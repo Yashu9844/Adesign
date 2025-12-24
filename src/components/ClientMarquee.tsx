@@ -12,7 +12,7 @@ const companies = [
   { name: 'Uber', logo: 'https://cdn.simpleicons.org/uber/white' },
   { name: 'Microsoft', logo: 'https://cdn.simpleicons.org/microsoft/white' },
   { name: 'Amazon', logo: 'https://cdn.simpleicons.org/amazon/white' },
-  { name: 'Tesla', logo: 'https://cdn.simpleicons.org/tesla/white' },
+
   { name: 'Apple', logo: 'https://cdn.simpleicons.org/apple/white' },
   { name: 'Google', logo: 'https://cdn.simpleicons.org/google/white' },
   { name: 'Meta', logo: 'https://cdn.simpleicons.org/meta/white' },
