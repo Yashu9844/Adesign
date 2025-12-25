@@ -181,7 +181,7 @@ export default function HowWeWork() {
                       index % 2 === 0 ? 'lg:justify-end' : ''
                     }`}
                   >
-                    <span className="text-5xl sm:text-6xl lg:text-7xl font-accent font-black text-white/[0.07]">
+                    <span className="text-5xl sm:text-6xl lg:text-7xl font-accent font-black text-white/25">
                       {step.number}
                     </span>
                     <span className="px-3 py-1 text-[11px] sm:text-xs text-white/50 border border-white/10 tracking-wider">
@@ -195,7 +195,7 @@ export default function HowWeWork() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-white/50 font-light leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-white/65 font-light leading-relaxed mb-6">
                     {step.description}
                   </p>
 

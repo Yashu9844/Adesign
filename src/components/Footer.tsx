@@ -37,6 +37,8 @@ export default function Footer() {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.2 });
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isMarqueeHovered, setIsMarqueeHovered] = useState(false);
   const currentYear = new Date().getFullYear();
 
   useGSAP(() => {
@@ -59,14 +61,38 @@ export default function Footer() {
       <div
         ref={marqueeRef}
         className="relative py-12 sm:py-16 md:py-20 border-y border-white/10 overflow-hidden"
+        onMouseEnter={() => setIsMarqueeHovered(true)}
+        onMouseLeave={() => setIsMarqueeHovered(false)}
+        onMouseMove={(e) => {
+          const rect = marqueeRef.current?.getBoundingClientRect();
+          if (rect) {
+            setMousePos({
+              x: e.clientX - rect.left,
+              y: e.clientY - rect.top,
+            });
+          }
+        }}
       >
+        {/* Glow effect on hover */}
+        {isMarqueeHovered && (
+          <div
+            className="absolute w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none z-0 transition-opacity duration-300"
+            style={{
+              left: mousePos.x - 192,
+              top: mousePos.y - 192,
+            }}
+          />
+        )}
+        {/* Subtle fade overlay on edges */}
+        <div className="absolute inset-y-0 left-0 w-32 sm:w-48 bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 sm:w-48 bg-gradient-to-l from-black via-black/50 to-transparent pointer-events-none z-10" />
         <div className="marquee-inner flex whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <span
               key={i}
               className="text-[15vw] sm:text-[12vw] md:text-[10vw] font-accent font-black text-transparent stroke-text mx-8 select-none"
               style={{
-                WebkitTextStroke: '1px rgba(255,255,255,0.15)',
+                WebkitTextStroke: '2px rgba(255,255,255,0.25)',
               }}
             >
               LET'S WORK TOGETHER
@@ -100,7 +126,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg sm:text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-md"
+              className="text-base sm:text-xl md:text-2xl text-white/85 font-light leading-relaxed max-w-md"
             >
               We design and build premium web experiences for founders & modern brands.
             </motion.p>
@@ -117,7 +143,7 @@ export default function Footer() {
                 className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors duration-300"
               >
                 <Mail className="w-4 h-4" />
-                <span className="text-sm sm:text-base">hello@agency.com</span>
+                <span className="text-sm md:text-base">hello@agency.com</span>
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
               <a
@@ -125,12 +151,12 @@ export default function Footer() {
                 className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors duration-300"
               >
                 <Phone className="w-4 h-4" />
-                <span className="text-sm sm:text-base">+1 (555) 123-4567</span>
+                <span className="text-sm md:text-base">+1 (555) 123-4567</span>
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
               <div className="flex items-center gap-3 text-white/50">
                 <MapPin className="w-4 h-4" />
-                <span className="text-sm sm:text-base">Bengaluru, India</span>
+                <span className="text-sm md:text-base">Bengaluru, India</span>
               </div>
             </motion.div>
 
@@ -164,7 +190,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
+              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
                 Navigation
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -176,7 +202,7 @@ export default function Footer() {
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
-                      <span className="text-sm sm:text-base">{link.label}</span>
+                      <span className="text-xs md:text-sm lg:text-base">{link.label}</span>
                       <ArrowUpRight
                         className={`w-3 h-3 transition-all duration-300 ${
                           hoveredLink === link.label
@@ -196,7 +222,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
+              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
                 Services
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -208,7 +234,7 @@ export default function Footer() {
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
-                      <span className="text-sm sm:text-base">{link.label}</span>
+                      <span className="text-xs md:text-sm lg:text-base">{link.label}</span>
                       <ArrowUpRight
                         className={`w-3 h-3 transition-all duration-300 ${
                           hoveredLink === link.label
@@ -229,10 +255,10 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="col-span-2 sm:col-span-1"
             >
-              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-6">
+              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-6">
                 Start a Project
               </h4>
-              <p className="text-sm text-white/50 mb-6 leading-relaxed">
+              <p className="text-xs md:text-sm text-white/50 mb-6 leading-relaxed">
                 Have an idea? Let's bring it to life together.
               </p>
               <Link href="/contact">

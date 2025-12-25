@@ -191,7 +191,7 @@ export default function TeamSection() {
                   <p className="text-sm sm:text-base text-white/50 mb-4">{founder.role}</p>
 
                   {/* Bio */}
-                  <p className="text-sm text-white/40 font-light leading-relaxed mb-6">
+                  <p className="text-sm text-white/55 font-light leading-relaxed mb-6">
                     {founder.bio}
                   </p>
 

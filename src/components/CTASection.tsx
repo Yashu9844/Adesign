@@ -105,7 +105,7 @@ export default function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base sm:text-lg md:text-xl text-white/50 font-light max-w-xl mx-auto mb-12 sm:mb-16"
+            className="text-base sm:text-lg md:text-xl text-white/65 font-light max-w-xl mx-auto mb-12 sm:mb-16"
           >
             Have a project in mind? We'd love to hear about it. Let's discuss how we can help bring your vision to life.
           </motion.p>

@@ -129,7 +129,7 @@ export default function WhatWeDo() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base sm:text-lg text-white/50 font-light leading-relaxed max-w-md lg:text-right"
+              className="text-base sm:text-lg text-white/65 font-light leading-relaxed max-w-md lg:text-right"
             >
               We specialize in creating digital experiences that are both
               beautiful and functional, driving real business results.
@@ -163,7 +163,7 @@ export default function WhatWeDo() {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Number */}
-                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-accent font-black text-white/[0.07] group-hover:text-white/12 transition-colors duration-500 mb-6 sm:mb-8">
+                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-accent font-black text-white/25 group-hover:text-white/40 transition-colors duration-500 mb-6 sm:mb-8">
                       {service.number}
                     </span>
 
@@ -173,7 +173,7 @@ export default function WhatWeDo() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm sm:text-base text-white/50 font-light leading-relaxed mb-8">
+                    <p className="text-sm sm:text-base text-white/65 font-light leading-relaxed mb-8">
                       {service.description}
                     </p>
 

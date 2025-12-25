@@ -177,7 +177,7 @@ export default function Testimonials() {
                   <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white/20 mb-6" />
 
                   {/* Quote Text */}
-                  <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed mb-8">
+                  <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-light leading-relaxed mb-8">
                     "{currentTestimonial.quote}"
                   </blockquote>
 

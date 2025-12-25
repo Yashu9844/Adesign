@@ -114,11 +114,11 @@ export default function SelectedWork() {
           </h2>
 
           {/* Subtext */}
-          <motion.p
+            <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/50 font-light leading-relaxed max-w-2xl"
+            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/65 font-light leading-relaxed max-w-2xl"
           >
             A collection of projects where design meets purpose. Each one crafted to solve real problems and drive measurable results.
           </motion.p>
@@ -221,12 +221,12 @@ export default function SelectedWork() {
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-lg sm:text-xl text-white/60 font-light mb-4">
+                <p className="text-lg sm:text-xl text-white/70 font-light mb-4">
                   {project.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-white/40 font-light leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-white/55 font-light leading-relaxed mb-6">
                   {project.description}
                 </p>
 
