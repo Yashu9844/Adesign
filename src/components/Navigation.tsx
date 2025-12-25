@@ -197,7 +197,7 @@ export default function Navigation() {
                 {/* Book a Call CTA */}
                 <Link 
                   href="/contact"
-                  className={`w-full bg-white text-black py-3 rounded-full border border-white/30 text-sm font-medium tracking-wider transition-all duration-300 hover:bg-white/90 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                  className={`w-full bg-white text-black py-3 border border-white/30 text-sm font-medium tracking-wider transition-all duration-300 hover:bg-white/90 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                     isMenuHovered 
                       ? 'opacity-100 translate-y-0 delay-[400ms]' 
                       : 'opacity-0 translate-y-6'
@@ -221,7 +221,7 @@ export default function Navigation() {
         href="/contact"
         className="hidden lg:flex fixed top-6 md:top-8 right-6 md:right-8 z-50 group cursor-pointer"
       >
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 flex items-center gap-2 transition-all duration-300 hover:bg-white hover:text-black text-white">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 flex items-center gap-2 transition-all duration-300 hover:bg-white hover:text-black text-white">
           <span className="text-sm font-medium tracking-wider">BOOK A CALL</span>
           <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

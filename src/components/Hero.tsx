@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-start justify-center md:items-center">
         <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-16 md:pb-0">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-8 lg:gap-12 items-center">
             
             {/* Main Content - Left Side */}
             <div className="lg:col-span-8 space-y-3 sm:space-y-6 md:space-y-10">
@@ -42,17 +42,17 @@ export default function Hero() {
               
               {/* Massive Name */}
               <div>
-                <h1 className="text-[2.75rem] leading-[0.85] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent text-white font-black sm:leading-[0.9] tracking-[-0.02em]">
+                <h1 className="text-[2.5rem] leading-[0.85] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-accent text-white font-black sm:leading-[0.9] tracking-[-0.02em]">
                   WE DESIGN
                 </h1>
-                <h1 className="text-[2.75rem] leading-[0.85] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent text-white/40 font-black sm:leading-[0.9] tracking-[-0.02em] mt-1 sm:mt-2">
+                <h1 className="text-[2.5rem] leading-[0.85] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-accent text-white/40 font-black sm:leading-[0.9] tracking-[-0.02em] mt-1 sm:mt-2">
                   WEB EXPERIENCES
                 </h1>
               </div>
               
               {/* Tagline */}
-              <div className="max-w-2xl">
-                <p className="text-sm leading-[1.4] sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light sm:leading-relaxed">
+              <div className="max-w-xl">
+                <p className="text-xs leading-[1.4] sm:text-base md:text-lg lg:text-xl text-white/80 font-light sm:leading-relaxed">
                   Transforming ideas into powerful digital solutions through
                   <span className="text-white font-normal"> innovative design</span> and
                   <span className="text-white font-normal"> clean code</span>
@@ -62,10 +62,10 @@ export default function Hero() {
               {/* CTA Button */}
               <div className="mt-1 sm:mt-3 md:mt-4">
                 <Link href="/contact">
-                  <button className="group relative bg-transparent text-white px-6 sm:px-10 py-3 sm:py-5 border-2 border-white transition-all duration-500 hover:bg-white hover:text-black hover:cursor-pointer overflow-hidden">
-                    <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-                      <span className="text-[11px] sm:text-base font-medium tracking-[0.2em] uppercase">Book a Call</span>
-                      <svg className="w-4 sm:w-5 h-4 sm:h-5 transform group-hover:rotate-45 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button className="group relative bg-transparent text-white px-5 sm:px-8 py-2.5 sm:py-4 border-2 border-white transition-all duration-500 hover:bg-white hover:text-black hover:cursor-pointer overflow-hidden">
+                    <span className="relative z-10 flex items-center gap-2 sm:gap-2.5">
+                      <span className="text-[10px] sm:text-sm font-medium tracking-[0.2em] uppercase">Book a Call</span>
+                      <svg className="w-3.5 sm:w-4 h-3.5 sm:h-4 transform group-hover:rotate-45 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
