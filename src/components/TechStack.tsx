@@ -29,8 +29,8 @@ const TechStack = () => {
       <div className="py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="relative">
           {/* Gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10" style={{ backgroundImage: 'linear-gradient(to right, var(--bg-primary), transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10" style={{ backgroundImage: 'linear-gradient(to left, var(--bg-primary), transparent)' }} />
           
           <div className="marquee">
             {/* First list */}
@@ -43,9 +43,12 @@ const TechStack = () => {
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert transition-opacity duration-300"
+                    style={{ opacity: '0.7' }}
+                    onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
+                    onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '0.7'; }}
                   />
-                  <span className="text-white/50 text-sm sm:text-base font-light tracking-wide group-hover:text-white/80 transition-colors duration-300 whitespace-nowrap">
+                  <span className="text-sm sm:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-subtle)' }} onMouseEnter={(e: React.MouseEvent<HTMLSpanElement>) => { (e.target as HTMLSpanElement).style.color = 'var(--text-secondary)'; }} onMouseLeave={(e: React.MouseEvent<HTMLSpanElement>) => { (e.target as HTMLSpanElement).style.color = 'var(--text-subtle)'; }}>
                     {tech.name}
                   </span>
                 </div>
@@ -61,9 +64,12 @@ const TechStack = () => {
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert transition-opacity duration-300"
+                    style={{ opacity: '0.7' }}
+                    onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
+                    onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '0.7'; }}
                   />
-                  <span className="text-white/50 text-sm sm:text-base font-light tracking-wide group-hover:text-white/80 transition-colors duration-300 whitespace-nowrap">
+                  <span className="text-sm sm:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-subtle)' }} onMouseEnter={(e) => { e.style.color = 'var(--text-secondary)'; }} onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}>
                     {tech.name}
                   </span>
                 </div>

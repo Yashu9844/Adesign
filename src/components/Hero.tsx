@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
@@ -7,18 +8,43 @@ import ClientMarquee from './ClientMarquee';
 import ScrollIndicator from './ScrollIndicator';
 
 export default function Hero() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(document.documentElement.classList.contains('light') ? 'light' : 'dark');
+    }
+    setMounted(true);
+
+    const handleThemeChange = () => {
+      const newTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+      setTheme(newTheme);
+    };
+
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (!mounted) return null;
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      {/* Video Background */}
+      {/* Video Background - Theme aware with smooth transition */}
       <video 
+        key={theme}
         autoPlay 
         loop 
         muted 
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500"
         poster="/images/hero-poster.webp"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src={theme === 'light' ? '/hero-video-lightmode.mp4' : '/hero-video.mp4'} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       

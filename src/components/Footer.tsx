@@ -56,11 +56,12 @@ export default function Footer() {
   });
 
   return (
-    <footer ref={footerRef} className="relative w-full bg-black overflow-hidden">
+    <footer ref={footerRef} className="relative w-full overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Large Marquee Text */}
       <div
         ref={marqueeRef}
-        className="relative py-12 sm:py-16 md:py-20 border-y border-white/10 overflow-hidden"
+        className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
+        style={{ borderTopColor: 'var(--border-medium)', borderBottomColor: 'var(--border-medium)' }}
         onMouseEnter={() => setIsMarqueeHovered(true)}
         onMouseLeave={() => setIsMarqueeHovered(false)}
         onMouseMove={(e) => {
@@ -76,16 +77,17 @@ export default function Footer() {
         {/* Glow effect on hover */}
         {isMarqueeHovered && (
           <div
-            className="absolute w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none z-0 transition-opacity duration-300"
+            className="absolute w-96 h-96 rounded-full blur-3xl pointer-events-none z-0 transition-opacity duration-300"
             style={{
               left: mousePos.x - 192,
               top: mousePos.y - 192,
+              backgroundColor: 'var(--bg-card)',
             }}
           />
         )}
         {/* Subtle fade overlay on edges */}
-        <div className="absolute inset-y-0 left-0 w-32 sm:w-48 bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-y-0 right-0 w-32 sm:w-48 bg-gradient-to-l from-black via-black/50 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 left-0 w-32 sm:w-48 pointer-events-none z-10" style={{ backgroundImage: 'linear-gradient(to right, var(--bg-primary), transparent)' }} />
+        <div className="absolute inset-y-0 right-0 w-32 sm:w-48 pointer-events-none z-10" style={{ backgroundImage: 'linear-gradient(to left, var(--bg-primary), transparent)' }} />
         <div className="marquee-inner flex whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <span
@@ -113,8 +115,8 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
               <Link href="/" className="inline-block group">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20">
-                  <span className="text-white text-2xl sm:text-3xl font-bold font-accent group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all duration-300" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-card-hover)'; e.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-card)'; e.style.borderColor = 'var(--border-medium)'; }}>
+                  <span className="text-2xl sm:text-3xl font-bold font-accent group-hover:scale-110 transition-transform duration-300" style={{ color: 'var(--text-primary)' }}>
                     A
                   </span>
                 </div>
@@ -126,7 +128,8 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-base sm:text-xl md:text-2xl text-white/85 font-light leading-relaxed max-w-md"
+              className="text-base sm:text-xl md:text-2xl font-light leading-relaxed max-w-md"
+              style={{ color: 'var(--text-secondary)' }}
             >
               We design and build premium web experiences for founders & modern brands.
             </motion.p>
@@ -140,7 +143,10 @@ export default function Footer() {
             >
               <a
                 href="mailto:hello@agency.com"
-                className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors duration-300"
+                className="group flex items-center gap-3 transition-colors duration-300"
+                style={{ color: 'var(--text-subtle)' }}
+                onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}
               >
                 <Mail className="w-4 h-4" />
                 <span className="text-sm md:text-base">hello@agency.com</span>
@@ -148,13 +154,16 @@ export default function Footer() {
               </a>
               <a
                 href="tel:+15551234567"
-                className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors duration-300"
+                className="group flex items-center gap-3 transition-colors duration-300"
+                style={{ color: 'var(--text-subtle)' }}
+                onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-sm md:text-base">+1 (555) 123-4567</span>
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
-              <div className="flex items-center gap-3 text-white/50">
+              <div className="flex items-center gap-3" style={{ color: 'var(--text-subtle)' }}>
                 <MapPin className="w-4 h-4" />
                 <span className="text-sm md:text-base">Bengaluru, India</span>
               </div>
@@ -174,7 +183,10 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="group w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center border border-white/10 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+                  className="group w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300"
+                  style={{ borderColor: 'var(--border-medium)', color: 'var(--text-subtle)' }}
+                  onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; e.style.backgroundColor = 'var(--bg-card)'; }}
+                  onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; e.style.borderColor = 'var(--border-medium)'; e.style.backgroundColor = 'transparent'; }}
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
                 </a>
@@ -190,7 +202,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-30)' }}>
                 Navigation
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -198,7 +210,10 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
+                      className="group inline-flex items-center gap-2 transition-colors duration-300"
+                      style={{ color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
+                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; }}
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
@@ -222,7 +237,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-30)' }}>
                 Services
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -230,7 +245,10 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
+                      className="group inline-flex items-center gap-2 transition-colors duration-300"
+                      style={{ color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
+                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; }}
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
@@ -255,14 +273,14 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="col-span-2 sm:col-span-1"
             >
-              <h4 className="text-xs md:text-sm text-white/30 tracking-[0.3em] uppercase mb-6">
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-6" style={{ color: 'var(--text-30)' }}>
                 Start a Project
               </h4>
-              <p className="text-xs md:text-sm text-white/50 mb-6 leading-relaxed">
+              <p className="text-xs md:text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-subtle)' }}>
                 Have an idea? Let's bring it to life together.
               </p>
               <Link href="/contact">
-                <button className="group w-full bg-white/5 border border-white/10 px-6 py-4 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                <button className="group w-full px-6 py-4 transition-all duration-300" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)', color: 'var(--text-secondary)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-card-hover)'; e.style.borderColor = 'var(--border-light)'; e.style.color = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-card)'; e.style.borderColor = 'var(--border-medium)'; e.style.color = 'var(--text-secondary)'; }}>
                   <span className="flex items-center justify-between">
                     <span className="text-sm font-medium tracking-wider uppercase">
                       Book a Call
@@ -277,7 +295,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 border-t border-white/10">
+      <div className="relative z-10" style={{ borderTopColor: 'var(--border-medium)' }}>
         <div className="w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Copyright */}
@@ -285,7 +303,8 @@ export default function Footer() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-xs sm:text-sm text-white/30"
+              className="text-xs sm:text-sm"
+              style={{ color: 'var(--text-30)' }}
             >
               © {currentYear} Agency. All rights reserved.
             </motion.p>
@@ -299,14 +318,20 @@ export default function Footer() {
             >
               <Link
                 href="/privacy"
-                className="text-xs sm:text-sm text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="text-xs sm:text-sm transition-colors duration-300"
+                style={{ color: 'var(--text-30)' }}
+                onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
+                onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
               >
                 Privacy Policy
               </Link>
-              <span className="text-white/10">|</span>
+              <span style={{ color: 'var(--text-very-subtle)' }}>|</span>
               <Link
                 href="/terms"
-                className="text-xs sm:text-sm text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="text-xs sm:text-sm transition-colors duration-300"
+                style={{ color: 'var(--text-30)' }}
+                onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
+                onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
               >
                 Terms of Service
               </Link>
@@ -318,7 +343,10 @@ export default function Footer() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.7 }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="group flex items-center gap-2 text-xs sm:text-sm text-white/30 hover:text-white/60 transition-colors duration-300"
+              className="group flex items-center gap-2 text-xs sm:text-sm transition-colors duration-300"
+              style={{ color: 'var(--text-30)' }}
+              onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
+              onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
             >
               <span>Back to top</span>
               <svg
@@ -341,7 +369,7 @@ export default function Footer() {
 
       {/* Large decorative text at bottom */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
-        <div className="text-[20vw] font-accent font-black text-white/2 leading-none text-center select-none translate-y-1/3">
+        <div className="text-[20vw] font-accent font-black leading-none text-center select-none translate-y-1/3" style={{ color: 'var(--text-25)' }}>
           AGENCY
         </div>
       </div>

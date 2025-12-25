@@ -44,7 +44,8 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-black py-24 sm:py-32 md:py-40 lg:py-52 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 md:py-40 lg:py-52 overflow-hidden"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -76,7 +77,7 @@ export default function CTASection() {
         <div className="text-center">
           {/* Main Heading with character animation */}
           <div ref={textRef} className="mb-8 sm:mb-12 perspective-1000">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black text-white leading-[0.9] tracking-[-0.02em]">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black leading-[0.9] tracking-[-0.02em]" style={{ color: 'var(--text-primary)' }}>
               {headingText.split('').map((char, i) => (
                 <span
                   key={i}
@@ -87,7 +88,7 @@ export default function CTASection() {
                 </span>
               ))}
             </h2>
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black text-white/30 leading-[0.9] tracking-[-0.02em] mt-2 sm:mt-4">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black leading-[0.9] tracking-[-0.02em] mt-2 sm:mt-4" style={{ color: 'var(--text-subtle)' }}>
               {subText.split('').map((char, i) => (
                 <span
                   key={i}
@@ -105,7 +106,8 @@ export default function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base sm:text-lg md:text-xl text-white/65 font-light max-w-xl mx-auto mb-12 sm:mb-16"
+            className="text-base sm:text-lg md:text-xl font-light max-w-xl mx-auto mb-12 sm:mb-16"
+            style={{ color: 'var(--text-light)' }}
           >
             Have a project in mind? We'd love to hear about it. Let's discuss how we can help bring your vision to life.
           </motion.p>
@@ -119,7 +121,7 @@ export default function CTASection() {
           >
             {/* Primary CTA */}
             <Link href="/contact">
-              <button className="group relative bg-white text-black px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500 hover:bg-white/90">
+              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--text-primary)', color: 'var(--bg-primary)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--text-primary)'; }}>
                 <span className="relative z-10 flex items-center gap-3">
                   <span className="text-sm sm:text-base font-medium tracking-[0.15em] uppercase">
                     Book a Call
@@ -143,7 +145,7 @@ export default function CTASection() {
 
             {/* Secondary CTA */}
             <a href="mailto:hello@agency.com">
-              <button className="group relative bg-transparent text-white px-8 sm:px-12 py-4 sm:py-5 border border-white/30 overflow-hidden transition-all duration-500 hover:border-white">
+              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--border-light)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-light)'; }}>
                 <span className="relative z-10 flex items-center gap-3">
                   <span className="text-sm sm:text-base font-medium tracking-[0.15em] uppercase">
                     hello@agency.com
@@ -174,11 +176,11 @@ export default function CTASection() {
             transition={{ duration: 1, delay: 1 }}
             className="mt-20 sm:mt-28 flex items-center justify-center gap-4"
           >
-            <div className="w-16 sm:w-24 h-px bg-white/20" />
-            <span className="text-[11px] sm:text-xs text-white/30 tracking-[0.3em] uppercase">
+            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
+            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--text-30)' }}>
               No pitch, just conversation
             </span>
-            <div className="w-16 sm:w-24 h-px bg-white/20" />
+            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
           </motion.div>
         </div>
       </div>

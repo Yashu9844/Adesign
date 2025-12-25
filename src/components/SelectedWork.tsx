@@ -79,7 +79,8 @@ export default function SelectedWork() {
     <section
       ref={sectionRef}
       id="work"
-      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 lg:py-40 overflow-hidden"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Background subtle grid */}
       <div
@@ -101,16 +102,16 @@ export default function SelectedWork() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <div className="w-12 sm:w-16 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
+            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase font-light" style={{ color: 'var(--text-subtle)' }}>
               Featured Projects
             </span>
           </motion.div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent text-white font-black leading-[0.95] tracking-[-0.02em]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent font-black leading-[0.95] tracking-[-0.02em]" style={{ color: 'var(--text-primary)' }}>
             <span className="work-word inline-block mr-4 sm:mr-6">Selected</span>
-            <span className="work-word inline-block text-white/40">Work</span>
+            <span className="work-word inline-block" style={{ color: 'var(--text-subtle)' }}>Work</span>
           </h2>
 
           {/* Subtext */}
@@ -118,7 +119,8 @@ export default function SelectedWork() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/65 font-light leading-relaxed max-w-2xl"
+            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl"
+            style={{ color: 'var(--text-light)' }}
           >
             A collection of projects where design meets purpose. Each one crafted to solve real problems and drive measurable results.
           </motion.p>
@@ -162,16 +164,16 @@ export default function SelectedWork() {
                 </motion.div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
+                <div className="absolute inset-0 transition-all duration-500" style={{ backgroundColor: 'var(--bg-overlay)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-overlay-heavy)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-overlay)'; }} />
 
                 {/* Corner Accents */}
                 <div className="absolute top-0 left-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-4 left-4 w-8 h-px bg-white/60" />
-                  <div className="absolute top-4 left-4 w-px h-8 bg-white/60" />
+                  <div className="absolute top-4 left-4 w-8 h-px" style={{ backgroundColor: 'var(--line-primary)' }} />
+                  <div className="absolute top-4 left-4 w-px h-8" style={{ backgroundColor: 'var(--line-primary)' }} />
                 </div>
                 <div className="absolute bottom-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 right-4 w-8 h-px bg-white/60" />
-                  <div className="absolute bottom-4 right-4 w-px h-8 bg-white/60" />
+                  <div className="absolute bottom-4 right-4 w-8 h-px" style={{ backgroundColor: 'var(--line-primary)' }} />
+                  <div className="absolute bottom-4 right-4 w-px h-8" style={{ backgroundColor: 'var(--line-primary)' }} />
                 </div>
 
                 {/* View Project Indicator */}
@@ -179,7 +181,7 @@ export default function SelectedWork() {
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   initial={false}
                 >
-                  <div className="flex items-center gap-3 text-white text-sm tracking-widest uppercase">
+                  <div className="flex items-center gap-3 text-sm tracking-widest uppercase" style={{ color: 'var(--text-primary)' }}>
                     <span>View Project</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -206,34 +208,34 @@ export default function SelectedWork() {
               >
                 {/* Category & Year */}
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-[11px] sm:text-xs text-white/40 tracking-widest uppercase">
+                  <span className="text-[11px] sm:text-xs tracking-widest uppercase" style={{ color: 'var(--text-subtle)' }}>
                     {project.category}
                   </span>
-                  <span className="w-1 h-1 rounded-full bg-white/20" />
-                  <span className="text-[11px] sm:text-xs text-white/40 tracking-widest">
+                  <span className="w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--border-medium)' }} />
+                  <span className="text-[11px] sm:text-xs tracking-widest" style={{ color: 'var(--text-subtle)' }}>
                     {project.year}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-accent text-white font-bold leading-tight mb-2">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-accent font-bold leading-tight mb-2" style={{ color: 'var(--text-primary)' }}>
                   {project.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-lg sm:text-xl text-white/70 font-light mb-4">
+                <p className="text-lg sm:text-xl font-light mb-4" style={{ color: 'var(--text-muted)' }}>
                   {project.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-white/55 font-light leading-relaxed mb-6">
+                <p className="text-sm sm:text-base font-light leading-relaxed mb-6" style={{ color: 'var(--text-55)' }}>
                   {project.description}
                 </p>
 
                 {/* Results Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 w-fit">
+                <div className="inline-flex items-center gap-2 px-4 py-2 w-fit" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}>
                   <span className="w-2 h-2 rounded-full bg-green-400/80" />
-                  <span className="text-xs sm:text-sm text-white/70 tracking-wide">
+                  <span className="text-xs sm:text-sm tracking-wide" style={{ color: 'var(--text-muted)' }}>
                     {project.results}
                   </span>
                 </div>
@@ -251,8 +253,8 @@ export default function SelectedWork() {
           className="flex justify-center mt-16 sm:mt-20 md:mt-28"
         >
           <Link href="/work">
-            <button className="group relative bg-transparent text-white px-8 sm:px-12 py-4 sm:py-5 border border-white/20 hover:border-white transition-all duration-500 overflow-hidden">
-              <span className="relative z-10 flex items-center gap-3">
+          <button className="group relative px-8 sm:px-12 py-4 sm:py-5 transition-all duration-500 overflow-hidden" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-medium)'; }}>
+            <span className="relative z-10 flex items-center gap-3">
                 <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase">
                   View All Projects
                 </span>
