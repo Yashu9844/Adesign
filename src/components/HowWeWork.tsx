@@ -111,7 +111,7 @@ export default function HowWeWork() {
 
       <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function HowWeWork() {
           </motion.div>
 
           {/* Main Heading */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent text-white font-black leading-[0.95] tracking-[-0.02em]">
               <span className="process-word inline-block mr-4 sm:mr-6">How</span>
               <span className="process-word inline-block mr-4 sm:mr-6">We</span>
@@ -150,7 +150,7 @@ export default function HowWeWork() {
           {/* Vertical Line */}
           <div className="absolute left-4 sm:left-8 lg:left-1/2 lg:-translate-x-px top-0 bottom-0 w-px bg-white/10" />
 
-          <div className="space-y-12 sm:space-y-16 md:space-y-20">
+          <div className="space-y-10 sm:space-y-14 md:space-y-16 lg:space-y-20">
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}

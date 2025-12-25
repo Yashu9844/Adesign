@@ -30,11 +30,11 @@ export default function Hero() {
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-start justify-center md:items-center">
-        <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-20 md:pb-0">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-16 md:pb-8 lg:pb-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-6 lg:gap-12 items-start lg:items-center">
             
             {/* Main Content - Left Side */}
-            <div className="lg:col-span-8 space-y-4 sm:space-y-6 lg:space-y-10">
+            <div className="md:col-span-2 lg:col-span-8 space-y-4 sm:space-y-6 md:space-y-6 lg:space-y-8">
               
               {/* Small Label */}
               <div className="flex items-center gap-3">
@@ -46,13 +46,13 @@ export default function Hero() {
               <div>
                 <h1 
                   className="font-accent text-white font-black leading-[0.85] tracking-[-0.02em]"
-                  style={{ fontSize: 'clamp(2.5rem, 8vw, 9rem)' }}
+                  style={{ fontSize: 'clamp(2.25rem, 6.5vw, 7rem)' }}
                 >
                   WE DESIGN
                 </h1>
                 <h1 
                   className="font-accent text-white/40 font-black leading-[0.85] tracking-[-0.02em] mt-1 sm:mt-2"
-                  style={{ fontSize: 'clamp(2.5rem, 8vw, 9rem)' }}
+                  style={{ fontSize: 'clamp(2.25rem, 6.5vw, 7rem)' }}
                 >
                   WEB EXPERIENCES
                 </h1>
@@ -86,26 +86,26 @@ export default function Hero() {
             </div>
             
             {/* Right Column - Stats/Info */}
-            <div className="lg:col-span-4 space-y-6 lg:space-y-10">
+            <div className="md:col-span-2 lg:col-span-4 space-y-4 md:space-y-6 lg:space-y-8">
               {/* Stats - Fluid typography */}
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                <div className="space-y-1 sm:space-y-2">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6">
+                <div className="space-y-1 md:space-y-1.5">
                   <div 
                     className="font-bold text-white"
-                    style={{ fontSize: 'clamp(1.875rem, 4vw, 3.75rem)' }}
+                    style={{ fontSize: 'clamp(1.5rem, 3.5vw, 3rem)' }}
                   >
                     50+
                   </div>
-                  <div className="text-xs sm:text-sm text-white/60 tracking-wider uppercase">Projects</div>
+                  <div className="text-[10px] sm:text-xs md:text-xs text-white/60 tracking-wider uppercase">Projects</div>
                 </div>
-                <div className="space-y-1 sm:space-y-2">
+                <div className="space-y-1 md:space-y-1.5">
                   <div 
                     className="font-bold text-white"
-                    style={{ fontSize: 'clamp(1.875rem, 4vw, 3.75rem)' }}
+                    style={{ fontSize: 'clamp(1.5rem, 3.5vw, 3rem)' }}
                   >
                     100%
                   </div>
-                  <div className="text-xs sm:text-sm text-white/60 tracking-wider uppercase">On Time</div>
+                  <div className="text-[10px] sm:text-xs md:text-xs text-white/60 tracking-wider uppercase">On Time</div>
                 </div>
               </div>
               

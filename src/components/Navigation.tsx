@@ -70,7 +70,7 @@ export default function Navigation() {
         >
           {/* Main Menu Strip */}
           <div
-            className="bg-black/30 backdrop-blur-md rounded-lg sm:rounded-[0.5vw] border border-white/10 px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl"
+            className="bg-black/30 backdrop-blur-md rounded-lg sm:rounded-[0.5vw] md:rounded-2xl border border-white/10 px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 flex items-center justify-between w-[85vw] sm:w-[60vw] md:w-[55vw] lg:w-[40vw] max-w-2xl"
             onMouseEnter={() => {
               if (closeTimeoutRef.current) {
                 clearTimeout(closeTimeoutRef.current);
@@ -149,7 +149,7 @@ export default function Navigation() {
           >
             <div
               ref={listRef}
-              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-[0.5vw] border border-white/20 shadow-2xl w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl max-h-[70vh] sm:max-h-[60vh] overflow-y-scroll bg-black/50 backdrop-blur-2xl`}
+              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-3xl border border-white/20 shadow-2xl w-[85vw] sm:w-[60vw] md:w-[55vw] lg:w-[40vw] max-w-2xl max-h-[60vh] sm:max-h-[60vh] md:max-h-[65vh] overflow-y-auto bg-black/50 backdrop-blur-2xl`}
               style={{ overscrollBehavior: 'contain' }}
               onMouseEnter={() => {
                 if (closeTimeoutRef.current) {
@@ -168,16 +168,16 @@ export default function Navigation() {
             >
               <div className="p-4 sm:p-6 md:p-8 lg:p-10">
                 {/* Sections */}
-                <div className="mb-6">
-                  <h3 className={`text-white/70 text-sm font-secondary tracking-wider mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                <div className="mb-5 md:mb-6">
+                  <h3 className={`text-white/70 text-xs md:text-sm font-secondary tracking-wider mb-5 md:mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                     isMenuHovered ? (fastOpen ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 delay-[100ms]') : 'opacity-0 translate-y-4'
                   }`}>PAGES</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-3 md:space-y-4">
                     {menuItems.map((item, i) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`block text-white text-lg sm:text-xl md:text-2xl font-light hover:text-white/70 transition-all duration-300 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                        className={`block text-white text-base sm:text-lg md:text-xl lg:text-2xl font-light hover:text-white/70 transition-all duration-300 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                           isMenuHovered 
                             ? `opacity-100 translate-y-0 ${fastOpen ? '' : `delay-[${150 + i * 50}ms]`}` 
                             : 'opacity-0 translate-y-4'
@@ -197,7 +197,7 @@ export default function Navigation() {
                 {/* Book a Call CTA */}
                 <Link 
                   href="/contact"
-                  className={`w-full bg-white text-black py-3 border border-white/30 text-sm font-medium tracking-wider transition-all duration-300 hover:bg-white/90 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                  className={`w-full bg-white text-black py-3 md:py-4 border border-white/30 text-xs md:text-sm font-medium tracking-wider transition-all duration-300 hover:bg-white/90 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                     isMenuHovered 
                       ? 'opacity-100 translate-y-0 delay-[400ms]' 
                       : 'opacity-0 translate-y-6'

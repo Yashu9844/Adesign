@@ -76,10 +76,10 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 sm:py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-8 lg:gap-8">
           {/* Left Column - Brand & Contact */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 md:col-span-2 space-y-6 md:space-y-8">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -157,17 +157,17 @@ export default function Footer() {
           </div>
 
           {/* Right Column - Navigation Links */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12 lg:pl-12">
+          <div className="lg:col-span-7 md:col-span-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-12 md:pt-8 lg:pt-0 lg:pl-12">
             {/* Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-6">
+              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
                 Navigation
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {footerLinks.navigation.map((link) => (
                   <li key={link.label}>
                     <Link
@@ -196,10 +196,10 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-6">
+              <h4 className="text-xs text-white/30 tracking-[0.3em] uppercase mb-4 md:mb-6">
                 Services
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
                     <Link

@@ -44,7 +44,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-black py-32 sm:py-40 lg:py-52 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 md:py-40 lg:py-52 overflow-hidden"
     >
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -115,7 +115,7 @@ export default function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 lg:gap-6"
           >
             {/* Primary CTA */}
             <Link href="/contact">

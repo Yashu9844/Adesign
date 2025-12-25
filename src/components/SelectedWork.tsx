@@ -93,7 +93,7 @@ export default function SelectedWork() {
 
       <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-36">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-36">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function SelectedWork() {
         </div>
 
         {/* Projects Grid - Asymmetric Layout */}
-        <div className="space-y-6 sm:space-y-8 md:space-y-10">
+        <div className="space-y-6 sm:space-y-8 md:space-y-8 lg:space-y-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -135,16 +135,16 @@ export default function SelectedWork() {
               transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className={`group relative ${
+              className={`group relative flex flex-col ${
                 index % 2 === 0
-                  ? 'lg:flex lg:flex-row'
-                  : 'lg:flex lg:flex-row-reverse'
-              } gap-6 sm:gap-8 lg:gap-12`}
+                  ? 'lg:flex-row'
+                  : 'lg:flex-row-reverse'
+              } gap-6 md:gap-8 lg:gap-12`}
             >
               {/* Image Container */}
               <Link
                 href={project.href}
-                className="relative block w-full lg:w-[65%] aspect-16/10 overflow-hidden cursor-pointer"
+                className="relative block w-full md:w-full lg:w-[65%] aspect-16/10 overflow-hidden cursor-pointer"
               >
                 {/* Image */}
                 <motion.div
@@ -200,7 +200,7 @@ export default function SelectedWork() {
 
               {/* Content */}
               <div
-                className={`w-full lg:w-[35%] flex flex-col justify-center py-6 lg:py-0 ${
+                className={`w-full md:w-full lg:w-[35%] flex flex-col justify-center py-4 md:py-6 lg:py-0 ${
                   index % 2 === 0 ? 'lg:pl-4' : 'lg:pr-4'
                 }`}
               >

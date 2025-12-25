@@ -102,7 +102,7 @@ export default function WhatWeDo() {
 
       <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ export default function WhatWeDo() {
           </motion.div>
 
           {/* Main Heading - Split Layout */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent text-white font-black leading-[0.95] tracking-[-0.02em]">
               <span className="service-word inline-block mr-4 sm:mr-6">What</span>
               <span className="service-word inline-block mr-4 sm:mr-6">We</span>
@@ -138,7 +138,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -227,9 +227,9 @@ export default function WhatWeDo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16 sm:mt-20 md:mt-28 pt-12 sm:pt-16 border-t border-white/10"
+          className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 pt-12 md:pt-14 lg:pt-16 border-t border-white/10"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
             {[
               { value: '5+', label: 'Years Experience' },
               { value: '50+', label: 'Projects Delivered' },

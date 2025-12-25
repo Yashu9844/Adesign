@@ -99,7 +99,7 @@ export default function TeamSection() {
 
       <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32 text-center">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 text-center">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,7 +135,7 @@ export default function TeamSection() {
         </div>
 
         {/* Founders Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-16 sm:mb-20 md:mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-16 md:mb-20 lg:mb-28">
           {founders.map((founder, index) => (
             <motion.div
               key={founder.id}
@@ -224,7 +224,7 @@ export default function TeamSection() {
             The Extended Team
           </motion.h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
             {team.map((member, index) => (
               <motion.div
                 key={member.id}

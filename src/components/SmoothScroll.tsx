@@ -51,7 +51,6 @@ const SmoothScroll = () => {
     };
 
     const onWheel = (e: WheelEvent) => {
-      e.preventDefault();
       isProgrammaticScroll = false;
       
       targetScroll += e.deltaY * 2.2;
@@ -79,7 +78,7 @@ const SmoothScroll = () => {
     targetScroll = window.scrollY;
     currentScroll = window.scrollY;
 
-    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("wheel", onWheel);
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {

@@ -25,7 +25,7 @@ export default function ScrollIndicator() {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3 pointer-events-none"
+      className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3 pointer-events-none md:hidden"
     >
       {/* Text label */}
       <motion.span

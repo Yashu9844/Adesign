@@ -108,7 +108,7 @@ export default function Testimonials() {
 
       <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32 text-center">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 text-center">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,9 +144,9 @@ export default function Testimonials() {
               className="relative"
             >
               {/* Main Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
                 {/* Image & Metric */}
-                <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+                <div className="md:col-span-1 lg:col-span-4 flex flex-col items-center lg:items-start">
                   {/* Author Image */}
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mb-6">
                     <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent rounded-full" />
@@ -172,7 +172,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote & Info */}
-                <div className="lg:col-span-8">
+                <div className="md:col-span-1 lg:col-span-8">
                   {/* Quote Icon */}
                   <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white/20 mb-6" />
 
