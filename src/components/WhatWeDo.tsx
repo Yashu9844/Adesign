@@ -95,7 +95,7 @@ export default function WhatWeDo() {
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full bg-black py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background gradient orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-linear-to-br from-white/2 to-transparent blur-3xl pointer-events-none" />
@@ -111,7 +111,7 @@ export default function WhatWeDo() {
             className="flex items-center gap-3 mb-6 sm:mb-8"
           >
             <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[10px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
               Our Services
             </span>
           </motion.div>
@@ -182,7 +182,7 @@ export default function WhatWeDo() {
                       {service.capabilities.map((cap) => (
                         <span
                           key={cap}
-                          className="px-3 py-1.5 text-[10px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
+                          className="px-3 py-1.5 text-[11px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
                         >
                           {cap}
                         </span>

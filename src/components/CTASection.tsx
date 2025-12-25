@@ -44,7 +44,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-black py-32 sm:py-40 md:py-52 lg:py-64 overflow-hidden"
+      className="relative w-full bg-black py-32 sm:py-40 lg:py-52 overflow-hidden"
     >
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -175,7 +175,7 @@ export default function CTASection() {
             className="mt-20 sm:mt-28 flex items-center justify-center gap-4"
           >
             <div className="w-16 sm:w-24 h-px bg-white/20" />
-            <span className="text-[10px] sm:text-xs text-white/30 tracking-[0.3em] uppercase">
+            <span className="text-[11px] sm:text-xs text-white/30 tracking-[0.3em] uppercase">
               No pitch, just conversation
             </span>
             <div className="w-16 sm:w-24 h-px bg-white/20" />

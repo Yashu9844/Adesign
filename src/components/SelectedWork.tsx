@@ -79,7 +79,7 @@ export default function SelectedWork() {
     <section
       ref={sectionRef}
       id="work"
-      className="relative w-full bg-black py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background subtle grid */}
       <div
@@ -102,7 +102,7 @@ export default function SelectedWork() {
             className="flex items-center gap-3 mb-6 sm:mb-8"
           >
             <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[10px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
               Featured Projects
             </span>
           </motion.div>
@@ -206,11 +206,11 @@ export default function SelectedWork() {
               >
                 {/* Category & Year */}
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-[10px] sm:text-xs text-white/40 tracking-widest uppercase">
+                  <span className="text-[11px] sm:text-xs text-white/40 tracking-widest uppercase">
                     {project.category}
                   </span>
                   <span className="w-1 h-1 rounded-full bg-white/20" />
-                  <span className="text-[10px] sm:text-xs text-white/40 tracking-widest">
+                  <span className="text-[11px] sm:text-xs text-white/40 tracking-widest">
                     {project.year}
                   </span>
                 </div>

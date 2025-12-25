@@ -88,7 +88,7 @@ export default function HowWeWork() {
     <section
       ref={sectionRef}
       id="process"
-      className="relative w-full bg-black py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
     >
       {/* Animated Background Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -120,7 +120,7 @@ export default function HowWeWork() {
             className="flex items-center gap-3 mb-6 sm:mb-8"
           >
             <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[10px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
               Our Process
             </span>
           </motion.div>
@@ -184,7 +184,7 @@ export default function HowWeWork() {
                     <span className="text-5xl sm:text-6xl lg:text-7xl font-accent font-black text-white/[0.07]">
                       {step.number}
                     </span>
-                    <span className="px-3 py-1 text-[10px] sm:text-xs text-white/50 border border-white/10 tracking-wider">
+                    <span className="px-3 py-1 text-[11px] sm:text-xs text-white/50 border border-white/10 tracking-wider">
                       {step.duration}
                     </span>
                   </div>
@@ -208,7 +208,7 @@ export default function HowWeWork() {
                     {step.details.map((detail) => (
                       <span
                         key={detail}
-                        className="px-3 py-1.5 text-[10px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
+                        className="px-3 py-1.5 text-[11px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
                       >
                         {detail}
                       </span>

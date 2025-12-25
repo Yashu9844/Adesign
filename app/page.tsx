@@ -8,10 +8,14 @@ import TeamSection from "@/components/TeamSection";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
+      {/* Preloader */}
+      <Preloader durationMs={1800} />
+      
       <SmoothScroll />
       {/* Navigation */}
       <Navigation />

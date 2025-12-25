@@ -99,7 +99,7 @@ export default function Testimonials() {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="relative w-full bg-black py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background Quote Mark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.02]">
@@ -117,7 +117,7 @@ export default function Testimonials() {
             className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
           >
             <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[10px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
               Testimonials
             </span>
             <div className="w-12 sm:w-16 h-px bg-white/40" />

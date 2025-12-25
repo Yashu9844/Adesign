@@ -92,7 +92,7 @@ export default function TeamSection() {
     <section
       ref={sectionRef}
       id="team"
-      className="relative w-full bg-black py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background Gradient */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-linear-to-bl from-white/[0.02] to-transparent pointer-events-none" />
@@ -108,7 +108,7 @@ export default function TeamSection() {
             className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
           >
             <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[10px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
               The Team
             </span>
             <div className="w-12 sm:w-16 h-px bg-white/40" />
@@ -200,7 +200,7 @@ export default function TeamSection() {
                     {founder.expertise.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 text-[10px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
+                        className="px-3 py-1 text-[11px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
                       >
                         {skill}
                       </span>
