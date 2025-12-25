@@ -69,7 +69,7 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
 
   // Disable page scroll while loader is active
   useEffect(() => {
-    if (reveal) return;
+    if (done) return; // Don't lock if already done
 
     const html = document.documentElement;
     const body = document.body;
@@ -87,14 +87,14 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
     body.style.width = "100%";
 
     return () => {
-      html.style.overflow = prevHtmlOverflow;
-      body.style.overflow = prevBodyOverflow;
-      body.style.position = prevPosition;
-      body.style.top = prevTop;
-      body.style.width = prevWidth;
+      html.style.overflow = prevHtmlOverflow || "";
+      body.style.overflow = prevBodyOverflow || "";
+      body.style.position = prevPosition || "";
+      body.style.top = prevTop || "";
+      body.style.width = prevWidth || "";
       window.scrollTo(0, y);
     };
-  }, [reveal]);
+  }, [done]);
 
   if (done) return null;
 
