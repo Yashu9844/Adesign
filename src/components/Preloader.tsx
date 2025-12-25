@@ -100,13 +100,14 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
 
   return (
     <>
-      {/* Circular mask reveal overlay */}
+      {/* Circular mask reveal overlay - WHITE flash that expands from center */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[10000] pointer-events-none bg-black"
+        id="transitionOverlay"
+        className="fixed inset-0 z-[10000] pointer-events-none bg-white"
         style={{
-          clipPath: "circle(100% at 50% 50%)",
-          opacity: 0,
+          clipPath: "circle(0% at 50% 50%)",
+          opacity: 1,
           willChange: "clip-path, opacity",
         }}
       />
@@ -132,16 +133,6 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
             animate={reveal ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Logo / Brand Mark */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-white text-2xl sm:text-3xl font-accent font-black tracking-tight"
-            >
-              AGENCY
-            </motion.div>
-
             {/* Percentage Counter */}
             <div className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter font-accent">
               {progress}<span className="text-white/40">%</span>
