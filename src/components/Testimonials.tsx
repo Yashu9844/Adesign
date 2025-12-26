@@ -99,7 +99,8 @@ export default function Testimonials() {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 lg:py-40 overflow-hidden"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Background Quote Mark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.02]">
@@ -108,7 +109,7 @@ export default function Testimonials() {
 
       <div className="relative z-10 w-full max-w-480 mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32 text-center">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 text-center">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,19 +117,19 @@ export default function Testimonials() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <div className="w-12 sm:w-16 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
+            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase font-light" style={{ color: 'var(--text-subtle)' }}>
               Testimonials
             </span>
-            <div className="w-12 sm:w-16 h-px bg-white/40" />
+            <div className="w-12 sm:w-16 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
           </motion.div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent text-white font-black leading-[0.95] tracking-[-0.02em]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent font-black leading-[0.95] tracking-[-0.02em]" style={{ color: 'var(--text-primary)' }}>
             <span className="testimonial-word inline-block mr-4 sm:mr-6">What</span>
             <span className="testimonial-word inline-block mr-4 sm:mr-6">Clients</span>
             <br className="hidden sm:block" />
-            <span className="testimonial-word inline-block text-white/40">Say</span>
+            <span className="testimonial-word inline-block" style={{ color: 'var(--text-subtle)' }}>Say</span>
           </h2>
         </div>
 
@@ -144,9 +145,9 @@ export default function Testimonials() {
               className="relative"
             >
               {/* Main Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
                 {/* Image & Metric */}
-                <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+                <div className="md:col-span-1 lg:col-span-4 flex flex-col items-center lg:items-start">
                   {/* Author Image */}
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mb-6">
                     <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent rounded-full" />
@@ -162,33 +163,33 @@ export default function Testimonials() {
 
                   {/* Metric Badge */}
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-accent font-bold text-white mb-1">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                       {currentTestimonial.metric}
                     </div>
-                    <div className="text-xs sm:text-sm text-white/40 tracking-wider uppercase">
+                    <div className="text-xs sm:text-sm tracking-wider uppercase" style={{ color: 'var(--text-subtle)' }}>
                       {currentTestimonial.metricLabel}
                     </div>
                   </div>
                 </div>
 
                 {/* Quote & Info */}
-                <div className="lg:col-span-8">
+                <div className="md:col-span-1 lg:col-span-8">
                   {/* Quote Icon */}
                   <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white/20 mb-6" />
 
                   {/* Quote Text */}
-                  <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed mb-8">
+                  <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
                     "{currentTestimonial.quote}"
                   </blockquote>
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-px bg-white/30" />
+                    <div className="w-12 h-px" style={{ backgroundColor: 'var(--text-muted)' }} />
                     <div>
-                      <div className="text-base sm:text-lg font-medium text-white">
+                      <div className="text-base sm:text-lg font-medium" style={{ color: 'var(--text-primary)' }}>
                         {currentTestimonial.author}
                       </div>
-                      <div className="text-sm text-white/50">
+                      <div className="text-sm" style={{ color: 'var(--text-subtle)' }}>
                         {currentTestimonial.role}, {currentTestimonial.company}
                       </div>
                     </div>
@@ -208,9 +209,12 @@ export default function Testimonials() {
                   onClick={() => setActiveIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === activeIndex
-                      ? 'bg-white w-6'
-                      : 'bg-white/30 hover:bg-white/50'
+                      ? 'w-6'
+                      : 'hover:opacity-75'
                   }`}
+                  style={{
+                    backgroundColor: index === activeIndex ? 'var(--text-primary)' : 'var(--text-very-subtle)'
+                  }}
                 />
               ))}
             </div>
@@ -218,13 +222,19 @@ export default function Testimonials() {
             {/* Arrows */}
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 flex items-center justify-center border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center transition-all duration-300"
+              style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+              onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
+              onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 flex items-center justify-center border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center transition-all duration-300"
+              style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+              onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
+              onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
             >
               <ChevronRight className="w-5 h-5" />
             </button>

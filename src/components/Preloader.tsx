@@ -104,7 +104,8 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
       <div
         ref={overlayRef}
         id="transitionOverlay"
-        className="fixed inset-0 z-[10000] pointer-events-none bg-white"
+        className="fixed inset-0 z-[10000] pointer-events-none"
+        style={{ backgroundColor: 'var(--text-primary)' }}
         style={{
           clipPath: "circle(0% at 50% 50%)",
           opacity: 1,
@@ -114,7 +115,8 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
 
       <motion.div
         initial={false}
-        className="fixed inset-0 z-[9999] bg-black overflow-hidden"
+        className="fixed inset-0 z-[9999] overflow-hidden"
+        style={{ backgroundColor: 'var(--bg-primary)' }}
       >
         {/* Subtle grid background */}
         <div
@@ -134,15 +136,16 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Percentage Counter */}
-            <div className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter font-accent">
-              {progress}<span className="text-white/40">%</span>
+            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter font-accent" style={{ color: 'var(--text-primary)' }}>
+              {progress}<span style={{ color: 'var(--text-subtle)' }}>%</span>
             </div>
 
             {/* Thin Progress Line */}
-            <div className="relative w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px] h-[2px] bg-white/10">
+            <div className="relative w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px] h-[2px]" style={{ backgroundColor: 'var(--text-very-subtle)' }}>
               <motion.div
-                className="absolute left-0 top-0 h-full bg-white"
+                className="absolute left-0 top-0 h-full"
                 style={{
+                  backgroundColor: 'var(--text-primary)',
                   width: `${progress}%`,
                   boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)'
                 }}
@@ -151,7 +154,7 @@ export default function Preloader({ durationMs = 1800 }: { durationMs?: number }
             </div>
 
             {/* Label */}
-            <div className="text-white/50 text-xs sm:text-sm tracking-[0.3em] uppercase font-light">
+            <div className="text-xs sm:text-sm tracking-[0.3em] uppercase font-light" style={{ color: 'var(--text-subtle)' }}>
               Loading Experience
             </div>
           </motion.div>

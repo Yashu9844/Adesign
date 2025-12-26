@@ -92,14 +92,15 @@ export default function TeamSection() {
     <section
       ref={sectionRef}
       id="team"
-      className="relative w-full bg-black py-24 sm:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 lg:py-40 overflow-hidden"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Background Gradient */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-linear-to-bl from-white/[0.02] to-transparent pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
-        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-28 lg:mb-32 text-center">
+        <div ref={headingRef} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 text-center">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,27 +108,28 @@ export default function TeamSection() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="w-12 sm:w-16 h-px bg-white/40" />
-            <span className="text-[11px] sm:text-xs text-white/50 tracking-[0.3em] uppercase font-light">
+            <div className="w-12 sm:w-16 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
+            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase font-light" style={{ color: 'var(--text-subtle)' }}>
               The Team
             </span>
-            <div className="w-12 sm:w-16 h-px bg-white/40" />
+            <div className="w-12 sm:w-16 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
           </motion.div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent text-white font-black leading-[0.95] tracking-[-0.02em]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent font-black leading-[0.95] tracking-[-0.02em]" style={{ color: 'var(--text-primary)' }}>
             <span className="team-word inline-block mr-4 sm:mr-6">Led</span>
             <span className="team-word inline-block mr-4 sm:mr-6">By</span>
             <span className="team-word inline-block mr-4 sm:mr-6">The</span>
             <br className="hidden sm:block" />
-            <span className="team-word inline-block text-white/40">Founders</span>
+            <span className="team-word inline-block" style={{ color: 'var(--text-subtle)' }}>Founders</span>
           </h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 sm:mt-8 text-base sm:text-lg text-white/50 font-light leading-relaxed max-w-2xl mx-auto"
+            className="mt-6 sm:mt-8 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto"
+            style={{ color: 'var(--text-subtle)' }}
           >
             A tight-knit team of strategists, designers, and engineers who are passionate about
             creating work that matters.
@@ -135,7 +137,7 @@ export default function TeamSection() {
         </div>
 
         {/* Founders Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-16 sm:mb-20 md:mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-16 md:mb-20 lg:mb-28">
           {founders.map((founder, index) => (
             <motion.div
               key={founder.id}
@@ -151,7 +153,7 @@ export default function TeamSection() {
               onMouseLeave={() => setHoveredFounder(null)}
               className="group relative"
             >
-              <div className="relative bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
+              <div className="relative overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-medium)'; }}>
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <motion.img
@@ -169,13 +171,19 @@ export default function TeamSection() {
                   <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <a
                       href={founder.linkedin}
-                      className="w-10 h-10 flex items-center justify-center bg-black/50 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-all duration-300"
+                      className="w-10 h-10 flex items-center justify-center backdrop-blur-md transition-all duration-300"
+                      style={{ backgroundColor: 'var(--bg-glass)', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
+                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
                     <a
                       href={founder.twitter}
-                      className="w-10 h-10 flex items-center justify-center bg-black/50 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-all duration-300"
+                      className="w-10 h-10 flex items-center justify-center backdrop-blur-md transition-all duration-300"
+                      style={{ backgroundColor: 'var(--bg-glass)', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
+                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
                     >
                       <Twitter className="w-4 h-4" />
                     </a>
@@ -185,13 +193,13 @@ export default function TeamSection() {
                 {/* Content */}
                 <div className="p-6 sm:p-8">
                   {/* Name & Role */}
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-accent font-bold text-white mb-1">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                     {founder.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-white/50 mb-4">{founder.role}</p>
+                  <p className="text-sm sm:text-base mb-4" style={{ color: 'var(--text-subtle)' }}>{founder.role}</p>
 
                   {/* Bio */}
-                  <p className="text-sm text-white/40 font-light leading-relaxed mb-6">
+                  <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--text-55)' }}>
                     {founder.bio}
                   </p>
 
@@ -200,7 +208,8 @@ export default function TeamSection() {
                     {founder.expertise.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 text-[11px] sm:text-xs text-white/60 bg-white/5 border border-white/10 tracking-wide"
+                        className="px-3 py-1 text-[11px] sm:text-xs tracking-wide"
+                        style={{ color: 'var(--text-60)', backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}
                       >
                         {skill}
                       </span>
@@ -219,12 +228,13 @@ export default function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-xl sm:text-2xl font-accent font-bold text-white/60 mb-8 sm:mb-12 text-center"
+            className="text-xl sm:text-2xl font-accent font-bold mb-8 sm:mb-12 text-center"
+            style={{ color: 'var(--text-light)' }}
           >
             The Extended Team
           </motion.h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
             {team.map((member, index) => (
               <motion.div
                 key={member.id}
@@ -238,18 +248,18 @@ export default function TeamSection() {
                 className="group text-center"
               >
                 {/* Image */}
-                <div className="relative aspect-square mb-4 overflow-hidden bg-white/5">
+                <div className="relative aspect-square mb-4 overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500" />
+                  <div className="absolute inset-0 transition-all duration-500" style={{ backgroundColor: 'var(--bg-overlay)' }} />
                 </div>
 
                 {/* Info */}
-                <h4 className="text-sm sm:text-base font-medium text-white mb-1">{member.name}</h4>
-                <p className="text-xs sm:text-sm text-white/40">{member.role}</p>
+                <h4 className="text-sm sm:text-base font-medium mb-1" style={{ color: 'var(--text-primary)' }}>{member.name}</h4>
+                <p className="text-xs sm:text-sm" style={{ color: 'var(--text-subtle)' }}>{member.role}</p>
               </motion.div>
             ))}
           </div>

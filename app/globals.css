@@ -135,12 +135,31 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'KH Teka', sans-serif !important;
+}
+
+/* Light mode styles */
+html.light body {
+  @apply bg-white text-black;
+}
+
+/* Dark mode styles */
+html.dark body {
+  @apply bg-black text-white;
 }
 
 * {
@@ -387,4 +406,116 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Theme-aware color utilities for light mode */
+html.light {
+  /* Background colors */
+  --bg-primary: #fafafa;
+  --bg-secondary: #f0f0f0;
+  --bg-overlay: rgba(0, 0, 0, 0.08);
+  --bg-overlay-heavy: rgba(0, 0, 0, 0.15);
+  --bg-card: rgba(0, 0, 0, 0.03);
+  --bg-card-hover: rgba(0, 0, 0, 0.06);
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-heavy: rgba(255, 255, 255, 0.9);
+  --bg-glass-60: rgba(255, 255, 255, 0.75);
+  
+  /* Text colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: rgba(26, 26, 26, 0.95);
+  --text-tertiary: rgba(26, 26, 26, 0.9);
+  --text-muted: rgba(26, 26, 26, 0.75);
+  --text-light: rgba(26, 26, 26, 0.7);
+  --text-subtle: rgba(26, 26, 26, 0.45);
+  --text-very-subtle: rgba(26, 26, 26, 0.35);
+  --text-faint: rgba(26, 26, 26, 0.25);
+  --text-super-faint: rgba(26, 26, 26, 0.12);
+  --text-veryFaint: rgba(26, 26, 26, 0.08);
+  --text-25: rgba(26, 26, 26, 0.25);
+  --text-55: rgba(26, 26, 26, 0.55);
+  --text-60: rgba(26, 26, 26, 0.6);
+  --text-80: rgba(26, 26, 26, 0.8);
+  --text-90: rgba(26, 26, 26, 0.9);
+  
+  /* Borders */
+  --border-light: rgba(26, 26, 26, 0.15);
+  --border-medium: rgba(26, 26, 26, 0.08);
+  --border-faint: rgba(26, 26, 26, 0.04);
+  
+  /* Lines */
+  --line-primary: rgba(26, 26, 26, 0.6);
+  --line-secondary: rgba(26, 26, 26, 0.35);
+  --line-light: rgba(26, 26, 26, 0.25);
+  --line-veryLight: rgba(26, 26, 26, 0.15);
+  --line-minimal: rgba(26, 26, 26, 0.08);
+  
+  /* Glow */
+  --glow-soft: rgba(26, 26, 26, 0.04);
+  --glow-medium: rgba(26, 26, 26, 0.08);
+  --glow-bright: rgba(26, 26, 26, 0.12);
+  
+  /* CTA */
+  --cta-primary: #1a1a1a;
+  --cta-primary-text: #ffffff;
+  --cta-secondary: transparent;
+  --cta-secondary-text: #1a1a1a;
+  --cta-border: rgba(26, 26, 26, 0.25);
+  --cta-border-hover: rgba(26, 26, 26, 0.4);
+}
+
+/* Theme-aware color utilities for dark mode (current colors) */
+html.dark {
+  /* Background colors */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-overlay: rgba(0, 0, 0, 0.2);
+  --bg-overlay-heavy: rgba(0, 0, 0, 0.5);
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.04);
+  --bg-glass: rgba(0, 0, 0, 0.3);
+  --bg-glass-heavy: rgba(0, 0, 0, 0.5);
+  --bg-glass-60: rgba(0, 0, 0, 0.6);
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-tertiary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-light: rgba(255, 255, 255, 0.65);
+  --text-subtle: rgba(255, 255, 255, 0.4);
+  --text-very-subtle: rgba(255, 255, 255, 0.3);
+  --text-faint: rgba(255, 255, 255, 0.2);
+  --text-super-faint: rgba(255, 255, 255, 0.1);
+  --text-veryFaint: rgba(255, 255, 255, 0.05);
+  --text-25: rgba(255, 255, 255, 0.25);
+  --text-55: rgba(255, 255, 255, 0.55);
+  --text-60: rgba(255, 255, 255, 0.6);
+  --text-80: rgba(255, 255, 255, 0.8);
+  --text-90: rgba(255, 255, 255, 0.9);
+  
+  /* Borders */
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --border-faint: rgba(255, 255, 255, 0.05);
+  
+  /* Lines */
+  --line-primary: rgba(255, 255, 255, 0.6);
+  --line-secondary: rgba(255, 255, 255, 0.4);
+  --line-light: rgba(255, 255, 255, 0.3);
+  --line-veryLight: rgba(255, 255, 255, 0.2);
+  --line-minimal: rgba(255, 255, 255, 0.1);
+  
+  /* Glow */
+  --glow-soft: rgba(255, 255, 255, 0.05);
+  --glow-medium: rgba(255, 255, 255, 0.1);
+  --glow-bright: rgba(255, 255, 255, 0.15);
+  
+  /* CTA */
+  --cta-primary: #ffffff;
+  --cta-primary-text: #000000;
+  --cta-secondary: transparent;
+  --cta-secondary-text: #ffffff;
+  --cta-border: rgba(255, 255, 255, 0.3);
+  --cta-border-hover: rgba(255, 255, 255, 0.5);
 }

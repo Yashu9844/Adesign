@@ -25,14 +25,15 @@ export default function ScrollIndicator() {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3 pointer-events-none"
+      className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3 pointer-events-none md:hidden"
     >
       {/* Text label */}
       <motion.span
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="text-white/50 text-[11px] sm:text-xs tracking-[0.25em] uppercase font-light"
+        className="text-[11px] sm:text-xs tracking-[0.25em] uppercase font-light"
+        style={{ color: 'var(--text-subtle)' }}
       >
         Scroll
       </motion.span>
@@ -40,11 +41,12 @@ export default function ScrollIndicator() {
       {/* Animated line container */}
       <div className="relative w-[1px] h-12 sm:h-16 overflow-hidden">
         {/* Background line */}
-        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
         
         {/* Animated moving line */}
         <motion.div
-          className="absolute top-0 left-0 w-full bg-white"
+          className="absolute top-0 left-0 w-full"
+          style={{ backgroundColor: 'var(--text-primary)' }}
           initial={{ height: '0%', top: '0%' }}
           animate={{
             height: ['0%', '40%', '40%', '0%'],
@@ -73,7 +75,7 @@ export default function ScrollIndicator() {
           height="8"
           viewBox="0 0 12 8"
           fill="none"
-          className="text-white/40"
+          style={{ color: 'var(--text-very-subtle)' }}
         >
           <path
             d="M1 1L6 6L11 1"
