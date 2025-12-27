@@ -252,7 +252,7 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
@@ -294,9 +294,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1 }}
+      className="h-full"
     >
-      <Link href={service.href} className="block group">
-        <div className="relative h-full min-h-[400px] sm:min-h-[450px] bg-white/[0.02] border border-white/10 p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/[0.04] hover:border-white/20">
+      <Link href={service.href} className="block group h-full">
+        <div className="relative h-full flex flex-col bg-white/[0.02] border border-white/10 p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/[0.04] hover:border-white/20">
           {/* Gradient overlay on hover */}
           <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -311,7 +312,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </div>
 
           {/* Content */}
-          <div className="relative z-10 space-y-4 pb-24">
+          <div className="relative z-10 space-y-4 flex-grow">
             <div>
               <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-1 group-hover:text-white transition-colors">
                 {service.title}
@@ -337,7 +338,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </div>
 
           {/* Stats & CTA */}
-          <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-8 flex items-end justify-between z-10">
+          <div className="relative z-10 flex items-end justify-between mt-8 pt-6 border-t border-white/5">
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-white">{service.stats.value}</div>
               <div className="text-xs text-white/40 tracking-wide">{service.stats.label}</div>
