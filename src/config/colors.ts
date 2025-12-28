@@ -12,8 +12,8 @@ export const COLORS = {
       secondary: '#0a0a0a',      // slightly lighter black
       overlay: 'rgba(0, 0, 0, 0.2)',   // bg-black/20
       overlayLight: 'rgba(0, 0, 0, 0.1)',  // bg-black/10
-      card: 'rgba(255, 255, 255, 0.02)', // bg-white/2
-      hover: 'rgba(255, 255, 255, 0.04)', // bg-white/4
+      card: 'rgba(255, 255, 255, 0.05)', // bg-white/5 - increased from 0.02 for visibility
+      hover: 'rgba(255, 255, 255, 0.08)', // bg-white/8 - increased from 0.04 for hover contrast
       glassmorphism: 'rgba(0, 0, 0, 0.3)', // bg-black/30
       glassmorphismHeavy: 'rgba(0, 0, 0, 0.5)', // bg-black/50
       glass60: 'rgba(0, 0, 0, 0.6)', // bg-black/60
@@ -37,9 +37,9 @@ export const COLORS = {
 
     // Borders & Dividers
     border: {
-      light: 'rgba(255, 255, 255, 0.2)',   // border-white/20
-      medium: 'rgba(255, 255, 255, 0.1)',  // border-white/10
-      faint: 'rgba(255, 255, 255, 0.05)',  // border-white/5
+      light: 'rgba(255, 255, 255, 0.3)',   // border-white/30 - increased from 0.2
+      medium: 'rgba(255, 255, 255, 0.2)',  // border-white/20 - increased from 0.1
+      faint: 'rgba(255, 255, 255, 0.1)',  // border-white/10 - increased from 0.05
     },
 
     // Lines & Decorative Elements

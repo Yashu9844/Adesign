@@ -375,7 +375,7 @@ const ValuesSection = () => {
         {values.map((value, index) => (
           <motion.div
             key={value.title}
-            className="p-6 md:p-8"
+            className="group relative overflow-hidden rounded-lg p-6 md:p-8 transition-all duration-500"
             style={{ 
               backgroundColor: 'var(--bg-card)', 
               border: '1px solid var(--border-medium)' 
@@ -386,20 +386,39 @@ const ValuesSection = () => {
             whileHover={{ 
               borderColor: 'var(--border-light)',
               backgroundColor: 'var(--bg-card-hover)',
+              y: -5,
             }}
           >
-            <h3 
-              className="text-xl md:text-2xl font-accent font-bold mb-3"
+            {/* Accent bar at top */}
+            <div 
+              className="absolute top-0 left-0 h-1 w-full origin-left transition-all duration-500 group-hover:w-full"
+              style={{ 
+                background: 'linear-gradient(90deg, var(--text-primary) 0%, transparent 100%)',
+              }}
+            />
+            
+            {/* Number indicator */}
+            <div 
+              className="absolute top-6 right-6 text-6xl font-accent font-black opacity-5 group-hover:opacity-10 transition-opacity duration-500"
               style={{ color: 'var(--text-primary)' }}
             >
-              {value.title}
-            </h3>
-            <p 
-              className="text-base leading-relaxed font-kh-teka"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              {value.description}
-            </p>
+              {String(index + 1).padStart(2, '0')}
+            </div>
+
+            <div className="relative z-10">
+              <h3 
+                className="text-xl md:text-2xl font-accent font-bold mb-3 transition-colors duration-300"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {value.title}
+              </h3>
+              <p 
+                className="text-base leading-relaxed font-kh-teka transition-colors duration-300"
+                style={{ color: 'var(--text-muted)' }}
+              >
+                {value.description}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -569,15 +588,15 @@ const DNASection = () => {
 
           {/* Hover description */}
           <div
-            className="mt-8 p-6 h-[120px] relative"
+            className="mt-8 relative min-h-[120px]"
             style={{ 
               backgroundColor: 'var(--bg-card)', 
-              border: '1px solid var(--border-medium)' 
+              border: '1px solid var(--border-medium)'
             }}
           >
             {/* Default text - fades out when skill is hovered */}
             <p 
-              className="text-base font-kh-teka italic absolute inset-6 transition-opacity duration-300"
+              className="text-base font-kh-teka italic absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 text-center"
               style={{ 
                 color: 'var(--text-subtle)',
                 opacity: hoveredSkill ? 0 : 1,
@@ -591,7 +610,7 @@ const DNASection = () => {
             {skills.map((skill) => (
               <div
                 key={skill.name}
-                className="absolute inset-6 transition-opacity duration-300"
+                className="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300"
                 style={{ 
                   opacity: hoveredSkill === skill.name ? 1 : 0,
                   pointerEvents: hoveredSkill === skill.name ? 'auto' : 'none'

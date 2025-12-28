@@ -471,8 +471,8 @@ html.dark {
   --bg-secondary: #0a0a0a;
   --bg-overlay: rgba(0, 0, 0, 0.2);
   --bg-overlay-heavy: rgba(0, 0, 0, 0.5);
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --bg-card-hover: rgba(255, 255, 255, 0.04);
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card-hover: rgba(255, 255, 255, 0.12);
   --bg-glass: rgba(0, 0, 0, 0.3);
   --bg-glass-heavy: rgba(0, 0, 0, 0.5);
   --bg-glass-60: rgba(0, 0, 0, 0.6);
@@ -495,16 +495,16 @@ html.dark {
   --text-90: rgba(255, 255, 255, 0.9);
   
   /* Borders */
-  --border-light: rgba(255, 255, 255, 0.2);
-  --border-medium: rgba(255, 255, 255, 0.1);
-  --border-faint: rgba(255, 255, 255, 0.05);
+  --border-light: rgba(255, 255, 255, 0.4);
+  --border-medium: rgba(255, 255, 255, 0.25);
+  --border-faint: rgba(255, 255, 255, 0.15);
   
   /* Lines */
-  --line-primary: rgba(255, 255, 255, 0.6);
-  --line-secondary: rgba(255, 255, 255, 0.4);
-  --line-light: rgba(255, 255, 255, 0.3);
-  --line-veryLight: rgba(255, 255, 255, 0.2);
-  --line-minimal: rgba(255, 255, 255, 0.1);
+  --line-primary: rgba(255, 255, 255, 0.8);
+  --line-secondary: rgba(255, 255, 255, 0.6);
+  --line-light: rgba(255, 255, 255, 0.5);
+  --line-veryLight: rgba(255, 255, 255, 0.35);
+  --line-minimal: rgba(255, 255, 255, 0.2);
   
   /* Glow */
   --glow-soft: rgba(255, 255, 255, 0.05);
