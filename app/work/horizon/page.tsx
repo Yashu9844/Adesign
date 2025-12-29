@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -13,6 +13,10 @@ export default function HorizonCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const approachRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const heroInView = useInView(heroRef, { once: true });
   const approachInView = useInView(approachRef, { once: true });
@@ -66,7 +70,7 @@ export default function HorizonCaseStudy() {
               initial={{ opacity: 0, x: -50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative p-12 lg:p-16 rounded-3xl overflow-hidden border border-white/10"
+              className="relative p-12 lg:p-16 rounded-none overflow-hidden border border-white/10"
               style={{
                 background: 'radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent)',
               }}
@@ -90,7 +94,7 @@ export default function HorizonCaseStudy() {
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden border border-white/10"
+              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg2.webp"
@@ -113,7 +117,7 @@ export default function HorizonCaseStudy() {
               { label: '2B+', value: 'Queries/Month' },
               { label: '99.9%', value: 'Uptime' },
             ].map((stat, i) => (
-              <div key={i} className="p-6 rounded-xl border border-white/10 bg-white/5">
+              <div key={i} className="p-6 rounded-none border border-white/10 bg-white/5">
                 <div className="text-3xl font-accent font-black text-white">{stat.label}</div>
                 <div className="text-sm text-white/60 mt-2">{stat.value}</div>
               </div>
@@ -157,7 +161,7 @@ export default function HorizonCaseStudy() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="text-4xl font-accent font-black mb-8 text-white">Solution</h2>
-              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10 mb-6">
+              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10 mb-6">
                 <Image
                   src="/images/pimg12.webp"
                   alt="Horizon Solution"
@@ -197,7 +201,7 @@ export default function HorizonCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={approachInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`p-8 rounded-2xl border border-white/10 bg-gradient-to-br ${item.color} to-transparent hover:border-white/20 transition-all`}
+                className={`p-8 rounded-none border border-white/10 bg-gradient-to-br ${item.color} to-transparent hover:border-white/20 transition-all`}
               >
                 <h3 className="text-2xl font-accent font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-white/60 text-sm">{item.subtitle}</p>
@@ -237,7 +241,7 @@ export default function HorizonCaseStudy() {
                 </div>
 
                 {/* Image */}
-                <div className={`relative h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-white/10 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -293,7 +297,7 @@ export default function HorizonCaseStudy() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="flex gap-6">
                   <div className="flex-shrink-0">
@@ -306,7 +310,7 @@ export default function HorizonCaseStudy() {
                     <p className="text-white/70 mb-4">{phase.details}</p>
                     <div className="flex flex-wrap gap-2">
                       {phase.items.map((item, i) => (
-                        <span key={i} className="text-xs bg-white/10 border border-white/20 px-3 py-1 rounded-full text-white/80">
+                        <span key={i} className="text-xs bg-white/10 border border-white/20 px-3 py-1 rounded-none text-white/80">
                           {item}
                         </span>
                       ))}
@@ -323,7 +327,7 @@ export default function HorizonCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 p-8 sm:p-12 rounded-2xl border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Need Enterprise Analytics Solutions?
@@ -373,7 +377,7 @@ export default function HorizonCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
               >
                 <div className="text-4xl mb-4">{impact.icon}</div>
                 <div className="text-5xl font-accent font-black text-white mb-3">{impact.metric}</div>
@@ -417,3 +421,4 @@ export default function HorizonCaseStudy() {
     </div>
   );
 }
+

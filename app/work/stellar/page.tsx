@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -13,6 +13,10 @@ export default function StellarCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const heroInView = useInView(heroRef, { once: true });
   const techInView = useInView(techRef, { once: true });
@@ -58,7 +62,7 @@ export default function StellarCaseStudy() {
 
             <div className="flex flex-wrap gap-3 mb-12">
               {['GPT-4 Integration', 'Document OCR', 'Enterprise Scale', 'Real-time Processing'].map(tag => (
-                <span key={tag} className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white">
+                <span key={tag} className="px-4 py-2 rounded-none bg-white/10 border border-white/20 text-sm text-white">
                   {tag}
                 </span>
               ))}
@@ -102,7 +106,7 @@ export default function StellarCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <p className="text-3xl sm:text-4xl font-accent font-black text-white mb-2">{item.metric}</p>
                 <p className="text-sm text-white/60 uppercase tracking-[0.2em]">{item.label}</p>
@@ -151,7 +155,7 @@ export default function StellarCaseStudy() {
                   </li>
                 ))}
               </ul>
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="p-6 rounded-none bg-white/5 border border-white/10">
                 <p className="text-white text-sm leading-relaxed">
                   Result: Processing time reduced from weeks to hours. Accuracy improved to 95%. Compliance guaranteed with complete audit trails.
                 </p>
@@ -208,7 +212,7 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={techInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="text-white/60 mb-4">{category.icon}</div>
                 <h3 className="text-xl font-accent font-bold text-white mb-4">{category.title}</h3>
@@ -266,11 +270,11 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={techInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-accent font-bold text-sm">{timeline.phase}</span>
+                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{timeline.phase}</span>
                     <span className="block text-xs text-white/60 mt-2">{timeline.duration}</span>
                   </div>
                   <div className="flex-1">
@@ -287,7 +291,7 @@ export default function StellarCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={techInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-16 p-8 sm:p-12 rounded-2xl border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Deploy Enterprise AI Solutions
@@ -329,7 +333,7 @@ export default function StellarCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] sm:h-[600px] rounded-2xl overflow-hidden border border-white/10"
+              className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg13.webp"
@@ -348,7 +352,7 @@ export default function StellarCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="relative h-[350px] rounded-2xl overflow-hidden border border-white/10"
+                  className="relative h-[350px] rounded-none overflow-hidden border border-white/10"
                 >
                   <Image
                     src={img}
@@ -369,7 +373,7 @@ export default function StellarCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="relative h-[250px] rounded-2xl overflow-hidden border border-white/10"
+                  className="relative h-[250px] rounded-none overflow-hidden border border-white/10"
                 >
                   <Image
                     src={img}
@@ -392,7 +396,7 @@ export default function StellarCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-16 p-8 sm:p-12 rounded-2xl border border-white/10 text-center"
+            className="mb-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Automate Document Processing at Scale
@@ -454,7 +458,7 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="text-4xl font-accent font-black text-white mb-2">{result.stat}</div>
                 <h4 className="text-lg font-accent font-bold text-white mb-2">{result.title}</h4>
@@ -522,3 +526,4 @@ export default function StellarCaseStudy() {
     </div>
   );
 }
+

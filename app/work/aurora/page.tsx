@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -13,6 +13,10 @@ export default function AuroraCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const strategyRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const heroInView = useInView(heroRef, { once: true });
   const strategyInView = useInView(strategyRef, { once: true });
@@ -89,7 +93,7 @@ export default function AuroraCaseStudy() {
         transition={{ duration: 0.8 }}
         className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-20"
       >
-        <div className="w-full max-w-[1920px] mx-auto relative h-[400px] sm:h-[600px] lg:h-[800px] rounded-2xl overflow-hidden border border-white/10">
+        <div className="w-full max-w-[1920px] mx-auto relative h-[400px] sm:h-[600px] lg:h-[800px] rounded-none overflow-hidden border border-white/10">
           <Image
             src="/images/pimg2.webp"
             alt="Aurora Website"
@@ -134,7 +138,7 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={strategyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h3 className="text-2xl font-accent font-bold text-white mb-3">{item.title}</h3>
@@ -165,10 +169,10 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={strategyInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="flex gap-6 items-start">
-                  <span className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-accent font-bold text-sm flex-shrink-0">{timeline.phase}</span>
+                  <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm flex-shrink-0">{timeline.phase}</span>
                   <div className="flex-1">
                     <h4 className="text-xl font-accent font-bold text-white mb-1">{timeline.title}</h4>
                     <p className="text-white/70 text-sm">{timeline.details}</p>
@@ -183,7 +187,7 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={strategyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 p-8 sm:p-12 rounded-2xl border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Ready to Launch a High-Converting Website?
@@ -226,7 +230,7 @@ export default function AuroraCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-2xl overflow-hidden border border-white/10"
+              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg13.webp"
@@ -244,7 +248,7 @@ export default function AuroraCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: (idx + 1) * 0.1 }}
-                className="relative h-[350px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10"
+                className="relative h-[350px] sm:h-[400px] rounded-none overflow-hidden border border-white/10"
               >
                 <Image
                   src={img}
@@ -261,7 +265,7 @@ export default function AuroraCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="md:col-span-2 relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10"
+              className="md:col-span-2 relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg16.webp"
@@ -282,7 +286,7 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-16 p-8 sm:p-12 rounded-2xl border border-white/10 text-center"
+            className="mb-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Need a Sustainable Brand Story?
@@ -318,7 +322,7 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
               >
                 <div className="text-5xl font-accent font-black text-white mb-2">{result.metric}</div>
                 <div className="text-lg font-medium text-white mb-2">{result.label}</div>
@@ -429,3 +433,4 @@ export default function AuroraCaseStudy() {
     </div>
   );
 }
+

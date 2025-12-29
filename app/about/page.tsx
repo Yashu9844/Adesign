@@ -375,7 +375,7 @@ const ValuesSection = () => {
         {values.map((value, index) => (
           <motion.div
             key={value.title}
-            className="group relative overflow-hidden rounded-lg p-6 md:p-8 transition-all duration-500"
+            className="group relative overflow-hidden rounded-none p-6 md:p-8 transition-all duration-500"
             style={{ 
               backgroundColor: 'var(--bg-card)', 
               border: '1px solid var(--border-medium)' 
@@ -779,6 +779,226 @@ const FeaturedTestimonial = () => {
   );
 };
 
+// Team Section
+const TeamSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const founders = [
+    {
+      name: 'Alex Mitchell',
+      role: 'Founder & Creative Director',
+      bio: 'With 12 years of experience in digital design and strategy, Alex founded Adesign to bridge the gap between exceptional design and real business results.',
+      image: '/images/pimg1.webp',
+      specialties: ['Brand Strategy', 'Design Direction', 'User Experience'],
+    },
+    {
+      name: 'Jordan Hayes',
+      role: 'Co-Founder & Strategy Lead',
+      bio: 'Jordan brings deep expertise in digital strategy and business development, ensuring every design decision drives measurable growth and client success.',
+      image: '/images/pimg2.webp',
+      specialties: ['Business Strategy', 'Client Relations', 'Growth Marketing'],
+    },
+  ];
+
+  const team = [
+    {
+      name: 'Sarah Chen',
+      role: 'Lead Product Designer',
+      bio: 'Sarah brings her expertise in interaction design and design systems to create intuitive, beautiful digital experiences.',
+      specialties: ['UI/UX Design', 'Design Systems', 'Prototyping'],
+      image: '/images/pimg3.webp',
+    },
+    {
+      name: 'James Rodriguez',
+      role: 'Senior Full-Stack Developer',
+      bio: 'James specializes in building scalable, high-performance applications with modern technologies and best practices.',
+      specialties: ['Next.js', 'Backend Dev', 'DevOps'],
+      image: '/images/pimg4.webp',
+    },
+    {
+      name: 'Maya Patel',
+      role: 'Brand Strategist & Creative',
+      bio: 'Maya crafts compelling brand narratives and visual identities that resonate with audiences and drive growth.',
+      specialties: ['Brand Identity', 'Creative Strategy', 'Copywriting'],
+      image: '/images/pimg5.webp',
+    },
+    {
+      name: 'David Kim',
+      role: 'Lead Motion Designer',
+      bio: 'David creates immersive animation experiences that bring digital products to life and engage users at every touchpoint.',
+      specialties: ['Animation', 'Motion Design', 'Creative Code'],
+      image: '/images/pimg6.webp',
+    },
+  ];
+
+  return (
+    <div ref={ref} className="my-20">
+      {/* Founder Section */}
+      <motion.div 
+        className="flex items-center gap-4 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
+        <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
+          Leadership
+        </p>
+      </motion.div>
+      
+      <motion.h2 
+        className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-12"
+        style={{ color: 'var(--text-primary)' }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        Our <span style={{ color: 'var(--text-subtle)' }}>Founders</span>
+      </motion.h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
+        {founders.map((founder, index) => (
+          <motion.div
+            key={founder.name}
+            className="overflow-hidden rounded-none transition-all duration-500"
+            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-medium)' }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+            whileHover={{ borderColor: 'var(--border-light)' }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 h-full">
+              {/* Image */}
+              <div className="relative h-[300px] sm:h-full overflow-hidden order-2 sm:order-1">
+                <motion.div
+                  animate={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src={founder.image}
+                    alt={founder.name}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 sm:p-8 flex flex-col justify-center order-1 sm:order-2">
+                <h3 className="text-2xl sm:text-3xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>
+                  {founder.name}
+                </h3>
+                <p className="text-sm font-kh-teka mb-4" style={{ color: 'var(--text-muted)' }}>
+                  {founder.role}
+                </p>
+                <p className="text-sm leading-relaxed mb-6 font-kh-teka" style={{ color: 'var(--text-secondary)' }}>
+                  {founder.bio}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {founder.specialties.map((specialty) => (
+                    <span
+                      key={specialty}
+                      className="px-3 py-1 rounded-full text-xs font-kh-teka"
+                      style={{ backgroundColor: 'var(--bg-primary)', border: '1px solid var(--border-light)', color: 'var(--text-muted)' }}
+                    >
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Team Members Section */}
+      <motion.div 
+        className="flex items-center gap-4 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
+        <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
+          Core Team
+        </p>
+      </motion.div>
+
+      <motion.h2 
+        className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-12"
+        style={{ color: 'var(--text-primary)' }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        The <span style={{ color: 'var(--text-subtle)' }}>Team</span>
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {team.map((member, index) => (
+          <motion.div
+            key={member.name}
+            className="group overflow-hidden rounded-none transition-all duration-500"
+            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-medium)' }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+            whileHover={{ borderColor: 'var(--border-light)' }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 h-full">
+              {/* Image */}
+              <div className="relative h-[300px] sm:h-full overflow-hidden">
+                <motion.div
+                  animate={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+                    {member.name}
+                  </h3>
+                  <p className="text-sm font-kh-teka mb-4" style={{ color: 'var(--text-muted)' }}>
+                    {member.role}
+                  </p>
+                  <p className="text-sm leading-relaxed mb-6 font-kh-teka" style={{ color: 'var(--text-secondary)' }}>
+                    {member.bio}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {member.specialties.map((specialty) => (
+                    <span
+                      key={specialty}
+                      className="px-3 py-1 rounded-full text-xs font-kh-teka"
+                      style={{ backgroundColor: 'var(--bg-primary)', border: '1px solid var(--border-light)', color: 'var(--text-muted)' }}
+                    >
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // Awards/Recognition Section
 const AwardsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -1043,6 +1263,14 @@ export default function AboutPage() {
               "Ongoing Partnership — Launch is just the beginning. We offer retainer relationships for brands that want a dedicated digital partner for continuous optimization and growth.",
             ]}
           />
+        </div>
+      </div>
+
+      {/* Team Section */}
+      <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="max-w-[1920px] mx-auto">
+          <SectionSeparator />
+          <TeamSection />
         </div>
       </div>
 

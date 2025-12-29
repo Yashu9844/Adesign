@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -13,6 +13,10 @@ export default function NexusCaseStudy() {
   const overviewRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const overviewInView = useInView(overviewRef, { once: true });
   const featuresInView = useInView(featuresRef, { once: true });
@@ -101,7 +105,7 @@ export default function NexusCaseStudy() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={overviewInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <p className="text-sm text-white/60 uppercase tracking-[0.2em] mb-2">{stat.label}</p>
                 <p className="text-3xl sm:text-4xl font-accent font-black text-white">{stat.value}</p>
@@ -177,14 +181,14 @@ export default function NexusCaseStudy() {
                   <p className="text-lg text-white/80 leading-relaxed mb-8">{feature.description}</p>
                   <div className="grid grid-cols-2 gap-4">
                     {feature.highlights.map((highlight, i) => (
-                      <div key={i} className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <div key={i} className="p-4 rounded-none bg-white/5 border border-white/10">
                         <p className="text-white text-sm font-medium">{highlight}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative h-[400px] sm:h-[500px] rounded-2xl overflow-hidden border border-white/10">
+                <div className="relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border border-white/10">
                   <Image
                     src={['/images/pimg8.webp', '/images/pimg9.webp', '/images/pimg10.webp'][idx]}
                     alt={feature.title}
@@ -224,11 +228,11 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-accent font-bold text-sm">{sprint.sprint}</span>
+                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{sprint.sprint}</span>
                   </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-accent font-bold text-white mb-2">{sprint.title}</h4>
@@ -245,7 +249,7 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="p-8 sm:p-12 rounded-2xl border border-white/10 text-center mb-16"
+            className="p-8 sm:p-12 rounded-none border border-white/10 text-center mb-16"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Need a High-Performance Mobile App?
@@ -286,7 +290,7 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] sm:h-[600px] rounded-2xl overflow-hidden border border-white/10 mb-8"
+            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border border-white/10 mb-8"
           >
             <Image
               src="/images/pimg11.webp"
@@ -305,7 +309,7 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[300px] rounded-2xl overflow-hidden border border-white/10"
+                className="relative h-[300px] rounded-none overflow-hidden border border-white/10"
               >
                 <Image
                   src={img}
@@ -326,7 +330,7 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-white/10"
+                className="relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10"
               >
                 <Image
                   src={img}
@@ -364,7 +368,7 @@ export default function NexusCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
               >
                 <div className="text-5xl font-accent font-black text-white mb-2">{result.metric}</div>
                 <div className="text-lg font-medium text-white mb-1">{result.label}</div>
@@ -432,3 +436,4 @@ export default function NexusCaseStudy() {
     </div>
   );
 }
+

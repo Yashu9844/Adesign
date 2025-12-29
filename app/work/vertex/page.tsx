@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -13,7 +13,9 @@ export default function VertexCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const strategyRef = useRef<HTMLDivElement>(null);
   const deliveriesRef = useRef<HTMLDivElement>(null);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const heroInView = useInView(heroRef, { once: true });
   const strategyInView = useInView(strategyRef, { once: true });
   const deliveriesInView = useInView(deliveriesRef, { once: true });
@@ -81,7 +83,7 @@ export default function VertexCaseStudy() {
 
             <div className="flex flex-wrap gap-4">
               {['Fintech', 'Brand Strategy', 'Design System', 'Motion'].map(tag => (
-                <span key={tag} className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white">
+                <span key={tag} className="px-4 py-2 rounded-none bg-white/10 border border-white/20 text-sm text-white">
                   {tag}
                 </span>
               ))}
@@ -174,7 +176,7 @@ export default function VertexCaseStudy() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-white/10"
+              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg16.webp"
@@ -210,7 +212,7 @@ export default function VertexCaseStudy() {
           >
             <div>
               <p className="text-white/60 text-sm uppercase tracking-[0.2em] mb-4">Before</p>
-              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10">
                 <Image
                   src="/images/pimg4.webp"
                   alt="Before"
@@ -221,7 +223,7 @@ export default function VertexCaseStudy() {
             </div>
             <div>
               <p className="text-white/60 text-sm uppercase tracking-[0.2em] mb-4">After</p>
-              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10">
                 <Image
                   src="/images/pimg5.webp"
                   alt="After"
@@ -238,7 +240,7 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[300px] sm:h-[500px] lg:h-[700px] rounded-2xl overflow-hidden border border-white/10 mb-16"
+            className="relative h-[300px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border border-white/10 mb-16"
           >
             <Image
               src="/images/pimg6.webp"
@@ -276,11 +278,11 @@ export default function VertexCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-accent font-bold text-sm">{timeline.week}</span>
+                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{timeline.week}</span>
                   </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-accent font-bold text-white mb-2">{timeline.title}</h4>
@@ -297,7 +299,7 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="p-8 sm:p-12 rounded-2xl border border-white/10 bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-center"
+            className="p-8 sm:p-12 rounded-none border border-white/10 bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Ready to Elevate Your Brand?
@@ -336,7 +338,7 @@ export default function VertexCaseStudy() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: i * 0.05 }}
-                        className="p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                        className="p-4 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Lightbulb className="w-4 h-4 text-white/60" />
@@ -348,7 +350,7 @@ export default function VertexCaseStudy() {
                 </div>
 
                 {/* Image */}
-                <div className={`relative h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-white/10 ${idx % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10 ${idx % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                   <Image
                     src={section.image}
                     alt={section.category}
@@ -415,7 +417,7 @@ export default function VertexCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
               >
                 <div className="text-4xl font-accent font-black text-white mb-2">{impact.stat}</div>
                 <h4 className="text-xl font-accent font-bold text-white mb-3">{impact.title}</h4>
