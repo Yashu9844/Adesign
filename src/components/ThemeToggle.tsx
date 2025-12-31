@@ -2,9 +2,22 @@
 
 import { useTheme } from '@/context/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <div className="w-10 h-10 md:w-11 md:h-11 bg-black/30 dark:bg-black/30 backdrop-blur-md border border-white/10 dark:border-white/10 rounded-lg md:rounded-[0.5vw]" />
+    );
+  }
 
   return (
     <button

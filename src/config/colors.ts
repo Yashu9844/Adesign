@@ -169,59 +169,59 @@ export const COLORS = {
   },
 
   LIGHT: {
-    // Backgrounds
+    // Backgrounds - WARM MINIMAL PALETTE (Stone/Neutral tones)
     bg: {
-      primary: '#ffffff',
-      secondary: '#f5f5f5',
-      overlay: 'rgba(0, 0, 0, 0.1)',
-      overlayLight: 'rgba(0, 0, 0, 0.05)',
-      card: 'rgba(0, 0, 0, 0.02)',
-      hover: 'rgba(0, 0, 0, 0.04)',
-      glassmorphism: 'rgba(255, 255, 255, 0.7)',
-      glassmorphismHeavy: 'rgba(255, 255, 255, 0.8)',
-      glass60: 'rgba(255, 255, 255, 0.6)',
+      primary: '#FAFAF9',        // Warm off-white (Stone 50) - Premium, reduces eye strain
+      secondary: '#F5F5F4',      // Subtle gray (Stone 100) - For sections/backgrounds
+      overlay: 'rgba(12, 10, 9, 0.02)',    // Warm black overlay - Very subtle
+      overlayLight: 'rgba(12, 10, 9, 0.01)', // Ultra-light overlay
+      card: '#FFFFFF',           // Pure white for elevated cards - Creates depth
+      hover: '#FFFFFF',          // White hover state for cards
+      glassmorphism: 'rgba(255, 255, 255, 0.8)',  // Softer glass effect
+      glassmorphismHeavy: 'rgba(255, 255, 255, 0.95)', // Strong glass
+      glass60: 'rgba(255, 255, 255, 0.6)', // Medium glass
     },
 
-    // Text/Foreground Colors (inverted from dark)
+    // Text - Near-black with warm undertones (Stone scale)
     text: {
-      primary: '#000000',
-      secondary: 'rgba(0, 0, 0, 0.9)',
-      tertiary: 'rgba(0, 0, 0, 0.85)',
-      muted: 'rgba(0, 0, 0, 0.7)',
-      mutedLight: 'rgba(0, 0, 0, 0.65)',
-      disabled: 'rgba(0, 0, 0, 0.5)',
-      placeholder: 'rgba(0, 0, 0, 0.4)',
-      subtle: 'rgba(0, 0, 0, 0.3)',
-      verySubtle: 'rgba(0, 0, 0, 0.25)',
-      faint: 'rgba(0, 0, 0, 0.2)',
-      superFaint: 'rgba(0, 0, 0, 0.1)',
-      veryFaint: 'rgba(0, 0, 0, 0.05)',
+      primary: '#0C0A09',        // Near-black (Stone 950) - Premium, less harsh
+      secondary: '#1C1917',      // Dark warm gray (Stone 900) - Headings
+      tertiary: '#292524',       // Medium-dark (Stone 800) - Body text
+      muted: '#44403C',          // Medium gray (Stone 700) - Secondary text
+      mutedLight: '#57534E',     // Light gray (Stone 600) - Tertiary text
+      disabled: '#78716C',       // Disabled state (Stone 500)
+      placeholder: '#A8A29E',    // Placeholder text (Stone 400)
+      subtle: '#D6D3D1',         // Subtle text (Stone 300)
+      verySubtle: '#E7E5E4',     // Very subtle (Stone 200)
+      faint: '#F5F5F4',          // Faint text (Stone 100)
+      superFaint: 'rgba(12, 10, 9, 0.08)', // Super faint
+      veryFaint: 'rgba(12, 10, 9, 0.04)',  // Very faint
     },
 
-    // Borders & Dividers (light mode inverted)
+    // Borders & Dividers - Softer, warm-toned
     border: {
-      light: 'rgba(0, 0, 0, 0.2)',
-      medium: 'rgba(0, 0, 0, 0.1)',
-      faint: 'rgba(0, 0, 0, 0.05)',
+      light: 'rgba(12, 10, 9, 0.12)',   // Visible border (increased for clarity)
+      medium: 'rgba(12, 10, 9, 0.08)',  // Medium border
+      faint: 'rgba(12, 10, 9, 0.04)',   // Subtle border
     },
 
-    // Lines & Decorative Elements
+    // Lines & Decorative Elements - Refined opacity
     line: {
-      primary: 'rgba(0, 0, 0, 0.6)',
-      secondary: 'rgba(0, 0, 0, 0.4)',
-      light: 'rgba(0, 0, 0, 0.3)',
-      veryLight: 'rgba(0, 0, 0, 0.2)',
-      minimal: 'rgba(0, 0, 0, 0.1)',
+      primary: 'rgba(12, 10, 9, 0.5)',    // Strong lines
+      secondary: 'rgba(12, 10, 9, 0.35)',  // Medium lines
+      light: 'rgba(12, 10, 9, 0.25)',     // Light lines
+      veryLight: 'rgba(12, 10, 9, 0.15)', // Very light lines
+      minimal: 'rgba(12, 10, 9, 0.08)',   // Minimal lines
     },
 
-    // Special Effects
+    // Special Effects - Warm glow
     glow: {
-      soft: 'rgba(0, 0, 0, 0.05)',
-      medium: 'rgba(0, 0, 0, 0.1)',
-      bright: 'rgba(0, 0, 0, 0.15)',
+      soft: 'rgba(12, 10, 9, 0.03)',   // Soft glow
+      medium: 'rgba(12, 10, 9, 0.06)', // Medium glow
+      bright: 'rgba(12, 10, 9, 0.12)', // Bright glow
     },
 
-    // Status Colors (same as dark)
+    // Status Colors
     status: {
       success: '#10B981',
       error: '#EF4444',
@@ -229,25 +229,25 @@ export const COLORS = {
       info: '#3B82F6',
     },
 
-    // CTA & Interactive (inverted)
+    // CTA & Interactive - Premium warm black
     cta: {
-      primary: '#000000',
-      primaryText: '#ffffff',
-      secondary: 'transparent',
-      secondaryText: '#000000',
-      secondaryBorder: 'rgba(0, 0, 0, 0.3)',
-      secondaryBorderHover: 'rgba(0, 0, 0, 0.5)',
-      hoverOpacity: 'rgba(0, 0, 0, 0.9)',
+      primary: '#18181B',          // Zinc 900 - Premium black button
+      primaryText: '#FFFFFF',      // White text on dark button
+      secondary: 'transparent',     // Transparent button
+      secondaryText: '#0C0A09',    // Near-black text
+      secondaryBorder: 'rgba(12, 10, 9, 0.2)',  // Visible border
+      secondaryBorderHover: 'rgba(12, 10, 9, 0.4)', // Hover border
+      hoverOpacity: 'rgba(24, 24, 27, 0.9)', // Button hover
     },
 
-    // Gradients (light mode)
+    // Gradients - Warm minimal aesthetic
     gradient: {
-      fade: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 1))',
-      fadeRight: 'linear-gradient(to right, rgba(255, 255, 255, 1), transparent)',
-      fadeLeft: 'linear-gradient(to left, rgba(255, 255, 255, 1), transparent)',
-      divider: 'linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent)',
-      stroke: '1px rgba(0, 0, 0, 0.15)',
-      strokeThick: '2px rgba(0, 0, 0, 0.25)',
+      fade: 'linear-gradient(to bottom, transparent, #FAFAF9)',  // Fade to warm white
+      fadeRight: 'linear-gradient(to right, #FAFAF9, transparent)', // Warm white to transparent
+      fadeLeft: 'linear-gradient(to left, #FAFAF9, transparent)',   // Warm white to transparent
+      divider: 'linear-gradient(to right, transparent, rgba(12, 10, 9, 0.1), transparent)', // Subtle warm divider
+      stroke: '1px rgba(12, 10, 9, 0.12)',      // Subtle stroke
+      strokeThick: '2px rgba(12, 10, 9, 0.2)', // Thicker stroke
     },
 
     // Component-specific (same pattern as dark, but inverted values)

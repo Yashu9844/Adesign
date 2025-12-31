@@ -54,11 +54,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const colors = theme === 'dark' ? COLORS.DARK : COLORS.LIGHT;
 
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
+  // Always provide context, even when not mounted to prevent useTheme errors
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, colors }}>
       {children}
