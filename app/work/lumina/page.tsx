@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
@@ -14,6 +14,10 @@ export default function LuminaCaseStudy() {
   const resultsRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const heroInView = useInView(heroRef, { once: true });
   const resultsInView = useInView(resultsRef, { once: true });
@@ -95,7 +99,7 @@ export default function LuminaCaseStudy() {
                     <p className="text-xs text-white/40 uppercase tracking-[0.2em] mb-2">Tech Stack</p>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {['Next.js', 'React', 'Stripe', 'PostgreSQL', 'Tailwind CSS'].map(tech => (
-                        <span key={tech} className="px-3 py-1 text-sm rounded-full bg-white/5 text-white border border-white/10">
+                        <span key={tech} className="px-3 py-1 text-sm rounded-none bg-white/5 text-white border border-white/10">
                           {tech}
                         </span>
                       ))}
@@ -114,7 +118,7 @@ export default function LuminaCaseStudy() {
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-white/10"
+              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border border-white/10"
             >
               <Image
                 src="/images/pimg1.webp"
@@ -176,7 +180,7 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-16 p-8 sm:p-12 rounded-2xl border border-white/10 bg-gradient-to-r from-white/10 to-white/5 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 bg-gradient-to-r from-white/10 to-white/5 text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
               Facing Similar E-Commerce Challenges?
@@ -212,7 +216,7 @@ export default function LuminaCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
+                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
               >
                 <div className="text-4xl mb-4">{result.icon}</div>
                 <div className="text-5xl font-accent font-black text-white mb-2">{result.metric}</div>
@@ -268,7 +272,7 @@ export default function LuminaCaseStudy() {
                       <span className="text-sm text-white/50 italic">{step.duration}</span>
                       <div className="flex gap-3">
                         {step.details && step.details.map((detail, i) => (
-                          <span key={i} className="text-xs bg-white/10 border border-white/20 px-3 py-1 rounded-full text-white/80">
+                          <span key={i} className="text-xs bg-white/10 border border-white/20 px-3 py-1 rounded-none text-white/80">
                             {detail}
                           </span>
                         ))}
@@ -286,7 +290,7 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 p-8 rounded-2xl border border-white/10 bg-white/5 text-center"
+            className="mt-16 p-8 rounded-none border border-white/10 bg-white/5 text-center"
           >
             <p className="text-white/70 mb-6">Ready to transform your e-commerce platform?</p>
             <Link href="/contact">
@@ -317,7 +321,7 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-8 relative h-[400px] sm:h-[500px] lg:h-[700px] rounded-2xl overflow-hidden border border-white/10"
+            className="mb-8 relative h-[400px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border border-white/10"
           >
             <Image
               src="/images/pimg2.webp"
@@ -336,7 +340,7 @@ export default function LuminaCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10"
+                className="relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border border-white/10"
               >
                 <Image
                   src={img}
@@ -357,7 +361,7 @@ export default function LuminaCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[250px] sm:h-[300px] rounded-2xl overflow-hidden border border-white/10"
+                className="relative h-[250px] sm:h-[300px] rounded-none overflow-hidden border border-white/10"
               >
                 <Image
                   src={img}
@@ -430,3 +434,4 @@ export default function LuminaCaseStudy() {
     </div>
   );
 }
+

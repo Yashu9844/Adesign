@@ -135,7 +135,7 @@ export default function WorkPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
+                  className="text-center p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
                 >
                   <Icon className="w-8 h-8 mx-auto mb-4" style={{ color: 'var(--text-muted)' }} />
                   <div className="text-4xl sm:text-5xl font-accent font-black text-white mb-2">{stat.value}</div>
@@ -168,7 +168,7 @@ export default function WorkPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${
+                className={`px-5 sm:px-6 py-2.5 rounded-none text-xs sm:text-sm font-medium transition-all duration-300 border ${
                   selectedCategory === category
                     ? 'bg-white text-black border-white'
                     : 'bg-transparent text-white border-white/20 hover:border-white/40 hover:bg-white/5'
@@ -217,7 +217,7 @@ export default function WorkPage() {
                 {/* Project Card */}
                 <div className="h-full flex flex-col">
                   {/* Image Container */}
-                  <div className="relative overflow-hidden rounded-2xl mb-6 h-64 sm:h-72 md:h-80 group/image">
+                  <div className="relative overflow-hidden rounded-none mb-6 h-64 sm:h-72 md:h-80 group/image">
                     <motion.div
                       animate={{ scale: hoveredProject === project.id ? 1.05 : 1 }}
                       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -274,7 +274,7 @@ export default function WorkPage() {
 
                     {/* Results Badge */}
                     <div className="mb-6 inline-flex">
-                      <span className="text-sm font-medium text-white bg-white/10 border border-white/20 px-4 py-2 rounded-full">
+                      <span className="text-sm font-medium text-white bg-white/10 border border-white/20 px-4 py-2 rounded-none">
                         {project.results}
                       </span>
                     </div>
@@ -284,7 +284,7 @@ export default function WorkPage() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-white/40 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+                          className="text-xs text-white/40 bg-white/5 px-3 py-1 rounded-none border border-white/10"
                         >
                           {tag}
                         </span>

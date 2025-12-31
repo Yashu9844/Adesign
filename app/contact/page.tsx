@@ -22,23 +22,44 @@ export default function ContactPage() {
   const formRef = useRef<HTMLDivElement>(null);
   const isFormInView = useInView(formRef, { once: true, amount: 0.2 });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage('');
 
-    // Simulate form submission - replace with actual API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      setStatusMessage('✓ Message sent! We\'ll get back to you within 24 hours.');
-      setName('');
-      setEmail('');
-      setCompany('');
-      setProjectType('');
-      setBudget('');
-      setTimeline('');
-      setMessage('');
+      const formData = {
+        name,
+        email,
+        company,
+        projectType,
+        budget,
+        timeline,
+        message,
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatusMessage('✓ Message sent! We\'ll get back to you within 24 hours.');
+        setName('');
+        setEmail('');
+        setCompany('');
+        setProjectType('');
+        setBudget('');
+        setTimeline('');
+        setMessage('');
+      } else {
+        setStatusMessage('✗ An error occurred. Please try again or email us directly.');
+      }
     } catch (error) {
       setStatusMessage('✗ An error occurred. Please try again or email us directly.');
       console.error('Submission error:', error);
@@ -54,7 +75,7 @@ export default function ContactPage() {
     'E-commerce',
     'Web Application',
     'UI/UX Design',
-    'Other',
+    'Custom',
   ];
 
   const budgetRanges = [
@@ -293,6 +314,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="text"
+                          name="name"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           onFocus={() => setFocusedField('name')}
@@ -323,6 +345,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="email"
+                          name="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           onFocus={() => setFocusedField('email')}
@@ -356,6 +379,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="text"
+                          name="company"
                           value={company}
                           onChange={(e) => setCompany(e.target.value)}
                           onFocus={() => setFocusedField('company')}
@@ -384,6 +408,7 @@ export default function ContactPage() {
                           Project Type
                         </label>
                         <select
+                          name="projectType"
                           value={projectType}
                           onChange={(e) => setProjectType(e.target.value)}
                           onFocus={() => setFocusedField('projectType')}
@@ -421,6 +446,7 @@ export default function ContactPage() {
                           Project Budget
                         </label>
                         <select
+                          name="budget"
                           value={budget}
                           onChange={(e) => setBudget(e.target.value)}
                           onFocus={() => setFocusedField('budget')}
@@ -455,6 +481,7 @@ export default function ContactPage() {
                           Timeline
                         </label>
                         <select
+                          name="timeline"
                           value={timeline}
                           onChange={(e) => setTimeline(e.target.value)}
                           onFocus={() => setFocusedField('timeline')}
@@ -491,6 +518,7 @@ export default function ContactPage() {
                         Project Details *
                       </label>
                       <textarea
+                        name="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         onFocus={() => setFocusedField('message')}
