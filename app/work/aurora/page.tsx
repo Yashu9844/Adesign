@@ -23,7 +23,7 @@ export default function AuroraCaseStudy() {
   const resultsInView = useInView(resultsRef, { once: true });
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -40,17 +40,17 @@ export default function AuroraCaseStudy() {
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/20"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}
             >
-              <Eye className="w-5 h-5" />
-              <span className="text-xs text-white/80 uppercase tracking-[0.2em]">Marketing Website</span>
+              <Eye className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+              <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Marketing Website</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] text-white"
+              className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95]" style={{ color: 'var(--text-primary)' }}
             >
               Aurora
             </motion.h1>
@@ -59,7 +59,7 @@ export default function AuroraCaseStudy() {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-xl sm:text-2xl text-white/80 leading-relaxed max-w-2xl"
+              className="text-xl sm:text-2xl leading-relaxed max-w-2xl" style={{ color: 'var(--text-muted)' }}
             >
               High-converting marketing website for a sustainable fashion brand. Combines compelling storytelling with conversion optimization to drive sales and brand loyalty.
             </motion.p>
@@ -71,12 +71,12 @@ export default function AuroraCaseStudy() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <Link href="/contact">
-                <button className="px-8 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Collaborate
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                   View Portfolio
                 </button>
               </Link>
@@ -93,7 +93,7 @@ export default function AuroraCaseStudy() {
         transition={{ duration: 0.8 }}
         className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-20"
       >
-        <div className="w-full max-w-[1920px] mx-auto relative h-[400px] sm:h-[600px] lg:h-[800px] rounded-none overflow-hidden border border-white/10">
+        <div className="w-full max-w-[1920px] mx-auto relative h-[400px] sm:h-[600px] lg:h-[800px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
           <Image
             src="/images/pimg2.webp"
             alt="Aurora Website"
@@ -104,15 +104,15 @@ export default function AuroraCaseStudy() {
       </motion.div>
 
       {/* Strategy Section */}
-      <section ref={strategyRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={strategyRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={strategyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Marketing <span className="text-white/40">Strategy</span>
+            Marketing <span style={{ color: 'var(--text-subtle)' }}>Strategy</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
@@ -138,11 +138,13 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={strategyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-2xl font-accent font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-white/70 leading-relaxed">{item.description}</p>
+                <h3 className="text-2xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
+                <p className="leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -152,9 +154,9 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 20 }}
             animate={strategyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl font-accent font-bold mb-8 text-white"
+            className="text-3xl font-accent font-bold mb-8" style={{ color: 'var(--text-primary)' }}
           >
-            Campaign <span className="text-white/40">Timeline</span>
+            Campaign <span style={{ color: 'var(--text-subtle)' }}>Timeline</span>
           </motion.h3>
 
           <div className="space-y-6">
@@ -169,13 +171,16 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={strategyInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border transition-all"
+                style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="flex gap-6 items-start">
-                  <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm flex-shrink-0">{timeline.phase}</span>
+                  <span className="inline-block px-4 py-2 rounded-none font-accent font-bold text-sm flex-shrink-0" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>{timeline.phase}</span>
                   <div className="flex-1">
-                    <h4 className="text-xl font-accent font-bold text-white mb-1">{timeline.title}</h4>
-                    <p className="text-white/70 text-sm">{timeline.details}</p>
+                    <h4 className="text-xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>{timeline.title}</h4>
+                    <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{timeline.details}</p>
                   </div>
                 </div>
               </motion.div>
@@ -187,21 +192,21 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={strategyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Ready to Launch a High-Converting Website?
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Our marketing websites have generated $200M+ in revenue for sustainable brands. Let's build your conversion machine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Start Website Project
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+              <button className="px-8 py-3 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                 View Conversion Playbook
               </button>
             </div>
@@ -217,9 +222,9 @@ export default function AuroraCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Website <span className="text-white/40">Showcase</span>
+            Website <span style={{ color: 'var(--text-subtle)' }}>Showcase</span>
           </motion.h2>
 
           {/* Masonry-like Layout */}
@@ -230,7 +235,7 @@ export default function AuroraCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border border-white/10"
+              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
             >
               <Image
                 src="/images/pimg13.webp"
@@ -248,7 +253,7 @@ export default function AuroraCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: (idx + 1) * 0.1 }}
-                className="relative h-[350px] sm:h-[400px] rounded-none overflow-hidden border border-white/10"
+                className="relative h-[350px] sm:h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
               >
                 <Image
                   src={img}
@@ -265,7 +270,7 @@ export default function AuroraCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="md:col-span-2 relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border border-white/10"
+              className="md:col-span-2 relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
                 src="/images/pimg16.webp"
@@ -279,23 +284,23 @@ export default function AuroraCaseStudy() {
       </section>
 
       {/* Results Section */}
-      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           {/* CTA Before Results */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
+            className="mb-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Need a Sustainable Brand Story?
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               We specialize in building authentic digital experiences for sustainable brands. Get results with storytelling and strategy.
             </p>
             <Link href="/contact">
-              <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                 Schedule Brand Strategy Session
               </button>
             </Link>
@@ -305,9 +310,9 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            Campaign <span className="text-white/40">Results</span>
+            Campaign <span style={{ color: 'var(--text-subtle)' }}>Results</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -322,11 +327,13 @@ export default function AuroraCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border transition-all text-center" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <div className="text-5xl font-accent font-black text-white mb-2">{result.metric}</div>
-                <div className="text-lg font-medium text-white mb-2">{result.label}</div>
-                <div className="text-sm text-white/60">{result.desc}</div>
+                <div className="text-5xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.metric}</div>
+                <div className="text-lg font-medium mb-2" style={{ color: 'var(--text-primary)' }}>{result.label}</div>
+                <div className="text-sm" style={{ color: 'var(--text-muted)' }}>{result.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -336,7 +343,7 @@ export default function AuroraCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t" style={{ borderColor: 'var(--border-faint)' }}
           >
             {[
               {
@@ -365,11 +372,11 @@ export default function AuroraCaseStudy() {
                 transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="text-white/60">{channel.icon}</div>
-                  <h4 className="text-xl font-accent font-bold text-white">{channel.title}</h4>
+                  <div style={{ color: 'var(--text-muted)' }}>{channel.icon}</div>
+                  <h4 className="text-xl font-accent font-bold" style={{ color: 'var(--text-primary)' }}>{channel.title}</h4>
                 </div>
-                <p className="text-3xl font-accent font-black text-white mb-2">{channel.value}</p>
-                <p className="text-white/70 text-sm">{channel.description}</p>
+                <p className="text-3xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{channel.value}</p>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{channel.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -390,19 +397,19 @@ export default function AuroraCaseStudy() {
                 <span key={i} className="text-3xl">⭐</span>
               ))}
             </div>
-            <p className="text-2xl sm:text-3xl font-light text-white/90 leading-relaxed mb-8">
+            <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
               "The website isn't just beautiful—it's a sales machine. We've never seen conversion rates this high. The storytelling approach really resonates with our community."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold text-white">Emma Rodriguez</p>
-              <p className="text-white/60">Founder, Aurora Sustainable Fashion</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Emma Rodriguez</p>
+              <p style={{ color: 'var(--text-muted)' }}>Founder, Aurora Sustainable Fashion</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -410,17 +417,17 @@ export default function AuroraCaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8 text-white">
-              Build a High-Converting <span className="text-white/40">Website</span>
+            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Build a High-Converting <span style={{ color: 'var(--text-subtle)' }}>Website</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Let's Build
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                   View More Projects
                 </button>
               </Link>

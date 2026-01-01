@@ -39,7 +39,7 @@ export default function VertexCaseStudy() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -68,22 +68,22 @@ export default function VertexCaseStudy() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-              <Palette className="w-5 h-5" />
-              <span className="text-xs text-white/80 uppercase tracking-[0.2em]">Brand Transformation</span>
+            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border backdrop-blur-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+              <Palette className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+              <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Brand Transformation</span>
             </div>
 
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6 text-white">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6" style={{ color: 'var(--text-primary)' }}>
               Vertex
             </h1>
 
-            <p className="text-xl sm:text-2xl text-white/80 leading-relaxed max-w-2xl mb-8">
+            <p className="text-xl sm:text-2xl leading-relaxed max-w-2xl mb-8" style={{ color: 'var(--text-muted)' }}>
               Complete brand overhaul for a fintech startup that raised $2.5M in seed funding, positioning them as the disruptive leader in financial technology.
             </p>
 
             <div className="flex flex-wrap gap-4">
               {['Fintech', 'Brand Strategy', 'Design System', 'Motion'].map(tag => (
-                <span key={tag} className="px-4 py-2 rounded-none bg-white/10 border border-white/20 text-sm text-white">
+                <span key={tag} className="px-4 py-2 rounded-none border text-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
                   {tag}
                 </span>
               ))}
@@ -109,8 +109,8 @@ export default function VertexCaseStudy() {
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.05 }}
               >
-                <p className="text-xs text-white/60 uppercase tracking-[0.2em] mb-2">{stat.label}</p>
-                <p className="text-2xl sm:text-3xl font-accent font-black text-white">{stat.value}</p>
+                <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
+                <p className="text-2xl sm:text-3xl font-accent font-black" style={{ color: 'var(--text-primary)' }}>{stat.value}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -118,15 +118,15 @@ export default function VertexCaseStudy() {
       </section>
 
       {/* Brand Strategy Deep Dive */}
-      <section ref={strategyRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={strategyRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={strategyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Brand <span className="text-white/40">Strategy</span>
+            Brand <span style={{ color: 'var(--text-subtle)' }}>Strategy</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -163,8 +163,8 @@ export default function VertexCaseStudy() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                   >
-                    <h3 className="text-2xl font-accent font-bold text-white mb-3">{strategy.title}</h3>
-                    <p className="text-lg text-white/70 leading-relaxed">{strategy.desc}</p>
+                    <h3 className="text-2xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{strategy.title}</h3>
+                    <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>{strategy.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -176,7 +176,7 @@ export default function VertexCaseStudy() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border border-white/10"
+              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
                 src="/images/pimg16.webp"
@@ -197,9 +197,9 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Visual <span className="text-white/40">Evolution</span>
+            Visual <span style={{ color: 'var(--text-subtle)' }}>Evolution</span>
           </motion.h2>
 
           {/* Before and After Split Screen */}
@@ -211,8 +211,8 @@ export default function VertexCaseStudy() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
           >
             <div>
-              <p className="text-white/60 text-sm uppercase tracking-[0.2em] mb-4">Before</p>
-              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10">
+              <p className="text-sm uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--text-muted)' }}>Before</p>
+              <div className="relative h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
                 <Image
                   src="/images/pimg4.webp"
                   alt="Before"
@@ -222,8 +222,8 @@ export default function VertexCaseStudy() {
               </div>
             </div>
             <div>
-              <p className="text-white/60 text-sm uppercase tracking-[0.2em] mb-4">After</p>
-              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10">
+              <p className="text-sm uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--text-muted)' }}>After</p>
+              <div className="relative h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
                 <Image
                   src="/images/pimg5.webp"
                   alt="After"
@@ -253,15 +253,15 @@ export default function VertexCaseStudy() {
       </section>
 
       {/* Deliverables Section */}
-      <section ref={deliveriesRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={deliveriesRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={deliveriesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Project <span className="text-white/40">Timeline</span>
+            Project <span style={{ color: 'var(--text-subtle)' }}>Timeline</span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto mb-16 space-y-6">
@@ -278,15 +278,15 @@ export default function VertexCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{timeline.week}</span>
+                    <span className="inline-block px-4 py-2 rounded-none font-accent font-bold text-sm" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>{timeline.week}</span>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-accent font-bold text-white mb-2">{timeline.title}</h4>
-                    <p className="text-white/70">{timeline.desc}</p>
+                    <h4 className="text-xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{timeline.title}</h4>
+                    <p style={{ color: 'var(--text-muted)' }}>{timeline.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -299,23 +299,23 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="p-8 sm:p-12 rounded-none border border-white/10 bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-center"
+            className="p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)', background: 'linear-gradient(to right, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1))' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Ready to Elevate Your Brand?
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Our brand transformations have helped 200+ companies raise $2.5B+ in funding. Let's build your iconic brand identity.
             </p>
             <Link href="/contact">
-              <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                 Start Brand Transformation
               </button>
             </Link>
           </motion.div>
 
           <div className="mt-16">
-            <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">What We <span className="text-white/40">Delivered</span></h2>
+            <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>What We <span style={{ color: 'var(--text-subtle)' }}>Delivered</span></h2>
 
           <div className="space-y-16">
             {deliverables.map((section, idx) => (
@@ -373,9 +373,9 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            Impact & <span className="text-white/40">Recognition</span>
+            Impact & <span style={{ color: 'var(--text-subtle)' }}>Recognition</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -417,11 +417,11 @@ export default function VertexCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
+                className="p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-card)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-faint)'; }}
               >
-                <div className="text-4xl font-accent font-black text-white mb-2">{impact.stat}</div>
-                <h4 className="text-xl font-accent font-bold text-white mb-3">{impact.title}</h4>
-                <p className="text-white/60 text-sm">{impact.desc}</p>
+                <div className="text-4xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{impact.stat}</div>
+                <h4 className="text-xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{impact.title}</h4>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{impact.desc}</p>
               </motion.div>
             ))}
           </div>

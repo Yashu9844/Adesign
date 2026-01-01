@@ -23,7 +23,7 @@ export default function StellarCaseStudy() {
   const resultsInView = useInView(resultsRef, { once: true });
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -47,22 +47,22 @@ export default function StellarCaseStudy() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20">
-              <Brain className="w-5 h-5" />
-              <span className="text-xs text-white/80 uppercase tracking-[0.2em]">AI Enterprise Solution</span>
+            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+              <Brain className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+              <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>AI Enterprise Solution</span>
             </div>
 
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8 text-white">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8" style={{ color: 'var(--text-primary)' }}>
               Stellar
             </h1>
 
-            <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-xl sm:text-2xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
               Enterprise AI solution integrating GPT-4 for intelligent document processing. Automates complex workflows with 95% accuracy and reduces processing time by 90%.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-12">
               {['GPT-4 Integration', 'Document OCR', 'Enterprise Scale', 'Real-time Processing'].map(tag => (
-                <span key={tag} className="px-4 py-2 rounded-none bg-white/10 border border-white/20 text-sm text-white">
+                <span key={tag} className="px-4 py-2 rounded-none border text-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
                   {tag}
                 </span>
               ))}
@@ -70,12 +70,12 @@ export default function StellarCaseStudy() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <button className="px-8 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Discuss Implementation
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                   View All Work
                 </button>
               </Link>
@@ -85,7 +85,7 @@ export default function StellarCaseStudy() {
       </section>
 
       {/* Key Metrics */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -106,10 +106,12 @@ export default function StellarCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-6 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <p className="text-3xl sm:text-4xl font-accent font-black text-white mb-2">{item.metric}</p>
-                <p className="text-sm text-white/60 uppercase tracking-[0.2em]">{item.label}</p>
+                <p className="text-3xl sm:text-4xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{item.metric}</p>
+                <p className="text-sm uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>{item.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -126,15 +128,15 @@ export default function StellarCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">Enterprise Challenge</h2>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Enterprise Challenge</h2>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
                 Fortune 500 companies were drowning in document processing. Manual review of contracts, invoices, and forms took weeks and was error-prone. They needed intelligent automation at scale.
               </p>
               <ul className="space-y-4">
                 {['Thousands of docs processed manually daily', 'High error rates from human fatigue', 'Compliance and audit trail complexity', 'Impossible to scale without massive teams'].map((problem, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <span className="text-red-400 font-bold mt-1">✕</span>
-                    <span className="text-white/80">{problem}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>{problem}</span>
                   </li>
                 ))}
               </ul>
@@ -146,17 +148,17 @@ export default function StellarCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">AI-Powered Solution</h2>
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>AI-Powered Solution</h2>
               <ul className="space-y-4 mb-8">
                 {['GPT-4 backed document understanding', 'Automated extraction & classification', 'Intelligent validation & anomaly detection', 'Audit-ready processing logs'].map((solution, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <Zap className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
-                    <span className="text-white/80">{solution}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>{solution}</span>
                   </li>
                 ))}
               </ul>
-              <div className="p-6 rounded-none bg-white/5 border border-white/10">
-                <p className="text-white text-sm leading-relaxed">
+              <div className="p-6 rounded-none border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-faint)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)' }}>
                   Result: Processing time reduced from weeks to hours. Accuracy improved to 95%. Compliance guaranteed with complete audit trails.
                 </p>
               </div>
@@ -166,15 +168,15 @@ export default function StellarCaseStudy() {
       </section>
 
       {/* Technology Stack */}
-      <section ref={techRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={techRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={techInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Technology <span className="text-white/40">Stack</span>
+            Technology <span style={{ color: 'var(--text-subtle)' }}>Stack</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -212,14 +214,16 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={techInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <div className="text-white/60 mb-4">{category.icon}</div>
-                <h3 className="text-xl font-accent font-bold text-white mb-4">{category.title}</h3>
+                <div className="mb-4" style={{ color: 'var(--text-muted)' }}>{category.icon}</div>
+                <h3 className="text-xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>{category.title}</h3>
                 <ul className="space-y-2">
-                  {category.tech.map((tech, j) => (
-                    <li key={j} className="text-sm text-white/70 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                  {category.items.map((item, j) => (
+                    <li key={j} className="text-sm flex items-center gap-2" style={{ color: 'var(--text-muted)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--border-medium)' }} />
                       {tech}
                     </li>
                   ))}
@@ -233,9 +237,9 @@ export default function StellarCaseStudy() {
             initial={{ opacity: 0, y: 20 }}
             animate={techInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl font-accent font-bold mb-8 text-white"
+            className="text-3xl font-accent font-bold mb-8" style={{ color: 'var(--text-primary)' }}
           >
-            Project <span className="text-white/40">Timeline</span>
+            Project <span style={{ color: 'var(--text-subtle)' }}>Timeline</span>
           </motion.h3>
 
           <div className="space-y-6">
@@ -270,16 +274,19 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={techInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border transition-all"
+                style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{timeline.phase}</span>
-                    <span className="block text-xs text-white/60 mt-2">{timeline.duration}</span>
+                    <span className="inline-block px-4 py-2 rounded-none font-accent font-bold text-sm" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>{timeline.phase}</span>
+                    <span className="block text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{timeline.duration}</span>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-accent font-bold text-white mb-2">{timeline.title}</h4>
-                    <p className="text-white/70 text-sm">{timeline.details}</p>
+                    <h4 className="text-xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{timeline.title}</h4>
+                    <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{timeline.details}</p>
                   </div>
                 </div>
               </motion.div>
@@ -291,21 +298,21 @@ export default function StellarCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={techInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Deploy Enterprise AI Solutions
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Enterprise-grade AI platforms that improve operational efficiency by 40%+ while maintaining security and compliance. Start your AI transformation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Start AI Project
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+              <button className="px-8 py-3 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-medium)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}>
                 Download AI Implementation Guide
               </button>
             </div>
@@ -321,9 +328,9 @@ export default function StellarCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Solution in <span className="text-white/40">Action</span>
+            Solution in <span style={{ color: 'var(--text-subtle)' }}>Action</span>
           </motion.h2>
 
           <div className="space-y-8">
@@ -333,7 +340,7 @@ export default function StellarCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border border-white/10"
+              className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
             >
               <Image
                 src="/images/pimg13.webp"
@@ -352,7 +359,7 @@ export default function StellarCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="relative h-[350px] rounded-none overflow-hidden border border-white/10"
+                  className="relative h-[350px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
                 >
                   <Image
                     src={img}
@@ -373,7 +380,7 @@ export default function StellarCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="relative h-[250px] rounded-none overflow-hidden border border-white/10"
+                  className="relative h-[250px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
                 >
                   <Image
                     src={img}
@@ -389,23 +396,23 @@ export default function StellarCaseStudy() {
       </section>
 
       {/* Enterprise Results */}
-      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           {/* Pre-Results CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
+            className="mb-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Automate Document Processing at Scale
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Reduce processing time by 90%, improve accuracy to 95%, and cut costs dramatically. Let's discuss how AI can transform your operations.
             </p>
             <Link href="/contact">
-              <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                 Schedule Enterprise Demo
               </button>
             </Link>
@@ -415,9 +422,9 @@ export default function StellarCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            Enterprise <span className="text-white/40">Impact</span>
+            Enterprise <span style={{ color: 'var(--text-subtle)' }}>Impact</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -458,11 +465,13 @@ export default function StellarCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <div className="text-4xl font-accent font-black text-white mb-2">{result.stat}</div>
-                <h4 className="text-lg font-accent font-bold text-white mb-2">{result.title}</h4>
-                <p className="text-white/60 text-sm">{result.desc}</p>
+                <div className="text-4xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.stat}</div>
+                <h4 className="text-lg font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{result.title}</h4>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{result.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -483,19 +492,19 @@ export default function StellarCaseStudy() {
                 <span key={i} className="text-3xl">⭐</span>
               ))}
             </div>
-            <p className="text-2xl sm:text-3xl font-light text-white/90 leading-relaxed mb-8">
+            <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
               "This AI solution fundamentally transformed how we process documents. What took our team 6 months now takes 1 week. The accuracy is exceptional, and the ROI was immediate."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold text-white">Dr. Robert Chen</p>
-              <p className="text-white/60">CTO, Fortune 500 Financial Services</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Dr. Robert Chen</p>
+              <p style={{ color: 'var(--text-muted)' }}>CTO, Fortune 500 Financial Services</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -503,17 +512,17 @@ export default function StellarCaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8 text-white">
-              Ready to Deploy <span className="text-white/40">Enterprise AI?</span>
+            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Ready to Deploy <span style={{ color: 'var(--text-subtle)' }}>Enterprise AI?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
-                  Schedule Demo
+                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                  Start AI Project
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                   View All Projects
                 </button>
               </Link>

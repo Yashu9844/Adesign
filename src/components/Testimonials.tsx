@@ -150,15 +150,15 @@ export default function Testimonials() {
                 <div className="md:col-span-1 lg:col-span-4 flex flex-col items-center lg:items-start">
                   {/* Author Image */}
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mb-6">
-                    <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent rounded-full" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
                     <img
                       src={currentTestimonial.image}
                       alt={currentTestimonial.author}
                       className="w-full h-full object-cover rounded-full grayscale"
                     />
                     {/* Decorative Ring */}
-                    <div className="absolute -inset-2 border border-white/10 rounded-full" />
-                    <div className="absolute -inset-4 border border-white/5 rounded-full" />
+                    <div className="absolute -inset-2 rounded-full" style={{ borderWidth: '1px', borderColor: 'var(--border-faint)' }} />
+                    <div className="absolute -inset-4 rounded-full" style={{ borderWidth: '1px', borderColor: 'var(--border-faint)', opacity: 0.5 }} />
                   </div>
 
                   {/* Metric Badge */}
@@ -175,7 +175,7 @@ export default function Testimonials() {
                 {/* Quote & Info */}
                 <div className="md:col-span-1 lg:col-span-8">
                   {/* Quote Icon */}
-                  <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white/20 mb-6" />
+                  <Quote className="w-8 h-8 sm:w-10 sm:h-10 mb-6" style={{ color: 'var(--text-disabled)', opacity: 0.4 }} />
 
                   {/* Quote Text */}
                   <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
@@ -213,7 +213,8 @@ export default function Testimonials() {
                       : 'hover:opacity-75'
                   }`}
                   style={{
-                    backgroundColor: index === activeIndex ? 'var(--text-primary)' : 'var(--text-very-subtle)'
+                    backgroundColor: index === activeIndex ? 'var(--text-primary)' : 'var(--text-disabled)',
+                    opacity: index === activeIndex ? 1 : 0.3
                   }}
                 />
               ))}
@@ -223,18 +224,18 @@ export default function Testimonials() {
             <button
               onClick={prevTestimonial}
               className="w-12 h-12 flex items-center justify-center transition-all duration-300"
-              style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
-              onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
-              onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
+              style={{ borderWidth: '1px', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextTestimonial}
               className="w-12 h-12 flex items-center justify-center transition-all duration-300"
-              style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
-              onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
-              onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
+              style={{ borderWidth: '1px', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
             >
               <ChevronRight className="w-5 h-5" />
             </button>

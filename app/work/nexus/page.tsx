@@ -41,7 +41,7 @@ export default function NexusCaseStudy() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -55,27 +55,27 @@ export default function NexusCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20">
-                <Smartphone className="w-5 h-5" />
-                <span className="text-xs text-white/80 uppercase tracking-[0.2em]">Mobile Product</span>
+              <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+                <Smartphone className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+                <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Mobile Product</span>
               </div>
 
-              <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8 text-white">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8" style={{ color: 'var(--text-primary)' }}>
                 Nexus
               </h1>
 
-              <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-8 max-w-2xl">
+              <p className="text-xl sm:text-2xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
                 Cross-platform mobile application for real-time collaboration and project management. Designed to empower distributed teams to work together seamlessly from anywhere in the world.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
-                  <button className="px-8 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                  <button className="px-8 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                     Get Started
                   </button>
                 </Link>
                 <Link href="/work">
-                  <button className="px-8 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                  <button className="px-8 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                     Back to Work
                   </button>
                 </Link>
@@ -86,7 +86,7 @@ export default function NexusCaseStudy() {
       </section>
 
       {/* Overview - Stats */}
-      <section ref={overviewRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={overviewRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -105,10 +105,12 @@ export default function NexusCaseStudy() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={overviewInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-6 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <p className="text-sm text-white/60 uppercase tracking-[0.2em] mb-2">{stat.label}</p>
-                <p className="text-3xl sm:text-4xl font-accent font-black text-white">{stat.value}</p>
+                <p className="text-sm uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
+                <p className="text-3xl sm:text-4xl font-accent font-black" style={{ color: 'var(--text-primary)' }}>{stat.value}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -125,11 +127,11 @@ export default function NexusCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">Challenge</h2>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Challenge</h2>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
                 Remote work is the new norm, but existing project management tools feel clunky on mobile. Teams were switching between desktop and mobile, losing context and productivity.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                 We needed to build a native mobile experience that was as powerful as desktop tools, with zero friction for teams of any size.
               </p>
             </motion.div>
@@ -140,12 +142,12 @@ export default function NexusCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">Solution</h2>
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Solution</h2>
               <ul className="space-y-4">
                 {['Native iOS & Android apps with unified codebase', 'Offline-first architecture for seamless experience', 'Voice & gesture-based quick actions', 'Smart AI-powered task suggestions', 'One-tap onboarding for teams'].map((solution, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <Layers className="w-6 h-6 text-white/60 flex-shrink-0 mt-1" />
-                    <span className="text-lg text-white/80">{solution}</span>
+                    <Layers className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--text-muted)' }} />
+                    <span className="text-lg" style={{ color: 'var(--text-muted)' }}>{solution}</span>
                   </li>
                 ))}
               </ul>
@@ -155,15 +157,15 @@ export default function NexusCaseStudy() {
       </section>
 
       {/* Features Section with Grid Images */}
-      <section ref={featuresRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={featuresRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Feature <span className="text-white/40">Highlights</span>
+            Feature <span style={{ color: 'var(--text-subtle)' }}>Highlights</span>
           </motion.h2>
 
           <div className="space-y-16">
@@ -177,18 +179,18 @@ export default function NexusCaseStudy() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
               >
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-accent font-black mb-4 text-white">{feature.title}</h3>
-                  <p className="text-lg text-white/80 leading-relaxed mb-8">{feature.description}</p>
-                  <div className="grid grid-cols-2 gap-4">
+                  <h3 className="text-3xl sm:text-4xl font-accent font-black mb-4" style={{ color: 'var(--text-primary)' }}>{feature.title}</h3>
+                  <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>{feature.description}</p>
+                  <div className="grid grid-cols-2 gap-3">
                     {feature.highlights.map((highlight, i) => (
-                      <div key={i} className="p-4 rounded-none bg-white/5 border border-white/10">
-                        <p className="text-white text-sm font-medium">{highlight}</p>
+                      <div key={i} className="p-4 rounded-none border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-faint)' }}>
+                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{highlight}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border border-white/10">
+                <div className="relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
                   <Image
                     src={['/images/pimg8.webp', '/images/pimg9.webp', '/images/pimg10.webp'][idx]}
                     alt={feature.title}
@@ -210,9 +212,9 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Development <span className="text-white/40">Journey</span>
+            Development <span style={{ color: 'var(--text-subtle)' }}>Journey</span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto mb-16 space-y-6">
@@ -228,15 +230,18 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-6 sm:p-8 rounded-none border transition-all"
+                style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="flex gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-none bg-white/20 text-white font-accent font-bold text-sm">{sprint.sprint}</span>
+                    <span className="inline-block px-4 py-2 rounded-none font-accent font-bold text-sm" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>{sprint.sprint}</span>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-accent font-bold text-white mb-2">{sprint.title}</h4>
-                    <p className="text-white/70">{sprint.desc}</p>
+                    <h4 className="text-xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{sprint.title}</h4>
+                    <p style={{ color: 'var(--text-muted)' }}>{sprint.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -249,21 +254,21 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="p-8 sm:p-12 rounded-none border border-white/10 text-center mb-16"
+            className="p-8 sm:p-12 rounded-none border text-center mb-16" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Need a High-Performance Mobile App?
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Our cross-platform expertise has delivered 200K+ downloads and 4.8★ ratings. Let's build your next successful app.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
-                  Discuss Your App Idea
+                <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                  Discuss Your App
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+              <button className="px-8 py-3 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                 Download App Playbook
               </button>
             </div>
@@ -279,9 +284,9 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Design <span className="text-white/40">Showcase</span>
+            Design <span style={{ color: 'var(--text-subtle)' }}>Showcase</span>
           </motion.h2>
 
           {/* Large Featured */}
@@ -290,7 +295,7 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border border-white/10 mb-8"
+            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border mb-8" style={{ borderColor: 'var(--border-faint)' }}>
           >
             <Image
               src="/images/pimg11.webp"
@@ -309,7 +314,7 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[300px] rounded-none overflow-hidden border border-white/10"
+                className="relative h-[300px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
               >
                 <Image
                   src={img}
@@ -330,7 +335,7 @@ export default function NexusCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10"
+                className="relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
               >
                 <Image
                   src={img}
@@ -345,15 +350,15 @@ export default function NexusCaseStudy() {
       </section>
 
       {/* Results Section */}
-      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            Business <span className="text-white/40">Outcomes</span>
+            Business <span style={{ color: 'var(--text-subtle)' }}>Outcomes</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -368,11 +373,13 @@ export default function NexusCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={resultsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border transition-all text-center" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <div className="text-5xl font-accent font-black text-white mb-2">{result.metric}</div>
-                <div className="text-lg font-medium text-white mb-1">{result.label}</div>
-                <div className="text-sm text-white/60">{result.subtext}</div>
+                <div className="text-5xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.metric}</div>
+                <div className="text-lg font-medium mb-1" style={{ color: 'var(--text-primary)' }}>{result.label}</div>
+                <div className="text-sm" style={{ color: 'var(--text-muted)' }}>{result.subtext}</div>
               </motion.div>
             ))}
           </div>
@@ -393,19 +400,19 @@ export default function NexusCaseStudy() {
                 <span key={i} className="text-3xl">⭐</span>
               ))}
             </div>
-            <p className="text-2xl sm:text-3xl font-light text-white/90 leading-relaxed mb-8">
+            <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
               "Nexus changed how our team works. For the first time, we can manage complex projects entirely from mobile without losing any power."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold text-white">James Mitchell</p>
-              <p className="text-white/60">Product Manager, Fortune 500 Tech Company</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>James Mitchell</p>
+              <p style={{ color: 'var(--text-muted)' }}>Product Manager, Fortune 500 Tech Company</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -413,17 +420,17 @@ export default function NexusCaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8 text-white">
-              Let's Build Your <span className="text-white/40">Next App</span>
+            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Let's Build Your <span style={{ color: 'var(--text-subtle)' }}>Next App</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
-                  Start Building
+                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                  Start Project
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}>
                   See All Projects
                 </button>
               </Link>

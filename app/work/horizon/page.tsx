@@ -57,7 +57,7 @@ export default function HorizonCaseStudy() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -70,20 +70,20 @@ export default function HorizonCaseStudy() {
               initial={{ opacity: 0, x: -50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative p-12 lg:p-16 rounded-none overflow-hidden border border-white/10"
+              className="relative p-12 lg:p-16 rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
               style={{
                 background: 'radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent)',
               }}
             >
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                  <Zap className="w-4 h-4" />
-                  <span className="text-xs text-white/60 uppercase tracking-[0.2em]">Data Intelligence</span>
+                <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+                  <Zap className="w-4 h-4" style={{ color: 'var(--text-primary)' }} />
+                  <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Data Intelligence</span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-accent font-black leading-[1.1] mb-6 text-white">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-accent font-black leading-[1.1] mb-6" style={{ color: 'var(--text-primary)' }}>
                   Horizon
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed max-w-xl">
+                <p className="text-xl leading-relaxed max-w-xl" style={{ color: 'var(--text-muted)' }}>
                   Enterprise analytics platform that transforms raw data into strategic business intelligence.
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function HorizonCaseStudy() {
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border border-white/10"
+              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
                 src="/images/pimg2.webp"
@@ -117,9 +117,9 @@ export default function HorizonCaseStudy() {
               { label: '2B+', value: 'Queries/Month' },
               { label: '99.9%', value: 'Uptime' },
             ].map((stat, i) => (
-              <div key={i} className="p-6 rounded-none border border-white/10 bg-white/5">
-                <div className="text-3xl font-accent font-black text-white">{stat.label}</div>
-                <div className="text-sm text-white/60 mt-2">{stat.value}</div>
+              <div key={i} className="p-6 rounded-none border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}>
+                <div className="text-3xl font-accent font-black" style={{ color: 'var(--text-primary)' }}>{stat.label}</div>
+                <div className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>{stat.value}</div>
               </div>
             ))}
           </motion.div>
@@ -127,7 +127,7 @@ export default function HorizonCaseStudy() {
       </section>
 
       {/* Problem & Solution with Images */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Problem Side */}
@@ -137,16 +137,16 @@ export default function HorizonCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-accent font-black mb-8 text-white">Problem</h2>
+              <h2 className="text-4xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Problem</h2>
               <div className="space-y-6">
-                <p className="text-lg text-white/80">
+                <p className="text-lg" style={{ color: 'var(--text-muted)' }}>
                   Legacy analytics tools were painfully slow, required SQL expertise, and couldn't scale with the client's explosive growth. Data silos meant decisions were made on incomplete information.
                 </p>
                 <ul className="space-y-4">
                   {['12+ hour report generation times', 'Fragmented data across systems', 'Limited visualization options', 'Steep learning curve for non-technical users'].map((issue, i) => (
                     <li key={i} className="flex gap-4 items-start">
                       <span className="text-red-400 font-bold text-xl flex-shrink-0">×</span>
-                      <span className="text-white/80">{issue}</span>
+                      <span style={{ color: 'var(--text-muted)' }}>{issue}</span>
                     </li>
                   ))}
                 </ul>
@@ -160,8 +160,8 @@ export default function HorizonCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-4xl font-accent font-black mb-8 text-white">Solution</h2>
-              <div className="relative h-[400px] rounded-none overflow-hidden border border-white/10 mb-6">
+              <h2 className="text-4xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Solution</h2>
+              <div className="relative h-[400px] rounded-none overflow-hidden border mb-6" style={{ borderColor: 'var(--border-faint)' }}>
                 <Image
                   src="/images/pimg12.webp"
                   alt="Horizon Solution"
@@ -173,7 +173,7 @@ export default function HorizonCaseStudy() {
                 {['Sub-second query response', 'Unified data warehouse', 'AI-powered insights', 'No-code dashboard builder'].map((sol, i) => (
                   <li key={i} className="flex gap-4 items-start">
                     <span className="text-green-400 font-bold text-xl flex-shrink-0">✓</span>
-                    <span className="text-white/80">{sol}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>{sol}</span>
                   </li>
                 ))}
               </ul>
@@ -189,9 +189,9 @@ export default function HorizonCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             animate={approachInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            Design <span className="text-white/40">Approach</span>
+            Design <span style={{ color: 'var(--text-subtle)' }}>Approach</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -201,10 +201,12 @@ export default function HorizonCaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={approachInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`p-8 rounded-none border border-white/10 bg-gradient-to-br ${item.color} to-transparent hover:border-white/20 transition-all`}
+                className={`p-8 rounded-none border bg-gradient-to-br ${item.color} to-transparent transition-all`} style={{ borderColor: 'var(--border-faint)' }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-faint)'}
               >
-                <h3 className="text-2xl font-accent font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-white/60 text-sm">{item.subtitle}</p>
+                <h3 className="text-2xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{item.subtitle}</p>
               </motion.div>
             ))}
           </div>
@@ -212,15 +214,15 @@ export default function HorizonCaseStudy() {
       </section>
 
       {/* Features Grid with Images */}
-      <section ref={featuresRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section ref={featuresRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
           >
-            Key <span className="text-white/40">Features</span>
+            Key <span style={{ color: 'var(--text-subtle)' }}>Features</span>
           </motion.h2>
 
           <div className="space-y-12">
@@ -236,12 +238,12 @@ export default function HorizonCaseStudy() {
                 {/* Text */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="text-5xl mb-4">{feature.icon}</div>
-                  <h3 className="text-3xl sm:text-4xl font-accent font-black mb-4 text-white">{feature.title}</h3>
-                  <p className="text-lg text-white/80 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-3xl sm:text-4xl font-accent font-black mb-4" style={{ color: 'var(--text-primary)' }}>{feature.title}</h3>
+                  <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>{feature.description}</p>
                 </div>
 
                 {/* Image */}
-                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border ${index % 2 === 1 ? 'lg:col-start-1' : ''}`} style={{ borderColor: 'var(--border-faint)' }}>
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -256,16 +258,16 @@ export default function HorizonCaseStudy() {
       </section>
 
       {/* How We Built It - Timeline */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-white text-center"
+            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
           >
-            How We Built <span className="text-white/40">Horizon</span>
+            How We Built <span style={{ color: 'var(--text-subtle)' }}>Horizon</span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto space-y-8">
@@ -297,20 +299,26 @@ export default function HorizonCaseStudy() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                className="p-8 rounded-none border transition-all"
+                style={{ 
+                  borderColor: 'var(--border-faint)', 
+                  backgroundColor: 'var(--bg-elevated)'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-accent font-bold">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center font-accent font-bold" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>
                       {idx + 1}
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-accent font-bold text-white mb-2">{phase.phase}</h3>
-                    <p className="text-white/70 mb-4">{phase.details}</p>
+                    <h3 className="text-2xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{phase.phase}</h3>
+                    <p className="mb-4" style={{ color: 'var(--text-muted)' }}>{phase.details}</p>
                     <div className="flex flex-wrap gap-2">
                       {phase.items.map((item, i) => (
-                        <span key={i} className="text-xs bg-white/10 border border-white/20 px-3 py-1 rounded-none text-white/80">
+                        <span key={i} className="text-xs px-3 py-1 rounded-none" style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-medium)', color: 'var(--text-muted)' }}>
                           {item}
                         </span>
                       ))}
@@ -327,21 +335,21 @@ export default function HorizonCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 p-8 sm:p-12 rounded-none border border-white/10 text-center"
+            className="mt-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Need Enterprise Analytics Solutions?
             </h3>
-            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Our data architecture expertise has powered analytics for 50K+ users. We can architect the same for your business intelligence needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 py-3 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Book Analytics Consultation
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+              <button className="px-8 py-3 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-medium)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}>
                 Download Architecture Guide
               </button>
             </div>
@@ -359,8 +367,8 @@ export default function HorizonCaseStudy() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8 text-white">
-              Business <span className="text-white/40">Impact</span>
+            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Business <span style={{ color: 'var(--text-subtle)' }}>Impact</span>
             </h2>
           </motion.div>
 
@@ -377,11 +385,17 @@ export default function HorizonCaseStudy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-center"
+                className="p-8 rounded-none border transition-all text-center"
+                style={{ 
+                  borderColor: 'var(--border-faint)', 
+                  backgroundColor: 'var(--bg-elevated)'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
                 <div className="text-4xl mb-4">{impact.icon}</div>
-                <div className="text-5xl font-accent font-black text-white mb-3">{impact.metric}</div>
-                <p className="text-white/60">{impact.description}</p>
+                <div className="text-5xl sm:text-6xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{impact.metric}</div>
+                <p style={{ color: 'var(--text-muted)' }}>{impact.description}</p>
               </motion.div>
             ))}
           </div>
@@ -389,7 +403,7 @@ export default function HorizonCaseStudy() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-[1920px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -397,18 +411,18 @@ export default function HorizonCaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-8 text-white">
-              Transform Your <span className="text-white/40">Data Into Action</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Transform Your <span style={{ color: 'var(--text-subtle)' }}>Data Into Action</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all inline-flex items-center gap-2">
+                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all inline-flex items-center gap-2" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Start Your Journey
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-medium)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}>
                   Back to Portfolio
                 </button>
               </Link>
