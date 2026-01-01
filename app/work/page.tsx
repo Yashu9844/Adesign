@@ -94,7 +94,7 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
@@ -106,13 +106,13 @@ export default function WorkPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-xs text-white/40 uppercase tracking-[0.3em] mb-4 block">Our Portfolio</span>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6 text-white">
+            <span className="text-xs uppercase tracking-[0.3em] mb-4 block" style={{ color: 'var(--text-subtle)' }}>Our Portfolio</span>
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6" style={{ color: 'var(--text-primary)' }}>
               Selected
               <br />
-              <span className="text-white/40">Work</span>
+              <span style={{ color: 'var(--text-subtle)' }}>Work</span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/60 font-light max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl font-light max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               A collection of projects we're proud of. Each one crafted with attention to detail and strategic thinking.
             </p>
           </motion.div>
@@ -120,7 +120,7 @@ export default function WorkPage() {
       </section>
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px" style={{ backgroundImage: 'var(--gradient-divider)' }} />
 
       {/* Stats Section */}
       <section className="relative py-16 sm:py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -135,11 +135,23 @@ export default function WorkPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-8 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all"
+                  className="text-center p-8 rounded-none border transition-all"
+                  style={{ 
+                    borderColor: 'var(--border-faint)',
+                    backgroundColor: 'var(--bg-elevated)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+                    e.currentTarget.style.borderColor = 'var(--border-medium)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--bg-elevated)';
+                    e.currentTarget.style.borderColor = 'var(--border-faint)';
+                  }}
                 >
                   <Icon className="w-8 h-8 mx-auto mb-4" style={{ color: 'var(--text-muted)' }} />
-                  <div className="text-4xl sm:text-5xl font-accent font-black text-white mb-2">{stat.value}</div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
+                  <div className="text-4xl sm:text-5xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{stat.value}</div>
+                  <div className="text-sm" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
                 </motion.div>
               );
             })}
@@ -148,7 +160,7 @@ export default function WorkPage() {
       </section>
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px" style={{ backgroundImage: 'var(--gradient-divider)' }} />
 
       {/* Projects Filter */}
       <section className="relative py-2 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -168,11 +180,24 @@ export default function WorkPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`px-5 sm:px-6 py-2.5 rounded-none text-xs sm:text-sm font-medium transition-all duration-300 border ${
-                  selectedCategory === category
-                    ? 'bg-white text-black border-white'
-                    : 'bg-transparent text-white border-white/20 hover:border-white/40 hover:bg-white/5'
-                }`}
+                className="px-5 sm:px-6 py-2.5 rounded-none text-xs sm:text-sm font-medium transition-all duration-300 border"
+                style={{
+                  backgroundColor: selectedCategory === category ? 'var(--cta-primary)' : 'transparent',
+                  color: selectedCategory === category ? 'var(--cta-primary-text)' : 'var(--text-primary)',
+                  borderColor: selectedCategory === category ? 'var(--cta-primary)' : 'var(--border-medium)'
+                }}
+                onMouseEnter={(e) => {
+                  if (selectedCategory !== category) {
+                    e.currentTarget.style.borderColor = 'var(--border-light)';
+                    e.currentTarget.style.backgroundColor = 'var(--bg-elevated)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedCategory !== category) {
+                    e.currentTarget.style.borderColor = 'var(--border-medium)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
               >
                 {category}
               </motion.button>
@@ -182,7 +207,7 @@ export default function WorkPage() {
       </section>
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px" style={{ backgroundImage: 'var(--gradient-divider)' }} />
 
       {/* Projects Grid */}
       <section
@@ -236,7 +261,8 @@ export default function WorkPage() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-white"
+                      className="absolute inset-0"
+                      style={{ backgroundColor: 'var(--bg-overlay)' }}
                     />
 
                     {/* CTA - Appears on image hover */}
@@ -246,7 +272,11 @@ export default function WorkPage() {
                       transition={{ duration: 0.1 }}
                       className="absolute inset-0 flex items-center justify-center z-10"
                     >
-                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-black/50 backdrop-blur-sm border border-white text-white rounded-full font-medium hover:bg-black/70 transition-all">
+                      <div className="inline-flex items-center gap-2 px-6 py-3 backdrop-blur-sm border rounded-full font-medium transition-all" style={{
+                        backgroundColor: 'var(--bg-glass)',
+                        borderColor: 'var(--text-primary)',
+                        color: 'var(--text-primary)'
+                      }}>
                         <span className="text-sm font-medium">View Case Study</span>
                         <ArrowUpRight className="w-4 h-4" />
                       </div>
@@ -257,24 +287,28 @@ export default function WorkPage() {
                   <div className="flex-1 flex flex-col">
                     {/* Category & Year */}
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs text-white/40 uppercase tracking-wider">{project.category}</span>
-                      <span className="text-xs text-white/40">{project.year}</span>
+                      <span className="text-xs uppercase tracking-wider" style={{ color: 'var(--text-subtle)' }}>{project.category}</span>
+                      <span className="text-xs" style={{ color: 'var(--text-subtle)' }}>{project.year}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl sm:text-3xl font-accent font-bold text-white mb-1">
+                    <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                       {project.title}
                     </h3>
-                    <p className="text-sm text-white/60 font-light mb-4">{project.subtitle}</p>
+                    <p className="text-sm font-light mb-4" style={{ color: 'var(--text-muted)' }}>{project.subtitle}</p>
 
                     {/* Description */}
-                    <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
+                    <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'var(--text-disabled)' }}>
                       {project.description}
                     </p>
 
                     {/* Results Badge */}
                     <div className="mb-6 inline-flex">
-                      <span className="text-sm font-medium text-white bg-white/10 border border-white/20 px-4 py-2 rounded-none">
+                      <span className="text-sm font-medium px-4 py-2 rounded-none border" style={{ 
+                        color: 'var(--text-primary)',
+                        backgroundColor: 'var(--bg-elevated)',
+                        borderColor: 'var(--border-medium)'
+                      }}>
                         {project.results}
                       </span>
                     </div>
@@ -284,7 +318,11 @@ export default function WorkPage() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-white/40 bg-white/5 px-3 py-1 rounded-none border border-white/10"
+                          className="text-xs px-3 py-1 rounded-none border" style={{
+                            color: 'var(--text-subtle)',
+                            backgroundColor: 'var(--bg-elevated)',
+                            borderColor: 'var(--border-faint)'
+                          }}
                         >
                           {tag}
                         </span>
@@ -301,7 +339,7 @@ export default function WorkPage() {
       </section>
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px" style={{ backgroundImage: 'var(--gradient-divider)' }} />
 
       {/* CTA Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -312,12 +350,12 @@ export default function WorkPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-6 text-white">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-6" style={{ color: 'var(--text-primary)' }}>
               Ready to Build
               <br />
-              <span className="text-white/40">Something Great?</span>
+              <span style={{ color: 'var(--text-subtle)' }}>Something Great?</span>
             </h2>
-            <p className="text-lg text-white/60 font-light mb-12 max-w-2xl mx-auto">
+            <p className="text-lg font-light mb-12 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Let's collaborate on your next project. Whether you're looking to redesign your brand, build a new product, or scale your digital presence—we're here to help.
             </p>
             
@@ -325,14 +363,20 @@ export default function WorkPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black rounded-full font-medium hover:bg-white/90 transition-all group"
+                className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-medium transition-all group"
+                style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--cta-hover)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--cta-primary)'}
               >
                 Start a Project
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-10 py-5 border border-white text-white rounded-full font-medium hover:bg-white/10 transition-all group"
+                className="inline-flex items-center gap-3 px-10 py-5 border rounded-full font-medium transition-all group"
+                style={{ borderColor: 'var(--text-primary)', color: 'var(--text-primary)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
               >
                 Schedule a Consultation
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -340,7 +384,7 @@ export default function WorkPage() {
             </div>
 
             {/* Subtext */}
-            <p className="text-sm text-white/40">No long-term contracts. Let's see if we're a good fit first.</p>
+            <p className="text-sm" style={{ color: 'var(--text-subtle)' }}>No long-term contracts. Let's see if we're a good fit first.</p>
           </motion.div>
         </div>
       </section>

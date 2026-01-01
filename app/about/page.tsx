@@ -39,6 +39,7 @@ const MediaSection = ({ imageSrc, alt }: { imageSrc: string; alt: string }) => {
           width={1920}
           height={1080}
           className="w-full h-full object-cover"
+          priority
         />
       </motion.div>
       {/* Subtle overlay on hover */}
@@ -247,15 +248,15 @@ const ProcessSection = () => {
             <div 
               className="relative p-8 transition-all duration-500"
               style={{ 
-                backgroundColor: 'var(--bg-card)', 
+                backgroundColor: 'var(--bg-elevated)', 
                 border: '1px solid var(--border-medium)' 
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--bg-card-hover)';
+                e.currentTarget.style.backgroundColor = 'var(--bg-glass)';
                 e.currentTarget.style.borderColor = 'var(--border-light)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+                e.currentTarget.style.backgroundColor = 'var(--bg-elevated)';
                 e.currentTarget.style.borderColor = 'var(--border-medium)';
               }}
             >
@@ -377,7 +378,7 @@ const ValuesSection = () => {
             key={value.title}
             className="group relative overflow-hidden rounded-none p-6 md:p-8 transition-all duration-500"
             style={{ 
-              backgroundColor: 'var(--bg-card)', 
+              backgroundColor: 'var(--bg-elevated)', 
               border: '1px solid var(--border-medium)' 
             }}
             initial={{ opacity: 0, y: 40 }}
@@ -385,7 +386,7 @@ const ValuesSection = () => {
             transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
             whileHover={{ 
               borderColor: 'var(--border-light)',
-              backgroundColor: 'var(--bg-card-hover)',
+              backgroundColor: 'var(--bg-glass)',
               y: -5,
             }}
           >
@@ -479,7 +480,7 @@ const ManifestoSection = () => {
       <div 
         className="absolute inset-0 opacity-30"
         style={{ 
-          background: 'radial-gradient(ellipse at center, var(--bg-card-hover) 0%, transparent 70%)' 
+          background: 'radial-gradient(ellipse at center, var(--bg-glass) 0%, transparent 70%)'
         }}
       />
       
@@ -590,7 +591,7 @@ const DNASection = () => {
           <div
             className="mt-8 relative min-h-[120px]"
             style={{ 
-              backgroundColor: 'var(--bg-card)', 
+              backgroundColor: 'var(--bg-elevated)', 
               border: '1px solid var(--border-medium)'
             }}
           >
@@ -655,7 +656,7 @@ const DNASection = () => {
               </div>
               <div 
                 className="h-2 w-full overflow-hidden"
-                style={{ backgroundColor: 'var(--bg-card)' }}
+                style={{ backgroundColor: 'var(--bg-elevated)' }}
               >
                 <motion.div
                   className="h-full origin-left"
@@ -686,7 +687,7 @@ const FeaturedTestimonial = () => {
       <div 
         className="p-8 md:p-12 lg:p-16 relative overflow-hidden"
         style={{ 
-          backgroundColor: 'var(--bg-card)', 
+          backgroundColor: 'var(--bg-elevated)', 
           border: '1px solid var(--border-medium)' 
         }}
       >
@@ -712,7 +713,7 @@ const FeaturedTestimonial = () => {
                   className="w-10 h-10 rounded-full border-2 overflow-hidden"
                   style={{ 
                     borderColor: 'var(--bg-primary)',
-                    backgroundColor: 'var(--bg-card-hover)'
+                    backgroundColor: 'var(--bg-glass)'
                   }}
                 >
                   <Image 
@@ -862,7 +863,7 @@ const TeamSection = () => {
           <motion.div
             key={founder.name}
             className="overflow-hidden rounded-none transition-all duration-500"
-            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-medium)' }}
+            style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-medium)' }}
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -942,7 +943,7 @@ const TeamSection = () => {
           <motion.div
             key={member.name}
             className="group overflow-hidden rounded-none transition-all duration-500"
-            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-medium)' }}
+            style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-medium)' }}
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
@@ -1041,7 +1042,7 @@ const AwardsSection = () => {
             key={`${award.year}-${award.title}`}
             className="group p-6 text-center transition-all duration-500 cursor-pointer"
             style={{ 
-              backgroundColor: 'var(--bg-card)', 
+              backgroundColor: 'var(--bg-elevated)', 
               border: '1px solid var(--border-medium)' 
             }}
             initial={{ opacity: 0, y: 40 }}

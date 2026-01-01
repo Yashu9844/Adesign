@@ -163,6 +163,7 @@ html.dark {
   --border-medium: rgba(255, 255, 255, 0.2);
   --border-faint: rgba(255, 255, 255, 0.1);
   --line-primary: rgba(255, 255, 255, 0.6);
+  --line-secondary: rgba(255, 255, 255, 0.2);
   --line-subtle: rgba(255, 255, 255, 0.3);
   
   /* CTAs & Interactive */
@@ -174,6 +175,9 @@ html.dark {
   /* Gradients */
   --gradient-fade: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
   --gradient-divider: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  
+  /* Logo Inversion */
+  --logo-invert: 1; /* Invert logos to white in dark mode */
 }
 
 /* Light Mode (Warm Minimal) */
@@ -201,6 +205,7 @@ html.light {
   --border-medium: rgba(12, 10, 9, 0.08);
   --border-faint: rgba(12, 10, 9, 0.04);
   --line-primary: rgba(12, 10, 9, 0.5);
+  --line-secondary: rgba(12, 10, 9, 0.15);
   --line-subtle: rgba(12, 10, 9, 0.25);
   
   /* CTAs & Interactive - Premium black */
@@ -212,6 +217,9 @@ html.light {
   /* Gradients */
   --gradient-fade: linear-gradient(to bottom, transparent, #FAFAF9);
   --gradient-divider: linear-gradient(to right, transparent, rgba(12, 10, 9, 0.1), transparent);
+  
+  /* Logo Inversion */
+  --logo-invert: 0; /* Don't invert logos in light mode */
 }
 
 /* Smooth theme transitions */
