@@ -34,7 +34,7 @@ const MediaSection = ({ imageSrc, alt }: { imageSrc: string; alt: string }) => {
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <Image
-          src={imageSrc}
+          src="/images/pimg1.webp"
           alt={alt}
           width={1920}
           height={1080}
