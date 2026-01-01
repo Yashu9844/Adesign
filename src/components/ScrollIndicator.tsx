@@ -41,7 +41,7 @@ export default function ScrollIndicator() {
       {/* Animated line container */}
       <div className="relative w-[1px] h-12 sm:h-16 overflow-hidden">
         {/* Background line */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
+        <div className="absolute inset-0" style={{ backgroundColor: 'var(--border-medium)' }} />
         
         {/* Animated moving line */}
         <motion.div
@@ -75,7 +75,7 @@ export default function ScrollIndicator() {
           height="8"
           viewBox="0 0 12 8"
           fill="none"
-          style={{ color: 'var(--text-very-subtle)' }}
+          style={{ color: 'var(--text-subtle)' }}
         >
           <path
             d="M1 1L6 6L11 1"

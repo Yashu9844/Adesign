@@ -56,8 +56,26 @@ export default function Navigation() {
         href="/"
         className="hidden lg:block fixed top-6 md:top-8 left-6 md:left-8 z-50 group cursor-pointer"
       >
-        <div className="w-12 h-12 md:w-14 md:h-14 bg-black/30 backdrop-blur-md border border-white/10 rounded-lg md:rounded-[0.5vw] flex items-center justify-center transition-all duration-300 hover:bg-black/40 hover:border-white/20">
-          <span className="text-white text-2xl md:text-3xl font-bold font-kh-teka group-hover:scale-110 transition-transform duration-300">
+        <div 
+          className="w-12 h-12 md:w-14 md:h-14 backdrop-blur-md rounded-lg md:rounded-[0.5vw] flex items-center justify-center transition-all duration-300"
+          style={{ 
+            backgroundColor: 'var(--bg-glass)', 
+            borderWidth: '1px', 
+            borderColor: 'var(--border-faint)' 
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-glass-heavy)';
+            e.currentTarget.style.borderColor = 'var(--border-medium)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-glass)';
+            e.currentTarget.style.borderColor = 'var(--border-faint)';
+          }}
+        >
+          <span 
+            className="text-2xl md:text-3xl font-bold font-kh-teka group-hover:scale-110 transition-transform duration-300"
+            style={{ color: 'var(--text-primary)' }}
+          >
             A
           </span>
         </div>
@@ -71,7 +89,8 @@ export default function Navigation() {
         >
           {/* Main Menu Strip */}
           <div
-            className="bg-black/30 backdrop-blur-md rounded-lg sm:rounded-[0.5vw] border border-white/10 px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl"
+            className="backdrop-blur-md rounded-lg sm:rounded-[0.5vw] px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl"
+            style={{ backgroundColor: 'var(--bg-glass)', borderWidth: '1px', borderColor: 'var(--border-faint)' }}
             onMouseEnter={() => {
               if (closeTimeoutRef.current) {
                 clearTimeout(closeTimeoutRef.current);
@@ -90,20 +109,20 @@ export default function Navigation() {
               }, 150);
             }}
           >
-            <span className="text-white text-xs sm:text-sm md:text-base lg:text-lg font-light tracking-wider">MENU</span>
+            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-light tracking-wider" style={{ color: 'var(--text-primary)' }}>MENU</span>
             
             <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
               {/* Hamburger Icon */}
               <div className={`relative h-3.5 sm:h-4 w-5 sm:w-6 pointer-events-auto flex flex-col justify-center gap-1.5 transition-all duration-300 z-50 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
-                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out absolute top-0 left-0 ${
+                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 rounded-full transition-all duration-300 ease-out absolute top-0 left-0 ${
                   isOpen ? 'translate-y-[6px] sm:translate-y-[7px] rotate-45' : 'translate-y-0 rotate-0'
-                }`}></span>
-                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out ${
+                }`} style={{ backgroundColor: 'var(--text-primary)' }}></span>
+                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
                   isOpen ? 'opacity-0 scale-x-50' : 'opacity-100 scale-x-100'
-                }`}></span>
-                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 bg-white rounded-full transition-all duration-300 ease-out absolute bottom-0 left-0 ${
+                }`} style={{ backgroundColor: 'var(--text-primary)' }}></span>
+                <span className={`pointer-events-none w-5 sm:w-6 h-0.5 rounded-full transition-all duration-300 ease-out absolute bottom-0 left-0 ${
                   isOpen ? '-translate-y-[6px] sm:-translate-y-[7px] -rotate-45' : 'translate-y-0 rotate-0'
-                }`}></span>
+                }`} style={{ backgroundColor: 'var(--text-primary)' }}></span>
                 <button
                   aria-label="toggle menu"
                   className="absolute -inset-2"
@@ -150,8 +169,13 @@ export default function Navigation() {
           >
             <div
               ref={listRef}
-              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-[0.5vw] border border-white/20 shadow-2xl w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl max-h-[70vh] sm:max-h-[60vh] overflow-y-scroll bg-black/50 backdrop-blur-2xl`}
-              style={{ overscrollBehavior: 'contain' }}
+              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-[0.5vw] shadow-2xl w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl max-h-[70vh] sm:max-h-[60vh] overflow-y-scroll backdrop-blur-2xl`}
+              style={{ 
+                overscrollBehavior: 'contain',
+                backgroundColor: 'var(--bg-glass-heavy)',
+                borderWidth: '1px',
+                borderColor: 'var(--border-medium)'
+              }}
               onMouseEnter={() => {
                 if (closeTimeoutRef.current) {
                   clearTimeout(closeTimeoutRef.current);
@@ -170,19 +194,25 @@ export default function Navigation() {
               <div className="p-4 sm:p-6 md:p-8 lg:p-10">
                 {/* Sections */}
                 <div className="mb-6">
-                  <h3 className={`text-white/70 text-sm font-secondary tracking-wider mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
-                    isMenuHovered ? (fastOpen ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 delay-[100ms]') : 'opacity-0 translate-y-4'
-                  }`}>PAGES</h3>
+                  <h3 
+                    className={`text-sm font-secondary tracking-wider mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                      isMenuHovered ? (fastOpen ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 delay-[100ms]') : 'opacity-0 translate-y-4'
+                    }`}
+                    style={{ color: 'var(--text-muted)' }}
+                  >PAGES</h3>
                   <div className="space-y-3">
                     {menuItems.map((item, i) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`block text-white text-lg sm:text-xl md:text-2xl font-light hover:text-white/70 transition-all duration-300 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                        className={`block text-lg sm:text-xl md:text-2xl font-light transition-all duration-300 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                           isMenuHovered 
                             ? `opacity-100 translate-y-0 ${fastOpen ? '' : `delay-[${150 + i * 50}ms]`}` 
                             : 'opacity-0 translate-y-4'
                         }`}
+                        style={{ color: 'var(--text-primary)' }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                         onClick={() => {
                           setIsMenuHovered(false);
                           setForceClosed(false);
@@ -198,11 +228,19 @@ export default function Navigation() {
                 {/* Book a Call CTA */}
                 <Link 
                   href="/contact"
-                  className={`w-full bg-white text-black py-2 rounded-none border border-white/30 text-sm font-medium tracking-wider transition-all duration-300 hover:bg-white/90 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                  className={`w-full py-2 rounded-none text-sm font-medium tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
                     isMenuHovered 
                       ? 'opacity-100 translate-y-0 delay-[400ms]' 
                       : 'opacity-0 translate-y-6'
                   }`}
+                  style={{ 
+                    backgroundColor: 'var(--cta-primary)', 
+                    color: 'var(--cta-primary-text)',
+                    borderWidth: '1px',
+                    borderColor: 'var(--cta-secondary-border)'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--cta-hover)'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--cta-primary)'}
                   onClick={() => {
                     setIsMenuHovered(false);
                     setForceClosed(false);
@@ -213,11 +251,14 @@ export default function Navigation() {
                 </Link>
 
                 {/* Theme Toggle */}
-                <div className={`w-full flex justify-center mt-6 pt-6 border-t border-white/10 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
-                  isMenuHovered 
-                    ? 'opacity-100 translate-y-0 delay-[450ms]' 
-                    : 'opacity-0 translate-y-6'
-                }`}>
+                <div 
+                  className={`w-full flex justify-center mt-6 pt-6 border-t ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                    isMenuHovered 
+                      ? 'opacity-100 translate-y-0 delay-[450ms]' 
+                      : 'opacity-0 translate-y-6'
+                  }`}
+                  style={{ borderColor: 'var(--border-faint)' }}
+                >
                   <ThemeToggle />
                 </div>
               </div>
@@ -236,7 +277,23 @@ export default function Navigation() {
           href="/contact"
           className="group cursor-pointer"
         >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-none px-6 py-2 flex items-center gap-2 transition-all duration-300 hover:bg-white hover:text-black text-white">
+          <div 
+            className="backdrop-blur-md rounded-none px-6 py-2 flex items-center gap-2 transition-all duration-300"
+            style={{ 
+              backgroundColor: 'var(--bg-glass)',
+              borderWidth: '1px',
+              borderColor: 'var(--border-medium)',
+              color: 'var(--text-primary)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--cta-primary)';
+              e.currentTarget.style.color = 'var(--cta-primary-text)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--bg-glass)';
+              e.currentTarget.style.color = 'var(--text-primary)';
+            }}
+          >
             <span className="text-sm font-medium tracking-wider">BOOK A CALL</span>
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

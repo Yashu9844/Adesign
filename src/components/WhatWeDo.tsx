@@ -156,16 +156,16 @@ export default function WhatWeDo() {
             >
               <Link href={service.href} className="block h-full">
                 {/* Card */}
-                <div className="relative h-full p-6 sm:p-8 lg:p-10 transition-all duration-500 overflow-hidden" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-card-hover)'; e.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-card)'; e.style.borderColor = 'var(--border-medium)'; }}>
+                <div className="relative h-full p-6 sm:p-8 lg:p-10 transition-all duration-500 overflow-hidden" style={{ backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-glass)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                   {/* Gradient Background on Hover */}
                   <div
-                    className={`absolute inset-0 bg-linear-to-br ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                    className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
                   />
 
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Number */}
-                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-accent font-black transition-colors duration-500 mb-6 sm:mb-8" style={{ color: 'var(--text-25)' }} onMouseEnter={(e) => { e.style.color = 'var(--text-very-subtle)'; }} onMouseLeave={(e) => { e.style.color = 'var(--text-25)'; }}>
+                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-accent font-black transition-colors duration-500 mb-6 sm:mb-8" style={{ color: 'var(--text-disabled)', opacity: 0.5 }} onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.3'; }} onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.5'; }}>
                       {service.number}
                     </span>
 
@@ -185,7 +185,7 @@ export default function WhatWeDo() {
                         <span
                           key={cap}
                           className="px-3 py-1.5 text-[11px] sm:text-xs tracking-wide"
-                          style={{ color: 'var(--text-60)', backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}
+                          style={{ color: 'var(--text-muted)', backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderColor: 'var(--border-faint)' }}
                         >
                           {cap}
                         </span>
@@ -193,7 +193,7 @@ export default function WhatWeDo() {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-3 transition-colors duration-300" style={{ color: 'var(--text-muted)' }} onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; }}>
+                    <div className="flex items-center gap-3 transition-colors duration-300" style={{ color: 'var(--text-muted)' }} onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}>
                       <span className="text-xs sm:text-sm font-medium tracking-widest uppercase">
                         Learn More
                       </span>

@@ -164,7 +164,7 @@ export default function SelectedWork() {
                 </motion.div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 transition-all duration-500" style={{ backgroundColor: 'var(--bg-overlay)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-overlay-heavy)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-overlay)'; }} />
+                <div className="absolute inset-0 transition-all duration-500" style={{ backgroundColor: 'var(--bg-overlay)' }} onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.5'; }} onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }} />
 
                 {/* Corner Accents */}
                 <div className="absolute top-0 left-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -228,13 +228,13 @@ export default function SelectedWork() {
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base font-light leading-relaxed mb-6" style={{ color: 'var(--text-55)' }}>
+                <p className="text-sm sm:text-base font-light leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
                   {project.description}
                 </p>
 
                 {/* Results Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 w-fit" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}>
-                  <span className="w-2 h-2 rounded-full bg-green-400/80" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 w-fit" style={{ backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderColor: 'var(--border-medium)' }}>
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#10B981', opacity: 0.8 }} />
                   <span className="text-xs sm:text-sm tracking-wide" style={{ color: 'var(--text-muted)' }}>
                     {project.results}
                   </span>
@@ -253,7 +253,7 @@ export default function SelectedWork() {
           className="flex justify-center mt-16 sm:mt-20 md:mt-28"
         >
           <Link href="/work">
-          <button className="group relative px-8 sm:px-12 py-4 sm:py-5 transition-all duration-500 overflow-hidden" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-medium)'; }}>
+          <button className="group relative px-8 sm:px-12 py-4 sm:py-5 transition-all duration-500 overflow-hidden" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderWidth: '1px', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
             <span className="relative z-10 flex items-center gap-3">
                 <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase">
                   View All Projects
@@ -272,7 +272,7 @@ export default function SelectedWork() {
                   />
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500" style={{ backgroundColor: 'var(--text-primary)' }} />
             </button>
           </Link>
         </motion.div>

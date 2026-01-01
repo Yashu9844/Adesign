@@ -96,7 +96,7 @@ export default function TeamSection() {
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Background Gradient */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-linear-to-bl from-white/[0.02] to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-white/[0.02] to-transparent pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
@@ -153,7 +153,7 @@ export default function TeamSection() {
               onMouseLeave={() => setHoveredFounder(null)}
               className="group relative"
             >
-              <div className="relative overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-medium)'; }}>
+              <div className="relative overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <motion.img
@@ -165,25 +165,25 @@ export default function TeamSection() {
                     }}
                     transition={{ duration: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                   {/* Social Links - Appear on Hover */}
                   <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <a
                       href={founder.linkedin}
                       className="w-10 h-10 flex items-center justify-center backdrop-blur-md transition-all duration-300"
-                      style={{ backgroundColor: 'var(--bg-glass)', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
-                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
+                      style={{ backgroundColor: 'var(--bg-glass)', borderWidth: '1px', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
                     <a
                       href={founder.twitter}
                       className="w-10 h-10 flex items-center justify-center backdrop-blur-md transition-all duration-300"
-                      style={{ backgroundColor: 'var(--bg-glass)', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; }}
-                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; e.style.borderColor = 'var(--border-light)'; }}
+                      style={{ backgroundColor: 'var(--bg-glass)', borderWidth: '1px', borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }}
                     >
                       <Twitter className="w-4 h-4" />
                     </a>
@@ -199,7 +199,7 @@ export default function TeamSection() {
                   <p className="text-sm sm:text-base mb-4" style={{ color: 'var(--text-subtle)' }}>{founder.role}</p>
 
                   {/* Bio */}
-                  <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--text-55)' }}>
+                  <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
                     {founder.bio}
                   </p>
 
@@ -209,7 +209,7 @@ export default function TeamSection() {
                       <span
                         key={skill}
                         className="px-3 py-1 text-[11px] sm:text-xs tracking-wide"
-                        style={{ color: 'var(--text-60)', backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}
+                        style={{ color: 'var(--text-muted)', backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderColor: 'var(--border-faint)' }}
                       >
                         {skill}
                       </span>
@@ -248,7 +248,7 @@ export default function TeamSection() {
                 className="group text-center"
               >
                 {/* Image */}
-                <div className="relative aspect-square mb-4 overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+                <div className="relative aspect-square mb-4 overflow-hidden" style={{ backgroundColor: 'var(--bg-elevated)' }}>
                   <img
                     src={member.image}
                     alt={member.name}

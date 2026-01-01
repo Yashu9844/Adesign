@@ -94,7 +94,7 @@ export default function Footer() {
               key={i}
               className="text-[15vw] sm:text-[12vw] md:text-[10vw] font-accent font-black text-transparent stroke-text mx-8 select-none"
               style={{
-                WebkitTextStroke: '2px rgba(255,255,255,0.25)',
+                WebkitTextStroke: '2px var(--border-medium)',
               }}
             >
               LET'S WORK TOGETHER
@@ -115,7 +115,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
               <Link href="/" className="inline-block group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all duration-300" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-card-hover)'; e.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-card)'; e.style.borderColor = 'var(--border-medium)'; }}>
+              <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all duration-300" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-glass)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
                   <span className="text-2xl sm:text-3xl font-bold font-accent group-hover:scale-110 transition-transform duration-300" style={{ color: 'var(--text-primary)' }}>
                     A
                   </span>
@@ -145,8 +145,8 @@ export default function Footer() {
                 href="mailto:hello@agency.com"
                 className="group flex items-center gap-3 transition-colors duration-300"
                 style={{ color: 'var(--text-subtle)' }}
-                onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
-                onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 <Mail className="w-4 h-4" />
                 <span className="text-sm md:text-base">hello@agency.com</span>
@@ -156,8 +156,8 @@ export default function Footer() {
                 href="tel:+15551234567"
                 className="group flex items-center gap-3 transition-colors duration-300"
                 style={{ color: 'var(--text-subtle)' }}
-                onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
-                onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-sm md:text-base">+1 (555) 123-4567</span>
@@ -185,8 +185,8 @@ export default function Footer() {
                   aria-label={social.label}
                   className="group w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300"
                   style={{ borderColor: 'var(--border-medium)', color: 'var(--text-subtle)' }}
-                  onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; e.style.borderColor = 'var(--border-light)'; e.style.backgroundColor = 'var(--bg-card)'; }}
-                  onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; e.style.borderColor = 'var(--border-medium)'; e.style.backgroundColor = 'transparent'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.backgroundColor = 'transparent'; }}
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
                 </a>
@@ -202,7 +202,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-30)' }}>
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-subtle)' }}>
                 Navigation
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -212,8 +212,8 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-2 transition-colors duration-300"
                       style={{ color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
-                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
@@ -237,7 +237,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-30)' }}>
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6" style={{ color: 'var(--text-subtle)' }}>
                 Services
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -247,8 +247,8 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-2 transition-colors duration-300"
                       style={{ color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.style.color = 'var(--text-primary)'; }}
-                      onMouseLeave={(e) => { e.style.color = 'var(--text-muted)'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
                       onMouseEnter={() => setHoveredLink(link.label)}
                       onMouseLeave={() => setHoveredLink(null)}
                     >
@@ -273,14 +273,14 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="col-span-2 sm:col-span-1"
             >
-              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-6" style={{ color: 'var(--text-30)' }}>
+              <h4 className="text-xs md:text-sm tracking-[0.3em] uppercase mb-6" style={{ color: 'var(--text-subtle)' }}>
                 Start a Project
               </h4>
               <p className="text-xs md:text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-subtle)' }}>
                 Have an idea? Let's bring it to life together.
               </p>
               <Link href="/contact">
-                <button className="group w-full px-6 py-4 transition-all duration-300" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-medium)', color: 'var(--text-secondary)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'var(--bg-card-hover)'; e.style.borderColor = 'var(--border-light)'; e.style.color = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--bg-card)'; e.style.borderColor = 'var(--border-medium)'; e.style.color = 'var(--text-secondary)'; }}>
+                <button className="group w-full px-6 py-4 transition-all duration-300" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-secondary)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-glass)'; e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.color = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}>
                   <span className="flex items-center justify-between">
                     <span className="text-sm font-medium tracking-wider uppercase">
                       Book a Call
@@ -304,7 +304,7 @@ export default function Footer() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-xs sm:text-sm"
-              style={{ color: 'var(--text-30)' }}
+              style={{ color: 'var(--text-subtle)' }}
             >
               © {currentYear} Agency. All rights reserved.
             </motion.p>
@@ -319,19 +319,19 @@ export default function Footer() {
               <Link
                 href="/privacy"
                 className="text-xs sm:text-sm transition-colors duration-300"
-                style={{ color: 'var(--text-30)' }}
-                onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
-                onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
+                style={{ color: 'var(--text-subtle)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 Privacy Policy
               </Link>
-              <span style={{ color: 'var(--text-very-subtle)' }}>|</span>
+              <span style={{ color: 'var(--border-medium)' }}>|</span>
               <Link
                 href="/terms"
                 className="text-xs sm:text-sm transition-colors duration-300"
-                style={{ color: 'var(--text-30)' }}
-                onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
-                onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
+                style={{ color: 'var(--text-subtle)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 Terms of Service
               </Link>
@@ -344,9 +344,9 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.7 }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="group flex items-center gap-2 text-xs sm:text-sm transition-colors duration-300"
-              style={{ color: 'var(--text-30)' }}
-              onMouseEnter={(e) => { e.style.color = 'var(--text-muted)'; }}
-              onMouseLeave={(e) => { e.style.color = 'var(--text-30)'; }}
+              style={{ color: 'var(--text-subtle)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
             >
               <span>Back to top</span>
               <svg
@@ -369,7 +369,7 @@ export default function Footer() {
 
       {/* Large decorative text at bottom */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
-        <div className="text-[20vw] font-accent font-black leading-none text-center select-none translate-y-1/3" style={{ color: 'var(--text-25)' }}>
+        <div className="text-[20vw] font-accent font-black leading-none text-center select-none translate-y-1/3" style={{ color: 'var(--text-disabled)', opacity: 0.3 }}>
           AGENCY
         </div>
       </div>

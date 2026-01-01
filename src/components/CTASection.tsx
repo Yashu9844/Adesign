@@ -69,8 +69,8 @@ export default function CTASection() {
 
       {/* Decorative lines */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-linear-to-b from-transparent via-white/5 to-transparent" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-linear-to-b from-transparent via-white/5 to-transparent" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -121,7 +121,7 @@ export default function CTASection() {
           >
             {/* Primary CTA */}
             <Link href="/contact">
-              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--text-primary)', color: 'var(--bg-primary)' }} onMouseEnter={(e) => { e.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; }} onMouseLeave={(e) => { e.style.backgroundColor = 'var(--text-primary)'; }}>
+              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'var(--text-primary)', color: 'var(--bg-primary)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--text-primary)'; }}>
                 <span className="relative z-10 flex items-center gap-3">
                   <span className="text-sm sm:text-base font-medium tracking-[0.15em] uppercase">
                     Book a Call
@@ -145,7 +145,7 @@ export default function CTASection() {
 
             {/* Secondary CTA */}
             <a href="mailto:hello@agency.com">
-              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--border-light)' }} onMouseEnter={(e) => { e.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.style.borderColor = 'var(--border-light)'; }}>
+              <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderWidth: '1px', borderColor: 'var(--border-light)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; }}>
                 <span className="relative z-10 flex items-center gap-3">
                   <span className="text-sm sm:text-base font-medium tracking-[0.15em] uppercase">
                     hello@agency.com
@@ -176,11 +176,11 @@ export default function CTASection() {
             transition={{ duration: 1, delay: 1 }}
             className="mt-20 sm:mt-28 flex items-center justify-center gap-4"
           >
-            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
-            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--text-30)' }}>
+            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--border-medium)' }} />
+            <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--text-subtle)' }}>
               No pitch, just conversation
             </span>
-            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--text-very-subtle)' }} />
+            <div className="w-16 sm:w-24 h-px" style={{ backgroundColor: 'var(--border-medium)' }} />
           </motion.div>
         </div>
       </div>

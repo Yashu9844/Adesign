@@ -43,8 +43,8 @@ const TechStack = () => {
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert transition-opacity duration-300"
-                    style={{ opacity: '0.7' }}
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain transition-opacity duration-300"
+                    style={{ opacity: '0.7', filter: 'brightness(0) invert(var(--logo-invert, 1))' }}
                     onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
                     onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '0.7'; }}
                   />
@@ -64,12 +64,12 @@ const TechStack = () => {
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain filter brightness-0 invert transition-opacity duration-300"
-                    style={{ opacity: '0.7' }}
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain transition-opacity duration-300"
+                    style={{ opacity: '0.7', filter: 'brightness(0) invert(var(--logo-invert, 1))' }}
                     onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
                     onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => { (e.target as HTMLImageElement).style.opacity = '0.7'; }}
                   />
-                  <span className="text-sm sm:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-subtle)' }} onMouseEnter={(e) => { e.style.color = 'var(--text-secondary)'; }} onMouseLeave={(e) => { e.style.color = 'var(--text-subtle)'; }}>
+                  <span className="text-sm sm:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-subtle)' }} onMouseEnter={(e: React.MouseEvent<HTMLSpanElement>) => { (e.target as HTMLSpanElement).style.color = 'var(--text-secondary)'; }} onMouseLeave={(e: React.MouseEvent<HTMLSpanElement>) => { (e.target as HTMLSpanElement).style.color = 'var(--text-subtle)'; }}>
                     {tech.name}
                   </span>
                 </div>
