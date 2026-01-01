@@ -240,7 +240,7 @@ export default function VertexCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[300px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border border-white/10 mb-16"
+            className="relative h-[300px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border mb-16" style={{ borderColor: 'var(--border-faint)' }}
           >
             <Image
               src="/images/pimg6.webp"
@@ -329,7 +329,7 @@ export default function VertexCaseStudy() {
               >
                 {/* Text Content */}
                 <div className={idx % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <h3 className="text-4xl sm:text-5xl font-accent font-black mb-8 text-white">{section.category}</h3>
+                  <h3 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>{section.category}</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {section.items.map((item, i) => (
                       <motion.div
@@ -338,11 +338,11 @@ export default function VertexCaseStudy() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: i * 0.05 }}
-                        className="p-4 rounded-none border border-white/10 bg-white/5 hover:bg-white/10 transition-all"
+                        className="p-4 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <Lightbulb className="w-4 h-4 text-white/60" />
-                          <span className="text-sm text-white">{item}</span>
+                          <Lightbulb className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
+                          <span className="text-sm" style={{ color: 'var(--text-primary)' }}>{item}</span>
                         </div>
                       </motion.div>
                     ))}
@@ -350,7 +350,7 @@ export default function VertexCaseStudy() {
                 </div>
 
                 {/* Image */}
-                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border border-white/10 ${idx % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border ${idx % 2 === 1 ? 'lg:col-start-1' : ''}`} style={{ borderColor: 'var(--border-faint)' }}>
                   <Image
                     src={section.image}
                     alt={section.category}
