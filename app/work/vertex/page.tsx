@@ -429,7 +429,7 @@ export default function VertexCaseStudy() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-white/5">
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
         <div className="w-full max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -442,12 +442,12 @@ export default function VertexCaseStudy() {
                 <span key={i} className="text-3xl">⭐</span>
               ))}
             </div>
-            <p className="text-2xl sm:text-3xl font-light text-white/90 leading-relaxed mb-8">
+            <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
               "This wasn't just a rebrand. They completely reimagined how we communicate our value. The design system alone saved us millions in development costs down the line."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold text-white">Michael Torres</p>
-              <p className="text-white/60">Founder & CEO, Vertex</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Michael Torres</p>
+              <p style={{ color: 'var(--text-muted)' }}>Founder & CEO, Vertex</p>
             </div>
           </motion.div>
         </div>
@@ -462,17 +462,17 @@ export default function VertexCaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8 text-white">
-              Ready to Build Your <span className="text-white/40">Brand Legacy?</span>
+            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Ready to Build Your <span style={{ color: 'var(--text-subtle)' }}>Brand Legacy?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 bg-white text-black rounded-full font-accent font-bold hover:bg-white/90 transition-all">
+                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Let's Talk
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border border-white/30 text-white rounded-full font-accent font-bold hover:border-white/60 transition-all">
+                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-medium)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}>
                   See More Work
                 </button>
               </Link>
