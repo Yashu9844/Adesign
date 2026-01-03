@@ -96,8 +96,8 @@ export default function Hero() {
                 </p>
               </div>
               
-              {/* CTA Button - Accessible sizing (min 44px touch target, min 12px text) */}
-              <div className="mt-2 sm:mt-4">
+              {/* CTA Buttons - Accessible sizing (min 44px touch target, min 12px text) */}
+              <div className="mt-2 sm:mt-4 flex flex-wrap gap-3 sm:gap-4">
                 <Link href="/contact">
                   <button className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 transition-all duration-500 overflow-hidden min-h-[44px]" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--text-primary)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--cta-primary)'; e.currentTarget.style.color = 'var(--cta-primary-text)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
                     <span className="relative z-10 flex items-center gap-2.5">
@@ -106,6 +106,11 @@ export default function Hero() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
+                  </button>
+                </Link>
+                <Link href="/pricing">
+                  <button className="group relative px-6 sm:px-8 py-3 sm:py-4 border transition-all duration-500 overflow-hidden min-h-[44px]" style={{ backgroundColor: 'transparent', color: 'var(--text-subtle)', borderColor: 'var(--border-faint)' }} onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }} onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; e.currentTarget.style.borderColor = 'var(--border-faint)'; }}>
+                    <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase">See Pricing</span>
                   </button>
                 </Link>
               </div>
