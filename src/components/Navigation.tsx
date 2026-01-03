@@ -89,7 +89,7 @@ export default function Navigation() {
         >
           {/* Main Menu Strip */}
           <div
-            className="backdrop-blur-md rounded-lg sm:rounded-[0.5vw] px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl"
+            className="backdrop-blur-md rounded-lg sm:rounded-[0.5vw] px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between w-[70vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl"
             style={{ backgroundColor: 'var(--bg-glass)', borderWidth: '1px', borderColor: 'var(--border-faint)' }}
             onMouseEnter={() => {
               if (closeTimeoutRef.current) {
@@ -169,7 +169,7 @@ export default function Navigation() {
           >
             <div
               ref={listRef}
-              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-[0.5vw] shadow-2xl w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl max-h-[70vh] sm:max-h-[60vh] overflow-y-scroll backdrop-blur-2xl`}
+              className={`nav-menu-scroll rounded-xl sm:rounded-2xl md:rounded-[0.5vw] shadow-2xl w-[70vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] max-w-xl max-h-[70vh] sm:max-h-[60vh] overflow-y-scroll backdrop-blur-2xl`}
               style={{ 
                 overscrollBehavior: 'contain',
                 backgroundColor: 'var(--bg-glass-heavy)',
@@ -249,33 +249,21 @@ export default function Navigation() {
                 >
                   BOOK A CALL
                 </Link>
-
-                {/* Theme Toggle */}
-                <div 
-                  className={`w-full flex justify-center mt-6 pt-6 border-t ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
-                    isMenuHovered 
-                      ? 'opacity-100 translate-y-0 delay-[450ms]' 
-                      : 'opacity-0 translate-y-6'
-                  }`}
-                  style={{ borderColor: 'var(--border-faint)' }}
-                >
-                  <ThemeToggle />
-                </div>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Desktop Right Controls - Book a Call & Theme Toggle */}
-      <div className="hidden lg:flex fixed top-6 md:top-8 right-6 md:right-8 z-50 items-center gap-3">
+      {/* Right Controls - Theme Toggle (all screens) & Book a Call (desktop only) */}
+      <div className="fixed top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 z-50 flex items-center gap-3">
         {/* Theme Toggle */}
         <ThemeToggle />
 
-        {/* Book a Call Button */}
+        {/* Book a Call Button - Desktop Only */}
         <Link
           href="/contact"
-          className="group cursor-pointer"
+          className="hidden lg:block group cursor-pointer"
         >
           <div 
             className="backdrop-blur-md rounded-none px-6 py-2 flex items-center gap-2 transition-all duration-300"

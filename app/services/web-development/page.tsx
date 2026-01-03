@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { ArrowUpRight, ArrowLeft, Code2, Database, Cloud, Shield, Rocket, GitBranch, Server, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -218,11 +219,7 @@ export default function WebDevelopmentPage() {
       <CTASection />
 
       {/* Footer */}
-      <footer className="py-12 border-t" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border-faint)' }}>
-        <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-center">
-          <p className="text-sm" style={{ color: 'var(--text-subtle)' }}>© 2025 Agency. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
