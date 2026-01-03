@@ -295,7 +295,7 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border mb-8" style={{ borderColor: 'var(--border-faint)' }}>
+            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border mb-8" style={{ borderColor: 'var(--border-faint)' }}
           >
             <Image
               src="/images/pimg11.webp"

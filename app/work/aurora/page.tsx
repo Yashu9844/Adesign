@@ -235,7 +235,7 @@ export default function AuroraCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
+              className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
                 src="/images/pimg13.webp"

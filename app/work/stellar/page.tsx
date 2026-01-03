@@ -221,10 +221,10 @@ export default function StellarCaseStudy() {
                 <div className="mb-4" style={{ color: 'var(--text-muted)' }}>{category.icon}</div>
                 <h3 className="text-xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>{category.title}</h3>
                 <ul className="space-y-2">
-                  {category.items.map((item, j) => (
+                  {category.tech.map((item, j) => (
                     <li key={j} className="text-sm flex items-center gap-2" style={{ color: 'var(--text-muted)' }}>
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--border-medium)' }} />
-                      {tech}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -340,7 +340,7 @@ export default function StellarCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
+              className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
                 src="/images/pimg13.webp"
