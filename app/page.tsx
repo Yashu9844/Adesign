@@ -8,6 +8,7 @@ import WhatWeDo from "@/components/WhatWeDo";
 import HowWeWork from "@/components/HowWeWork";
 import TeamSection from "@/components/TeamSection";
 import Testimonials from "@/components/Testimonials";
+import PricingPreview from "@/components/PricingPreview";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
@@ -54,6 +55,12 @@ export default function Home() {
 
       {/* Testimonials - What Clients Say */}
       <Testimonials />
+
+      {/* Gradient Divider */}
+      <div className="w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+
+      {/* Pricing Preview */}
+      <PricingPreview />
 
       {/* Gradient Divider */}
       <div className="w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />

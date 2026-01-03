@@ -45,6 +45,7 @@ export default function Navigation() {
     { label: 'HOME', href: '/' },
     { label: 'WORK', href: '/work' },
     { label: 'SERVICES', href: '/services' },
+    { label: 'PRICING', href: '/pricing' },
     { label: 'ABOUT', href: '/about' },
     { label: 'CONTACT', href: '/contact' },
   ];
