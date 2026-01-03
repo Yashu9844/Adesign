@@ -144,6 +144,7 @@ html.dark {
   --bg-primary: #000000;
   --bg-secondary: #0a0a0a;
   --bg-elevated: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.08);
   --bg-overlay: rgba(0, 0, 0, 0.2);
   --bg-glass: rgba(0, 0, 0, 0.3);
   --bg-glass-heavy: rgba(0, 0, 0, 0.5);
@@ -157,6 +158,7 @@ html.dark {
   --text-subtle: rgba(255, 255, 255, 0.3);
   --text-60: rgba(255, 255, 255, 0.6); /* For stats */
   --text-light: rgba(255, 255, 255, 0.7); /* For icons */
+  --text-number: rgba(255, 255, 255, 0.05); /* For large service numbers */
   
   /* Borders & Lines */
   --border-light: rgba(255, 255, 255, 0.3);
@@ -182,41 +184,44 @@ html.dark {
 
 /* Light Mode (Warm Minimal) */
 html.light {
-  /* Backgrounds - Warm stone tones */
-  --bg-primary: #FAFAF9;  /* Stone 50 - Warm off-white */
-  --bg-secondary: #F5F5F4; /* Stone 100 - Subtle gray */
-  --bg-elevated: #FFFFFF;  /* Pure white for cards */
-  --bg-overlay: rgba(12, 10, 9, 0.02);
-  --bg-glass: rgba(255, 255, 255, 0.8);
-  --bg-glass-heavy: rgba(255, 255, 255, 0.95);
+  /* Backgrounds - Maximum contrast light mode */
+  --bg-primary: #F5F5F5;  /* Light gray - modern and clean */
+  --bg-secondary: #DADADA; /* Medium gray for strong section separation */
+  --bg-elevated: #ffffff;  /* Pure white for cards - maximum contrast */
+  --bg-card: #EEEEEE;     /* Light gray for card backgrounds */
+  --bg-dark: #BFBFBF;     /* Dark gray for buttons - very prominent */
+  --bg-overlay: rgba(0, 0, 0, 0.12);
+  --bg-glass: rgba(240, 235, 225, 0.85);
+  --bg-glass-heavy: rgba(220, 210, 195, 0.95);
   
   /* Text Colors - Near-black with warm undertones */
-  --text-primary: #0C0A09;  /* Stone 950 - Premium near-black */
-  --text-secondary: #1C1917; /* Stone 900 */
-  --text-tertiary: #292524;  /* Stone 800 */
+  --text-primary: #000000;   /* Pure black for maximum contrast */
+  --text-secondary: #0C0A09; /* Stone 950 - Very dark */
+  --text-tertiary: #1C1917;  /* Stone 900 */
   --text-muted: #44403C;     /* Stone 700 */
   --text-disabled: #78716C;  /* Stone 500 */
   --text-subtle: #A8A29E;    /* Stone 400 */
-  --text-60: rgba(12, 10, 9, 0.6);  /* For stats */
-  --text-light: rgba(12, 10, 9, 0.7); /* For icons */
+  --text-60: rgba(0, 0, 0, 0.6);    /* For stats */
+  --text-light: rgba(0, 0, 0, 0.7); /* For icons */
+  --text-number: rgba(255, 255, 255, 0.95); /* For large service numbers - white in light mode */
   
-  /* Borders & Lines - Warm subtle */
-  --border-light: rgba(12, 10, 9, 0.12);
-  --border-medium: rgba(12, 10, 9, 0.08);
-  --border-faint: rgba(12, 10, 9, 0.04);
-  --line-primary: rgba(12, 10, 9, 0.5);
-  --line-secondary: rgba(12, 10, 9, 0.15);
-  --line-subtle: rgba(12, 10, 9, 0.25);
+  /* Borders & Lines - Dark/gray for visibility */
+  --border-light: #555555;   /* Dark gray for prominent borders */
+  --border-medium: #333333;  /* Very dark gray for medium borders */
+  --border-faint: #888888;   /* Medium gray for subtle borders */
+  --line-primary: #000000;   /* Pure black for primary lines */
+  --line-secondary: #333333; /* Very dark gray for secondary lines */
+  --line-subtle: #555555;    /* Dark gray for subtle lines */
   
   /* CTAs & Interactive - Premium black */
-  --cta-primary: #18181B;    /* Zinc 900 */
+  --cta-primary: #000000;    /* Pure black */
   --cta-primary-text: #FFFFFF;
-  --cta-hover: rgba(24, 24, 27, 0.9);
-  --cta-secondary-border: rgba(12, 10, 9, 0.2);
+  --cta-hover: rgba(0, 0, 0, 0.9);
+  --cta-secondary-border: rgba(0, 0, 0, 0.3);
   
   /* Gradients */
   --gradient-fade: linear-gradient(to bottom, transparent, #FAFAF9);
-  --gradient-divider: linear-gradient(to right, transparent, rgba(12, 10, 9, 0.1), transparent);
+  --gradient-divider: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.25), transparent);
   
   /* Logo Inversion */
   --logo-invert: 0; /* Don't invert logos in light mode */
@@ -258,12 +263,14 @@ body {
 
 /* Light mode styles */
 html.light body {
-  @apply bg-white text-black;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 /* Dark mode styles */
 html.dark body {
-  @apply bg-black text-white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 * {

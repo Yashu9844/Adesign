@@ -112,11 +112,11 @@ export default function PerformancePage() {
   });
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Navigation />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-black">
+      <section ref={heroRef} className="relative min-h-screen w-full overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
         {/* Background gradient */}
         <motion.div style={{ y }} className="absolute inset-0">
           <div className="absolute top-1/4 right-1/3 w-[700px] h-[700px] bg-yellow-500/10 rounded-full blur-[150px]" />
@@ -153,7 +153,8 @@ export default function PerformancePage() {
             >
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 hover:opacity-100 transition-all group"
+                style={{ color: 'var(--text-muted)', opacity: 0.6 }}
               >
                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                 <span className="text-sm tracking-wide">Back to Services</span>
@@ -167,17 +168,17 @@ export default function PerformancePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex items-center gap-6 mb-8"
             >
-              <span className="text-8xl sm:text-9xl font-accent font-black text-white/5">06</span>
-              <div className="w-16 h-16 flex items-center justify-center border border-white/20 bg-white/5">
-                <Zap className="w-7 h-7 text-white/80" />
+              <span className="text-8xl sm:text-9xl font-accent font-black" style={{ color: 'var(--text-number)' }}>06</span>
+              <div className="w-16 h-16 flex items-center justify-center" style={{ borderWidth: '1px', borderStyle: 'solid', borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}>
+                <Zap className="w-7 h-7" style={{ color: 'var(--text-secondary)' }} />
               </div>
             </motion.div>
 
             {/* Title */}
             <div ref={titleRef} className="mb-8">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black text-white leading-[0.9]">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-accent font-black leading-[0.9]" style={{ color: 'var(--text-primary)' }}>
                 <span className="title-word inline-block">PERFORMANCE</span>{' '}
-                <span className="title-word inline-block text-white/40">& SEO</span>
+                <span className="title-word inline-block" style={{ color: 'var(--text-disabled)' }}>& SEO</span>
               </h1>
             </div>
 
@@ -186,7 +187,8 @@ export default function PerformancePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl sm:text-2xl text-white/60 max-w-2xl font-light mb-12"
+              className="text-xl sm:text-2xl max-w-2xl font-light mb-12"
+              style={{ color: 'var(--text-muted)' }}
             >
               Lightning-fast experiences that rank. Optimize speed, 
               climb search results, and convert more visitors.
@@ -200,9 +202,9 @@ export default function PerformancePage() {
               className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12"
             >
               {stats.map((stat, index) => (
-                <div key={index} className="border-l border-white/10 pl-4">
-                  <div className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-white/40 tracking-wide">{stat.label}</div>
+                <div key={index} className="pl-4" style={{ borderLeft: '1px solid var(--border-faint)' }}>
+                  <div className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>{stat.value}</div>
+                  <div className="text-sm tracking-wide" style={{ color: 'var(--text-disabled)' }}>{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -221,34 +223,34 @@ export default function PerformancePage() {
             transition={{ duration: 1.5, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs text-white/40 tracking-widest uppercase">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
+            <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-disabled)' }}>Scroll</span>
+            <div className="w-px h-12 bg-gradient-to-b" style={{ backgroundImage: 'linear-gradient(to bottom, var(--text-disabled), transparent)' }} />
           </motion.div>
         </motion.div>
       </section>
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px bg-gradient-to-r" style={{ backgroundImage: 'linear-gradient(to right, transparent, var(--border-faint), transparent)' }} />
 
       {/* Capabilities Section */}
       <CapabilitiesSection />
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px bg-gradient-to-r" style={{ backgroundImage: 'linear-gradient(to right, transparent, var(--border-faint), transparent)' }} />
 
       {/* Metrics Section */}
       <MetricsSection />
 
       {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="w-full h-px bg-gradient-to-r" style={{ backgroundImage: 'linear-gradient(to right, transparent, var(--border-faint), transparent)' }} />
 
       {/* CTA Section */}
       <CTASection />
 
       {/* Footer */}
-      <footer className="py-12 bg-black border-t border-white/10">
+      <footer className="py-12" style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-faint)' }}>
         <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-center">
-          <p className="text-white/40 text-sm">© 2025 Agency. All rights reserved.</p>
+          <p className="text-sm" style={{ color: 'var(--text-disabled)' }}>© 2025 Agency. All rights reserved.</p>
         </div>
       </footer>
     </div>
@@ -260,7 +262,7 @@ function CapabilitiesSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="relative py-24 sm:py-32 lg:py-40 bg-black overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 sm:py-32 lg:py-40 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Header */}
         <motion.div
@@ -269,10 +271,10 @@ function CapabilitiesSection() {
           transition={{ duration: 0.8 }}
           className="mb-16 sm:mb-24"
         >
-          <span className="text-xs text-white/40 tracking-[0.3em] uppercase mb-4 block">Optimization</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-bold text-white">
+          <span className="text-xs tracking-[0.3em] uppercase mb-4 block" style={{ color: 'var(--text-disabled)' }}>Optimization</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-bold" style={{ color: 'var(--text-primary)' }}>
             Performance
-            <span className="text-white/40"> Capabilities</span>
+            <span style={{ color: 'var(--text-disabled)' }}> Capabilities</span>
           </h2>
         </motion.div>
 
@@ -286,14 +288,15 @@ function CapabilitiesSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative p-8 bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-500"
+                className="group relative p-8 hover:bg-opacity-80 transition-all duration-500"
+                style={{ backgroundColor: 'var(--bg-elevated)', borderWidth: '1px', borderStyle: 'solid', borderColor: 'var(--border-faint)' }}
               >
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 mb-6 group-hover:border-yellow-500/30 group-hover:bg-yellow-500/5 transition-all duration-300">
-                  <Icon className="w-5 h-5 text-white/60 group-hover:text-yellow-400 transition-colors" />
+                <div className="w-12 h-12 flex items-center justify-center mb-6 group-hover:border-yellow-500/30 group-hover:bg-yellow-500/5 transition-all duration-300" style={{ borderWidth: '1px', borderStyle: 'solid', borderColor: 'var(--border-faint)' }}>
+                  <Icon className="w-5 h-5 group-hover:text-yellow-400 transition-colors" style={{ color: 'var(--text-muted)' }} />
                 </div>
 
-                <h3 className="text-xl font-accent font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{cap.description}</p>
+                <h3 className="text-xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{cap.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{cap.description}</p>
 
                 <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
@@ -310,7 +313,7 @@ function MetricsSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="relative py-24 sm:py-32 lg:py-40 bg-black overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 sm:py-32 lg:py-40 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Header */}
         <motion.div
@@ -319,12 +322,12 @@ function MetricsSection() {
           transition={{ duration: 0.8 }}
           className="mb-16 sm:mb-24 text-center"
         >
-          <span className="text-xs text-white/40 tracking-[0.3em] uppercase mb-4 block">Results</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-bold text-white">
+          <span className="text-xs tracking-[0.3em] uppercase mb-4 block" style={{ color: 'var(--text-disabled)' }}>Results</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-bold" style={{ color: 'var(--text-primary)' }}>
             Real
-            <span className="text-white/40"> Improvements</span>
+            <span style={{ color: 'var(--text-disabled)' }}> Improvements</span>
           </h2>
-          <p className="text-white/50 mt-4 max-w-lg mx-auto">
+          <p className="mt-4 max-w-lg mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Average metrics improvements across our optimization projects
           </p>
         </motion.div>
@@ -337,25 +340,26 @@ function MetricsSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative p-8 bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 text-center"
+              className="relative p-8 bg-gradient-to-b text-center"
+              style={{ backgroundImage: 'linear-gradient(to bottom, var(--bg-elevated), transparent)', borderWidth: '1px', borderStyle: 'solid', borderColor: 'var(--border-faint)' }}
             >
               {/* Improvement badge */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-500/20 border border-yellow-500/30 px-3 py-1 rounded-full">
                 <span className="text-xs font-bold text-yellow-400">↑ {metric.improvement}</span>
               </div>
 
-              <h3 className="text-2xl font-accent font-black text-white mt-4 mb-1">{metric.label}</h3>
-              <p className="text-xs text-white/40 mb-6">{metric.description}</p>
+              <h3 className="text-2xl font-accent font-black mt-4 mb-1" style={{ color: 'var(--text-primary)' }}>{metric.label}</h3>
+              <p className="text-xs mb-6" style={{ color: 'var(--text-disabled)' }}>{metric.description}</p>
 
               <div className="flex items-center justify-center gap-6">
                 <div>
-                  <div className="text-lg text-white/30 line-through">{metric.before}</div>
-                  <div className="text-[10px] text-white/20 uppercase">Before</div>
+                  <div className="text-lg line-through" style={{ color: 'var(--text-disabled)', opacity: 0.5 }}>{metric.before}</div>
+                  <div className="text-[10px] uppercase" style={{ color: 'var(--text-disabled)', opacity: 0.3 }}>Before</div>
                 </div>
                 <div className="w-8 h-px bg-gradient-to-r from-white/20 to-yellow-500/50" />
                 <div>
-                  <div className="text-lg text-white font-bold">{metric.after}</div>
-                  <div className="text-[10px] text-white/40 uppercase">After</div>
+                  <div className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>{metric.after}</div>
+                  <div className="text-[10px] uppercase" style={{ color: 'var(--text-disabled)' }}>After</div>
                 </div>
               </div>
             </motion.div>
@@ -369,10 +373,10 @@ function MetricsSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-white/40 text-sm mb-6">Tools We Use</p>
+          <p className="text-sm mb-6" style={{ color: 'var(--text-disabled)' }}>Tools We Use</p>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {['Lighthouse', 'PageSpeed Insights', 'GTmetrix', 'WebPageTest', 'Semrush', 'Ahrefs'].map((tool) => (
-              <span key={tool} className="text-white/30 hover:text-white/60 transition-colors text-sm font-medium">
+              <span key={tool} className="hover:opacity-80 transition-colors text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
                 {tool}
               </span>
             ))}
@@ -388,7 +392,7 @@ function CTASection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   return (
-    <section ref={sectionRef} className="relative py-32 sm:py-40 lg:py-52 bg-black overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 sm:py-40 lg:py-52 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-[150px]" />
       </div>
@@ -399,13 +403,13 @@ function CTASection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-xs text-white/40 tracking-[0.3em] uppercase mb-6 block">Speed Up</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-accent font-black text-white mb-8">
+          <span className="text-xs tracking-[0.3em] uppercase mb-6 block" style={{ color: 'var(--text-disabled)' }}>Speed Up</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
             Slow Sites Lose
             <br />
-            <span className="text-white/40">Let's Fix That</span>
+            <span style={{ color: 'var(--text-disabled)' }}>Let's Fix That</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-12">
+          <p className="text-lg max-w-xl mx-auto mb-12" style={{ color: 'var(--text-muted)' }}>
             Every second of load time costs you customers. 
             Get a free performance audit and see what's holding you back.
           </p>
@@ -420,7 +424,7 @@ function CTASection() {
               </button>
             </Link>
             <Link href="/work">
-              <button className="group relative bg-transparent text-white px-10 py-4 border border-white/30 font-medium tracking-wide transition-all duration-300 hover:border-white hover:bg-white/5">
+              <button className="group relative bg-transparent px-10 py-4 font-medium tracking-wide transition-all duration-300 hover:opacity-80" style={{ color: 'var(--text-primary)', borderWidth: '1px', borderStyle: 'solid', borderColor: 'var(--border-medium)' }}>
                 <span className="flex items-center gap-2">
                   VIEW CASE STUDIES
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

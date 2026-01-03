@@ -248,7 +248,7 @@ const ProcessSection = () => {
             <div 
               className="relative p-8 transition-all duration-500"
               style={{ 
-                backgroundColor: 'var(--bg-elevated)', 
+                backgroundColor: 'var(--0vated)', 
                 border: '1px solid var(--border-medium)' 
               }}
               onMouseEnter={(e) => {

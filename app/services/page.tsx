@@ -300,7 +300,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       className="h-full"
     >
       <Link href={service.href} className="block group h-full">
-        <div className="relative h-full flex flex-col border p-6 sm:p-8 overflow-hidden transition-all duration-500" style={{
+        <div className="relative h-full flex flex-col p-6 sm:p-8 overflow-hidden transition-all duration-500 border" style={{
           backgroundColor: 'var(--bg-elevated)',
           borderColor: 'var(--border-faint)'
         }}
@@ -318,7 +318,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
           {/* Number */}
           <div className="relative z-10 flex items-start justify-between mb-8">
-            <span className="text-6xl sm:text-7xl font-accent font-black transition-colors duration-500" style={{ color: 'var(--bg-elevated)' }}>
+            <span className="text-6xl sm:text-7xl font-accent font-black transition-colors duration-500" style={{ color: 'var(--text-subtle)' }}>
               {service.number}
             </span>
             <div className="w-12 h-12 flex items-center justify-center border transition-all duration-300" style={{ borderColor: 'var(--border-faint)' }}
@@ -437,7 +437,7 @@ function ProcessSection() {
                 className="relative text-center lg:text-left"
               >
                 {/* Step number */}
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-6 border relative z-10" style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-primary)' }}>
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-6 border relative z-10" style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-dark)' }}>
                   <span className="text-xl font-accent font-bold" style={{ color: 'var(--text-primary)' }}>{step.number}</span>
                 </div>
 
