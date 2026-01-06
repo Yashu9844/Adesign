@@ -750,7 +750,7 @@ const FeaturedTestimonial = () => {
           >
             <div>
               <p className="text-base font-kh-teka font-medium" style={{ color: 'var(--text-primary)' }}>
-                Sarah Chen
+                Yashavanth R Siddesh
               </p>
               <p className="text-sm font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
                 CEO, TechVentures Inc.
