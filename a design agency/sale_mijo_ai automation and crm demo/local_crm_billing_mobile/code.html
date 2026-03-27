@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Billing &amp; Payments | Salemijo CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A365D", // Trustworthy Deep Blue
+              "secondary": "#047857", // Success Green
+              "accent": "#F59E0B", // Caution/Warning Amber
+              "surface": "#F8FAFC",
+              "on-surface": "#1E293B",
+              "on-surface-variant": "#64748B",
+              "outline-variant": "#E2E8F0"
+            },
+            fontFamily: {
+              "headline": ["IBM Plex Sans", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "4px", "lg": "8px", "xl": "12px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .bharat-card {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white border-b border-outline-variant w-full top-0 px-4 py-3 sticky z-50">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-white text-xl">business_center</span>
+</div>
+<h1 class="font-headline font-bold text-xl tracking-tight text-primary">Salemijo</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface rounded-full">notifications</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 pt-6 pb-24">
+<!-- Header Section -->
+<section class="mb-8">
+<h2 class="font-headline font-bold text-3xl text-primary">Billing &amp; Payments</h2>
+<p class="text-on-surface-variant mt-2 text-sm leading-relaxed">View your agency earnings, manage subscriptions, and pay outstanding dues via Razorpay.</p>
+</section>
+<div class="grid grid-cols-1 gap-6">
+<!-- Dashboard Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Managed Revenue Card -->
+<div class="bharat-card p-5 rounded-lg">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">payments</span>
+<span class="text-on-surface-variant font-medium text-xs uppercase tracking-wider">Total Revenue Managed</span>
+</div>
+<div class="text-3xl font-headline font-bold text-on-surface">₹2,05,450.00</div>
+<div class="flex items-center gap-1 mt-2 text-secondary text-xs font-semibold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.5% vs last month</span>
+</div>
+</div>
+<!-- Current Plan Card -->
+<div class="bharat-card p-5 rounded-lg bg-primary text-white border-none">
+<div class="flex justify-between items-start mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-white/70 text-sm">verified</span>
+<span class="text-white/70 font-medium text-xs uppercase tracking-wider">Agency Plan</span>
+</div>
+<span class="bg-white/20 text-white px-2 py-0.5 rounded text-[10px] font-bold">ACTIVE</span>
+</div>
+<div class="text-2xl font-headline font-bold">Growth Plan</div>
+<div class="text-white/70 text-xs mt-1">Next due: 24 Oct, 2024</div>
+<button class="mt-4 w-full bg-white text-primary font-bold py-2 rounded text-sm hover:bg-opacity-90 transition-all">Upgrade Plan</button>
+</div>
+</div>
+<!-- Pending Balance & Payment (Now prominent for Indian context) -->
+<div class="bharat-card p-6 rounded-lg bg-white">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h3 class="text-on-surface-variant font-medium text-xs uppercase tracking-wider mb-1">Pending Balance</h3>
+<div class="text-4xl font-headline font-bold text-primary">₹1,499.00</div>
+<p class="text-xs mt-2 flex items-center gap-1 text-amber-600"><span class="material-symbols-outlined text-sm">schedule</span> Payment due by 24 Oct, 2024</p>
+</div>
+<div class="flex-1 max-w-md">
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 border border-outline-variant rounded hover:bg-slate-50 cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<img alt="UPI" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQLruzeOt6hwOH7l4jXToTMFOU2hqWrxEb5iNp8EU9VPMRI0-zu5puyHsnqDVffSVPFmjAE8Seg2IyGK6mK6oTbnCVyI6eRxTHkXneXz7MvhQAUqm0_2toLd-d9RmT6TDc9qgfnGg07LyvnIoMCta6RTmnRPYrQxWrvd0MklJBohbiD2q9cUJ_2vRCtJo6npdEqN-mtV3A3UGi89gEnv1VZ53ayXoa1Hw76o225_kfpc5TFjwFk7DR6gnna2lAeBBJ8_ZpODeEtQkB"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Pay via UPI</span>
+<span class="text-[10px] text-on-surface-variant">GPay, PhonePe, Paytm, BHIM</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<button class="w-full bg-on-surface text-white py-3 rounded font-bold text-sm flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm">
+                            Pay Now
+                            <span class="material-symbols-outlined text-sm">bolt</span>
+</button>
+</div>
+<div class="mt-4 flex flex-col items-center gap-2">
+<div class="flex items-center gap-3 opacity-60">
+<img alt="Razorpay" class="h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBud2dHt8Al7eqbfmc7DNL94fIe9SToTWBlZBWssJV_nsTtlZokViCy3zrol6HWzhKqTjVqPnN5bUqOBi3cUUsTgzwDCjduigzOfBzcjXC6G6h3IFS-ZPSOcwDpBBE0l-Yq3dLxiTKWN7OXgdGvHSaIBCO-WPAxy7WxbVTWNflscL5YIwWaxg9eBk8OKGB13CdJszTXw86HMnPc5T2plEECV-OJs46_npisRiu_K0R4aeRO5nfA2O9UNlgubJC5Kp7t1Wx3sCvdusB1"/>
+<span class="text-[10px] text-on-surface-variant font-medium">Secured by Razorpay</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Invoices Table -->
+<div class="bharat-card rounded-lg overflow-hidden bg-white">
+<div class="px-5 py-4 border-b border-outline-variant flex justify-between items-center bg-slate-50">
+<h3 class="font-headline font-bold text-sm text-primary uppercase tracking-wider">Recent Invoices</h3>
+<button class="text-primary text-xs font-bold hover:underline">Download All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50/50 text-on-surface-variant text-[11px] uppercase tracking-wider font-semibold">
+<tr>
+<th class="px-5 py-3 border-b border-outline-variant">Invoice No.</th>
+<th class="px-5 py-3 border-b border-outline-variant">Date</th>
+<th class="px-5 py-3 border-b border-outline-variant">Amount</th>
+<th class="px-5 py-3 border-b border-outline-variant">Status</th>
+<th class="px-5 py-3 border-b border-outline-variant text-right">Download</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 font-medium text-xs">#INV-88291</td>
+<td class="px-5 py-4 text-xs text-on-surface-variant">24 Sep, 2024</td>
+<td class="px-5 py-4 font-bold text-xs text-on-surface">₹1,499.00</td>
+<td class="px-5 py-4">
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">download</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 font-medium text-xs">#INV-87102</td>
+<td class="px-5 py-4 text-xs text-on-surface-variant">24 Aug, 2024</td>
+<td class="px-5 py-4 font-bold text-xs text-on-surface">₹1,499.00</td>
+<td class="px-5 py-4">
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">download</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 font-medium text-xs">#INV-86554</td>
+<td class="px-5 py-4 text-xs text-on-surface-variant">24 Jul, 2024</td>
+<td class="px-5 py-4 font-bold text-xs text-on-surface">₹1,250.00</td>
+<td class="px-5 py-4">
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">download</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-5 py-3 bg-slate-50 text-center border-t border-outline-variant">
+<button class="text-on-surface-variant text-xs font-medium hover:text-primary">Show More Transactions</button>
+</div>
+</div>
+<!-- Business Health Tip -->
+<div class="bg-primary/5 border border-primary/10 p-5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<h4 class="font-bold text-primary text-sm mb-1">Tax Savings Tip</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Ensure your <strong>GSTIN</strong> is updated in settings to claim Input Tax Credit (ITC) on your subscription invoices.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white border-t border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-medium mt-1">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-[10px] font-medium mt-1">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary px-3 py-1 bg-primary/5 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[10px] font-bold mt-1">Billing</span>
+</a>
+</nav>
+</body></html>

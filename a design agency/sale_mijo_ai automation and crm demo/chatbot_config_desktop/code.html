@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salemijo AI | Bot Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for professional tool feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #eceef0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e0e3e5; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-bright": "#f7f9fb",
+                "secondary": "#216963",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#dae2fd",
+                "on-primary-fixed-variant": "#3f465c",
+                "on-primary": "#ffffff",
+                "inverse-on-surface": "#eff1f3",
+                "on-surface": "#191c1e",
+                "surface-tint": "#565e74",
+                "on-tertiary-container": "#9863ff",
+                "on-primary-fixed": "#131b2e",
+                "primary": "#000000",
+                "on-secondary-fixed": "#00201e",
+                "background": "#f7f9fb",
+                "surface-container-high": "#e6e8ea",
+                "on-background": "#191c1e",
+                "tertiary-fixed-dim": "#d2bbff",
+                "surface-container": "#eceef0",
+                "on-error-container": "#93000a",
+                "primary-container": "#131b2e",
+                "on-tertiary-fixed": "#25005a",
+                "on-secondary-container": "#266d68",
+                "tertiary": "#000000",
+                "surface-dim": "#d8dadc",
+                "on-tertiary-fixed-variant": "#5a00c6",
+                "error": "#ba1a1a",
+                "primary-fixed-dim": "#bec6e0",
+                "tertiary-container": "#25005a",
+                "tertiary-fixed": "#eaddff",
+                "outline": "#76777d",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#a8ece5",
+                "surface-container-highest": "#e0e3e5",
+                "on-secondary-fixed-variant": "#00504b",
+                "on-secondary": "#ffffff",
+                "surface": "#f7f9fb",
+                "secondary-fixed-dim": "#8fd3cc",
+                "surface-container-low": "#f2f4f6",
+                "on-surface-variant": "#45464d",
+                "secondary-fixed": "#abefe8",
+                "on-primary-container": "#7c839b",
+                "surface-variant": "#e0e3e5",
+                "outline-variant": "#c6c6cd",
+                "inverse-surface": "#2d3133",
+                "inverse-primary": "#bec6e0"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- SideNavBar (JSON Derived) -->
+<aside class="h-screen w-64 flex flex-col fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 font-manrope text-sm font-medium tracking-tight py-8 px-4 z-50">
+<div class="flex items-center gap-3 mb-10 px-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Salemijo</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">Premium Curator</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Relationships
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span> Pipeline
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-900 dark:text-white font-bold border-r-2 border-slate-900 dark:border-slate-50 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span> Intelligence
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span> Analytics
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<div class="mt-auto space-y-1 pt-6 border-t border-surface-container">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold mb-4 scale-95 active:scale-100 transition-transform">New Entry</button>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support
+            </a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span> Account
+            </a>
+</div>
+</aside>
+<!-- TopNavBar (JSON Derived) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl z-40 flex justify-between items-center px-8">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Search knowledge base..." type="text"/>
+</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-slate-500 hover:text-slate-900 transition-all font-manrope text-sm" href="#">Global Search</a>
+<a class="text-slate-500 hover:text-slate-900 transition-all font-manrope text-sm" href="#">Recent</a>
+<a class="text-slate-500 hover:text-slate-900 transition-all font-manrope text-sm" href="#">Favorites</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-slate-900 transition-all opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-slate-900 transition-all opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Indian male professional profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIMwSEPNIYOBlthUvtVQdDXVH2ErtKj9J5DrQVMhDibAo1cwO74GLeLa1mWEwPK8RazD4ZFJTb3ACy8Mi1AaTxJfaslFdgdT3oEF1TCnB7E6sUgQczRbhlfARSaBkjvJ3eZg63igxjZFB0iXPaXQw6FsnbnG0UWlMYTJRZoI918YelCxCp32Gm_Opcd6YwFHtPnN9lv2FIK6efOuevOZs0d4Ppk1LX2KplDlP4YRBalGbCOKS6Qx6CQVcW-oQNwGidvO7wsXSZpDMR"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12 min-h-screen">
+<!-- Header Section -->
+<header class="mb-12 max-w-5xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container tracking-wider uppercase">AI Core v2.4</span>
+<span class="text-on-surface-variant text-xs font-medium">• Last synced 12m ago</span>
+</div>
+<h1 class="text-5xl font-extrabold font-headline tracking-tighter text-primary leading-tight mb-4">Chatbot Configuration</h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                Refine the intelligence and personality of your Salemijo digital assistant. Upload documentation to the knowledge base and preview real-time responses.
+            </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8 max-w-[1400px]">
+<!-- Column 1: Configuration & Knowledge -->
+<div class="col-span-12 lg:col-span-7 space-y-8">
+<!-- Knowledge Base Upload Area -->
+<section class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -mr-16 -mt-16 rounded-full transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-bold text-xl mb-1">Knowledge Base</h3>
+<p class="text-sm text-on-surface-variant">Supply documents to train the assistant.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="upload">upload</span>
+                            Upload Data
+                        </button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+<div>
+<p class="text-sm font-semibold">Brand_Guidelines_2024.pdf</p>
+<p class="text-xs text-on-surface-variant">2.4 MB • Processing</p>
+</div>
+</div>
+<div class="w-24 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[65%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="language">language</span>
+<div>
+<p class="text-sm font-semibold">salemijo.io/services/*</p>
+<p class="text-xs text-on-surface-variant">Web Crawler • Synced 2h ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</section>
+<!-- Personality/Tone Settings -->
+<section class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary">
+<h3 class="font-headline font-bold text-xl mb-6">Personality &amp; Tone</h3>
+<div class="grid grid-cols-3 gap-4">
+<button class="flex flex-col items-center gap-3 p-6 bg-surface-container-lowest rounded-lg border-2 border-secondary shadow-sm transition-all text-center">
+<span class="material-symbols-outlined text-3xl text-secondary" data-icon="architecture">architecture</span>
+<div>
+<p class="text-sm font-bold">Architectural</p>
+<p class="text-[10px] text-on-surface-variant mt-1 leading-tight">Structured, precise, and visionary responses.</p>
+</div>
+</button>
+<button class="flex flex-col items-center gap-3 p-6 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-surface-container-highest transition-all text-center">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant" data-icon="business_center">business_center</span>
+<div>
+<p class="text-sm font-bold">Professional</p>
+<p class="text-[10px] text-on-surface-variant mt-1 leading-tight">Concise, data-driven, and results-oriented.</p>
+</div>
+</button>
+<button class="flex flex-col items-center gap-3 p-6 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-surface-container-highest transition-all text-center">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+<div>
+<p class="text-sm font-bold">Friendly</p>
+<p class="text-[10px] text-on-surface-variant mt-1 leading-tight">Warm, approachable, and helpful tone.</p>
+</div>
+</button>
+</div>
+<div class="mt-8">
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-3">Custom System Prompt</label>
+<textarea class="w-full bg-surface-container-highest/30 border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all font-body leading-relaxed" placeholder="e.g. You are a high-end concierge for Salemijo. Always emphasize discretion and exclusivity..." rows="4"></textarea>
+</div>
+</section>
+<!-- Integration Status -->
+<section class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div>
+<p class="text-xs font-bold">WhatsApp</p>
+<p class="text-[10px] text-secondary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#E1306C]/10 flex items-center justify-center text-[#E1306C]">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</div>
+<div>
+<p class="text-xs font-bold">Instagram</p>
+<p class="text-[10px] text-on-surface-variant font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant opacity-30"></span> Linked
+                            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="widgets">widgets</span>
+</div>
+<div>
+<p class="text-xs font-bold">Site Widget</p>
+<p class="text-[10px] text-secondary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Live
+                            </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Column 2: Live Preview (Sticky) -->
+<div class="col-span-12 lg:col-span-5 relative">
+<div class="sticky top-24">
+<div class="bg-primary-container text-on-primary-container rounded-3xl p-1 shadow-2xl overflow-hidden h-[700px] flex flex-col">
+<!-- Preview Header -->
+<div class="bg-primary-container p-6 flex justify-between items-center border-b border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center relative">
+<span class="material-symbols-outlined text-secondary" data-icon="smart_toy">smart_toy</span>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary border-2 border-primary-container rounded-full"></span>
+</div>
+<div>
+<p class="font-headline font-bold text-white">Aarav - Salemijo Concierge</p>
+<p class="text-xs text-on-primary-container/80">Always active • AI v2.4</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-primary-container/40" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 p-6 space-y-6 overflow-y-auto bg-primary-container">
+<div class="max-w-[85%]">
+<div class="bg-white/5 backdrop-blur-md p-4 rounded-2xl rounded-tl-none border border-white/5">
+<p class="text-sm text-white/90 leading-relaxed">Namaste. How can I assist you with your portfolio or upcoming acquisitions today, Mr. Sharma?</p>
+</div>
+<span class="text-[10px] text-white/30 mt-2 block ml-1">09:12 AM</span>
+</div>
+<div class="max-w-[85%] ml-auto text-right">
+<div class="bg-secondary p-4 rounded-2xl rounded-tr-none shadow-lg inline-block text-left">
+<p class="text-sm text-white leading-relaxed">Can you check the latest entry in the Relationship pipeline for "Neo Horizon"?</p>
+</div>
+<span class="text-[10px] text-white/30 mt-2 block mr-1">09:14 AM</span>
+</div>
+<div class="max-w-[85%]">
+<div class="bg-tertiary-container/30 backdrop-blur-xl p-5 rounded-2xl rounded-tl-none border border-on-tertiary-container/20">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-tertiary-container">Intelligence Sync</span>
+</div>
+<p class="text-sm text-white/90 leading-relaxed">Certainly. Neo Horizon was added 48 hours ago. Their primary focus is on architectural symmetry and carbon-neutral materials. Would you like me to draft an introductory proposal based on our premium curator values?</p>
+</div>
+<span class="text-[10px] text-white/30 mt-2 block ml-1">Typing...</span>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-6 bg-white/5 border-t border-white/5">
+<div class="relative flex items-center">
+<input class="w-full bg-white/5 border-none rounded-full py-4 pl-6 pr-14 text-sm text-white focus:ring-2 focus:ring-secondary/50 placeholder:text-white/20" placeholder="Type a message to test..." type="text"/>
+<button class="absolute right-2 w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white hover:scale-105 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+<div class="flex justify-center mt-4">
+<p class="text-[10px] text-white/20 uppercase tracking-[0.2em] font-bold">Live Tester Mode</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (As per suppression rules, only on main context) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center hover:rotate-12 transition-all group z-50">
+<span class="material-symbols-outlined text-2xl" data-icon="bolt">bolt</span>
+<span class="absolute right-full mr-4 px-3 py-1 bg-primary text-on-primary text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Deploy to Live</span>
+</button>
+</main>
+<!-- Context Rail (Design System Signature) -->
+<aside class="fixed top-0 right-0 h-full w-2 hidden xl:flex flex-col items-center py-20 gap-8 bg-surface-container-high z-50">
+<div class="w-1 h-12 bg-secondary/20 rounded-full"></div>
+<div class="w-1 h-32 bg-secondary/50 rounded-full"></div>
+<div class="w-1 h-8 bg-secondary/20 rounded-full"></div>
+</aside>
+</body></html>

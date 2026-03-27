@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salemijo - Agency Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-bright": "#f7f9fb",
+                "secondary": "#216963",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#dae2fd",
+                "on-primary-fixed-variant": "#3f465c",
+                "on-primary": "#ffffff",
+                "inverse-on-surface": "#eff1f3",
+                "on-surface": "#191c1e",
+                "surface-tint": "#565e74",
+                "on-tertiary-container": "#9863ff",
+                "on-primary-fixed": "#131b2e",
+                "primary": "#000000",
+                "on-secondary-fixed": "#00201e",
+                "background": "#f7f9fb",
+                "surface-container-high": "#e6e8ea",
+                "on-background": "#191c1e",
+                "tertiary-fixed-dim": "#d2bbff",
+                "surface-container": "#eceef0",
+                "on-error-container": "#93000a",
+                "primary-container": "#131b2e",
+                "on-tertiary-fixed": "#25005a",
+                "on-secondary-container": "#266d68",
+                "tertiary": "#000000",
+                "surface-dim": "#d8dadc",
+                "on-tertiary-fixed-variant": "#5a00c6",
+                "error": "#ba1a1a",
+                "primary-fixed-dim": "#bec6e0",
+                "tertiary-container": "#25005a",
+                "tertiary-fixed": "#eaddff",
+                "outline": "#76777d",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#a8ece5",
+                "surface-container-highest": "#e0e3e5",
+                "on-secondary-fixed-variant": "#00504b",
+                "on-secondary": "#ffffff",
+                "surface": "#f7f9fb",
+                "secondary-fixed-dim": "#8fd3cc",
+                "surface-container-low": "#f2f4f6",
+                "on-surface-variant": "#45464d",
+                "secondary-fixed": "#abefe8",
+                "on-primary-container": "#7c839b",
+                "surface-variant": "#e0e3e5",
+                "outline-variant": "#c6c6cd",
+                "inverse-surface": "#2d3133",
+                "inverse-primary": "#bec6e0"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top App Bar (Shared Component) -->
+<header class="bg-[#f2f4f6] dark:bg-slate-900 w-full top-0 px-6 py-4 z-50 sticky">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Agent Profile" class="w-full h-full object-cover" data-alt="Professional Indian male agency owner profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHXhN8eG6I2A8I_Z1v9CqX9e7G4l3G_K9oX1M1A2B3C4D5E6F7G8H9I0J1K2L3"/>
+</div>
+<span class="font-['Manrope'] font-black text-2xl tracking-tighter text-[#0F172A] dark:text-white uppercase">Salemijo</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#0F172A] dark:text-slate-100 hover:bg-white/50 dark:hover:bg-slate-800 transition-colors p-2 rounded-xl active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-6 pt-8 space-y-10">
+<!-- 1. Revenue Widget (Editorial Authority) -->
+<section class="space-y-4">
+<div class="flex items-baseline justify-between">
+<h2 class="text-on-surface-variant font-body text-sm font-medium tracking-wide uppercase">Revenue Snapshot</h2>
+<span class="text-secondary font-bold text-sm bg-secondary-container px-2 py-0.5 rounded-lg">+12.4%</span>
+</div>
+<div class="bg-primary-container p-8 rounded-full text-white relative overflow-hidden">
+<!-- Abstract Grain Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-gradient-to-tr from-white/20 to-transparent"></div>
+<p class="font-headline text-5xl font-extrabold tracking-tighter mb-2">₹1,42,850</p>
+<p class="text-on-primary-container font-body text-sm">Gross Agency Earnings • This Month</p>
+<div class="mt-6 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex-shrink-0 bg-white/5 px-4 py-2 rounded-xl">
+<p class="text-[10px] uppercase text-on-primary-container">Invoiced</p>
+<p class="font-bold">₹84.2k</p>
+</div>
+<div class="flex-shrink-0 bg-white/5 px-4 py-2 rounded-xl">
+<p class="text-[10px] uppercase text-on-primary-container">Pending</p>
+<p class="font-bold">₹58.6k</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. AI Highlight (Glassmorphism Intelligence) -->
+<section class="relative">
+<div class="absolute -top-12 -right-4 w-32 h-32 bg-on-tertiary-container/10 rounded-full blur-3xl"></div>
+<div class="glass-panel p-6 rounded-xl shadow-sm border border-white/40 ring-1 ring-black/5 flex items-start gap-4">
+<div class="p-3 bg-tertiary-fixed rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="temp_preferences_custom" style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg leading-tight mb-1">Priority Attention Required</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">AI detected <span class="text-on-tertiary-fixed-variant font-semibold">3 high-priority messages</span> from premium clients that need your review before EOD.</p>
+<button class="mt-4 text-on-tertiary-fixed-variant font-bold text-sm flex items-center gap-1">
+                        Review Messages <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. Quick Actions (Bento Pattern) -->
+<section class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between items-start h-32 hover:bg-surface-container-low transition-colors active:scale-95 duration-200 group">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="person_add">person_add</span>
+<span class="font-headline font-bold text-on-surface">New Client</span>
+</button>
+<button class="bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between items-start h-32 hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="assignment_ind">assignment_ind</span>
+<span class="font-headline font-bold text-on-surface">Assign Agent</span>
+</button>
+</section>
+<!-- 4. Recent Wins (Data Canvas / No-Line Rule) -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Recent Wins</h2>
+<button class="text-on-surface-variant text-sm font-medium">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Win Card 1 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img alt="Client Profile" class="w-full h-full object-cover" data-alt="Indian business woman profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3M1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T1U2V3W4X5Y6Z7"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Indus Retail Expansion</p>
+<p class="text-xs text-on-surface-variant">Closed by Arjun • 2h ago</p>
+</div>
+<div class="text-right">
+<p class="text-secondary font-bold text-sm">+₹12,500</p>
+</div>
+</div>
+<!-- Win Card 2 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img alt="Client Profile" class="w-full h-full object-cover" data-alt="Indian professional man headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuE8F9G0H1I2J3K4L5M6N7O8P9Q0R1S2T3U4V5W6X7Y8Z9A0B1C2D3E4F"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">TATA Steel Logistics</p>
+<p class="text-xs text-on-surface-variant">Onboarding Started • 5h ago</p>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Onboarding</span>
+</div>
+</div>
+<!-- Win Card 3 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img alt="Client Profile" class="w-full h-full object-cover" data-alt="Indian creative female professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuF1G2H3I4J5K6L7M8N9O0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Bangalore Creative Hub</p>
+<p class="text-xs text-on-surface-variant">Annual Renewal • Yesterday</p>
+</div>
+<div class="text-right">
+<p class="text-secondary font-bold text-sm">+₹4,200</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8pt pt-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(19,27,46,0.06)] rounded-t-3xl">
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Inbox</span>
+</a>
+<!-- Clients -->
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Clients</span>
+</a>
+<!-- Insights (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-[#0F172A] dark:text-teal-400 bg-[#f2f4f6] dark:bg-slate-800 rounded-xl px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Insights</span>
+</a>
+<!-- Social -->
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="share">share</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Social</span>
+</a>
+</nav>
+</body></html>

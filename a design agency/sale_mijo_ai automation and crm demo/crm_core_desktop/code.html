@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salemijo CRM | Professional Curator Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fb",
+              "secondary": "#216963",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#dae2fd",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "on-surface": "#191c1e",
+              "surface-tint": "#565e74",
+              "on-tertiary-container": "#9863ff",
+              "on-primary-fixed": "#131b2e",
+              "primary": "#000000",
+              "on-secondary-fixed": "#00201e",
+              "background": "#f7f9fb",
+              "surface-container-high": "#e6e8ea",
+              "on-background": "#191c1e",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container": "#eceef0",
+              "on-error-container": "#93000a",
+              "primary-container": "#131b2e",
+              "on-tertiary-fixed": "#25005a",
+              "on-secondary-container": "#266d68",
+              "tertiary": "#000000",
+              "surface-dim": "#d8dadc",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "error": "#ba1a1a",
+              "primary-fixed-dim": "#bec6e0",
+              "tertiary-container": "#25005a",
+              "tertiary-fixed": "#eaddff",
+              "outline": "#76777d",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#a8ece5",
+              "surface-container-highest": "#e0e3e5",
+              "on-secondary-fixed-variant": "#00504b",
+              "on-secondary": "#ffffff",
+              "surface": "#f7f9fb",
+              "secondary-fixed-dim": "#8fd3cc",
+              "surface-container-low": "#f2f4f6",
+              "on-surface-variant": "#45464d",
+              "secondary-fixed": "#abefe8",
+              "on-primary-container": "#7c839b",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#c6c6cd",
+              "inverse-surface": "#2d3133",
+              "inverse-primary": "#bec6e0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #eceef0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- SideNavBar (Authority: Shared Components JSON) -->
+<aside class="h-screen w-64 flex flex-col fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 font-manrope text-sm font-medium tracking-tight py-8 px-4 z-50">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<img alt="Agency Logo" class="w-6 h-6" data-alt="Abstract geometric agency logo design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3W42eOCouBUu13gNnFDLbz-8iLQ4A0uxEvW7_Vo6parqGE6IeDH3a6wv6RMzcXaOrb_aKxjkJS8-2j43tWZgsWiuNxcCap7hlK2hwpprtXpDX67zZqnvydWcJhoN9v0bhhk0iBR8nBQ6hQGO9xfALBwxeGLvnc2R7fTo2cCCwxG_OZKq5nFjK5pR1p0--UyVZAOEvfHqhY9syNOkFfo2yEDAW1n6iREgYJzWpMBKrOXL09hRrgVa1d84oEHKCo-pt3XK9AJhudhko"/>
+</div>
+<div>
+<h1 class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 leading-none">Salemijo</h1>
+<span class="text-[10px] text-on-surface-variant tracking-[0.2em] uppercase opacity-70">Premium Curator</span>
+</div>
+</div>
+</div>
+<button class="mb-8 w-full py-3 px-4 bg-primary text-on-primary rounded-lg flex items-center justify-center gap-2 scale-95 active:scale-100 transition-transform font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+            New Entry
+        </button>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-900 dark:text-white font-bold border-r-2 border-slate-900 dark:border-slate-50 bg-slate-200/50" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                Relationships
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                Pipeline
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+                Intelligence
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="pt-6 mt-6 border-t border-slate-200/50 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+                Account
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen relative flex flex-col">
+<!-- TopNavBar (Authority: Shared Components JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl z-40 flex justify-between items-center px-8 transition-all">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-50" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Global Search..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-6 px-8">
+<a class="text-slate-900 dark:text-slate-50 font-semibold text-sm transition-all" href="#">Recent</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 text-sm transition-all" href="#">Favorites</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30 ml-2">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a professional male curator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm-PmXXqIOW7ntjSzvlQfatM-4ofq43Q2Hv68gW05sgoJZvOZiLj7iVH8BHLKDch1sI0uYuctvRgS-o8F5IYwe1dONYKsMrq_ilZzVkDJt5bGCYhKdmo54Mh3RBwlOltjvLzjBKpww9DEdBKWLH3MNd_yjEDFAZlVzqkinC7yLTAH6pGU5RMKGg5b8xTtaGRjccRt3lCQpXVKn5lauFdYD6G9cbt2Er8z83uoiSYY_vCFRH0CZz6f5-yHDVi2G_6xPup_J7_IKSfbX"/>
+</div>
+</div>
+</header>
+<!-- Page Grid Layout (Bento Style) -->
+<section class="mt-16 p-8 grid grid-cols-12 gap-6 flex-1 overflow-hidden">
+<!-- Column 1: Client List (Editorial Logic) -->
+<div class="col-span-4 flex flex-col gap-6">
+<div class="flex justify-between items-end mb-2">
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Curated Relations</h2>
+<span class="text-xs font-label text-on-surface-variant opacity-60 px-3 py-1 bg-surface-container rounded-full">42 Active</span>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-14rem)] pr-2">
+<!-- List Item: Active / Closing -->
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm border-l-4 border-secondary-container group cursor-pointer hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<img alt="Elena Vance" class="w-12 h-12 rounded-full object-cover" data-alt="Professional profile photo of a female client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtF4HXgS47Mu-qy7a8qXk4BToO4t6aeCJOQLHyEoZwfezNMimfqf3vic0aqjVNjy4oJ1Ez8XXRVIgq1ZApAwjshi6wz2C7K2K_InI8PV_zloEOG5M_88jiBSK-T_e2zQ9O_MMph7iP4UFJC9grinJeuuNfOr0ihi0g6o7V1IFCmULTkcvqShCHUBfy7m0ykot4Ihl8l_KlxJAkusPGyc6hlQHAcl9j5iyXTO_X9xoZ29RuXcdzUDJIsAMXyUu05vYqkqtSB7ghKcV"/>
+<div>
+<h3 class="font-bold text-on-surface">Arjun Mehta</h3>
+<p class="text-xs text-on-surface-variant">Reliance Capital</p>
+</div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary px-2 py-1 bg-secondary-container/30 rounded">Closing</span>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[8px] font-bold">AI</div>
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden">
+<img alt="Team Member" data-alt="Small avatar of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYrzZlRJ_nvVpbTnE3Uasl5pII27iSAnfXwA8yVUOwVNxNktyFoyAkgYYmBD5N1uFFjyUpmFUEcK2uVzuI74EOu47oznR8kyp_8WR5qJlbkoWBIENZ5kiULkqIiy5PcTAd2u5U_HTQNQyR2Rd9hP-1ZU_KMIn3olX-lvkESTqJ0QyVhl3tqSZ7awly4h-sqsNYhfEi2wyOwXPq17ODmd0kjnkLez2jg7CJXvxPU-C7iwhtFtD7ZPdZJInajL72VEjJfAC5iU0NXOcV"/>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-[10px] text-on-surface-variant uppercase">Health Score</span>
+<span class="text-lg font-bold text-secondary">94%</span>
+</div>
+</div>
+</div>
+<!-- List Item: Nurturing -->
+<div class="p-5 bg-surface-container-low/50 rounded-xl group cursor-pointer hover:bg-surface-container-lowest transition-all">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface-variant">AM</div>
+<div>
+<h3 class="font-bold text-on-surface opacity-80">Arjun Mehta</h3>
+<p class="text-xs text-on-surface-variant">Reliance Capital</p>
+</div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-primary-fixed-variant px-2 py-1 bg-primary-fixed rounded">Nurturing</span>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<div class="h-1.5 w-32 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-on-primary-fixed-variant w-[65%]"></div>
+</div>
+<span class="text-xs font-medium text-on-surface-variant">65% Health</span>
+</div>
+</div>
+<!-- List Item: At Risk -->
+<div class="p-5 bg-surface-container-low/50 rounded-xl group cursor-pointer hover:bg-surface-container-lowest transition-all">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<img alt="David Chen" class="w-12 h-12 rounded-full object-cover grayscale" data-alt="Portrait of a male client in professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1I0Re9Q8kzxkoliUvFnOQcJjKZ_8tH1AuPRTcDrMW8XEDQiOjafp4CXrv69OJUAyB99ewxOxPFY9Ps6AfUTHFSeL46DLMVu6AHduSpSDp4LjIWW-gE2ZscZeQ5sZgMJ-4qV4stN_VQZvhTYrbDbHPkMie3C020YaasRv2Z8ZtispKynwBRQZKBz8PrajVCxKrQGEMW4ksFC2QjUYN9UAw-7DImx5_mZDfKcz8Z6GC-whxA21oX2J9S8fsYfT-TzAL3RTt5L3_i2fA"/>
+<div>
+<h3 class="font-bold text-on-surface opacity-80">Ishaan Sharma</h3>
+<p class="text-xs text-on-surface-variant">Sharma &amp; Co</p>
+</div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-error px-2 py-1 bg-error-container/40 rounded">At Risk</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-error text-[10px] font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                            Last contact 14 days ago
+                        </div>
+</div>
+</div>
+</div>
+<!-- Column 2 & 3: Profile Detail & Timeline -->
+<div class="col-span-8 flex flex-col gap-6">
+<!-- Profile Header Card -->
+<div class="bg-primary-container text-on-primary-container rounded-2xl p-8 relative overflow-hidden flex items-center justify-between min-h-[200px]">
+<div class="z-10 max-w-lg">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-bold py-1 px-3 bg-secondary text-on-secondary rounded-full">Premium Client</span>
+<span class="text-xs font-medium text-on-primary-container/60">ID: SAL-4092-X</span>
+</div>
+<h1 class="text-5xl font-extrabold tracking-tighter text-on-primary mb-2">Ananya Iyer</h1>
+<p class="text-lg font-light text-on-primary-container leading-relaxed">Lead Creative Director at Zen Design Studio. Interested in the Q4 Expansion Series and high-tier curation services.</p>
+</div>
+<div class="z-10 flex flex-col items-end gap-3">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/5 text-center min-w-[120px]">
+<span class="block text-[10px] uppercase tracking-widest mb-1 text-on-primary/60">Pipeline Value</span>
+<span class="text-2xl font-bold text-on-primary">₹1,42,500</span>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-on-primary text-primary-container rounded-lg font-bold text-sm hover:bg-surface-container-lowest transition-all">Edit Profile</button>
+<button class="p-2 bg-white/10 rounded-lg text-on-primary hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Abstract background element -->
+<div class="absolute right-[-10%] top-[-20%] w-[400px] h-[400px] bg-secondary/20 blur-[100px] rounded-full"></div>
+</div>
+<!-- Secondary Grid for Timeline & Insights -->
+<div class="grid grid-cols-2 gap-6 flex-1">
+<!-- Interaction History Timeline -->
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-on-surface">Interaction Ledger</h3>
+<button class="text-secondary text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                                Filter
+                            </button>
+</div>
+<div class="space-y-6 relative before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/30">
+<!-- Timeline Entry -->
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 uppercase">Today, 10:42 AM</span>
+<h4 class="text-sm font-bold text-on-surface mt-1">Proposal Sent: Q4 Expansion</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Automated follow-up triggered via AI curator. Document reference: #DOC-102.</p>
+</div>
+<!-- Timeline Entry -->
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-on-primary-fixed-variant" data-icon="call">call</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 uppercase">Yesterday</span>
+<h4 class="text-sm font-bold text-on-surface mt-1">Introductory Discovery Call</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Discussed timeline and core requirements. Ananya emphasized the need for bespoke delivery.</p>
+</div>
+<!-- Timeline Entry -->
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 uppercase">Oct 12, 2023</span>
+<h4 class="text-sm font-bold text-on-surface mt-1">AI Health Insight Generated</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Sentiment analysis shifted to "Highly Positive" following LinkedIn engagement.</p>
+</div>
+</div>
+</div>
+<!-- AI Insights & Automation Status -->
+<div class="flex flex-col gap-6">
+<!-- Automation Card -->
+<div class="bg-tertiary-container rounded-2xl p-6 border border-tertiary-fixed/10 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-2 bg-on-tertiary-fixed/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="auto_mode">auto_mode</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-tertiary-fixed uppercase">Active</span>
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(33,105,99,0.8)]"></div>
+</div>
+</div>
+<h3 class="text-lg font-bold text-on-tertiary mb-2 relative z-10">AI Follow-up Active</h3>
+<p class="text-xs text-tertiary-fixed/70 leading-relaxed mb-4 relative z-10">System is currently monitoring Ananya's response patterns. Next touchpoint scheduled for Friday if no reply received.</p>
+<button class="w-full py-2 bg-white/10 hover:bg-white/20 text-on-tertiary rounded-lg text-xs font-bold transition-all relative z-10 backdrop-blur-sm">Configure Automation</button>
+<!-- AI Sparkle decoration -->
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-on-tertiary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<!-- Data Points Bento -->
+<div class="grid grid-cols-2 gap-4 flex-1">
+<div class="bg-surface-container-high rounded-2xl p-5 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase opacity-60">Avg Response</span>
+<div>
+<span class="text-2xl font-extrabold text-on-surface">2.4h</span>
+<p class="text-[10px] text-secondary font-bold mt-1">↑ 12% faster</p>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-2xl p-5 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase opacity-60">Touchpoints</span>
+<div>
+<span class="text-2xl font-extrabold text-on-surface">18</span>
+<p class="text-[10px] text-on-surface-variant opacity-60 mt-1">Across 3 channels</p>
+</div>
+</div>
+<div class="col-span-2 bg-secondary-container/20 rounded-2xl p-5 border border-secondary/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Conversion Likelihood</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-1 bg-surface-container rounded-full overflow-hidden w-24">
+<div class="h-full bg-secondary w-[88%]"></div>
+</div>
+<span class="text-xs font-bold text-secondary">88%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Hand "Context Rail" (Design System Requirement) -->
+<div class="fixed right-0 top-16 h-[calc(100vh-4rem)] w-12 bg-surface-container-high border-l border-outline-variant/10 flex flex-col items-center py-6 gap-6 z-30">
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="AI Notes">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="Tasks">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="Files">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+</button>
+<div class="mt-auto p-2">
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

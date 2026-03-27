@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salemijo AI Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fb",
+              "secondary": "#216963",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#dae2fd",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "on-surface": "#191c1e",
+              "surface-tint": "#565e74",
+              "on-tertiary-container": "#9863ff",
+              "on-primary-fixed": "#131b2e",
+              "primary": "#000000",
+              "on-secondary-fixed": "#00201e",
+              "background": "#f7f9fb",
+              "surface-container-high": "#e6e8ea",
+              "on-background": "#191c1e",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container": "#eceef0",
+              "on-error-container": "#93000a",
+              "primary-container": "#131b2e",
+              "on-tertiary-fixed": "#25005a",
+              "on-secondary-container": "#266d68",
+              "tertiary": "#000000",
+              "surface-dim": "#d8dadc",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "error": "#ba1a1a",
+              "primary-fixed-dim": "#bec6e0",
+              "tertiary-container": "#25005a",
+              "tertiary-fixed": "#eaddff",
+              "outline": "#76777d",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#a8ece5",
+              "surface-container-highest": "#e0e3e5",
+              "on-secondary-fixed-variant": "#00504b",
+              "on-secondary": "#ffffff",
+              "surface": "#f7f9fb",
+              "secondary-fixed-dim": "#8fd3cc",
+              "surface-container-low": "#f2f4f6",
+              "on-surface-variant": "#45464d",
+              "secondary-fixed": "#abefe8",
+              "on-primary-container": "#7c839b",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#c6c6cd",
+              "inverse-surface": "#2d3133",
+              "inverse-primary": "#bec6e0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(16px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 z-40 bg-[#f2f4f6] dark:bg-slate-900 w-full px-6 py-4">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional agent profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJNfUWm8KZ6myFSNA5nWz2zPG78bJ112-t93WWq5OclcdggW41O2RFfHy8AfgDGczWqgL5-dQ6DUojiichHYEjQknVOYOl8RxUsbIFGK1pTW4zwX1fCIcM1a2SgmwdC0LLsOCHj68R7SUkDb_mRLds33bTGRPZF6aDvwGVtZ0tlCcEu-PucdfRtwLtyvOliQ31ugc4ohnqEJQMaqFzY5cfhQAvgXBWnRAMqB4smA-5ci_JkBg9GIxe4TDgOO4ybgOdIbSnRO5eThTu"/>
+</div>
+<h1 class="font-['Manrope'] font-black text-2xl tracking-tighter text-[#0F172A] dark:text-white">Salemijo</h1>
+</div>
+<button class="hover:bg-white/50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-xl">
+<span class="material-symbols-outlined text-[#0F172A] dark:text-slate-100" data-icon="auto_awesome">auto_awesome</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 space-y-10 max-w-md mx-auto">
+<!-- Automation Personas (Toggles) -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight">Agent Mode</h2>
+<span class="text-xs font-label text-on-surface-variant tracking-widest uppercase">Select Persona</span>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+<div class="flex-none bg-primary text-on-primary px-5 py-4 rounded-xl flex flex-col gap-2 min-w-[140px] shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<p class="font-label font-bold text-sm">Aggressive</p>
+<div class="w-full h-1 bg-on-primary/20 rounded-full mt-2 overflow-hidden">
+<div class="bg-on-primary h-full w-full"></div>
+</div>
+</div>
+<div class="flex-none bg-surface-container-lowest text-on-surface px-5 py-4 rounded-xl flex flex-col gap-2 min-w-[140px] transition-transform active:scale-95">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<p class="font-label font-bold text-sm">Empathetic</p>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-2"></div>
+</div>
+<div class="flex-none bg-surface-container-lowest text-on-surface px-5 py-4 rounded-xl flex flex-col gap-2 min-w-[140px] transition-transform active:scale-95">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="history_edu">history_edu</span>
+<p class="font-label font-bold text-sm">Concise</p>
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-2"></div>
+</div>
+</div>
+</section>
+<!-- Funnel Visualization -->
+<section class="space-y-6">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight">Sequence Funnel</h2>
+<div class="grid grid-cols-1 gap-1">
+<div class="bg-surface-container-lowest p-6 rounded-t-xl flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest">New Leads</p>
+<p class="font-headline font-bold text-xl">1,240</p>
+</div>
+</div>
+<span class="text-secondary text-sm font-bold">+12%</span>
+</div>
+<div class="bg-surface-container-low p-6 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest">AI Contacted</p>
+<p class="font-headline font-bold text-xl">892</p>
+</div>
+</div>
+<span class="text-secondary text-sm font-bold">72%</span>
+</div>
+<div class="bg-surface-container-high p-6 rounded-b-xl flex justify-between items-center border-t border-white/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="event_available">event_available</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest">Meetings Set</p>
+<p class="font-headline font-bold text-xl">156</p>
+</div>
+</div>
+<span class="text-primary text-sm font-bold">17.5%</span>
+</div>
+</div>
+</section>
+<!-- Success Metrics Bento -->
+<section class="space-y-6">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight">Insights</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl space-y-2">
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest">Response Rate</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-black">42%</span>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="trending_up">trending_up</span>
+</div>
+<p class="text-[10px] text-on-surface-variant italic leading-tight">Above industry avg.</p>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl space-y-2">
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest">Sentiment</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-black">+0.8</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-icon="mood">mood</span>
+</div>
+<p class="text-[10px] text-on-surface-variant italic leading-tight">Positive shift detected</p>
+</div>
+<div class="col-span-2 glass-card p-6 rounded-xl relative overflow-hidden">
+<div class="relative z-10 flex flex-col gap-1">
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest">AI Performance Index</p>
+<h3 class="font-headline font-bold text-lg">Portfolio Health: Optimal</h3>
+<p class="text-sm text-on-surface-variant">The current "Aggressive" persona is maximizing conversions for properties in the $2M+ bracket.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="analytics">analytics</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Replies Review -->
+<section class="space-y-6 pb-4">
+<div class="flex justify-between items-center">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight">Recent Replies</h2>
+<button class="text-xs font-bold text-secondary">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Reply Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-secondary shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Client profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn4cu9E7XAHvJ1sMo6Ip4MDLyDZ_YEhy5pgkXG-VcUfCRQbQNYKALkgM9VRvUSXP5g8HwMaDGVvkOGQrbOhMKcyz75B3qp6xoTfzM_Q_bGVNayNpYqJ7yPP2NeMtNf8YolZRD7vT55yo2GYBAf6LV0IXsyzmbnRG6xIdNPmTFuEyXeOkpDR_uoScTYbtLFSbzMFQvfUfXQXFSVWqCtgGrVoyrrP35XLrPNeyZYwWH9JWtcvhQY9_FTY1pDCRgOfy7rhMhxgRDwyRDb"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">Arjun Sharma</h4>
+<p class="text-[10px] text-on-surface-variant font-medium">Re: Property Viewing</p>
+</div>
+</div>
+<span class="text-[10px] font-bold bg-secondary/10 text-secondary px-2 py-1 rounded">SENT</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic mb-4">"Absolutely Arjun, we understand speed is key. I've penciled you in for 4 PM Friday. Does that align?"</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container text-[11px] font-bold py-2 rounded-lg transition-colors hover:bg-surface-container-high">Flag</button>
+<button class="flex-1 bg-primary text-on-primary text-[11px] font-bold py-2 rounded-lg shadow-md">Edit Future</button>
+</div>
+</div>
+<!-- Reply Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-on-tertiary-container shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Client profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWBca6jbozxOwMRpV4_5-NENkcaFFSej3wiDfEhea8HjGDx5QObLkdZ_fQGMbv3VX6n74lEehbYuMnj1LCdLKWz3cxtz4Pr6YA5t1g0dCGyS7ZB3Tb81YUOrV-XgSaEc0XgZXY5NM1lifbK5Dru_lO-6BCd-tmbNXSHBIgaOQW5mQi1S6_UT3s6o9EXTa2zkq1tZE0-pVtVahw5eUtreOGqx8jKYHhYbdzJKf_4afJIeClFTCtWj6ndCY6akqKUckMfHhp52Yd0ok"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">Priya Patel</h4>
+<p class="text-[10px] text-on-surface-variant font-medium">Re: Mortgage Interest</p>
+</div>
+</div>
+<span class="text-[10px] font-bold bg-on-tertiary-container/10 text-on-tertiary-container px-2 py-1 rounded">DRAFT</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic mb-4">"That's a great question about the variable rates. Let me generate a quick comparison chart for you..."</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-secondary text-white text-[11px] font-bold py-2 rounded-lg shadow-md">Approve &amp; Send</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(19,27,46,0.06)] flex justify-around items-center px-6 pb-6 pt-2">
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0F172A] dark:text-teal-400 bg-[#f2f4f6] dark:bg-slate-800 rounded-xl px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Insights</span>
+</a>
+</nav>
+</body></html>

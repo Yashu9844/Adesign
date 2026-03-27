@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Competition Insights Dashboard - Salemijo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-container-highest": "#e0e3e5",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-surface": "#191c1e",
+              "secondary-container": "#a8ece5",
+              "secondary-fixed": "#abefe8",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-fixed": "#eaddff",
+              "inverse-on-surface": "#eff1f3",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#7c839b",
+              "secondary-fixed-dim": "#8fd3cc",
+              "tertiary-container": "#25005a",
+              "on-primary-fixed": "#131b2e",
+              "primary-fixed": "#dae2fd",
+              "on-error": "#ffffff",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed-dim": "#bec6e0",
+              "inverse-surface": "#2d3133",
+              "on-secondary-fixed": "#00201e",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "tertiary": "#000000",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#45464d",
+              "inverse-primary": "#bec6e0",
+              "surface-tint": "#565e74",
+              "surface-container": "#eceef0",
+              "error-container": "#ffdad6",
+              "secondary": "#216963",
+              "on-tertiary-container": "#9863ff",
+              "on-secondary-fixed-variant": "#00504b",
+              "primary": "#000000",
+              "primary-container": "#131b2e",
+              "background": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#25005a",
+              "surface-dim": "#d8dadc",
+              "outline": "#76777d",
+              "surface-variant": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#d2bbff",
+              "on-background": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#266d68",
+              "surface": "#f7f9fb",
+              "outline-variant": "#c6c6cd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.75rem;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar Execution -->
+<header class="bg-[#f7f9fb] w-full top-0 px-6 py-4 sticky z-50">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Agent profile headshot in a studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAieoV0cc2jU86NUffHLyt9X9HwdE1aEVegIv4ognA9ihBC2p28PQ-qDsNcRbyqSY_tn0VD3QA8RhbSVcnse7hXqoqeFl5MqooLPOrBBBQSiFgl-312Ft37iaORoMV5-lLD6ADd8LSunBhGbJzEyD0k4Dm167WtTX6sTObNuuiEQFrlTuJWNEPR2F2nZSzy5MLTL57X26znbW23jgk-g4N9zl0X7bD0o7nNC2nc8rb8nSKcfpAzoQvws3NiRteojrxeAkoEwOiV8lHf"/>
+</div>
+<h1 class="font-['Manrope'] font-black text-2xl tracking-tighter text-[#0F172A]">Salemijo</h1>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#45464d] font-medium hover:bg-white/50 transition-colors px-3 py-1 rounded-lg" href="#">Inbox</a>
+<a class="text-[#45464d] font-medium hover:bg-white/50 transition-colors px-3 py-1 rounded-lg" href="#">Clients</a>
+<a class="text-[#45464d] font-medium hover:bg-white/50 transition-colors px-3 py-1 rounded-lg" href="#">Social</a>
+<a class="text-[#0F172A] font-bold transition-colors px-3 py-1 rounded-lg" href="#">Insights</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-[#0F172A] p-2 hover:bg-white/50 rounded-full transition-colors active:scale-95 duration-200">auto_awesome</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-10 pb-32">
+<!-- Dashboard Header -->
+<header class="mb-12">
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-2 block">Market Intel</span>
+<h2 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-4">Competition <span class="text-on-surface-variant/40">Insights</span></h2>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                Real-time benchmark of Salemijo against the top 3 industry challengers. AI-driven signals reveal growth gaps and engagement opportunities.
+            </p>
+</header>
+<div class="editorial-grid">
+<!-- Main Performance Chart Section (Bento Large) -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-full p-8 shadow-sm">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline text-2xl font-bold mb-1">Comparative Reach</h3>
+<p class="text-on-surface-variant text-sm">Engagement Rate vs. Follower Growth (Weekly)</p>
+</div>
+<div class="flex gap-4 text-xs font-medium">
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-primary"></span> Salemijo</div>
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-secondary"></span> Rival A</div>
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-outline-variant"></span> Rival B</div>
+</div>
+</div>
+<!-- Abstract Bar Chart Representation -->
+<div class="h-64 flex items-end justify-between gap-4 px-4 border-b border-surface-container-highest">
+<div class="flex-1 flex flex-col justify-end gap-1 group">
+<div class="w-full bg-primary rounded-t-lg h-[85%] relative">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">4.2%</span>
+</div>
+<span class="text-[10px] text-center font-semibold text-on-surface-variant pt-2">Engagement</span>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-secondary rounded-t-lg h-[65%]"></div>
+<span class="text-[10px] text-center font-medium text-on-surface-variant pt-2">Follower Growth</span>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-outline-variant/40 rounded-t-lg h-[45%]"></div>
+<span class="text-[10px] text-center font-medium text-on-surface-variant pt-2">Sentiment</span>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-primary rounded-t-lg h-[92%]"></div>
+<span class="text-[10px] text-center font-semibold text-on-surface-variant pt-2">Reach</span>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-secondary/60 rounded-t-lg h-[30%]"></div>
+<span class="text-[10px] text-center font-medium text-on-surface-variant pt-2">Conversion</span>
+</div>
+</div>
+</section>
+<!-- AI Insight Rail (Bento Small) -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="glass-panel p-6 rounded-full flex flex-col gap-4">
+<div class="flex items-center gap-2 text-on-tertiary-container">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline font-bold text-sm tracking-wide">AI STRATEGY SIGNAL</span>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-tertiary-fixed/30 rounded-xl">
+<p class="text-sm font-medium text-on-surface leading-snug"><span class="font-bold text-primary">Social Samosa Media</span> is trending on Instagram Reels with 'Regional Language' campaigns. </p>
+<span class="text-[10px] font-bold text-on-tertiary-fixed-variant mt-2 block">+14% Shift Detected</span>
+</div>
+<div class="p-4 bg-secondary-container/30 rounded-xl">
+<p class="text-sm font-medium text-on-surface leading-snug"><span class="font-bold text-secondary">Opportunity:</span> Low response time on WhatsApp for Bharat Digital Labs. Salemijo can capture leads by automating festive queries. </p>
+</div>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary p-6 rounded-full flex items-center justify-between">
+<div>
+<p class="text-xs opacity-70 mb-1">Ad Performance</p>
+<h4 class="text-2xl font-bold">Top 3%</h4>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-40">trending_up</span>
+</div>
+</aside>
+<!-- Competitor Metrics Grid -->
+<section class="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Rival Card 1 -->
+<div class="bg-surface-container-low p-6 rounded-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg flex items-center justify-center font-bold">R1</div>
+<span class="text-[10px] font-bold text-error bg-error-container px-2 py-0.5 rounded-full">-2.4%</span>
+</div>
+<h5 class="font-bold text-on-surface mb-1">Social Samosa Media</h5>
+<p class="text-xs text-on-surface-variant mb-4">Primary focus: Instagram &amp; WhatsApp</p>
+<div class="space-y-3">
+<div class="w-full bg-surface-variant rounded-full h-1">
+<div class="bg-primary w-3/4 h-full rounded-full"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium text-on-surface-variant">
+<span>Response Time</span>
+<span class="text-on-surface">4.2h</span>
+</div>
+</div>
+</div>
+<!-- Rival Card 2 -->
+<div class="bg-surface-container-low p-6 rounded-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg flex items-center justify-center font-bold">R2</div>
+<span class="text-[10px] font-bold text-secondary bg-secondary-container px-2 py-0.5 rounded-full">+18%</span>
+</div>
+<h5 class="font-bold text-on-surface mb-1">Bharat Digital Labs</h5>
+<p class="text-xs text-on-surface-variant mb-4">Primary focus: ShareChat</p>
+<div class="space-y-3">
+<div class="w-full bg-surface-variant rounded-full h-1">
+<div class="bg-secondary w-1/2 h-full rounded-full"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium text-on-surface-variant">
+<span>Response Time</span>
+<span class="text-on-surface">12.8h</span>
+</div>
+</div>
+</div>
+<!-- Rival Card 3 -->
+<div class="bg-surface-container-low p-6 rounded-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg flex items-center justify-center font-bold">R3</div>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container-highest px-2 py-0.5 rounded-full">Stable</span>
+</div>
+<h5 class="font-bold text-on-surface mb-1">Indus Creative Network</h5>
+<p class="text-xs text-on-surface-variant mb-4">Primary focus: Multi-channel</p>
+<div class="space-y-3">
+<div class="w-full bg-surface-variant rounded-full h-1">
+<div class="bg-outline w-2/3 h-full rounded-full"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium text-on-surface-variant">
+<span>Response Time</span>
+<span class="text-on-surface">6.1h</span>
+</div>
+</div>
+</div>
+<!-- Salemijo (Self) -->
+<div class="bg-primary text-on-primary p-6 rounded-full shadow-xl shadow-primary/10">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">S</div>
+<span class="text-[10px] font-bold text-secondary bg-secondary-container px-2 py-0.5 rounded-full">TOP</span>
+</div>
+<h5 class="font-bold mb-1">Social Samosa Media</h5>
+<p class="text-xs opacity-70 mb-4">Global Reach Index</p>
+<div class="space-y-3">
+<div class="w-full bg-white/10 rounded-full h-1">
+<div class="bg-secondary-fixed w-[92%] h-full rounded-full"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium opacity-80">
+<span>Response Time</span>
+<span class="font-bold">0.8h</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Heatmap Section -->
+<section class="col-span-12 lg:col-span-6 bg-surface-container-low p-8 rounded-full">
+<h3 class="font-headline text-xl font-bold mb-6">Market Sentiment Heatmap</h3>
+<div class="grid grid-cols-4 grid-rows-3 gap-2 h-48">
+<!-- Salemijo Dominance -->
+<div class="col-span-2 row-span-2 bg-secondary rounded-xl flex items-center justify-center text-on-secondary font-bold text-xs p-4 text-center">Brand Loyalty (High)</div>
+<div class="bg-secondary/40 rounded-xl"></div>
+<div class="bg-tertiary-fixed rounded-xl flex items-center justify-center p-2"><span class="material-symbols-outlined text-on-tertiary-fixed text-lg">bolt</span></div>
+<!-- Competition -->
+<div class="bg-surface-container-highest rounded-xl"></div>
+<div class="bg-surface-container-highest rounded-xl"></div>
+<div class="col-span-2 bg-error-container/30 rounded-xl flex items-center justify-center text-[10px] font-bold text-error">Rival Churn Risk</div>
+</div>
+</section>
+<!-- AI Growth Predicition -->
+<section class="col-span-12 lg:col-span-6 bg-surface-container-high p-8 rounded-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold">Q4 Prediction</h3>
+<p class="text-xs text-on-surface-variant font-medium">Model: Salemijo-Prophet-v2</p>
+</div>
+</div>
+<p class="text-on-surface font-medium leading-relaxed mb-6 italic">"Salemijo is on track to outperform Social Samosa Media in engagement by the peak of Diwali season if the current vernacular content pivot continues at 1.2x velocity."</p>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary text-xs font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">Apply AI Recs</button>
+<button class="bg-white text-primary border border-surface-container-highest text-xs font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Export Report</button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar Execution -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-white/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(19,27,46,0.06)] rounded-t-3xl border-none">
+<div class="flex flex-col items-center justify-center text-[#45464d] px-4 py-2 hover:opacity-80 active:scale-90 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#45464d] px-4 py-2 hover:opacity-80 active:scale-90 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">group</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Clients</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#45464d] px-4 py-2 hover:opacity-80 active:scale-90 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">share</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Social</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#0F172A] bg-[#f2f4f6] rounded-xl px-4 py-2 active:scale-90 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] text-[11px] font-bold tracking-wide">Insights</span>
+</div>
+</nav>
+</body></html>

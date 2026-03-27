@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Billing &amp; Payments | Salemijo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-container-highest": "#e0e3e5",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-surface": "#191c1e",
+              "secondary-container": "#a8ece5",
+              "secondary-fixed": "#abefe8",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-fixed": "#eaddff",
+              "inverse-on-surface": "#eff1f3",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#7c839b",
+              "secondary-fixed-dim": "#8fd3cc",
+              "tertiary-container": "#25005a",
+              "on-primary-fixed": "#131b2e",
+              "primary-fixed": "#dae2fd",
+              "on-error": "#ffffff",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed-dim": "#bec6e0",
+              "inverse-surface": "#2d3133",
+              "on-secondary-fixed": "#00201e",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "tertiary": "#000000",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#45464d",
+              "inverse-primary": "#bec6e0",
+              "surface-tint": "#565e74",
+              "surface-container": "#eceef0",
+              "error-container": "#ffdad6",
+              "secondary": "#216963",
+              "on-tertiary-container": "#9863ff",
+              "on-secondary-fixed-variant": "#00504b",
+              "primary": "#000000",
+              "primary-container": "#131b2e",
+              "background": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#25005a",
+              "surface-dim": "#d8dadc",
+              "outline": "#76777d",
+              "surface-variant": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#d2bbff",
+              "on-background": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#266d68",
+              "surface": "#f7f9fb",
+              "outline-variant": "#c6c6cd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-[#f7f9fb] dark:bg-slate-950 w-full top-0 px-6 py-4 sticky z-50">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Agent Profile" data-alt="Professional user avatar for agent profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCrNYbWHEaYWEe1-0U96TsPWQrDl__YqxWUCzM3zO32im-N3T7XOpH55heoZbhwdFQHYm1TdpUV6XxFeNZTj4XP8ym3X0xNP2Zwdoyrfy51EC6COq9IhZXFdXjRdMZ8BnyWbRTBXIEJln_rLq9VZLrRwLX6tgWMkG43iKXaISaEhWaoVMFw0rTuO85eMctWRRd1zDrZGzGAzqDvjc6so2eYVGDbnOKm_HX4TnXj6vH01xwc3McsOc8FLdiUjE2iah0itowwP_4vVk4"/>
+</div>
+<h1 class="font-['Manrope'] font-black text-2xl tracking-tighter text-[#0F172A] dark:text-white">Salemijo</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#45464d] dark:text-slate-400 font-medium hover:bg-white/50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Inbox</a>
+<a class="text-[#45464d] dark:text-slate-400 font-medium hover:bg-white/50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Clients</a>
+<a class="text-[#45464d] dark:text-slate-400 font-medium hover:bg-white/50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Social</a>
+<a class="text-[#45464d] dark:text-slate-400 font-medium hover:bg-white/50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Insights</a>
+</nav>
+<button class="material-symbols-outlined text-[#0F172A] dark:text-white p-2 hover:bg-white/50 dark:hover:bg-slate-800 transition-colors rounded-full">auto_awesome</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-10 pb-32">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<span class="text-secondary font-semibold tracking-widest uppercase text-xs">Financial Overview</span>
+<h2 class="font-headline font-bold text-5xl mt-2 tracking-tight text-on-surface">Billing &amp; Earnings</h2>
+<p class="text-on-surface-variant mt-4 max-w-xl text-lg">Manage your agency subscription, track managed revenue across your portfolio, and settle outstanding balances.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Bento Grid Left: Stats & Plan -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Managed Revenue Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-none flex flex-col justify-between h-64 relative overflow-hidden">
+<div class="z-10">
+<span class="text-on-surface-variant font-medium text-sm">Total Revenue Managed</span>
+<div class="text-4xl font-headline font-extrabold mt-2 tracking-tighter">₹1,42,850.00</div>
+</div>
+<div class="flex items-center gap-2 z-10">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span class="text-secondary font-semibold text-sm">+12.5% vs last month</span>
+</div>
+<!-- Abstract geometric background -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Current Plan Card -->
+<div class="bg-primary-container p-8 rounded-xl shadow-sm border-none flex flex-col justify-between h-64 text-white relative">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-on-primary-container font-medium text-sm">Active Subscription</span>
+<span class="bg-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Agency Pro</span>
+</div>
+<div class="text-3xl font-headline font-bold mt-4">Growth Plan</div>
+<p class="text-on-primary-container text-sm mt-2">Next billing date: Oct 24, 2024</p>
+</div>
+<button class="bg-white text-primary font-bold py-3 px-6 rounded-lg text-sm w-full transition-transform active:scale-95">Upgrade Experience</button>
+</div>
+<!-- Recent Invoices Table (Bento Wide) -->
+<div class="md:col-span-2 bg-surface-container-low rounded-xl overflow-hidden">
+<div class="px-8 py-6 border-b border-outline-variant/10 flex justify-between items-center bg-white/30">
+<h3 class="font-headline font-bold text-xl">Recent Invoices</h3>
+<button class="text-secondary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="text-on-surface-variant text-xs uppercase tracking-widest">
+<tr>
+<th class="px-8 py-4 font-semibold">Invoice ID</th>
+<th class="px-8 py-4 font-semibold">Date</th>
+<th class="px-8 py-4 font-semibold">Amount</th>
+<th class="px-8 py-4 font-semibold">Status</th>
+<th class="px-8 py-4 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-8 py-5 font-medium text-sm">#INV-88291</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Sep 24, 2024</td>
+<td class="px-8 py-5 font-bold text-sm">₹24,999.00</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">download</button>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-8 py-5 font-medium text-sm">#INV-87102</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Aug 24, 2024</td>
+<td class="px-8 py-5 font-bold text-sm">₹24,999.00</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">download</button>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-8 py-5 font-medium text-sm">#INV-86554</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Jul 24, 2024</td>
+<td class="px-8 py-5 font-bold text-sm">₹38,500.00</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md text-[10px] font-bold uppercase">Paid</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">download</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Context Rail: Payment Sidebar -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Payment Modal Container -->
+<div class="bg-surface-container-high rounded-xl p-8 sticky top-28 border border-white shadow-xl">
+<h3 class="font-headline font-bold text-2xl mb-2">Pending Balance</h3>
+<div class="text-4xl font-headline font-black text-primary mb-8">₹0.00</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg group cursor-pointer border border-transparent hover:border-secondary transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Credit/Debit Cards</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Visa, Mastercard, Amex</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg group cursor-pointer border border-transparent hover:border-secondary transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance_wallet</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold">UPI Payments</span>
+<span class="text-[10px] text-on-surface-variant uppercase">GPay, PhonePe, Paytm</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg group cursor-pointer border border-transparent hover:border-secondary transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Netbanking</span>
+<span class="text-[10px] text-on-surface-variant uppercase">All major Indian banks</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                        Pay Now
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="mt-6 flex items-center justify-center gap-4 grayscale opacity-40">
+<img alt="Visa" data-alt="Visa payment logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_iQ5l0_lsegZOSnGHurla2xY8d-sk-Es6hQJZpp1Zmrns7PmP-la5x--VdIUTcMMijBynKIsJnpK6_ufjBcS6T0-nf7DqXJl5Vzq3RiZ8ju44bYBUDcvDQ9Rx2qZUakdXUbrDtaIYSHwYUAn_nZOcmZ9ewGx0u3XLtZF_Qy04TPWD9WAKboJlIyZfQ3pKgrMqTvuPx7aaw-Xeb1Tz2QrmeBoQjJ3xOgehG3OKF69z7YtfvagPtrbVj-PX8i4g-pYGgP0hxPQFgp1L"/>
+<img alt="UPI" data-alt="UPI payment logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQLruzeOt6hwOH7l4jXToTMFOU2hqWrxEb5iNp8EU9VPMRI0-zu5puyHsnqDVffSVPFmjAE8Seg2IyGK6mK6oTbnCVyI6eRxTHkXneXz7MvhQAUqm0_2toLd-d9RmT6TDc9qgfnGg07LyvnIoMCta6RTmnRPYrQxWrvd0MklJBohbiD2q9cUJ_2vRCtJo6npdEqN-mtV3A3UGi89gEnv1VZ53ayXoa1Hw76o225_kfpc5TFjwFk7DR6gnna2lAeBBJ8_ZpODeEtQkB"/>
+<img alt="Razorpay" data-alt="Razorpay secured logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBud2dHt8Al7eqbfmc7DNL94fIe9SToTWBlZBWssJV_nsTtlZokViCy3zrol6HWzhKqTjVqPnN5bUqOBi3cUUsTgzwDCjduigzOfBzcjXC6G6h3IFS-ZPSOcwDpBBE0l-Yq3dLxiTKWN7OXgdGvHSaIBCO-WPAxy7WxbVTWNflscL5YIwWaxg9eBk8OKGB13CdJszTXw86HMnPc5T2plEECV-OJs46_npisRiu_K0R4aeRO5nfA2O9UNlgubJC5Kp7t1Wx3sCvdusB1"/>
+</div>
+</div>
+<!-- AI Insights Panel (Glassmorphism) -->
+<div class="bg-tertiary-container/5 backdrop-blur-xl border border-tertiary-container/10 p-6 rounded-xl">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline font-bold text-on-tertiary-container text-sm">Financial Insight</h4>
+</div>
+<p class="text-sm text-on-primary-container leading-relaxed">Your agency's managed revenue grew by 15% this quarter. Switching to the <strong>Annual Billing</strong> cycle could save you ₹48,000/year.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-4 pt-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(19,27,46,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#45464d] dark:text-slate-500 px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">share</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0F172A] dark:text-teal-400 bg-[#f2f4f6] dark:bg-slate-800 rounded-xl px-4 py-2 hover:opacity-80 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Insights</span>
+</a>
+</nav>
+</body></html>

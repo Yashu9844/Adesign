@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#7ebdac",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary-container": "#636467",
+              "outline-variant": "#bfc9c4",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "primary": "#00342b",
+              "primary-fixed": "#afefdd",
+              "surface-tint": "#29695b",
+              "on-secondary-fixed-variant": "#454749",
+              "on-tertiary-container": "#e89f8c",
+              "on-primary-fixed": "#00201a",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#5d5e61",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "on-surface": "#191c1d",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-container": "#edeeef",
+              "primary-container": "#004d40",
+              "surface-container-highest": "#e1e3e4",
+              "tertiary-fixed": "#ffdbd1",
+              "on-secondary": "#ffffff",
+              "outline": "#707975",
+              "surface-bright": "#f8f9fa",
+              "on-tertiary-fixed": "#370e04",
+              "on-secondary-fixed": "#1a1c1e",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#e2e2e5",
+              "on-error-container": "#93000a",
+              "background": "#f8f9fa",
+              "tertiary": "#4e2013",
+              "on-tertiary": "#ffffff",
+              "inverse-primary": "#94d3c1",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#065043",
+              "on-background": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-surface-variant": "#3f4945",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#693527",
+              "secondary-container": "#e2e2e5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-nav { backdrop-filter: blur(15px); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00342b] font-headline">Aryan Clothing</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium Inter" href="#">Men</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium Inter" href="#">Women</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium Inter" href="#">New Arrivals</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium Inter" href="#">Sale</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium Inter" href="#">Categories</a>
+</div>
+<div class="flex items-center space-x-6 text-[#00342b]">
+<button class="hover:bg-slate-50/50 p-2 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="hover:bg-slate-50/50 p-2 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:bg-slate-50/50 p-2 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<!-- Breadcrumb -->
+<div class="flex items-center space-x-2 text-[10px] uppercase tracking-[0.2em] text-secondary mb-12">
+<a class="hover:text-primary transition-colors" href="#">Men</a>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Occasion Wear</a>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Bandhgala</span>
+</div>
+<!-- PDP Hero Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 flex flex-col-reverse lg:flex-row gap-6">
+<!-- Thumbnails -->
+<div class="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible hide-scrollbar lg:w-24 shrink-0">
+<div class="w-20 lg:w-full aspect-[3/4] bg-surface-container-low cursor-pointer ring-1 ring-primary/20 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Close up detail of intricate emerald green hand-embroidery on silk fabric with gold threads and floral patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArMlPyt2EttOaYkg_-sdrQV3ucVlXEa-5i5n_m7BHQc76wFsqkCBAW0M_WP5XEviGPD2qObTjTNU-jNvBizUkZpOMjo52z9UPGryBzY_uktaSos4_oq_UyFrEwIsVkJi_L3bitSwya6Zw1ufy8BFxc4oxe9ObQdQAqIkvFEd1QFnkNwkutSCXJs7G7dYTO-pJ7SHkaBvyJ62EEfnMwDY0kyqiHYFgAUQRR0YUvbeATRTyZhosJ-QQmiEPDpm2sFEav-6rCDUazrWb5"/>
+</div>
+<div class="w-20 lg:w-full aspect-[3/4] bg-surface-container-low cursor-pointer hover:ring-1 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Full shot of an Indian male model wearing a luxury emerald green bandhgala standing against a minimal ivory architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5a3Ql859ey0Jwp_oPXZCSGBJZjYb45iNe_-zNETlh7AMFUWRppsDmtRiTM_jO5efKx6JAdtmUgBKkVPF636imd_XON-RNvZhiBT3momOCME9RAupXYyfGsHfAoQ_FwzPuLd_Pkf6t5Ne1lddDjSP1LxF2aS4NKlepnZznPcBC9hiN7bhHGAiJfWGBKkKZFUZA5m4K8xY5vjmjqXdH6pQh4sNASz1pELxSXkBMInpZdCIUolP7C0c252YvESvL37yIhh9km2EWNyh8"/>
+</div>
+<div class="w-20 lg:w-full aspect-[3/4] bg-surface-container-low cursor-pointer hover:ring-1 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Profile view of a man in traditional Indian fashion featuring high collar and metallic buttons in a soft warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4yXUN4hVjn0JGHZtZZhNd6W4KdvZasQMa82Sx4cv6xYl624VFq8XNQK0xQWRhte247XJ3r89jLzrjPsmX4_ZfUmGPC1aS_KpGL1kFX5Igmv7s8wHK4kicy5V8S2Pb023Ogpmm8ChxfDgWVUFulswWiKiIfo1j24ALQDXjJ88APn4yXnXsixLWXa4sUnaKZO2yEkt2Jw9cNVaY-xASYv9bzjzPyshqfpEi05LLE-BhMSIJyg6zEtivSQ15GfhZK9Gsb-2ADN2We-mw"/>
+</div>
+<div class="w-20 lg:w-full aspect-[3/4] bg-surface-container-low cursor-pointer hover:ring-1 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Texture shot of high-quality hand-loomed raw silk in deep emerald green showing organic weave patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMFnj8V6_9aY6E3_aKPnOHZaHD26wPeWXn1BqhkGSs3L1_GFOGMX_UVDorekjyyWI0OcNl5eZBEUhCf7KDqHji0JmYKqfoBs2N8t2CAFeLPT3sn8j8SwxwQjAX9-Mbr9O5sb5HIgEzxvhKRzpOwpOUBuWf9un73wo0P6OR8kUxm1iM7aPvTuvA236jTMXLE66mVbJVGeU3c13-EC0O_dZy5Jab5-U5ck-OhPVcpbYcffO_Bgdkg6OsseNwW4ABOS6fbZfzTgqApKU2"/>
+</div>
+</div>
+<!-- Main Display -->
+<div class="flex-grow aspect-[3/4] relative overflow-hidden bg-surface-container-low group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Regal portrait of an Indian model in a bespoke Hand-Embroidered Silk Bandhgala in Emerald green with majestic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6hFyZidhK-N1_rh5gT6QDcAACr6kjfcE1dBatIQGrHREFxE1OS1RFbaf5HoF8Yni_RYV2M87hCMDLq0casXs4mgtfqdtsCY170hfvBw9l3yQ1nBZ-YWRxad4dYLF-jgroIHKFOhgtdeK-dTxMZcRSVz5acpk3E2Be_ynDAtSlXUYB9O15MDKTzC3VDavH1bHLLhpiRl-XplZvVCpYKo0-834HdXC8Tb1Rbto__b9-IBrs2M8NcT0rqP4NJusQ9ptECucb2rNlNOwE"/>
+<div class="absolute top-6 left-6 bg-white/40 backdrop-blur-md px-4 py-1 text-[10px] tracking-widest uppercase font-semibold text-primary">Limited Edition</div>
+</div>
+</div>
+<!-- Product Details Section -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="mb-8">
+<h1 class="text-4xl font-bold tracking-tight font-headline text-primary mb-2">Hand-Embroidered Silk Bandhgala</h1>
+<p class="text-secondary font-medium tracking-wide">Deep Emerald | Artisanal Collection</p>
+</div>
+<div class="text-3xl font-light text-primary mb-10 font-headline">
+                        ₹42,000
+                        <span class="text-xs text-secondary ml-2 align-middle font-body font-medium">(Inclusive of all taxes)</span>
+</div>
+<div class="space-y-8 mb-12">
+<!-- Description -->
+<div class="relative pl-6 border-l border-outline-variant/30">
+<p class="text-sm leading-relaxed text-secondary mb-4 italic">
+                                "A masterpiece of heritage craftsmanship. This Bandhgala is meticulously crafted from hand-loomed mulberry silk, featuring ornate floral embroidery rendered by master artisans in Lucknow."
+                            </p>
+<div class="grid grid-cols-2 gap-4 text-[11px] uppercase tracking-wider text-primary font-bold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                                    100% Hand-Loomed Silk
+                                </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                                    Gold Thread Zardosi
+                                </div>
+</div>
+</div>
+<!-- Size Selector -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Select Size (IN)</span>
+<button class="text-[10px] font-bold text-primary underline decoration-primary/30 underline-offset-4">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-4 text-sm font-medium border border-primary text-primary hover:bg-primary hover:text-white transition-all ring-inset ring-1 ring-primary/10">38</button>
+<button class="py-4 text-sm font-medium border border-outline-variant/30 text-secondary hover:border-primary transition-all">40</button>
+<button class="py-4 text-sm font-medium border border-outline-variant/30 text-secondary hover:border-primary transition-all">42</button>
+<button class="py-4 text-sm font-medium border border-outline-variant/30 text-secondary hover:border-primary transition-all">44</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 mt-auto">
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-white text-sm font-bold uppercase tracking-[0.2em] shadow-lg hover:translate-y-[-2px] transition-all">
+                            Add to Bag
+                        </button>
+<button class="w-full py-5 bg-secondary-container text-on-secondary-fixed text-sm font-bold uppercase tracking-[0.2em] hover:bg-secondary-fixed-dim transition-all">
+                            Buy Now
+                        </button>
+</div>
+<!-- Localized Help -->
+<div class="mt-8 flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Expert Styling Help</p>
+<p class="text-sm font-semibold text-primary">+91 98765 43210</p>
+</div>
+</div>
+<button class="text-primary-container">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Asymmetric Bento Section: Details -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-8 bg-surface-container-lowest p-12 relative overflow-hidden">
+<div class="relative z-10 max-w-lg">
+<h2 class="text-3xl font-bold font-headline text-primary mb-6">The Soul of Silk</h2>
+<p class="text-secondary leading-relaxed mb-6">Every Bandhgala tells a story of patience. Our silk is sourced from sustainable weavers in Bhagalpur, where the threads are spun by hand to preserve the natural luster and characteristic slubs that define authentic raw silk.</p>
+<p class="text-secondary leading-relaxed">The embroidery process alone takes over 140 hours of intensive manual labor, ensuring that no two pieces are ever truly identical.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 md:opacity-100 md:w-1/3">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="Artistic macro shot of high-quality textile fibers and metallic embroidery threads on a dark table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqshfMUutQz-yysmXy-uMKHf47S5Ii9mU-ds_pdfAOUVvRZs-1NaRNI53EFFaLmPfXLOUgDn-lsQd_uXq0z8BLGsEuZmZS25RerSke78ZAzyc-3owoNwiZJratHBNP86wLqMiXIs-7T-SW6LwklyVRsJtHCxWgx3ZsbsOLMuCuHp8Jmm2SBkgZ3KeiEa6e1Ya-0CMYAt3oJP_-J7syFDg9Z6uwtL61mbLrHXh3FQLIu5fOtCIXexShE9DdWB9lkVNvOMgRx-zqPH6u"/>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary text-white p-12 flex flex-col justify-center">
+<span class="material-symbols-outlined text-4xl mb-6 opacity-50" data-icon="history_edu">history_edu</span>
+<h3 class="text-xl font-bold font-headline mb-4">Curated Heritage</h3>
+<p class="text-sm text-on-primary-container leading-relaxed">Designed for the modern connoisseur, this piece bridges the gap between ancestral tradition and contemporary tailoring.</p>
+</div>
+</section>
+<!-- Cross-sell section: Curated with -->
+<section class="mt-32">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="text-[10px] uppercase tracking-[0.3em] font-bold text-secondary block mb-2">Complete the Look</span>
+<h2 class="text-4xl font-bold font-headline text-primary">Curated With</h2>
+</div>
+<a class="text-xs font-bold text-primary flex items-center gap-2 border-b border-primary/20 pb-1" href="#">Explore Full Collection <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Cross-sell 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury cream-colored tailored trousers in fine wool fabric displayed in an editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsQVQUI3P9jBuH1173ya-j-r3YzqcJhQ2RKffIHr1C-HmzB5a_e9gi30mEPRrQ2PvQwIJQRKXj-LbswKvZTzDpr4lv1QAN2mjphVTECNrTvXCLDXAsvU-r5UZgc42XtGp8TVtdSgUM5wf_h7chwgdKxZX_CDRYL-KKKQXK2rPSpg5gJR7WF7uyCpNooOjlutNVvcP_Kf0A9OAZem1NzylRcBp156PP446NqC8WQ3E4qV1ldhekBGR2Nn5D9Uud9KtlQ0GLlIeeBMys"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-3 text-[10px] font-bold uppercase tracking-widest text-primary opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Quick Add</button>
+</div>
+<h4 class="text-sm font-bold text-primary mb-1">Ivory Wool Trousers</h4>
+<p class="text-xs text-secondary mb-3">Tailored Fit</p>
+<p class="text-sm font-semibold text-primary">₹8,500</p>
+</div>
+<!-- Cross-sell 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Handcrafted tan leather Jodhpuri shoes with intricate punching details on a minimalist pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWvPS3OIMm-Wdv2uglBJBLH2NLfRuMyGtsPafrltVMGoKiDYYC_LaNRI78P4USNReHn7Zimx7YijbJBFb8maZwhBBMcwRgP8w_SuSNm9w9FCQa3Ii-cTSNpZA7xEeGMF7iF22TkOC6yxW-riWUL99N5CjjP7FyQzd16C5mxagX8ZeSdXnUl6SByHfV1GZXLteA4jXujXVaFTj5zIYG_ibE907UelRD0PQH9Rjdrb0N2u3SQfF6UeBjitAL0iKLoEIZkv96-5lKs6g"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-3 text-[10px] font-bold uppercase tracking-widest text-primary opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Quick Add</button>
+</div>
+<h4 class="text-sm font-bold text-primary mb-1">Tan Leather Jodhpuri</h4>
+<p class="text-xs text-secondary mb-3">Handcrafted Leather</p>
+<p class="text-sm font-semibold text-primary">₹12,000</p>
+</div>
+<!-- Cross-sell 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a luxury gold pocket watch with classical design on a silk background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6o0iuXZ6aZwcQYZ5iEZv6HabxOktym1XoP7QQbn9bCMb5Uw8UtwgdZzeMQ_XFHv0ULEeIV2amifbyBTC_cNxDPSFVWn7R7WPFgwWKhrtLcSUARMOqNj2rr6_ALnxdx1oS3F9HpgqdpPRQGrh794yBjNaaHQZdgJlayOkrEkNDabDY3LnOFwiikHxuORqebFHc7eOC3_GOKMnAntIswVmt5tko28HrqkNoo27StUk8c0_7Lbajoz-e8kHKsB9ARcmpYv_TGZHIyN_Y"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-3 text-[10px] font-bold uppercase tracking-widest text-primary opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Quick Add</button>
+</div>
+<h4 class="text-sm font-bold text-primary mb-1">Heirloom Pocket Watch</h4>
+<p class="text-xs text-secondary mb-3">Limited Edition</p>
+<p class="text-sm font-semibold text-primary">₹28,000</p>
+</div>
+<!-- Cross-sell 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Collection of premium silk pocket squares in various jewel tones including emerald and gold" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHy39Me8yvep3tI7F3OKxVTUqYiuFfr50RnCNvl7i2448FhTz8ZRncgtiTVCDSPwhts_Fwv2MIYBybvD28k7copuo6edeITAqp9TzaJBRNSnm_CXRFrgdc8le8t7mM_7jqvF5Oj40LOS9DTJ_0diZSkxwJ0VxqMRe7Hpzx5FIGK1KbSYEfHfoQoglo-UsVuSPNdlzW2BgR1qYqCWdVaQ2zDenYOCheW793ebW7alFwEOOOfQV9aIhJNFS1IpBrSvM8ShQgYl4kefGs"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-3 text-[10px] font-bold uppercase tracking-widest text-primary opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Quick Add</button>
+</div>
+<h4 class="text-sm font-bold text-primary mb-1">Hand-Rolled Pocket Square</h4>
+<p class="text-xs text-secondary mb-3">100% Mulberry Silk</p>
+<p class="text-sm font-semibold text-primary">₹2,200</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 py-20 px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-bold font-headline text-slate-900">Aryan Clothing</div>
+<p class="text-xs font-medium text-slate-500 leading-loose uppercase tracking-widest">Crafting modern Indian silhouettes with a dedication to artisanal heritage and sustainable luxury.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Shop</h5>
+<ul class="space-y-2 text-xs font-medium Inter uppercase tracking-widest">
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Men's Collection</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Women's Collection</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Occasion Wear</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Artisanal Accessories</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Care</h5>
+<ul class="space-y-2 text-xs font-medium Inter uppercase tracking-widest">
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Customer Service</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Secure Payments</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Returns &amp; Exchange</a></li>
+<li><a class="text-slate-500 hover:text-slate-800 transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Contact</h5>
+<ul class="space-y-2 text-xs font-medium Inter uppercase tracking-widest">
+<li class="text-slate-500">Mumbai Office, BKC</li>
+<li class="text-slate-500">+91 98765 43210</li>
+<li class="text-slate-500">concierge@aryanclothing.in</li>
+</ul>
+<div class="flex space-x-4 pt-4">
+<span class="material-symbols-outlined text-slate-400" data-icon="share">share</span>
+<span class="material-symbols-outlined text-slate-400" data-icon="camera">camera</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto border-t border-slate-200 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[10px] font-medium Inter uppercase tracking-widest text-slate-400">© 2024 Aryan Clothing. All Rights Reserved.</p>
+<div class="flex gap-6 text-[10px] font-medium Inter uppercase tracking-widest text-slate-400">
+<span>Handcrafted in India</span>
+<span>Worldwide Shipping</span>
+</div>
+</div>
+</footer>
+</body></html>

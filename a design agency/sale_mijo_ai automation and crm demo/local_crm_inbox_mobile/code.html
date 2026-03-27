@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salemijo CRM | Local Agency Business Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0052CC", // Professional Blue (Bharat Utilitarian)
+              "secondary": "#00875A", // Success Green
+              "on-surface": "#172B4D",
+              "on-surface-variant": "#44546F",
+              "surface-container": "#F4F5F7",
+              "surface-container-high": "#EBECF0",
+              "outline": "#DFE1E6",
+              "tertiary": "#6554C0" // AI/Notice Purple
+            },
+            fontFamily: {
+              "headline": ["Public Sans", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "4px", "lg": "6px", "xl": "8px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        min-height: 100dvh;
+        background-color: #F4F5F7;
+      }
+      .utilitarian-card {
+        background: white;
+        border: 1px solid #DFE1E6;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+    </style>
+</head>
+<body class="bg-surface-container font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-white border-b border-outline sticky top-0 z-50">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary flex items-center justify-center text-white font-bold">S</div>
+<h1 class="font-headline font-bold text-xl tracking-tight text-on-surface">Salemijo CRM</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1 px-3 py-1.5 bg-surface-container-high rounded text-sm font-semibold hover:bg-outline transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span>Payouts</span>
+</button>
+<button class="material-symbols-outlined text-on-surface-variant p-2 rounded hover:bg-surface-container-high transition-colors" data-icon="notifications">notifications</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 pt-6 pb-24">
+<!-- Page Header -->
+<div class="mb-6">
+<h2 class="font-headline font-bold text-2xl text-on-surface">Agency Inbox</h2>
+<p class="text-on-surface-variant text-sm">Managing 24 active client conversations across WhatsApp and Instagram.</p>
+</div>
+<!-- Search and Quick Filters -->
+<div class="mb-6 flex flex-col sm:flex-row gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white border border-outline rounded focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm" placeholder="Search by name or phone..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 sm:pb-0">
+<button class="whitespace-nowrap px-4 py-2 bg-primary text-white rounded font-semibold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+                Follow-ups
+            </button>
+<button class="whitespace-nowrap px-4 py-2 bg-white border border-outline rounded font-medium text-on-surface hover:bg-surface-container transition-colors text-sm">
+                New Leads
+            </button>
+<button class="whitespace-nowrap px-4 py-2 bg-white border border-outline rounded font-medium text-on-surface hover:bg-surface-container transition-colors text-sm">
+                Unpaid Invoices
+            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Main Message List -->
+<div class="lg:col-span-8 space-y-3">
+<div class="flex items-center gap-2 py-1">
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Priority Actions</span>
+<div class="h-[1px] flex-1 bg-outline"></div>
+</div>
+<!-- Message Card 1: Aditi Sharma -->
+<div class="utilitarian-card p-4 rounded hover:border-primary cursor-pointer transition-colors group">
+<div class="flex gap-4">
+<img alt="Aditi Sharma" class="w-12 h-12 rounded object-cover border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeHr9ucPttNwBr3mdYOC-KiykLJ-AUyauLzNXK2AHNHfn2otSRv-GrTgMXrh9Qc5btjqElw15xUTJ1aRe8xk4gDtztXQn0uIcR-idzL81BdeStYHzNhhwqlzxhRn1MkzsNUf2cdm1Pd1EuQ158KmwYS5aSKx2KR6OM4R-q9VRzX4EhCY_qVVobGqcKewOixkanUXdnt0Ujt8bXfESk6jEjJBtfurUg_V20mwD8XcyWnsc4OaH8ApnqiOtKDvGcSBFirDqGf4Arg0ha"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-on-surface flex items-center gap-2">Aditi Sharma <span class="text-[10px] px-1.5 py-0.5 bg-secondary/10 text-secondary border border-secondary/20 rounded uppercase font-bold">Hot Lead</span></h4>
+<p class="text-sm text-on-surface mt-0.5 line-clamp-1">"Sir, please send the revised commercial for the Worli site today."</p>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">Just now</span>
+</div>
+<div class="mt-3 flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-tertiary bg-tertiary/5 px-2 py-1 rounded border border-tertiary/10">
+<span class="material-symbols-outlined text-[14px] fill-1" data-icon="auto_awesome">auto_awesome</span>
+                                AI: High Intent (Commercial Query)
+                            </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="whatsapp">forum</span>
+                                WhatsApp Business
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Message Card 2: Rohan Gupta -->
+<div class="utilitarian-card p-4 rounded hover:border-primary cursor-pointer transition-colors group">
+<div class="flex gap-4">
+<img alt="Rohan Gupta" class="w-12 h-12 rounded object-cover border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWT02LkYqiVYCxREJ4tKTql-os2jFS7qF886RUJizyO-WHIEGjV-ApWXVZ5savvaj7cxFOapFQNupSPSAJ-7J24jDVykXzLtcbR7Yk8ou8lV2w4hj6Hnh_Ya90lc_UffxCMOEyOm12PwXjZOmYz6RtCYq6gPBfgsT0f0P8FgWwglipnsHPPilfiHhkTbag6sAxI9weyWaU1b-h8KI2XE5CEF79lta368knaVJL7UiyeT1VGxkF7dWOxHoJWjU4WWYqfIHDOmpmOXrr"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-on-surface">Rohan Gupta</h4>
+<p class="text-sm text-on-surface mt-0.5 line-clamp-1">"Sent the token amount via Razorpay. Check and confirm receipt."</p>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">15m ago</span>
+</div>
+<div class="mt-3 flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-secondary bg-secondary/5 px-2 py-1 rounded border border-secondary/10">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                                Payment Received: ₹25,000
+                            </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="sms">sms</span>
+                                Direct Message
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Message Card 3: Vivek Mehta -->
+<div class="utilitarian-card p-4 rounded hover:border-primary cursor-pointer transition-colors group opacity-75">
+<div class="flex gap-4">
+<img alt="Vivek Mehta" class="w-12 h-12 rounded object-cover border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXUxLnvcLaRvjgYNw1y6u0BYwxpJkCFUz7U7_1nnSR8s5WL214wGH9ozYuDlX7i3AmcDpATGrvnP1WmiJZgqjLOseijc_8Hu57US1_dP1bKtapnoyjvb4GQGGaJBmTL9_j1okT40oyHjiJCxWsxdhXvY2sP-w0i7I68ySWX235iNwDVxXaAZzCliLh1eP6oSODklxZjLdjmAmvaVbhxDUcSjRizu-VRw_5YffUn8NNhtTPxhI_IZ0U7x6_r8t62DUT7QOvALaVJjbk"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-on-surface">Vivek Mehta</h4>
+<p class="text-sm text-on-surface mt-0.5 line-clamp-1">"I'll visit the site tomorrow morning with my family. Shared location."</p>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">1h ago</span>
+</div>
+<div class="mt-3 flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-on-surface-variant bg-surface-container-high px-2 py-1 rounded border border-outline">
+                                Followed Up
+                            </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="alternate_email">alternate_email</span>
+                                Instagram Lead
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Agency Operations Sidebar -->
+<div class="lg:col-span-4 space-y-4">
+<!-- AI Insights (Practical) -->
+<div class="utilitarian-card p-5 rounded">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="psychology">psychology</span>
+<h3 class="font-bold text-sm uppercase tracking-wider">Agency Pulse</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-semibold mb-1">
+<span class="text-on-surface-variant">Daily Response Rate</span>
+<span class="text-secondary">92%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[92%]"></div>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded border border-outline">
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-1">Pending Tasks</p>
+<ul class="text-sm space-y-2">
+<li class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                3 Commercials to send
+                            </li>
+<li class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                                2 Site visits tomorrow
+                            </li>
+</ul>
+</div>
+<button class="w-full py-2.5 bg-on-surface text-white text-sm font-bold rounded hover:bg-black transition-colors">
+                        Generate Daily Report
+                    </button>
+</div>
+</div>
+<!-- Recent Business Wins (Replacing Premium Stats) -->
+<div class="utilitarian-card p-5 rounded">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="receipt_long">receipt_long</span>
+<h3 class="font-bold text-sm uppercase tracking-wider">Recent Wins</h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface">Token: BKC Office</span>
+<span class="font-bold text-secondary">₹1,00,000</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface">Adv: Pune Plot</span>
+<span class="font-bold text-secondary">₹50,000</span>
+</div>
+<hr class="border-outline"/>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-on-surface-variant">Total Invoiced (MTD)</span>
+<span class="text-sm font-bold">₹4,25,000</span>
+</div>
+</div>
+</div>
+<!-- Razorpay Integration -->
+<div class="bg-[#f0f4ff] border border-primary/20 p-4 rounded flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="Razorpay" class="h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_NPzMKp2goWvWW7bT9jUejFzBriK0mRSBSvw_dOnfJ5UJ2iwNyrOtP3h178jygQMlrKMyWE_lIGvSdR98XXEIv_YA53Bl1Yw1fEVWZ4g8AKUwelw0KDLItUywg6hU5OVtB1uH6npV7qeoOICSoUTtsCU7_D5nisickEo4IxFyxTXSb0fCeLD-yHm5ox3yotkb8bQ9X6Enj1CYYOhsTx1A8LI07nuukEpJuHoeGtvDofmAyp0OrZZFT4I8aoGECanLZu7hwgOr0ywT"/>
+<span class="text-xs font-bold text-[#002870]">Razorpay Integrated</span>
+</div>
+<button class="text-[11px] font-bold text-primary hover:underline">VIEW DASHBOARD</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Bottom Bar (Mobile Utility) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-5 pt-3 bg-white border-t border-outline md:hidden">
+<a class="flex flex-col items-center justify-center text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="inbox" style="font-variation-settings: 'FILL' 1;">inbox</span>
+<span class="text-[10px] font-bold mt-0.5">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="contact_page">contact_page</span>
+<span class="text-[10px] font-medium mt-0.5">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="payments">payments</span>
+<span class="text-[10px] font-medium mt-0.5">Billing</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium mt-0.5">Settings</span>
+</a>
+</nav>
+<!-- Desktop Sidebar Rail -->
+<div class="hidden md:flex fixed left-0 top-[61px] h-[calc(100vh-61px)] w-16 flex-col items-center py-6 gap-6 bg-white border-r border-outline">
+<span class="material-symbols-outlined text-primary text-[28px] cursor-pointer" data-icon="inbox" style="font-variation-settings: 'FILL' 1;">inbox</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[28px] hover:text-primary cursor-pointer" data-icon="contact_page">contact_page</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[28px] hover:text-primary cursor-pointer" data-icon="description">description</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[28px] hover:text-primary cursor-pointer" data-icon="payments">payments</span>
+<div class="mt-auto mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[28px] hover:text-primary cursor-pointer" data-icon="settings">settings</span>
+</div>
+</div>
+</body></html>

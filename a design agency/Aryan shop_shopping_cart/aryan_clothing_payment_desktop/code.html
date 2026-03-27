@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | Aryan Clothing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#7ebdac",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-container": "#636467",
+                        "outline-variant": "#bfc9c4",
+                        "tertiary-fixed-dim": "#ffb5a1",
+                        "primary": "#00342b",
+                        "primary-fixed": "#afefdd",
+                        "surface-tint": "#29695b",
+                        "on-secondary-fixed-variant": "#454749",
+                        "on-tertiary-container": "#e89f8c",
+                        "on-primary-fixed": "#00201a",
+                        "on-tertiary-fixed-variant": "#6d382a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5d5e61",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "primary-fixed-dim": "#94d3c1",
+                        "surface-container": "#edeeef",
+                        "primary-container": "#004d40",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-secondary": "#ffffff",
+                        "outline": "#707975",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-fixed": "#370e04",
+                        "on-secondary-fixed": "#1a1c1e",
+                        "surface-container-low": "#f3f4f5",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e2e2e5",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9fa",
+                        "tertiary": "#4e2013",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#94d3c1",
+                        "secondary-fixed-dim": "#c6c6c9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#065043",
+                        "on-background": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#3f4945",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-dim": "#d9dadb",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#693527",
+                        "secondary-container": "#e2e2e5"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active { @apply text-primary font-bold border-b-2 border-primary pb-1; }
+        .glass-nav {
+            background: rgba(248, 249, 250, 0.7);
+            backdrop-filter: blur(15px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Anchor -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0px_4px_20px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary font-headline">Aryan Clothing</div>
+<div class="hidden md:flex space-x-8">
+<span class="text-slate-600 font-medium text-sm">Men</span>
+<span class="text-slate-600 font-medium text-sm">Women</span>
+<span class="text-slate-600 font-medium text-sm">New Arrivals</span>
+<span class="text-slate-600 font-medium text-sm">Sale</span>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-primary cursor-pointer">favorite</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">shopping_bag</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">person</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Progress Bar: Step 2 Payment Active -->
+<div class="flex justify-center items-center mb-16 max-w-2xl mx-auto">
+<div class="flex flex-col items-center flex-1">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-xs font-semibold uppercase tracking-widest text-slate-400">1. Shipping</span>
+</div>
+<div class="h-px bg-primary-container flex-1 mb-6"></div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-2 shadow-lg scale-110">
+<span class="text-sm font-bold">2</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">2. Payment</span>
+</div>
+<div class="h-px bg-surface-container-highest flex-1 mb-6"></div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center mb-2 border border-outline-variant/20">
+<span class="text-sm">3</span>
+</div>
+<span class="text-xs font-semibold uppercase tracking-widest text-slate-400">3. Review</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Payment Methods -->
+<div class="lg:col-span-8 space-y-8">
+<header>
+<h1 class="text-4xl font-bold tracking-tight font-headline text-primary mb-2">Choose Payment Method</h1>
+<p class="text-slate-500 font-medium">All transactions are secure and encrypted.</p>
+</header>
+<div class="space-y-4">
+<!-- UPI Option -->
+<label class="group relative flex flex-col p-6 rounded-xl bg-surface-container-lowest border-b-2 border-transparent hover:border-primary transition-all cursor-pointer shadow-sm">
+<input checked="" class="sr-only peer" name="payment" type="radio"/>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-4">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100"></div>
+</div>
+<span class="text-lg font-bold font-headline">UPI (Google Pay, PhonePe, Paytm)</span>
+</div>
+<div class="flex space-x-2">
+<div class="px-2 py-1 bg-white border border-slate-100 rounded text-[10px] font-bold text-slate-400">UPI</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="bg-surface-container px-3 py-1 rounded-lg text-xs font-medium text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span> Google Pay
+                            </div>
+<div class="bg-surface-container px-3 py-1 rounded-lg text-xs font-medium text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">smartphone</span> PhonePe
+                            </div>
+<div class="bg-surface-container px-3 py-1 rounded-lg text-xs font-medium text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">payments</span> Paytm
+                            </div>
+</div>
+</label>
+<!-- Card Option -->
+<label class="group relative flex flex-col p-6 rounded-xl bg-surface-container-lowest border-b-2 border-transparent hover:border-primary transition-all cursor-pointer shadow-sm">
+<input class="sr-only peer" name="payment" type="radio"/>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-4">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100"></div>
+</div>
+<span class="text-lg font-bold font-headline">Credit / Debit Card</span>
+</div>
+<div class="flex space-x-2 opacity-60">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Card Number</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:ring-0 focus:border-primary py-2 font-mono text-sm" placeholder="XXXX XXXX XXXX XXXX" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Expiry</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:ring-0 focus:border-primary py-2 text-sm" placeholder="MM/YY" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-slate-400">CVV</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:ring-0 focus:border-primary py-2 text-sm" placeholder="***" type="password"/>
+</div>
+</div>
+</div>
+</label>
+<!-- COD Option -->
+<label class="group relative flex flex-col p-6 rounded-xl bg-surface-container-lowest border-b-2 border-transparent hover:border-primary transition-all cursor-pointer shadow-sm">
+<input class="sr-only peer" name="payment" type="radio"/>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary flex items-center justify-center transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100"></div>
+</div>
+<span class="text-lg font-bold font-headline">Cash on Delivery</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">local_shipping</span>
+</div>
+<p class="mt-2 text-xs text-slate-500 font-medium ml-10">Pay in cash when your order is delivered to your doorstep.</p>
+</label>
+</div>
+<!-- Trust Indicators -->
+<div class="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 items-center opacity-70 grayscale hover:grayscale-0 transition-all">
+<div class="flex flex-col items-center">
+<div class="font-headline font-black text-slate-900 text-sm italic">Razorpay</div>
+<span class="text-[8px] uppercase font-bold tracking-tighter">Secure Partner</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="font-headline font-black text-slate-900 text-sm italic tracking-tighter">CASHFREE</div>
+<span class="text-[8px] uppercase font-bold tracking-tighter">Payments</span>
+</div>
+<div class="flex flex-col items-center col-span-2 md:col-span-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">SSL Encrypted</span>
+</div>
+</div>
+<div class="flex space-x-2 justify-center">
+<div class="w-8 h-5 bg-slate-200 rounded flex items-center justify-center text-[8px] font-bold">VISA</div>
+<div class="w-8 h-5 bg-slate-200 rounded flex items-center justify-center text-[8px] font-bold">MC</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-low rounded-2xl p-8 sticky top-32 space-y-8">
+<h2 class="text-xl font-bold font-headline text-primary">Order Summary</h2>
+<!-- Product Items -->
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-16 h-20 bg-surface-container-high rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Premium emerald green linen shirt hanging on a minimalist boutique rack with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHig7h5T9zCd1FNlf7BCTGYBI3olhZQuIUUfrOWz1FTgQa1t6MQYZDJ2PH1LcHQtcHR7POyKOiRzq9pM_4aW9Atzkj1VBZ2jiGbFirXG_BGT0WcvImonj9uSkVADP2b4WBJsiOcKdg_zqAbFbb5DKshnmJWa4fuhj8ICToTZOlQ0kYRbCz78G58ryGmzHv2ZujSGp69WoX3lxhTJu32bS2auXyzTtH5upLRdV5dIkEBR0zh0x52KnWDCM3ct4RWYHPRd3GkMz6qXwL"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-on-surface">Linen Blend Shirt</h4>
+<p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Emerald / Medium</p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-xs font-semibold">Qty: 1</span>
+<span class="text-sm font-bold text-primary">₹2,499</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-16 h-20 bg-surface-container-high rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Slim fit dark denim jeans folded neatly on a textured architectural surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM5GY8UetrWPPQHBGuYHFg_ChSOV96a6TW42X6DDtglccNizkrwZ_-byPYOPqDqngc3IJZLEkgAmrm3nvfPTg-2mjeIVQAOnJvL3W7_-1mrHxuscPd6_FAk8YOJRuvAr2ApsXupocbgZaU3xtsv7vk3I3mgQ9kC7AfwZ3G7QfaXcKOyM1ik0W20g77REUHy1aA6GAu1LYIs_c97lYrDepXxWOPaQcv7ptPZSTtjMeHYyiXJSGBRKsy0g7v3V43mewTTbNfCnc1RmmN"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-on-surface">Selvedge Denim</h4>
+<p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Indigo / 32</p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-xs font-semibold">Qty: 1</span>
+<span class="text-sm font-bold text-primary">₹4,200</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-3 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between text-sm text-slate-600">
+<span>Subtotal</span>
+<span>₹6,699.00</span>
+</div>
+<div class="flex justify-between text-sm text-slate-600">
+<span>Shipping</span>
+<span class="text-green-600 font-bold uppercase text-[10px]">Free</span>
+</div>
+<div class="flex justify-between text-sm text-slate-600">
+<span>Tax (GST 12%)</span>
+<span>₹803.88</span>
+</div>
+<div class="flex justify-between text-lg font-bold text-primary pt-4 border-t border-outline-variant/40">
+<span>Total</span>
+<span>₹7,502.88</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-4 rounded-lg font-bold shadow-lg transform transition-all active:scale-95 flex items-center justify-center gap-2">
+                        Complete Payment
+                        <span class="material-symbols-outlined text-sm">lock</span>
+</button>
+<div class="text-center pt-4">
+<p class="text-[10px] text-slate-400 font-medium">By clicking complete payment, you agree to our Terms of Service and Privacy Policy.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Support Section -->
+<section class="max-w-7xl mx-auto px-8 py-12 border-t border-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Customer Support</h5>
+<p class="text-sm font-medium">client@gmail.com</p>
+<p class="text-sm font-medium">+91 98765 43210</p>
+</div>
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Secure Checkout</h5>
+<p class="text-sm text-slate-600 font-medium leading-relaxed">256-bit SSL encryption. We do not store your credit card details.</p>
+</div>
+<div class="flex flex-col items-center md:items-end justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">verified</span>
+<span class="text-[10px] font-bold uppercase text-primary mt-1">Authorized Store</span>
+</div>
+</div>
+</section>
+<!-- Footer Anchor -->
+<footer class="bg-slate-100 py-12 px-8 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-xl font-bold font-headline text-slate-900">Aryan Clothing</div>
+<p class="text-xs font-medium text-slate-500 Inter uppercase tracking-widest leading-loose">Mumbai Office<br/>Worli Sea Face, Mumbai 400018</p>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-bold uppercase tracking-widest text-primary">Service</div>
+<ul class="space-y-2">
+<li><a class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-opacity" href="#">Customer Service</a></li>
+<li><a class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-opacity" href="#">Secure Payments</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-bold uppercase tracking-widest text-primary">Policy</div>
+<ul class="space-y-2">
+<li><a class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-opacity" href="#">Returns</a></li>
+<li><a class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-opacity" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="flex flex-col justify-end items-end">
+<p class="text-xs font-medium text-slate-500 Inter uppercase tracking-widest">© 2024 Aryan Clothing. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

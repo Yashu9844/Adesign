@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e2e2e5",
+              "primary-fixed": "#afefdd",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "tertiary-fixed": "#ffdbd1",
+              "on-primary-fixed": "#00201a",
+              "on-background": "#191c1d",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "on-surface-variant": "#3f4945",
+              "surface-tint": "#29695b",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-surface": "#191c1d",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e2e2e5",
+              "inverse-primary": "#94d3c1",
+              "surface": "#f8f9fa",
+              "primary-container": "#004d40",
+              "on-primary-container": "#7ebdac",
+              "inverse-surface": "#2e3132",
+              "primary": "#00342b",
+              "tertiary-container": "#693527",
+              "tertiary": "#4e2013",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#5d5e61",
+              "outline": "#707975",
+              "on-secondary-fixed": "#1a1c1e",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-fixed": "#370e04",
+              "surface-bright": "#f8f9fa",
+              "on-secondary-fixed-variant": "#454749",
+              "outline-variant": "#bfc9c4",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#065043",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#e89f8c",
+              "on-secondary-container": "#636467",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .font-manrope { font-family: 'Manrope', sans-serif; }
+      .font-inter { font-family: 'Inter', sans-serif; }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-sm flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<button class="text-emerald-900 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-manrope font-black tracking-tighter text-emerald-900 text-lg uppercase">Aryan Clothing</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-emerald-900 relative active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-40 px-6 max-w-md mx-auto">
+<!-- Editorial Header -->
+<section class="mb-12">
+<p class="font-label text-xs tracking-[0.2em] text-secondary mb-2 uppercase">Your Curation</p>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-primary">Shopping Bag</h2>
+</section>
+<!-- Cart Items List -->
+<div class="space-y-8">
+<!-- Item 1: Silk Bandhgala -->
+<div class="relative flex gap-6 items-start group">
+<div class="w-32 aspect-[3/4] overflow-hidden bg-surface-container rounded-lg shadow-sm flex-shrink-0">
+<img alt="Silk Bandhgala" class="w-full h-full object-cover" data-alt="Close up of a luxury emerald green silk bandhgala jacket with intricate gold embroidery on a minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1-c7DMG9EJviwRuO2vB8ciISw_W5L2kojsxolemWtb0goI3b-c8N1J4pOAQ4vFQqAKJTCtGIkbI83KjCPy1ExM4pMYVhVd9ShQw0aERsoIWmKJmh1mKEUKNe3JsBcLYGxAMGWlf6VQUcgBNE0TUm80LQGEdDuvRkZFLvra0lFiwZoMB4R2hQYP__5LMDwXceVP86_e8LbBvkfR9IJK3VYFeylZwNaV-BO_03Fc311LrnEa_DftCEO6w04D_Ti0lvlQiZpprAtMGu"/>
+</div>
+<div class="flex flex-col flex-grow py-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight text-primary">Silk Bandhgala</h3>
+<button class="text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-xs text-secondary mb-4">Deep Emerald / Large</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center bg-surface-container rounded-lg p-1">
+<button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-md transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-bold text-sm">1</span>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-md transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-headline font-black text-primary">₹24,500</p>
+</div>
+<div class="flex gap-4">
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="favorite">favorite</span> Wishlist
+                            </button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary flex items-center gap-1 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Tailored Trousers -->
+<div class="relative flex gap-6 items-start group">
+<div class="w-32 aspect-[3/4] overflow-hidden bg-surface-container rounded-lg shadow-sm flex-shrink-0">
+<img alt="Tailored Trousers" class="w-full h-full object-cover" data-alt="Professional studio shot of charcoal grey tailored wool trousers with sharp pleats, focusing on fabric texture and cut" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOn8DvTUJyZzuMm7XugJ8PF75pAut6zNXqEozsbMG8swS-Fj4_FTxmuVl5wdwrYD5nT9s4c84t4k2AJwP7HUCVpq-YYigO5fMP5UsFWK1I-f0SVfueDS6Nx5QFkV-6CTxlUI14fAlv7WyPB6JwDqDDgRM8bI3gdVlD6E49bz-1Txh5I14n0BV8u90ycManjXfjq8iP_dnP_iQ0GZxrUHNDaNI97qR7e5WGNf5jf6aVcUUCsZw-0SY_HhkyBxeJbnQ_p06uzUWHMFW9"/>
+</div>
+<div class="flex flex-col flex-grow py-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight text-primary">Tailored Trousers</h3>
+<button class="text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-xs text-secondary mb-4">Charcoal Grey / 32</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center bg-surface-container rounded-lg p-1">
+<button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-md transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-bold text-sm">1</span>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-md transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-headline font-black text-primary">₹8,900</p>
+</div>
+<div class="flex gap-4">
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="favorite">favorite</span> Wishlist
+                            </button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary flex items-center gap-1 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary Section -->
+<section class="mt-16 pt-8 border-t border-outline-variant/20">
+<h4 class="font-headline font-bold text-xl mb-6 text-primary">Order Summary</h4>
+<div class="space-y-4">
+<div class="flex justify-between text-sm">
+<span class="text-secondary">MRP Total</span>
+<span class="font-medium">₹33,400</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Discount</span>
+<span class="text-emerald-700 font-bold">- ₹3,340</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary">Shipping</span>
+<span class="font-medium text-emerald-700">FREE</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/10 flex justify-between items-end">
+<div>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Grand Total</p>
+<p class="font-headline text-3xl font-black text-primary">₹30,060</p>
+</div>
+<p class="text-[10px] text-secondary text-right">Inclusive of all taxes</p>
+</div>
+</div>
+</section>
+<!-- Promo Code Placeholder -->
+<div class="mt-8 p-4 bg-surface-container-low rounded-xl flex items-center justify-between group cursor-pointer border border-transparent active:border-primary/20 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sell">sell</span>
+<span class="font-label font-semibold text-sm">Apply Coupon Code</span>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="chevron_right">chevron_right</span>
+</div>
+</main>
+<!-- Sticky Bottom Checkout -->
+<div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-6 pb-10 z-50">
+<button class="w-full h-14 bg-primary text-on-primary font-manrope font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+            Proceed to Checkout
+            <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar (Hidden on desktop via design, but mapping for mobile shell consistency) -->
+<nav class="fixed bottom-0 w-full z-[60] pb-safe hidden">
+<div class="flex justify-around items-center h-20 w-full px-4 bg-white/70 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-slate-200/20">
+<div class="flex flex-col items-center justify-center text-slate-400 font-manrope font-medium text-[10px] uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Shop</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 font-manrope font-medium text-[10px] uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span>Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 font-manrope font-medium text-[10px] uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span>Wishlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-900 font-manrope font-bold text-[10px] uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</div>
+</div>
+</nav>
+<footer class="w-full py-12 px-6 mb-32 bg-slate-50 flex flex-col items-center text-center space-y-4">
+<p class="font-manrope text-xs text-slate-500">© 2024 Aryan Clothing. +91 98765 43210</p>
+<div class="flex gap-6">
+<a class="font-manrope text-xs text-slate-500 hover:text-emerald-900 transition-all underline" href="#">Privacy</a>
+<a class="font-manrope text-xs text-slate-500 hover:text-emerald-900 transition-all underline" href="#">Terms</a>
+<a class="font-manrope text-xs text-slate-500 hover:text-emerald-900 transition-all underline" href="#">Shipping</a>
+</div>
+</footer>
+</body></html>

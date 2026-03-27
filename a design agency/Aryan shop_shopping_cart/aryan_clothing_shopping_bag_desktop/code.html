@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Bag | Aryan Clothing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#7ebdac",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary-container": "#636467",
+              "outline-variant": "#bfc9c4",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "primary": "#00342b",
+              "primary-fixed": "#afefdd",
+              "surface-tint": "#29695b",
+              "on-secondary-fixed-variant": "#454749",
+              "on-tertiary-container": "#e89f8c",
+              "on-primary-fixed": "#00201a",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#5d5e61",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "on-surface": "#191c1d",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-container": "#edeeef",
+              "primary-container": "#004d40",
+              "surface-container-highest": "#e1e3e4",
+              "tertiary-fixed": "#ffdbd1",
+              "on-secondary": "#ffffff",
+              "outline": "#707975",
+              "surface-bright": "#f8f9fa",
+              "on-tertiary-fixed": "#370e04",
+              "on-secondary-fixed": "#1a1c1e",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#e2e2e5",
+              "on-error-container": "#93000a",
+              "background": "#f8f9fa",
+              "tertiary": "#4e2013",
+              "on-tertiary": "#ffffff",
+              "inverse-primary": "#94d3c1",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#065043",
+              "on-background": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-surface-variant": "#3f4945",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#693527",
+              "secondary-container": "#e2e2e5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(15px); }
+        /* Remove spin buttons from number inputs */
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-[0px_4px_20px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00342b] font-manrope">Aryan Clothing</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium" href="#">Men</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium" href="#">Women</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium" href="#">New Arrivals</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium" href="#">Sale</a>
+<a class="text-slate-600 hover:text-[#00342b] transition-colors text-sm font-medium" href="#">Categories</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#00342b] hover:scale-95 duration-200">favorite</button>
+<button class="material-symbols-outlined text-[#00342b] hover:scale-95 duration-200 relative">
+                    shopping_bag
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+<button class="material-symbols-outlined text-[#00342b] hover:scale-95 duration-200">person</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-20 px-8 max-w-screen-2xl mx-auto min-h-screen">
+<div class="mb-12">
+<h1 class="text-4xl font-bold tracking-tight font-manrope text-primary mb-2">Shopping Bag</h1>
+<p class="text-secondary font-medium text-sm">You have 2 items in your collection.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Items Section -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Item 1: Silk Bandhgala -->
+<div class="flex flex-col md:flex-row gap-8 group">
+<div class="w-full md:w-48 h-64 bg-surface-container rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a premium dark emerald silk bandhgala jacket with intricate embroidery on the collar and silver buttons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Gcv-5OsSexQtj4Q1aoCZnO8YT2TdyY5caoVwpA2omnFM-jYGPNBNc3pbFOnNQH7wulJCZxBXtT8WfdV911uvcAOd7xxVpoLPOfxaTevyZgtunZOUcZNFvlFNZwy6Lt_ABC0i436vcAIEyidUzaWPdZ-xoeHiu_KeJKeLaauieJHNUlggr3vWjjfU9Mp6UnsmNbr5u2b_D22WfoMlCGW41Bsh986G8WS8ZI05V7G6SKzPO2Jn5GjI9znh_LwNlQmYIQb6uxV2jy27"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold font-manrope text-on-surface">Silk Bandhgala</h3>
+<span class="text-lg font-bold font-manrope text-primary">₹42,000</span>
+</div>
+<p class="text-sm text-secondary mb-1">Color: Deep Emerald</p>
+<p class="text-sm text-secondary mb-4">Size: 42 (L)</p>
+<div class="flex items-center space-x-4">
+<div class="flex items-center bg-surface-container-low rounded-full px-3 py-1 border border-outline-variant/20">
+<button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary transition-colors">remove</button>
+<input class="w-10 bg-transparent border-none text-center text-sm font-semibold focus:ring-0" type="number" value="1"/>
+<button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary transition-colors">add</button>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-6 pt-4">
+<button class="flex items-center text-xs font-semibold uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg mr-2">favorite</span> Save to wishlist
+                            </button>
+<button class="flex items-center text-xs font-semibold uppercase tracking-widest text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-lg mr-2">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Item 2: Tailored Trousers -->
+<div class="flex flex-col md:flex-row gap-8 group">
+<div class="w-full md:w-48 h-64 bg-surface-container rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury charcoal grey wool trousers perfectly pressed and hanging in a minimalist studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkGLqIE22zcrMpADHPJPurdx45poUHPudG7OYVE2ysNRCwRJPBPorViCceXvD8Zmkfu4Vc_Sl15navyaPNtMFs1q0-JdlZuBkbGMSaWuX_apWc9zfVaYll3mkNKDrJdWr9-8uAeALr921swI92rTDWcv4JDFS1uCHrNexGPbX38FYYsX1sPJxAr7nqsEXIMGweh7kFI48emay5kvmsYANra296A8irsJ5zCW8BASvl2xBCmFxWZztJOJTliZIvCngEybUy0LjD8NLM"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold font-manrope text-on-surface">Tailored Trousers</h3>
+<span class="text-lg font-bold font-manrope text-primary">₹8,999</span>
+</div>
+<p class="text-sm text-secondary mb-1">Color: Charcoal Grey</p>
+<p class="text-sm text-secondary mb-4">Size: 34 (W)</p>
+<div class="flex items-center space-x-4">
+<div class="flex items-center bg-surface-container-low rounded-full px-3 py-1 border border-outline-variant/20">
+<button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary transition-colors">remove</button>
+<input class="w-10 bg-transparent border-none text-center text-sm font-semibold focus:ring-0" type="number" value="1"/>
+<button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary transition-colors">add</button>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-6 pt-4">
+<button class="flex items-center text-xs font-semibold uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg mr-2">favorite</span> Save to wishlist
+                            </button>
+<button class="flex items-center text-xs font-semibold uppercase tracking-widest text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-lg mr-2">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Upsell / Discover Tonal Shift -->
+<div class="mt-20 p-10 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-center mb-8">
+<h4 class="text-xl font-bold font-manrope text-primary">Complete the Look</h4>
+<a class="text-xs font-bold uppercase tracking-widest border-b-2 border-primary pb-1" href="#">Explore Style Guide</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="space-y-3">
+<div class="aspect-[3/4] bg-surface rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Handcrafted dark brown leather loafers on a minimalist stone pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Fc2X40yd4e_DI_gq3lwU9ZxIr-UtMEFFqruaFrnmSifK3-YIAtu5_c7KE7JzqPed3eqFlkgPYaoYf78XCSVxivGJwiMZ-LygMG8qesS6uxyEJUHRsk3Stji-fBCDlGTGPuJaKAEaeStQEXhXjVcwQCyrCJvuErgrxrSlklO5LiOCX1OgZQpkyHq1B2tZtWtJWpVAQGRsMG7svFD5WQo3Fqp5ttj2du0MGs47_yC_b-KnbLYrGWm0lYFrf2UK3P6WJSkewHpE_3RA"/>
+</div>
+<p class="text-xs font-bold uppercase tracking-tighter">Leather Loafers</p>
+</div>
+<div class="space-y-3">
+<div class="aspect-[3/4] bg-surface rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxury gold wristwatch with a leather strap on a dark velvet background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8-DFJBi6yKDfutEeWYyb83N1rHuc23ICrXJcFjm-T8DfFv9dL6AOVL9XIFqDmM2HRRmnhygbRoQT-OmbB_E5xMfXmcRjvqeBj2PGqlprmv95Ev_RaKuVMDip2_Jl7ZwgKbW14f12pxgzIn7Oy-hM7ZvGpCOL1chkv_fqX25wXAqE6pmR6MJnTY2slB3DvfP8quBkM0MgMsUZ9dZgysgkjsrBLLspcHwx9WuWEnghHxCtJsF_Sb8pMkCzZ4ze8l0E6A9R22coJbQrN"/>
+</div>
+<p class="text-xs font-bold uppercase tracking-tighter">Gold Heritage Watch</p>
+</div>
+<div class="space-y-3 opacity-50">
+<div class="aspect-[3/4] bg-surface rounded overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary Section -->
+<div class="lg:col-span-4 sticky top-32">
+<div class="bg-white p-8 rounded-xl shadow-[0px_4px_20px_rgba(25,28,29,0.06)] border border-outline-variant/10">
+<h2 class="text-2xl font-bold font-manrope text-primary mb-8">Order Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-secondary">Subtotal</span>
+<span class="text-on-surface">₹50,999</span>
+</div>
+<div class="flex justify-between text-sm font-medium">
+<span class="text-secondary">MRP Discount</span>
+<span class="text-error">- ₹2,500</span>
+</div>
+<div class="flex justify-between text-sm font-medium">
+<span class="text-secondary">Shipping</span>
+<span class="text-primary font-bold uppercase tracking-tighter text-xs">Complimentary</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between">
+<span class="text-lg font-bold font-manrope text-primary">Total Amount</span>
+<span class="text-lg font-bold font-manrope text-primary">₹48,499</span>
+</div>
+</div>
+<div class="mb-8">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-secondary mb-2">Coupon Code</label>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline-variant/30 focus:border-primary py-3 px-0 text-sm font-bold uppercase tracking-widest outline-none transition-all placeholder:text-slate-300" placeholder="ENTER CODE" type="text"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] font-black text-primary uppercase tracking-widest hover:opacity-70 transition-opacity">Apply</button>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-5 rounded-md font-bold text-sm uppercase tracking-[0.2em] shadow-lg hover:-translate-y-1 transition-all duration-300 group flex items-center justify-center">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined ml-3 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-8 pt-8 border-t border-outline-variant/20">
+<div class="flex items-center space-x-4 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<span class="text-[11px] font-medium text-secondary uppercase tracking-wider">Secure Payment Protected</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+<span class="text-[11px] font-medium text-secondary uppercase tracking-wider">Standard Delivery: 3-5 Days</span>
+</div>
+</div>
+</div>
+<p class="mt-6 text-center text-[10px] text-secondary font-medium px-4 uppercase tracking-[0.1em] leading-relaxed">
+                    By proceeding, you agree to Aryan Clothing's Terms of Use and Privacy Policy.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 w-full py-12 px-8 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-xl font-bold font-manrope text-slate-900">Aryan Clothing</div>
+<p class="text-slate-500 text-xs leading-relaxed uppercase tracking-widest">© 2024 Aryan Clothing. All Rights Reserved.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Shopping</span>
+<a class="text-xs font-medium text-slate-500 hover:text-slate-800 uppercase tracking-widest" href="#">Customer Service</a>
+<a class="text-xs font-medium text-slate-500 hover:text-slate-800 uppercase tracking-widest" href="#">Secure Payments</a>
+<a class="text-xs font-medium text-slate-500 hover:text-slate-800 uppercase tracking-widest" href="#">Returns</a>
+</div>
+<div class="flex flex-col space-y-3">
+<span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Company</span>
+<a class="text-xs font-medium text-slate-500 hover:text-slate-800 uppercase tracking-widest" href="#">Mumbai Office</a>
+<a class="text-xs font-medium text-slate-500 hover:text-slate-800 uppercase tracking-widest" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Connect</span>
+<div class="flex space-x-4">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">phone</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
