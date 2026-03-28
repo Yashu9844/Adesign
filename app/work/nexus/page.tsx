@@ -7,9 +7,9 @@ import { motion, useInView } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
-import { Smartphone, Layers } from 'lucide-react';
+import { Bot, BarChart3 } from 'lucide-react';
 
-export default function NexusCaseStudy() {
+export default function SalemijoCaseStudy() {
   const overviewRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -24,19 +24,19 @@ export default function NexusCaseStudy() {
 
   const features = [
     {
-      title: 'Real-time Collaboration',
-      description: 'Teams can work simultaneously on projects with instant synchronization.',
-      highlights: ['Live cursors', 'Comments & mentions', 'Activity feed', 'Version history'],
+      title: 'AI-Powered Agent Management',
+      description: 'Intelligent distribution system with AI support for managing sales agents efficiently.',
+      highlights: ['Smart agent assignment', 'Performance analytics', 'AI recommendations', 'Territory management'],
     },
     {
-      title: 'Intuitive Interface',
-      description: 'Designed for mobile-first usage with zero learning curve.',
-      highlights: ['Gesture navigation', 'Voice commands', 'Offline mode', 'Smart notifications'],
+      title: 'Customizable CRM Chatbot',
+      description: 'AI chatbot that adapts to your business needs and customer interactions.',
+      highlights: ['Natural language processing', 'Custom workflows', 'Multi-channel support', 'Lead qualification'],
     },
     {
-      title: 'Enterprise Security',
-      description: 'Enterprise-grade encryption and compliance for sensitive data.',
-      highlights: ['End-to-end encryption', 'SSO integration', 'Audit logs', 'Data residency'],
+      title: 'Integrated Payment System',
+      description: 'Seamless billing and payment processing with real-time tracking.',
+      highlights: ['Multiple payment gateways', 'Invoice management', 'Payment analytics', 'Automated reminders'],
     },
   ];
 
@@ -56,16 +56,16 @@ export default function NexusCaseStudy() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
-                <Smartphone className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
-                <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Mobile Product</span>
+                <Bot className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+                <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>AI-Powered CRM</span>
               </div>
 
               <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8" style={{ color: 'var(--text-primary)' }}>
-                Nexus
+                Salemijo
               </h1>
 
               <p className="text-xl sm:text-2xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-                Cross-platform mobile application for real-time collaboration and project management. Designed to empower distributed teams to work together seamlessly from anywhere in the world.
+                Modern AI-powered CRM platform with intelligent agent management, customizable chatbots, and integrated payment systems. Designed to streamline sales processes and enhance customer relationships.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -95,9 +95,9 @@ export default function NexusCaseStudy() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8"
           >
             {[
-              { label: 'App Downloads', value: '200K+' },
-              { label: '4.8 Star Rating', value: '45K+ Reviews' },
-              { label: 'Active Daily Users', value: '85K+' },
+              { label: 'Sales Efficiency', value: '+150%' },
+              { label: 'Client Satisfaction', value: '4.8/5 Stars' },
+              { label: 'Active Users', value: '5K+' },
               { label: 'Retention Rate', value: '74%' },
             ].map((stat, i) => (
               <motion.div
@@ -146,7 +146,7 @@ export default function NexusCaseStudy() {
               <ul className="space-y-4">
                 {['Native iOS & Android apps with unified codebase', 'Offline-first architecture for seamless experience', 'Voice & gesture-based quick actions', 'Smart AI-powered task suggestions', 'One-tap onboarding for teams'].map((solution, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <Layers className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--text-muted)' }} />
+                    <BarChart3 className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--text-muted)' }} />
                     <span className="text-lg" style={{ color: 'var(--text-muted)' }}>{solution}</span>
                   </li>
                 ))}
@@ -192,7 +192,7 @@ export default function NexusCaseStudy() {
 
                 <div className="relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
                   <Image
-                    src={['/images/pimg8.webp', '/images/pimg9.webp', '/images/pimg10.webp'][idx]}
+                    src={['/portfolio-images-work/salemijo-agent-management.png', '/portfolio-images-work/salemijo-crm-chatbot.png', '/portfolio-images-work/salemijo-billing.png'][idx]}
                     alt={feature.title}
                     fill
                     className="object-cover"
@@ -219,10 +219,10 @@ export default function NexusCaseStudy() {
 
           <div className="max-w-4xl mx-auto mb-16 space-y-6">
             {[
-              { sprint: 'Sprint 1-2', title: 'MVP Foundation', desc: 'Core app architecture, authentication system, offline-first data sync, basic task management' },
-              { sprint: 'Sprint 3-4', title: 'Real-time Features', desc: 'Live collaboration engine, presence indicators, comment system, activity feed, notifications' },
-              { sprint: 'Sprint 5-6', title: 'AI & Automation', desc: 'Smart task suggestions, voice commands, gesture recognition, automated workflows, analytics' },
-              { sprint: 'Sprint 7-8', title: 'Polish & Scale', desc: 'Performance optimization, accessibility audit, security hardening, launch preparation, beta testing' },
+              { sprint: 'Phase 1', title: 'Discovery & Planning', desc: 'UI/UX research, wireframing, design system setup, stakeholder alignment, technical architecture' },
+              { sprint: 'Phase 2', title: 'Frontend Development', desc: 'Dashboard implementation, responsive design, agent management interface, CRM chatbot UI, payment integration' },
+              { sprint: 'Phase 3', title: 'Backend Integration', desc: 'API integration with Salemijo backend team, AI tools linkage, payment gateway setup, data synchronization' },
+              { sprint: 'Phase 4', title: 'Testing & Launch', desc: 'QA testing, performance optimization, user training, deployment, post-launch support' },
             ].map((sprint, idx) => (
               <motion.div
                 key={idx}
@@ -257,7 +257,7 @@ export default function NexusCaseStudy() {
             className="p-8 sm:p-12 rounded-none border text-center mb-16" style={{ borderColor: 'var(--border-faint)' }}
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Need a High-Performance Mobile App?
+              Need an AI-Powered CRM Platform?
             </h3>
             <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Our cross-platform expertise has delivered 200K+ downloads and 4.8★ ratings. Let's build your next successful app.
@@ -295,53 +295,56 @@ export default function NexusCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border mb-8" style={{ borderColor: 'var(--border-faint)' }}
+            className="relative w-full rounded-none overflow-hidden border mb-4" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
           >
             <Image
-              src="/images/pimg11.webp"
-              alt="Nexus App"
-              fill
-              className="object-cover"
+              src="/portfolio-images-work/salemijo-home.png"
+              alt="Salemijo Platform"
+              width={1920}
+              height={1080}
+              className="w-full h-auto"
             />
           </motion.div>
 
           {/* Three Column Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {['/images/pimg4.webp', '/images/pimg5.webp', '/images/pimg6.webp'].map((img, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            {['/portfolio-images-work/salemijo-dashboard.png', '/portfolio-images-work/salemijo-billing.png', '/portfolio-images-work/salemijo-mobile.png'].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[300px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+                className="relative w-full rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
               >
                 <Image
                   src={img}
                   alt={`Gallery ${idx + 1}`}
-                  fill
-                  className="object-cover"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto"
                 />
               </motion.div>
             ))}
           </div>
 
           {/* Two Column Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {['/images/pimg7.webp', '/images/pimg12.webp'].map((img, idx) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {['/portfolio-images-work/salemijo-crm-chatbot.png', '/portfolio-images-work/salemijo-agent-management.png'].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+                className="relative w-full rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
               >
                 <Image
                   src={img}
                   alt={`Gallery ${idx + 4}`}
-                  fill
-                  className="object-cover"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto"
                 />
               </motion.div>
             ))}
@@ -401,11 +404,11 @@ export default function NexusCaseStudy() {
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
-              "Nexus changed how our team works. For the first time, we can manage complex projects entirely from mobile without losing any power."
+              "Salemijo transformed our sales process. The AI-powered agent management and customizable CRM chatbot have increased our efficiency by over 150%."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>James Mitchell</p>
-              <p style={{ color: 'var(--text-muted)' }}>Product Manager, Fortune 500 Tech Company</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Sales Director</p>
+              <p style={{ color: 'var(--text-muted)' }}>Salemijo Client</p>
             </div>
           </motion.div>
         </div>
