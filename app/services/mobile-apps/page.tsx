@@ -112,9 +112,9 @@ export default function MobileAppsPage() {
                 position: 'absolute',
                 top: `${20 + i * 25}%`,
                 right: `${5 + i * 10}%`,
+                borderColor: 'var(--border-light)',
               }}
               className="w-32 h-64 border-4 rounded-3xl"
-              style={{ borderColor: 'var(--border-light)' }}
             />
           ))}
         </div>

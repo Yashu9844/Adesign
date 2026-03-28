@@ -212,10 +212,8 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-2 transition-colors duration-300"
                       style={{ color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
-                      onMouseEnter={() => setHoveredLink(link.label)}
-                      onMouseLeave={() => setHoveredLink(null)}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; setHoveredLink(link.label); }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; setHoveredLink(null); }}
                     >
                       <span className="text-xs md:text-sm lg:text-base">{link.label}</span>
                       <ArrowUpRight
@@ -247,10 +245,8 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-2 transition-colors duration-300"
                       style={{ color: 'var(--text-muted)' }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
-                      onMouseEnter={() => setHoveredLink(link.label)}
-                      onMouseLeave={() => setHoveredLink(null)}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; setHoveredLink(link.label); }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; setHoveredLink(null); }}
                     >
                       <span className="text-xs md:text-sm lg:text-base">{link.label}</span>
                       <ArrowUpRight

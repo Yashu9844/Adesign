@@ -128,8 +128,7 @@ export default function BrandIdentityPage() {
             animate={{ rotate: -360 }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
             className="absolute top-1/3 right-1/3 w-48 h-48 border"
-            style={{ borderColor: 'var(--border-faint)' }}
-            style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
+            style={{ borderColor: 'var(--border-faint)', borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
           />
         </div>
 
