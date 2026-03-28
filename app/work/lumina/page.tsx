@@ -7,7 +7,7 @@ import { motion, useInView } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
-import { ArrowLeft, ArrowRight, Check, Award } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Award, TrendingUp, Users, DollarSign, Star } from 'lucide-react';
 
 export default function LuminaCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -25,40 +25,40 @@ export default function LuminaCaseStudy() {
   const galleryInView = useInView(galleryRef, { once: true });
 
   const results = [
-    { metric: '+156%', label: 'Conversion Rate Increase', icon: '📈' },
-    { metric: '45K+', label: 'Monthly Active Users', icon: '👥' },
-    { metric: '$8.2M', label: 'Revenue Generated', icon: '💰' },
-    { metric: '4.9/5', label: 'Average Rating', icon: '⭐' },
+      { metric: '+34%', label: 'Checkout Conversion', Icon: TrendingUp },
+      { metric: '2.5K+', label: 'Monthly Visitors', Icon: Users },
+      { metric: '+45%', label: 'Mobile Sales', Icon: DollarSign },
+      { metric: '4.8/5', label: 'Customer Satisfaction', Icon: Star },
   ];
 
   const process = [
     {
       num: '01',
-      title: 'Discovery & Audit',
-      description: 'Comprehensive analysis of the existing platform, user behaviors, pain points, and competitive landscape. Identified the 68% checkout abandonment rate was due to friction in the payment flow.',
+      title: 'Discovery & Strategy',
+        description: 'Deep audit of Aryan\'s early platform revealed significant checkout friction, lack of mobile optimization, and poor product categorization for their growing catalog. Competitive analysis highlighted the need for a modern, responsive storefront. Conducted initial customer interviews to understand shopping behaviors and pain points.',
       duration: '2 weeks',
-      details: ['UX Audit', 'User Interviews', 'Competitive Analysis', 'Data Mining'],
+      details: ['Platform Audit', 'Customer Interviews', 'Competitor Analysis', 'User Behavior Study'],
     },
     {
       num: '02',
-      title: 'Design & Strategy',
-      description: 'Created wireframes for one-click checkout, mapped personalization engine, and designed mobile-optimized flows. Conducted usability testing with 50+ target users.',
+      title: 'Design & Validation',
+        description: 'Redesigned the entire UX with collection-based product discovery, heritage-focused storytelling pages, and a frictionless mobile checkout. Created a fresh design system maintaining Aryan\'s premium aesthetic while improving usability. Validated prototypes with a core group of early customers.',
       duration: '3 weeks',
-      details: ['Wireframing', 'Prototypes', 'User Testing', 'Design System'],
+      details: ['Design System', 'UX Validation', 'Mobile-First', 'Visual Design'],
     },
     {
       num: '03',
-      title: 'Development Sprint',
-      description: 'Built scalable architecture on Next.js with PostgreSQL backend. Integrated Stripe for seamless payments. Implemented AI recommendation engine and real-time inventory sync.',
-      duration: '6 weeks',
-      details: ['Backend Dev', 'Frontend Dev', 'API Integration', 'QA Testing'],
+      title: 'Build & Deploy',
+      description: 'Built on Next.js for speed, PostgreSQL + Redis for inventory sync. Integrated Razorpay for Indian payments, WhatsApp notifications for orders, and admin dashboard for live inventory tracking. Achieved highly responsive page load times across all devices. Ensured a smooth rollout and migration for existing users.',
+      duration: '5 weeks',
+      details: ['Full-Stack Dev', 'Payment Gateways', 'Inventory API', 'Performance Optimization'],
     },
     {
       num: '04',
-      title: 'Launch & Optimize',
-      description: 'Soft launch with 10K users revealed opportunities for further optimization. Implemented A/B testing for CTAs, product placement, and checkout flows. Results exceeded projections.',
+      title: 'Launch & Growth',
+      description: 'Staged rollout reached 5K customers in Week 1 with successful migration. Implemented A/B testing on CTA placements, product storytelling, and payment methods. Achieved 40% faster load times, 156% conversion increase, and 92% return customer rate. Automated email campaigns with curated collections.',
       duration: '2 weeks',
-      details: ['A/B Testing', 'Analytics', 'Optimization', 'Monitoring'],
+      details: ['Go-Live', 'A/B Testing', 'Marketing Automation', 'Analytics'],
     },
   ];
 
@@ -81,9 +81,9 @@ export default function LuminaCaseStudy() {
                 <div>
                   <span className="text-xs uppercase tracking-[0.3em]" style={{ color: 'var(--text-subtle)' }}>Case Study</span>
                   <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mt-4 mb-4" style={{ color: 'var(--text-primary)' }}>
-                    Lumina
+                    Aryan Store
                   </h1>
-                  <p className="text-2xl font-light" style={{ color: 'var(--text-muted)' }}>Premium E-Commerce Platform</p>
+                  <p className="text-2xl font-light" style={{ color: 'var(--text-muted)' }}>Luxury Heritage Fashion Platform</p>
                 </div>
 
                 <div className="space-y-4 py-8 border-y" style={{ borderColor: 'var(--border-faint)' }}>
@@ -93,13 +93,13 @@ export default function LuminaCaseStudy() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Team</p>
-                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>4 Designers, 5 Developers, 2 Product Managers</p>
+                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>1 UI/UX Designers, 2 Full-Stack Developers</p>
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Tech Stack</p>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      {['Next.js', 'React', 'Stripe', 'PostgreSQL', 'Tailwind CSS'].map(tech => (
-                        <span key={tech} className="px-3 py-1 text-sm rounded-none border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
+                      {['Next.js', 'React', 'Tailwind CSS', 'PostgreSQL', 'Razorpay'].map(tech => (
+                        <span key={tech} className="px-3 py-1 text-sm border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
                           {tech}
                         </span>
                       ))}
@@ -108,7 +108,7 @@ export default function LuminaCaseStudy() {
                 </div>
 
                 <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                  A premium shopping experience designed to eliminate friction, personalize interactions, and drive conversions. Built for luxury brands looking to scale their digital presence without compromising on exclusivity.
+                  A tradition clothing e-commerce platform designed to showcase premium Indian fashion, intelligent inventory, and secure transactions through razor pay 
                 </p>
               </div>
             </motion.div>
@@ -118,13 +118,14 @@ export default function LuminaCaseStudy() {
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+              className="relative w-full overflow-hidden border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
             >
               <Image
-                src="/images/pimg1.webp"
-                alt="Lumina Platform"
-                fill
-                className="object-cover"
+                src="/portfolio-images-work/home_page.png"
+                alt="Aryan Store Home Desktop"
+                width={1920}
+                height={1080}
+                className="w-full h-auto block"
               />
             </motion.div>
           </div>
@@ -146,10 +147,10 @@ export default function LuminaCaseStudy() {
               </h2>
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                  The client was losing 68% of customers at checkout, and their existing platform couldn't handle seasonal traffic spikes. Mobile experience was clunky, personalization was non-existent, and they were hemorrhaging money to cart abandonment.
-                </p>
-                <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                  We needed to rebuild from the ground up while maintaining their existing customer base and inventory system, all within a tight 12-week timeline.
+                    Aryan Store struggled with an outdated tech stack, losing a significant portion of customers at the checkout stage. Their unique product catalog lacked intelligent discovery and mobile experiences were clunky, making it hard to build consistent customer trust online. They needed a polished upgrade without losing their premium boutique identity.
+                  </p>
+                  <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                    The challenge: rebuild the storefront for speed and seamless conversion while preserving the distinct aesthetic that made Aryan Store stand out. Timeline: 8 weeks. Main goal: establish a solid digital foundation to steadily grow their initial customer base.
                 </p>
               </div>
             </motion.div>
@@ -164,7 +165,7 @@ export default function LuminaCaseStudy() {
                 Our Solution
               </h2>
               <div className="space-y-4">
-                {['One-click checkout with saved payment methods', 'AI-powered product recommendations', 'Progressive web app for mobile-first experience', 'Real-time inventory synchronization', 'Advanced analytics dashboard'].map((solution, i) => (
+                {['One-click checkout with Razorpay + wallet integration', 'Smart product discovery with collection-based browsing', 'Mobile-optimized responsive design (60%+ mobile traffic)', 'Real-time inventory linked to artisan production', 'Admin dashboard with order tracking and customer insights'].map((solution, i) => (
                   <div key={i} className="flex gap-4 items-start">
                     <Check className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--text-muted)' }} />
                     <span className="text-lg" style={{ color: 'var(--text-muted)' }}>{solution}</span>
@@ -180,17 +181,17 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)', background: 'linear-gradient(to right, var(--bg-elevated), var(--bg-card))' }}
+            className="mt-16 p-8 sm:p-12 border text-center" style={{ borderColor: 'var(--border-faint)', background: 'linear-gradient(to right, var(--bg-elevated), var(--bg-card))' }}
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Facing Similar E-Commerce Challenges?
+              Ready to Transform Your Heritage Brand?
             </h3>
             <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Our proven methodology has helped 50+ brands increase conversion rates by an average of 150%. Let's discuss how we can do the same for you.
+              We specialize in building premium e-commerce experiences for artisanal and heritage brands. 30+ premium Indian brands trust us with their digital transformation, achieving an average 150% conversion lift.
             </p>
             <Link href="/contact">
-              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
-                Schedule Strategy Session
+              <button className="px-8 py-3 font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                Schedule Consultation
               </button>
             </Link>
           </motion.div>
@@ -210,19 +211,22 @@ export default function LuminaCaseStudy() {
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {results.map((result, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={resultsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 rounded-none border transition-all group" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
-              >
-                <div className="text-4xl mb-4">{result.icon}</div>
-                <div className="text-5xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.metric}</div>
-                <div className="font-light" style={{ color: 'var(--text-muted)' }}>{result.label}</div>
-              </motion.div>
-            ))}
+            {results.map((result, index) => {
+              const Icon = result.Icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={resultsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 border transition-all group" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
+                >
+                  <Icon className="w-8 h-8 mb-4" style={{ color: 'var(--text-muted)' }} />
+                  <div className="text-5xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.metric}</div>
+                  <div className="font-light" style={{ color: 'var(--text-muted)' }}>{result.label}</div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -259,7 +263,7 @@ export default function LuminaCaseStudy() {
                 <div className="flex gap-6">
                   {/* Timeline dot */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+                    <div className="w-16 h-16 border-2 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
                       <span className="text-sm font-accent font-bold" style={{ color: 'var(--text-primary)' }}>{step.num}</span>
                     </div>
                   </div>
@@ -272,7 +276,7 @@ export default function LuminaCaseStudy() {
                       <span className="text-sm italic" style={{ color: 'var(--text-subtle)' }}>{step.duration}</span>
                       <div className="flex gap-3">
                         {step.details && step.details.map((detail, i) => (
-                          <span key={i} className="text-xs border px-3 py-1 rounded-none" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-muted)' }}>
+                          <span key={i} className="text-xs border px-3 py-1" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-muted)' }}>
                             {detail}
                           </span>
                         ))}
@@ -290,11 +294,11 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 p-8 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+            className="mt-16 p-8 border text-center" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
           >
-            <p className="mb-6" style={{ color: 'var(--text-muted)' }}>Ready to transform your e-commerce platform?</p>
+            <p className="mb-6" style={{ color: 'var(--text-muted)' }}>Ready to build a world-class e-commerce experience for your heritage brand?</p>
             <Link href="/contact">
-              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all inline-flex items-center gap-2" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+              <button className="px-8 py-3 font-accent font-bold transition-all inline-flex items-center gap-2" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                 Start Your Project
               </button>
             </Link>
@@ -321,32 +325,34 @@ export default function LuminaCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-8 relative h-[400px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+            className="mb-8 relative w-full overflow-hidden border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
           >
             <Image
-              src="/images/pimg2.webp"
-              alt="Lumina Full Width"
-              fill
-              className="object-cover"
+              src="/portfolio-images-work/search_desktop.png"
+              alt="Aryan Store Search Overview"
+              width={1920}
+              height={1080}
+              className="w-full h-auto block"
             />
           </motion.div>
 
           {/* Two Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            {['/images/pimg3.webp', '/images/pimg4.webp'].map((img, idx) => (
+            {['/portfolio-images-work/product_detail.png', '/portfolio-images-work/checkout_desktop.png'].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+                className="relative w-full overflow-hidden border flex items-start" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
               >
                 <Image
                   src={img}
-                  alt={`Lumina Gallery ${idx + 1}`}
-                  fill
-                  className="object-cover"
+                  alt={idx === 0 ? 'Aryan Store Product Detail' : 'Aryan Store Checkout'}
+                  width={960}
+                  height={1080}
+                  className="w-full h-auto block rounded-none"
                 />
               </motion.div>
             ))}
@@ -354,24 +360,42 @@ export default function LuminaCaseStudy() {
 
           {/* Three Column Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {['/images/pimg5.webp', '/images/pimg6.webp', '/images/pimg7.webp'].map((img, idx) => (
+            {['/portfolio-images-work/mobile_home.png', '/portfolio-images-work/search_home.png', '/portfolio-images-work/payment_home.png'].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="relative h-[250px] sm:h-[300px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+                className="relative w-full overflow-hidden border flex items-start" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
               >
                 <Image
                   src={img}
-                  alt={`Lumina Gallery ${idx + 4}`}
-                  fill
-                  className="object-cover"
+                  alt={idx === 0 ? 'Aryan Store Mobile Home' : idx === 1 ? 'Aryan Store Search' : 'Aryan Store Payment'}
+                  width={640}
+                  height={1280}
+                  className="w-full h-auto block rounded-none"
                 />
               </motion.div>
             ))}
           </div>
+
+          {/* Full Width Admin Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-8 relative w-full overflow-hidden border" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+          >
+            <Image
+              src="/portfolio-images-work/admin_desktop.png"
+              alt="Aryan Store Admin Dashboard"
+              width={1920}
+              height={1080}
+              className="w-full h-auto block rounded-none"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -387,15 +411,15 @@ export default function LuminaCaseStudy() {
           >
             <div className="mb-8 flex justify-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-3xl">⭐</span>
+                <Star key={i} className="w-6 h-6 fill-current" style={{ color: 'var(--text-primary)' }} />
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
-              "Working with this team was transformative. They didn't just build a platform—they completely reimagined how our customers experience luxury shopping online."
+              "The new site completely changed how our independent brand is perceived online. Our checkout issues disappeared overnight, and our customers frequently tell us how much they love browsing our collections now. It gave us the professional foundation we needed to actually start growing."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Sarah Chen</p>
-              <p style={{ color: 'var(--text-muted)' }}>CEO, Lumina</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Rahul Verma</p>
+              <p style={{ color: 'var(--text-muted)' }}>Operations Manager, Aryan Store</p>
             </div>
           </motion.div>
         </div>
@@ -416,12 +440,12 @@ export default function LuminaCaseStudy() {
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                <button className="px-8 sm:px-12 py-4 font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
                   Start Your Project
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
+                <button className="px-8 sm:px-12 py-4 border font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.backgroundColor = 'transparent'; }}>
                   View More Projects
                 </button>
               </Link>
@@ -434,4 +458,5 @@ export default function LuminaCaseStudy() {
     </div>
   );
 }
+
 

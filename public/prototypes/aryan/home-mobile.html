@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e2e2e5",
+              "primary-fixed": "#afefdd",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "tertiary-fixed": "#ffdbd1",
+              "on-primary-fixed": "#00201a",
+              "on-background": "#191c1d",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "on-surface-variant": "#3f4945",
+              "surface-tint": "#29695b",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-surface": "#191c1d",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e2e2e5",
+              "inverse-primary": "#94d3c1",
+              "surface": "#f8f9fa",
+              "primary-container": "#004d40",
+              "on-primary-container": "#7ebdac",
+              "inverse-surface": "#2e3132",
+              "primary": "#00342b",
+              "tertiary-container": "#693527",
+              "tertiary": "#4e2013",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#5d5e61",
+              "outline": "#707975",
+              "on-secondary-fixed": "#1a1c1e",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-fixed": "#370e04",
+              "surface-bright": "#f8f9fa",
+              "on-secondary-fixed-variant": "#454749",
+              "outline-variant": "#bfc9c4",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#065043",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#e89f8c",
+              "on-secondary-container": "#636467",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="menu">menu</span>
+</div>
+<h1 class="font-manrope font-black tracking-tighter text-emerald-900 text-lg uppercase">Aryan Clothing</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section: Cinematic Banner -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Luxury Menswear" class="w-full h-full object-cover object-center" data-alt="Cinematic portrait of a sophisticated Indian man wearing a luxury emerald green bandhgala suit standing in a modern architectural interior with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2kp2-mO4pLsBT20xSeX3cIucRrJ1JwcVHXZ9_kcE3UeQ-osKcPDfJMWUQtD75JWPDt5pa0IhGje2v_uxR2qSWykqL-FkmzWaOyDpBfTVFCF5Q2zK5mFNQqK0qUfjyh7I42NGxLolGYmXtvd-KnvRfhZlcbeqv5A3LOqkQZ8YiWk2n0KXemdGPGFdZvRLEsgu_HoZZEusWYrRWLt21N-pIvmUD4eTveoS85vTwVNNHroqGRGBMy3vDgadYvKNuSIS5JfMCqyns9gVj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-12 left-0 w-full px-8 flex flex-col items-start">
+<span class="font-label text-white/80 uppercase tracking-[0.3em] text-[10px] mb-2">Heritage Collection</span>
+<h2 class="font-headline font-extrabold text-4xl text-white leading-tight mb-6 tracking-tighter">THE NEW<br/>MAJESTY.</h2>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-md font-label text-xs uppercase tracking-widest flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+                    Explore Now
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Brand Story: Editorial Layout -->
+<section class="py-20 px-8 bg-surface">
+<div class="max-w-md">
+<h3 class="font-headline font-bold text-2xl text-primary mb-6 tracking-tight">The Modern Curator.</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm font-light mb-8">
+                    Aryan Clothing merges centuries of Indian textile heritage with the precision of contemporary tailoring. We don't just dress; we curate an identity of subtle power and effortless grace.
+                </p>
+<div class="w-12 h-[1px] bg-primary/20"></div>
+</div>
+</section>
+<!-- The Atelier's Choice: Bento Grid Style -->
+<section class="py-12 px-6 bg-surface-container-low">
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="font-label text-primary/60 text-[10px] uppercase tracking-widest">Exclusively Curated</span>
+<h4 class="font-headline font-bold text-xl text-primary">The Atelier's Choice</h4>
+</div>
+<span class="text-xs font-medium text-primary border-b border-primary/20 pb-1">View All</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Large Card -->
+<div class="col-span-2 relative group overflow-hidden rounded-xl aspect-[4/5]">
+<img alt="Silk Fabric" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Detailed close up of premium raw silk fabric in deep emerald green with intricate gold embroidery and traditional patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmwRC4qsALGX8wCfkf4zEWzZkxtJJs4_HWDfvhuHZEIN_MrjVxO8O2o8PUgfeN8JF5RQ5BZcjAuk-1n47gdStw0pyWQJU7Kd0RWQ2dYHS2Y_PaamIiKp5H0rr5qNf-z7Q_rHVbU283vgaU8tdmzuNiY1exf3zHta7TuC7P1HtBFVsRylxlx5J2-pzA1HtmY05_RscH_hik15DpKii2EQLmwOW75RchCMv9WR3BAvV-GlBaGgn6XaoV_ZLwwoGcT3xjJrwVrwJkIhQf"/>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="bg-white/80 backdrop-blur-md p-4 shadow-sm">
+<h5 class="font-headline font-bold text-primary">Raw Silk Bandhgala</h5>
+<p class="text-[10px] text-secondary uppercase tracking-widest mt-1">Starting from ₹42,000</p>
+</div>
+</div>
+</div>
+<!-- Small Cards -->
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-2 rounded-xl">
+<img alt="Leather Accessories" class="w-full aspect-square object-cover rounded-lg mb-3" data-alt="Luxury handcrafted leather mojari shoes in deep brown with minimal gold detailing on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4-1K1yNCI2k1YNrS6wdB5JUhMg639wTIjcIGVXxolz7u-LhR9nO1IoSn5zVpSM9-Z6JPEAoN-_iPMt7lbg1qdnH54HWV1x94RPQgrl4Zj9mTrDkin8k0NIRguTt1xgj9w60Mhm5MWIEndpAsuGvQTs2ovLtB6vsIU-Ftv4mRMs7O-LOhrw7Byz5sVGwJvlWUa6PoReqqm66uIZEsXPhQX7_kIQgyqRYZuRcBHCDPcEF9wKm76bhpaeXWuZEjxJ0pvPqFz8hGzdOeY"/>
+<h6 class="font-headline font-bold text-sm text-primary px-1">Artisan Mojaris</h6>
+<p class="text-[10px] text-secondary px-1 mt-0.5">₹8,500</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-2 rounded-xl">
+<img alt="Linen Kurta" class="w-full aspect-square object-cover rounded-lg mb-3" data-alt="Stunning portrait of an Indian man in a classic white linen kurta with emerald stone buttons and a mandarin collar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVys5Otndv6CbbnmzWFbEOUM_THpPdu0EHVyfm9AKM20aRPtRm_GCtG7Vyf1bugU_FuMkjq5QSvHKElUKvhqCud5EdAx4AWjPTgwIOi2Kq3yUNqx1cYBveumPKSkaJQvlG_n_E6EOgG1VQh283CVHhs5tSEG8kYkr3AYAhRyHKYExrGNUK3OX8HwPwRbkucbqwtNYStiHl6G3GMnLtBaqlB1C7KrVvMPadBXdKO4ILSaFPLEB0rlCSr5fa0_zihy8N0ba-Tx3YdzXs"/>
+<h6 class="font-headline font-bold text-sm text-primary px-1">Linen Essentials</h6>
+<p class="text-[10px] text-secondary px-1 mt-0.5">₹12,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now: Horizontal Scroll -->
+<section class="py-20 bg-surface-container-lowest">
+<div class="px-6 mb-8">
+<h4 class="font-headline font-bold text-xl text-primary">Trending Now</h4>
+</div>
+<div class="flex overflow-x-auto gap-6 px-6 no-scrollbar">
+<!-- Trending Item 1 -->
+<div class="min-w-[280px] flex flex-col">
+<div class="relative mb-4">
+<img alt="Modern Jacket" class="w-full aspect-[3/4] object-cover" data-alt="Fashion photography of a man in a structured modern jacket with asymmetrical buttons in a charcoal and forest green weave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBMwVNrN4iUh_KZz40PtULWToga-UWQPik8Gq6WycpH2EqNZFN1GMx4NKUOqGeEhEj-JRvO-2J4yrrwfnfplrZCidb-pLKTr18zrAPn9U84-MRldyv3knK7Lq4uphe9oI1WX7FvnVcATQUMKAFL620zGvmGAVC3UpQQQfGElw8JH1YU6kvbZXPTKJsQ80BJOU8pstJEMYVhwbbKGt2mw39ZzpArE8h05Aji8oLNetwYbrw5VetRHp2hWhH3x5SUqENDWOzQGt-ET4d"/>
+<span class="absolute top-4 left-4 bg-primary text-white text-[9px] font-label uppercase tracking-widest px-3 py-1">New Arrival</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-headline font-semibold text-primary">Modern Nehru Jacket</h5>
+<p class="text-xs text-secondary-container text-on-secondary-container mt-1">Charcoal &amp; Forest</p>
+</div>
+<span class="font-headline font-bold text-primary">₹18,900</span>
+</div>
+</div>
+<!-- Trending Item 2 -->
+<div class="min-w-[280px] flex flex-col">
+<div class="relative mb-4">
+<img alt="Cufflinks" class="w-full aspect-[3/4] object-cover" data-alt="Close up of a luxury watch and emerald cufflinks on a textured cream fabric background with soft warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC77K9B8W7QA7jOX2M9hggYEE2b7G3-6xOPkShtSJzVrX-qRDGjI1mNvGgYrxFYqtNM2Qbc3czoeI5fArcUJfLlje94nO8zClEmoslyHF5cEotLdmUeJxOjnXdMmR-SyV54qEtPlRrqJrc7CG3RJsyMz2y7f-5B1Orq9wIH82jUrBG-CdD1DfUFT-dWodRJX_Jb4aW43k_pCYRcGcK9UkkAk7GHblg3F9BoTbs09rV_legvYqwIFic0rNguWoN5r4ghJ5iRiUMtPcwx"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-headline font-semibold text-primary">Signature Cufflinks</h5>
+<p class="text-xs text-secondary-container text-on-secondary-container mt-1">Emerald &amp; Gold</p>
+</div>
+<span class="font-headline font-bold text-primary">₹5,400</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Collections: Full Width Asymmetry -->
+<section class="py-12 px-6">
+<div class="relative flex flex-col items-center">
+<div class="w-4/5 ml-auto">
+<img alt="Luxury Tuxedo" class="w-full aspect-[4/5] object-cover rounded-sm" data-alt="Editorial portrait of a man leaning against a dark stone wall wearing a luxury ivory tuxedo with emerald lapels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpeQAJKx844chgT4cKK42l2MXz3Dw_IVVgYD7tp2Ln4Wm_eFbyFXcMPHnghtUMe0zNvgxcjpTVsjLv6FBUyRP33WgrlxDfxaeWMd9LHlzA-iRKukp_Ib0iDJQR5siW4gvRx8UoD4ImSoSzlkdoX8wU8PzQ9Lxc6vhCy6KH76CTbcg9gDPSffrdrRbn9UJh_sK07ya99fMREjlKVIcTvbm6P415cUrAnlI2GxHdQM-8stEuqU5XVOONehPpkH1QAHs2x7t5GP_eeoZO"/>
+</div>
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-3/4 bg-white p-8 shadow-sm">
+<span class="font-label text-primary/40 text-[9px] uppercase tracking-[0.4em] mb-2 block">Premium Custom</span>
+<h4 class="font-headline font-bold text-2xl text-primary leading-tight mb-4">The Wedding<br/>Atelier</h4>
+<p class="text-xs text-on-surface-variant font-light mb-6 leading-relaxed">Made-to-measure masterpieces for your most defining moments.</p>
+<a class="text-[10px] font-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Book Appointment</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 mb-20 bg-slate-50 flex flex-col items-center text-center space-y-4">
+<div class="flex gap-6 mb-4">
+<a class="text-slate-500 text-xs font-manrope" href="#">Privacy</a>
+<a class="text-slate-500 text-xs font-manrope" href="#">Terms</a>
+<a class="text-slate-500 text-xs font-manrope" href="#">Shipping</a>
+</div>
+<p class="font-manrope text-xs text-slate-500">© 2024 Aryan Clothing. +91 98765 43210</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/70 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-slate-200/20 flex justify-around items-center h-20 px-4">
+<button class="flex flex-col items-center justify-center text-emerald-900 font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-widest mt-1">Shop</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-widest mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-widest mt-1">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

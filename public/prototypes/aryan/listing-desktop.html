@@ -1,0 +1,374 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#c6c6c9",
+              "inverse-on-surface": "#f0f1f2",
+              "inverse-primary": "#94d3c1",
+              "tertiary-fixed": "#ffdbd1",
+              "outline-variant": "#bfc9c4",
+              "on-tertiary-fixed": "#370e04",
+              "on-primary": "#ffffff",
+              "tertiary": "#4e2013",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#636467",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "primary-container": "#004d40",
+              "on-primary-fixed": "#00201a",
+              "on-primary-fixed-variant": "#065043",
+              "on-secondary-fixed": "#1a1c1e",
+              "inverse-surface": "#2e3132",
+              "surface-container-low": "#f3f4f5",
+              "outline": "#707975",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#f8f9fa",
+              "on-error": "#ffffff",
+              "secondary": "#5d5e61",
+              "tertiary-container": "#693527",
+              "on-surface": "#191c1d",
+              "on-primary-container": "#7ebdac",
+              "primary-fixed": "#afefdd",
+              "primary": "#00342b",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "surface-container-high": "#e7e8e9",
+              "on-tertiary-container": "#e89f8c",
+              "on-secondary-fixed-variant": "#454749",
+              "surface-dim": "#d9dadb",
+              "secondary-container": "#e2e2e5",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "surface": "#f8f9fa",
+              "on-surface-variant": "#3f4945",
+              "surface-tint": "#29695b",
+              "secondary-fixed": "#e2e2e5",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "background": "#f8f9fa"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm shadow-emerald-900/5 flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-extrabold tracking-tighter text-emerald-900">Aryan Clothing</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope font-bold tracking-tight text-sm uppercase text-slate-600 hover:text-emerald-800 transition-colors duration-300" href="#">Men</a>
+<a class="font-manrope font-bold tracking-tight text-sm uppercase text-slate-600 hover:text-emerald-800 transition-colors duration-300" href="#">Women</a>
+<a class="font-manrope font-bold tracking-tight text-sm uppercase text-emerald-900 border-b-2 border-emerald-900 pb-1" href="#">New Arrivals</a>
+<a class="font-manrope font-bold tracking-tight text-sm uppercase text-slate-600 hover:text-emerald-800 transition-colors duration-300" href="#">Sale</a>
+<a class="font-manrope font-bold tracking-tight text-sm uppercase text-slate-600 hover:text-emerald-800 transition-colors duration-300" href="#">Categories</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-emerald-900">
+<button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">search</span></button>
+<button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">favorite</span></button>
+<button class="scale-95 active:scale-90 transition-transform relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">person</span></button>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-[1440px] mx-auto">
+<!-- Header & Breadcrumbs -->
+<header class="mb-12">
+<nav class="flex items-center gap-2 text-label-sm text-secondary mb-4 font-medium tracking-wide">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Men</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">New Arrivals</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-2">The Heritage Collection</h1>
+<p class="text-secondary max-w-xl">A curated selection of artisanal Indian silhouettes, redefined with modern sculptural tailoring and premium silk blends.</p>
+</div>
+<div class="flex items-center gap-4 border-b border-outline-variant/20 pb-2">
+<span class="text-sm font-semibold uppercase tracking-widest text-secondary">Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 font-manrope font-bold text-sm text-primary uppercase cursor-pointer">
+<option>Featured</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+</header>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-10">
+<section>
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Category</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Kurta</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Sherwani</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox">
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Trousers</span>
+</label>
+</div>
+</section>
+<section>
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Size</h3>
+<div class="grid grid-cols-4 gap-2">
+<button class="aspect-square flex items-center justify-center border border-outline-variant/30 text-xs font-bold hover:border-primary hover:text-primary transition-all">S</button>
+<button class="aspect-square flex items-center justify-center border-2 border-primary text-primary text-xs font-bold">M</button>
+<button class="aspect-square flex items-center justify-center border border-outline-variant/30 text-xs font-bold hover:border-primary hover:text-primary transition-all">L</button>
+<button class="aspect-square flex items-center justify-center border border-outline-variant/30 text-xs font-bold hover:border-primary hover:text-primary transition-all">XL</button>
+</div>
+</section>
+<section>
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Price Range</h3>
+<input class="w-full accent-primary h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer" max="50000" min="2000" step="1000" type="range" value="12500">
+<div class="flex justify-between mt-4 text-xs font-bold text-secondary">
+<span class="">₹2,000</span>
+<span class="text-primary font-black">₹50,000+</span>
+</div>
+</section>
+<section>
+<h3 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Color</h3>
+<div class="flex flex-wrap gap-4">
+<button class="w-8 h-8 rounded-full ring-2 ring-offset-2 ring-primary bg-[#00342b] transition-transform active:scale-90" title="Emerald"></button>
+<button class="w-8 h-8 rounded-full bg-[#d4af37] transition-transform active:scale-90" title="Gold"></button>
+<button class="w-8 h-8 rounded-full bg-[#1a1c1e] transition-transform active:scale-90" title="Onyx"></button>
+</div>
+</section>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Handsome Indian model wearing a structured emerald green silk kurta with intricate gold embroidery in a minimalist studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADgbsIkjNVtJfMfjzuL-Hv4iaHLktl2nPbgB33o73cqEvVsltS5GJUFtZbWw9pFQnRqU9Km8R-eWrYxRIm81HXkKZ_hr4jrW-WZceVqaHsI2Uq3wwzl3F4I2XweuYnzmgiZ86f3Mt4G2ISD3OuMdyZyRV9RuKc_QmbO846Wgwgj_5privlQ8nbii-3wKrOwBO021ZbBV-EefZ6NYFZJyGynzyn7xWLClmREfi0b3ewgOfqy4gkri0BheXe9tI5ulX3-AGpszEw-htX">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Sculpted Silk Kurta</h3>
+<p class="text-secondary text-sm">Deep Emerald • Hand-loomed</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹12,500</p>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Indian groom model posing in a majestic white sherwani with silver patterns, sophisticated luxury fashion lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAopvTxvdXhHsY6Yf9GNG_-Uo43UcNeSpvdcQtnSQ3DAwtWpufRG9dZ9OqNbDqA5Q3LLW_rm7uSm3Ne-uOHMp5lmKckF_htE8gDyv72T60zGWqWoyWtiPGaoVIqItaai255fO5n63-12p9kyAjpsJZICK0dpZYUE4e3ladYkv-ZfASSxrtG61gIVk-t79v_DJnkpJ9wENiAkCpBQM0hGuh5w1vjasGtW70ywdoOMuEDd2Mkn_f7fleVLg-z3sSb2knShSk3X90JpC4J">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Royal Ivory Sherwani</h3>
+<p class="text-secondary text-sm">Onyx Accents • Tailored Fit</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹48,900</p>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern Indian man in a textured charcoal grey kurta posing against a stone wall, contemporary ethnic wear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTSLgYrGi3_iSNDvC6HxcRFDceuVZhI9jDGHdW4lDVyMx1wc8Kj03GD4aBgrYkSUZM5ImuCWsGanrbPwgd_Pl60ISpwPvGbpGHp45alvJ12EtQf965Be_K4w_ajEb93wVpT9Q1nKj_PxyHPpVzxgfRIoC2FTtgrahVY3tkmTghgxvUXiYr3uJ0low4X0HoYhBqTkYcBacty2ftxdW6mfiGwmb_YImexx4aaOagcIddSSNlQMtG5itjz86ojAZlwQdl81sVHwPLQXT0">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Onyx Textured Kurta</h3>
+<p class="text-secondary text-sm">Midnight Blend • Geometric Weave</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹8,750</p>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elegant Indian ethnic trousers in rich cream silk fabric, close up on texture and drape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlffyxxULo_HkAFh3KQIGze_35onb31uG4Psz0OCeLDT9aEz83JnFyvr4NOwLQGre6FfgWe6Zc9jX4pfE3fDV0YfDLgfRmL6dnvsCBotD4fTRbayzWwy0gt5f2pEsX6amP8jHspVqwCFfjMaBBmuZoIzEGek6k_Fugwm-OGDhaXzbuihWG4164DdC1EXIck7_Jq6NL-FimCZdyI8L4GAN3WuylFN_Q96bWBbUeK1Ej6YjmUxj4uDX8t9IrjHU2KwBOdMNumLFb-fRU">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Tapered Silk Trousers</h3>
+<p class="text-secondary text-sm">Champagne Gold • Premium Crease</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹5,400</p>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Indian model in a vibrant gold and saffron embroidered vest over a white kurta, sunlight filtering through windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQqbcOZ7Q5W4ThHzwsgpIyIxr_r_TegkuCz5Ly-Fvk-s-_zzFIVn0rEiGzy34u1dMoXnuPEc2DXDcYpI8n7qkgrxgyhLkRW2YEJpoEtP_gWWQnLdDiUQgEG_QT60Aw4jjF_d43PK7jEig1kCyCx3j9dOkK4h8UEkphCZHUeBh1wMPumsKZ7MIuoH-v1AjiaTGh_x31r9dE7OfFV0ajYtDVv4f5-JBCaMR-o2GpskQ99mfnW4gbxKsJUx8-IkBu6AqS0RK-a_cy3_w">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Heritage Waistcoat</h3>
+<p class="text-secondary text-sm">Gold Zari • Festive Occasion</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹14,900</p>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Indian model wearing a midnight blue velvet bandhgala jacket with silver buttons, elegant dark studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNsK2juhvSydhwE71IVhAnW0CDXcTyJ5py59eVZmNVSO8hjJT04yz_zfNzeiHMDWTvgeVmrf5RIY_WgXr7w5HgfCS3aV1yX778QDN0hl0Q3ovgcvyEfMjtt5V5-Ud8_XtZ3nENoLo8hvhGiFlbrU7xd_eiBOsOm-Z9QjHfKvNU5nYEuLZ0nk0ADm7Ba8MMl-7mQJ7F1kC6_xN3lB8VmxmcJGSKURElRuc_MZ9S0pTefeakGGmd0dIGHyjuwyc4jb-wnktj90adKoI">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Velvet Bandhgala</h3>
+<p class="text-secondary text-sm">Midnight Navy • Regal Finish</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹32,000</p>
+</div>
+</article>
+<!-- Product Card 7 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Product shot of a finely tailored white cotton kurta with subtle self-on-self embroidery, clean bright aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfZNqd-PfQIWd5ssvv6Y8WsZdIjxW11u5_Pjl-ud2qc5OYmCHFO3l5BJsZQj44nDBPViyikfutzsWJt_SAqRnK98_51R1rUfpQfvOanjyAtl7UNXoujcW6moGz3Fj76IZAC24qd46pLmLFPAbwSn3KnNFAykgGbX6DaC1aZTP5OcPCBpoZ1Pn-pOahMeQRwlgEWVd5fAs-__3MJF3YWLqR3juXMabGHZYBCOpl1xwKzVgxi2h5SH3U-G-UElrVQidb-UwAU4NLH4cC">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Essential Linen Kurta available in white, red , gold</h3>
+<p class="text-secondary text-sm">Cloud White • Breathable Fabric</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹6,200</p>
+</div>
+</article>
+<!-- Product Card 8 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of a man's hands wearing a gold watch and a silk kurta cuff, luxury lifestyle aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnxQmuLiVDn_scCwHrbuqo60llFzlcOvcmz7NFDJ64jnYmvTcJHcWv8Vq8fl8hXC6knXidD_Q6WL0Qx35J082nAhq1hcAXsl9-In7Gr7nH9fmqWi_foZT4H_FxbPyd7m8R96TyEaz7-vVaO4J-8e6bcwiKLUXF8y2rTu0jCRY06SxpHlOAElrpMBsb16xTglMZjeURRq4LI96PkwFjViwNs357_mYM2BFbTXBBzuBvsz5zFZlCkrYDNaiLNQWc5K8Wr1C_-gqlD5jB">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Artisan Watch with golden handle</h3>
+<p class="text-secondary text-sm">Terracotta Silk • Bespoke Fit</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹11,800</p>
+</div>
+</article>
+<!-- Product Card 9 -->
+<article class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Indian model in a deep red sherwani with minimal styling, moody artistic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXDSUzOhvvyjLC2oF-oJMtWNwQqTlkR7xbqHisjNDFA2evL0y_bRUsnCW0O0OJ6AjoJVW5d-1B3R1XstNm4JM4T46SroWa4t1mfAhyP5y0NkRIzqvt85cPjZUyUuAOSI1XJo7DE1ssiSdi7saZJC87zi5y3ZV2cHJ2_FD_gPEXOsfagZU0_6O5VY_NAu3IUfdZLhDdETL1hXxeuDCI-gkuX3qjKbAV_IDVTfSUDG9oK3mV3n4olaBeTRFnPeLG2GQS4CVSv3oKllOF">
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="space-y-1 px-1">
+<h3 class="font-headline text-lg font-bold text-primary group-hover:underline decoration-1 underline-offset-4">Red Kurta Sovereign Set</h3>
+<p class="text-secondary text-sm">Deep Ruby • High Collar</p>
+<p class="font-manrope font-extrabold text-primary pt-2">₹42,500</p>
+</div>
+</article>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-20 flex flex-col items-center gap-6">
+<p class="text-sm text-secondary tracking-widest uppercase">Showing 9 of 48 items</p>
+<div class="w-64 h-px bg-outline-variant/20 relative">
+<div class="absolute inset-y-0 left-0 w-1/4 bg-primary"></div>
+</div>
+<button class="px-12 py-4 bg-primary text-on-primary font-manrope font-bold uppercase tracking-widest text-sm rounded-md shadow-lg shadow-primary/20 hover:bg-primary-container hover:-translate-y-1 transition-all">Load More Essentials</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50 border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<span class="text-xl font-bold text-emerald-900">Aryan Clothing</span>
+<p class="font-manrope text-sm text-slate-500">Exquisite Indian tailoring for the modern gentleman. Redefining heritage with sculptural precision.</p>
+</div>
+<div>
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-widest mb-6">Contact Us</h4>
+<ul class="space-y-3 font-manrope text-sm text-slate-500">
+<li class="hover:underline decoration-emerald-500/30 cursor-pointer">Contact: +91 98765 43210</li>
+<li class="hover:underline decoration-emerald-500/30 cursor-pointer">Local Office: Mumbai, MH</li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-widest mb-6">Payments</h4>
+<ul class="space-y-3 font-manrope text-sm text-slate-500">
+<li class="hover:underline decoration-emerald-500/30 cursor-pointer">Razorpay Accepted</li>
+<li class="hover:underline decoration-emerald-500/30 cursor-pointer">Cashfree Secure</li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-widest mb-6">Connect</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">alternate_email</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">shopping_cart</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 text-center">
+<p class="font-manrope text-sm text-slate-500">© 2024 Aryan Clothing. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-slate-100 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-emerald-900 font-bold bg-emerald-50 rounded-xl px-3 py-1 tap-highlight-none active:scale-95 transition-all">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-manrope text-[10px] font-medium uppercase tracking-widest">Shop</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 tap-highlight-none active:scale-95 transition-all">
+<span class="material-symbols-outlined">search</span>
+<span class="font-manrope text-[10px] font-medium uppercase tracking-widest">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 tap-highlight-none active:scale-95 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-manrope text-[10px] font-medium uppercase tracking-widest">Wishlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 tap-highlight-none active:scale-95 transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="font-manrope text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e2e2e5",
+              "primary-fixed": "#afefdd",
+              "surface-container-low": "#f3f4f5",
+              "background": "#f8f9fa",
+              "tertiary-fixed": "#ffdbd1",
+              "on-primary-fixed": "#00201a",
+              "on-background": "#191c1d",
+              "on-tertiary-fixed-variant": "#6d382a",
+              "on-surface-variant": "#3f4945",
+              "surface-tint": "#29695b",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-surface": "#191c1d",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e2e2e5",
+              "inverse-primary": "#94d3c1",
+              "surface": "#f8f9fa",
+              "primary-container": "#004d40",
+              "on-primary-container": "#7ebdac",
+              "inverse-surface": "#2e3132",
+              "primary": "#00342b",
+              "tertiary-container": "#693527",
+              "tertiary": "#4e2013",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#5d5e61",
+              "outline": "#707975",
+              "on-secondary-fixed": "#1a1c1e",
+              "tertiary-fixed-dim": "#ffb5a1",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#94d3c1",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-fixed": "#370e04",
+              "surface-bright": "#f8f9fa",
+              "on-secondary-fixed-variant": "#454749",
+              "outline-variant": "#bfc9c4",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#065043",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#e89f8c",
+              "on-secondary-container": "#636467",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active { color: #00342b; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        input:focus { outline: none; border-bottom: 2px solid #00342b !important; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Anchor (Manual Implementation based on JSON for Transactional UI) -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline font-black tracking-tighter text-emerald-900 text-lg">Aryan Clothing</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-24 pb-40 px-6 max-w-lg mx-auto">
+<!-- Multi-step Progress Bar -->
+<nav class="mb-10">
+<div class="flex items-center justify-between relative">
+<div class="absolute top-1/2 left-0 w-full h-px bg-surface-container-highest -z-10"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-headline font-bold text-primary">Shipping</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary text-xs font-bold ring-4 ring-primary-fixed">
+                        2
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-headline font-bold text-primary">Payment</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant text-xs font-bold">
+                        3
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-headline font-semibold text-secondary">Review</span>
+</div>
+</div>
+</nav>
+<!-- Shipping Summary (Editorial Asymmetric Layout) -->
+<section class="mb-12 relative">
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-primary">Shipping To</h2>
+<button class="text-label-sm text-primary font-bold uppercase tracking-wider text-[11px] border-b border-primary/20 pb-0.5">Edit Address</button>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-5">
+<span class="material-symbols-outlined text-[120px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="relative z-10">
+<p class="font-headline font-bold text-on-surface">Aryan Sharma</p>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">
+                        H.No 42, Sector 18, Block C<br/>
+                        Gurugram, Haryana - 122001<br/>
+                        India
+                    </p>
+<p class="text-on-surface-variant text-sm mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="call">call</span>
+                        +91 98765 43210
+                    </p>
+</div>
+</div>
+</section>
+<!-- Payment Selection UI -->
+<section class="mb-12">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-primary mb-6">Payment Method</h2>
+<div class="space-y-4">
+<!-- UPI Options -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border-2 border-primary">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-headline font-bold">UPI Payments</span>
+</div>
+<div class="w-5 h-5 rounded-full border-4 border-primary bg-primary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center gap-2 border border-outline-variant/20">
+<img class="h-4" data-alt="Google Pay logo with blue, red, yellow and green stylized G icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtoIbuLC6oWbKKrew2pLazpvieDCZxrL7JBiicthGgVMgBJd4CRfr6Rg4fiy_Q8dwqnzdFef4NuFl1mx1lW7iAiOzCAboDq2QGQIyDelxTgorP9xoWmHZJLAvnEw3Yuntl_L2gC-rXZ87kta7vFp8E0FJESdEyJuOHE7a0B6UGbMUKJFCZtv9cYGrW8KvUatEOwscTma99AgFqIJ0EV8OsEmFVbvbDYzc9UpFUfttYU8K-9BAAquMxbwZzC1KJVnN1DzExrIoycakv"/>
+<span class="text-xs font-semibold">GPay</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center gap-2 border border-primary/20 ring-1 ring-primary/30">
+<img class="h-4" data-alt="PhonePe logo featuring a purple square with a white stylized P icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-L203INjilapKAGOAemvjkBnq5RnTM-v0Bp7OfArSaShEKLNLBSy6peQqNhvbssnfte5VcEaN6QML-9FFrCGCcV-Xg7JkC2mNGMdouEtjOz899AiW0B0v4j8J523OqKIVSjP_f0FCkDJy5dpigS5OoNTk82PVhHlkAmnH7Y4-tebiJ-1ZLgoqGu9MVj7zLc6eeoHy7idyYQLoXJNPHkwKgxzR8UTFFHoCUVpaNfrPh_tOrVe1uJwA78RoxfAPNpBE7gJP5vmf1yNb"/>
+<span class="text-xs font-semibold">PhonePe</span>
+</div>
+</div>
+<div class="mt-4">
+<input class="w-full text-sm border-0 border-b border-outline-variant/30 bg-transparent py-2 px-0 placeholder:text-outline/50" placeholder="Enter UPI ID (e.g. user@okaxis)" type="text"/>
+</div>
+</div>
+<!-- Cards -->
+<div class="bg-surface-container-low rounded-xl p-5 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+<span class="font-headline font-bold text-secondary">Credit / Debit Card</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+</div>
+</div>
+<!-- Cash on Delivery -->
+<div class="bg-surface-container-low rounded-xl p-5 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+<span class="font-headline font-bold text-secondary">Cash on Delivery</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Indicators & Gateways -->
+<section class="flex flex-col items-center gap-6 mb-12">
+<div class="flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full border border-emerald-100">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-wider text-primary">100% Secure Checkout</span>
+</div>
+<div class="flex items-center gap-8 opacity-40 grayscale">
+<img class="h-4" data-alt="Razorpay logo brand mark in dark minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwnAGnfAHlxckKMLdPcCE5c6AxtR8bl1Dnlt_j6gukIl4bIyCwsYDCH8TT6uz2HqgXqzeZnV9bBCq0qQsnsROG63xqa77lh3RKb4AXPCX7QSci7viLYiuVcYEM7-hXkU0Gfujx9h4-DUNcVzgGmuf40UOyEWBqwS00I5isFjLNnyEVfAVLc1qA5vbWVt_hPp5O2lMgbuzE6WTvKV8odF719_npaC-tF3yxVu3KxG0wJVupGMDfRSYbP6zkpoC1scmn9WvCrYrbb_Ha"/>
+<img class="h-4" data-alt="Cashfree payments logo brand mark in dark minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFf1cqXGjpwaN0rTnLqKP2waltIhrxlRVU1tM-ntbNakTsE-8UKZA5RlQKV9veN6kYoJi63h_EUAcNouSuIhnn0-Ikkmiq_xEciyO31YYcjq5gWuYcsk6tQQFBJnZPLG6PXwBhAo9QSKO7AL57ZFLWnVVl_K0PFLLtKc5Dhm3mv47IIGOyP__agRP6ozf7IOoqUknVhhm3Go7DA9fqkYERD9UzWE8I4GISR6RFUE8yM_8p6jNaW6MC4Sg0__6piml2dsDzgLRJpH0I"/>
+</div>
+</section>
+<!-- Price Breakdown -->
+<section class="bg-surface-container-low/50 p-6 rounded-2xl">
+<h3 class="font-headline font-bold text-lg mb-4">Order Summary</h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal (2 items)</span>
+<span class="font-medium">₹4,998.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Shipping</span>
+<span class="text-emerald-700 font-bold uppercase text-[10px] tracking-widest">Free</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Tax (GST 12%)</span>
+<span class="font-medium">₹599.76</span>
+</div>
+<div class="pt-4 mt-2 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-headline font-black text-xl uppercase tracking-tight">Total Amount</span>
+<span class="font-headline font-black text-xl text-primary">₹5,597.76</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Payment Bar -->
+<footer class="fixed bottom-0 w-full bg-white/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-6 pb-safe z-50">
+<div class="max-w-lg mx-auto flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest font-bold text-secondary">Payable</span>
+<span class="font-headline font-black text-xl text-primary">₹5,597</span>
+</div>
+<button class="flex-1 bg-primary text-on-primary font-headline font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span>Complete Payment</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+</div>
+</footer>
+<!-- Bottom Navigation (Filtered for focused checkout - Hidden as per Semantic Shell Mandate) -->
+<!-- Suppressed to prioritize the transaction focus -->
+</body></html>

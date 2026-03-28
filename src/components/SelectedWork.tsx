@@ -12,13 +12,13 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'Lumina',
+    title: 'Aryan Store',
     subtitle: 'E-Commerce Platform',
-    description: 'A premium shopping experience with seamless checkout and personalized recommendations.',
-    image: '/images/pimg1.webp',
+    description: 'A premium Indian heritage shopping experience with a seamless checkout.',
+      image: '/portfolio-images-work/home_page.png',
     category: 'Web Development',
     year: '2024',
-    results: '+156% Conversion Rate',
+    results: '+34% Conversion Rate',
     href: '/work/lumina',
   },
   {
