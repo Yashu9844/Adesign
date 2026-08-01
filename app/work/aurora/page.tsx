@@ -7,9 +7,9 @@ import { motion, useInView } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
-import { Zap, TrendingUp, Eye } from 'lucide-react';
+import { Zap, TrendingUp, Eye, BookOpen, LineChart, GraduationCap } from 'lucide-react';
 
-export default function AuroraCaseStudy() {
+export default function MedhasyaCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const strategyRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,7 @@ export default function AuroraCaseStudy() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95]" style={{ color: 'var(--text-primary)' }}
             >
-              Aurora
+              Medhasya Academy
             </motion.h1>
 
             <motion.p
@@ -61,7 +61,7 @@ export default function AuroraCaseStudy() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xl sm:text-2xl leading-relaxed max-w-2xl" style={{ color: 'var(--text-muted)' }}
             >
-              High-converting marketing website for a sustainable fashion brand. Combines compelling storytelling with conversion optimization to drive sales and brand loyalty.
+              A comprehensive educational website and marketing campaign driving high local SEO rankings and conversions for a premier academy.
             </motion.p>
 
             <motion.div
@@ -95,10 +95,10 @@ export default function AuroraCaseStudy() {
       >
         <div className="w-full max-w-[1920px] mx-auto relative h-[400px] sm:h-[600px] lg:h-[800px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
           <Image
-            src="/images/pimg2.webp"
-            alt="Aurora Website"
+            src="/portfolio-images-work/medhasya/academy_home page.png"
+            alt="Medhasya Website"
             fill
-            className="object-cover"
+            className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
           />
         </div>
       </motion.div>
@@ -118,19 +118,19 @@ export default function AuroraCaseStudy() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                title: 'Storytelling First',
-                description: 'Every page tells a story about sustainability, craftsmanship, and values. Users become emotionally invested in the brand journey.',
-                icon: '📖',
+                title: 'Educational Excellence',
+                description: 'Highlighting courses, faculty, and student success to build trust and authority in the local education sector.',
+                icon: <BookOpen className="w-10 h-10" />,
               },
               {
-                title: 'Conversion Optimized',
-                description: 'Strategic CTAs, social proof, urgency elements, and checkout optimization designed to maximize sales at every step.',
-                icon: '💸',
+                title: 'SEO & Lead Generation',
+                description: 'Strategic local SEO tags and outreach programs designed to rank high for tuition searches in Bangalore.',
+                icon: <LineChart className="w-10 h-10" />,
               },
               {
-                title: 'Community Focused',
-                description: 'Features for customer reviews, user-generated content, and community building to create brand advocates.',
-                icon: '👥',
+                title: 'Student Success Stories',
+                description: 'Features for student video testimonials and reviews that increased site relevance and trust significantly.',
+                icon: <GraduationCap className="w-10 h-10" />,
               },
             ].map((item, i) => (
               <motion.div
@@ -142,7 +142,7 @@ export default function AuroraCaseStudy() {
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'}
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
               >
-                <div className="text-5xl mb-4">{item.icon}</div>
+                <div className="mb-4" style={{ color: 'var(--text-primary)' }}>{item.icon}</div>
                 <h3 className="text-2xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
                 <p className="leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
               </motion.div>
@@ -195,10 +195,10 @@ export default function AuroraCaseStudy() {
             className="mt-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Ready to Launch a High-Converting Website?
+              Ready to Launch an Educational Platform?
             </h3>
             <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Our marketing websites have generated $200M+ in revenue for sustainable brands. Let's build your conversion machine.
+              Our educational websites have driven thousands of new student enrollments for academies. Let's build your lead generation machine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -238,15 +238,15 @@ export default function AuroraCaseStudy() {
               className="md:col-span-2 relative h-[400px] sm:h-[500px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
-                src="/images/pimg13.webp"
-                alt="Aurora Showcase 1"
+                src="/portfolio-images-work/medhasya/ranked second in google map for searching for tution in bengalore using google tags and organic review outreach.png"
+                alt="Medhasya Showcase 1"
                 fill
-                className="object-cover"
+                className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
               />
             </motion.div>
 
             {/* Two columns */}
-            {['/images/pimg14.webp', '/images/pimg15.webp'].map((img, idx) => (
+            {['/portfolio-images-work/medhasya/adding video testimony increased the site relevance compare to other website.png', '/portfolio-images-work/medhasya/increased the website seo to show in first page.png'].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
@@ -257,9 +257,9 @@ export default function AuroraCaseStudy() {
               >
                 <Image
                   src={img}
-                  alt={`Aurora ${idx + 2}`}
+                  alt={`Medhasya ${idx + 2}`}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
                 />
               </motion.div>
             ))}
@@ -273,10 +273,10 @@ export default function AuroraCaseStudy() {
               className="md:col-span-2 relative h-[300px] sm:h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
-                src="/images/pimg16.webp"
-                alt="Aurora Showcase 4"
+                src="/portfolio-images-work/medhasya/courses.png"
+                alt="Medhasya Showcase 4"
                 fill
-                className="object-cover"
+                className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
               />
             </motion.div>
           </div>
@@ -294,10 +294,10 @@ export default function AuroraCaseStudy() {
             className="mb-16 p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)' }}
           >
             <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Need a Sustainable Brand Story?
+              Need an Educational Platform?
             </h3>
             <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              We specialize in building authentic digital experiences for sustainable brands. Get results with storytelling and strategy.
+              We specialize in building authentic digital experiences for educational institutions. Get results with local SEO and strategy.
             </p>
             <Link href="/contact">
               <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
@@ -317,10 +317,10 @@ export default function AuroraCaseStudy() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { metric: '340%', label: 'ROI', desc: 'Return on marketing investment' },
-              { metric: '245%', label: 'Traffic Increase', desc: 'Year-over-year growth' },
-              { metric: '4.2%', label: 'Conversion Rate', desc: 'Industry average: 1.8%' },
-              { metric: '$2.3M', label: 'Revenue Generated', desc: 'First year sales' },
+              { metric: '#2', label: 'Local Search Rank', desc: 'For competitive tuition keywords in Bangalore' },
+              { metric: '245%', label: 'Traffic Increase', desc: 'Year-over-year organic growth' },
+              { metric: '45%', label: 'Enrollment Growth', desc: 'Increase in new student admissions' },
+              { metric: '10x', label: 'Engagement', desc: 'Through video testimonials' },
             ].map((result, i) => (
               <motion.div
                 key={i}
@@ -398,11 +398,11 @@ export default function AuroraCaseStudy() {
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
-              "The website isn't just beautiful—it's a sales machine. We've never seen conversion rates this high. The storytelling approach really resonates with our community."
+              "The website isn't just beautiful—it's an enrollment machine. We've never seen local SEO rankings this high. The student video testimonials approach really resonates with parents."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Emma Rodriguez</p>
-              <p style={{ color: 'var(--text-muted)' }}>Founder, Aurora Sustainable Fashion</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Academy Director</p>
+              <p style={{ color: 'var(--text-muted)' }}>Medhasya Academy</p>
             </div>
           </motion.div>
         </div>

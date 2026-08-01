@@ -29,7 +29,7 @@ export default function Home() {
       {/* Gradient Divider */}
       <div className="w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
 
-      {/* Selected Work Section */}
+      {/* Work Showcase Section */}
       <SelectedWork />
 
       {/* Gradient Divider */}
@@ -47,11 +47,11 @@ export default function Home() {
       {/* Gradient Divider */}
       <div className="w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
 
-      {/* Team Section - Led by the Founders */}
+      {/* Team Section - Led by the Founders (Hidden temporarily)
       <TeamSection />
 
-      {/* Gradient Divider */}
       <div className="w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+      */}
 
       {/* Testimonials - What Clients Say */}
       <Testimonials />

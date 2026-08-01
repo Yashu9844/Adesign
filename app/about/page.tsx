@@ -433,7 +433,7 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const stats = [
-    { number: '50+', label: 'Projects Delivered' },
+    { number: '8+', label: 'Projects Delivered' },
     { number: '100%', label: 'Client Satisfaction' },
     { number: '4+', label: 'Years Experience' },
     { number: '24/7', label: 'Support Available' },
@@ -727,7 +727,7 @@ const FeaturedTestimonial = () => {
               ))}
             </div>
             <span className="text-sm font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-              Trusted by 50+ clients worldwide
+              Trusted by 8+ clients worldwide
             </span>
           </motion.div>
 

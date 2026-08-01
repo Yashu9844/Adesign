@@ -47,8 +47,25 @@ const services = [
   {
     id: 3,
     number: '03',
-    title: 'Brand Strategy',
+    title: 'UX Strategy',
     shortTitle: 'Strategy',
+    description:
+      'We align user needs with business goals through deep research, journey mapping, and strategic architectural planning.',
+    capabilities: [
+      'User Research',
+      'Journey Mapping',
+      'Information Architecture',
+      'Usability Testing',
+      'Product Strategy',
+    ],
+    accent: 'from-orange-500/20 to-rose-500/20',
+    href: '/services/ux-strategy',
+  },
+  {
+    id: 4,
+    number: '04',
+    title: 'Brand Systems',
+    shortTitle: 'Branding',
     description:
       'We help you define your brand identity, positioning, and voice to create meaningful connections with your audience.',
     capabilities: [
@@ -58,8 +75,42 @@ const services = [
       'Market Research',
       'Guidelines',
     ],
-    accent: 'from-orange-500/20 to-rose-500/20',
-    href: '/services/brand-strategy',
+    accent: 'from-pink-500/20 to-red-500/20',
+    href: '/services/brand-systems',
+  },
+  {
+    id: 5,
+    number: '05',
+    title: 'Application',
+    shortTitle: 'Application',
+    description:
+      'We build native and cross-platform mobile applications that deliver seamless, engaging experiences across all devices.',
+    capabilities: [
+      'iOS & Android',
+      'React Native',
+      'App Architecture',
+      'Mobile UI/UX',
+      'App Store Launch',
+    ],
+    accent: 'from-indigo-500/20 to-blue-500/20',
+    href: '/services/application',
+  },
+  {
+    id: 6,
+    number: '06',
+    title: 'AI Automation',
+    shortTitle: 'Automation',
+    description:
+      'We integrate intelligent AI workflows and automations to streamline your operations and reduce manual workload exponentially.',
+    capabilities: [
+      'Custom LLMs',
+      'Workflow Automation',
+      'Data Extraction',
+      'Chatbot Integration',
+      'Optimization',
+    ],
+    accent: 'from-violet-500/20 to-fuchsia-500/20',
+    href: '/services/ai-automation',
   },
 ];
 
@@ -236,7 +287,7 @@ export default function WhatWeDo() {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
             {[
               { value: '5+', label: 'Years Experience' },
-              { value: '50+', label: 'Projects Delivered' },
+              { value: '8+', label: 'Projects Delivered' },
               { value: '30+', label: 'Happy Clients' },
               { value: '100%', label: 'On-Time Delivery' },
             ].map((stat, index) => (

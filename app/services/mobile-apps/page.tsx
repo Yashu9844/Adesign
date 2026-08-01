@@ -53,7 +53,7 @@ const features = [
 ];
 
 const stats = [
-  { value: '50+', label: 'Apps Published' },
+  { value: '4+', label: 'Apps Published' },
   { value: '4.8★', label: 'Average Rating' },
   { value: '2M+', label: 'Downloads' },
   { value: '12', label: 'App Awards' },

@@ -16,7 +16,7 @@ const projects = [
     subtitle: 'E-Commerce Platform',
     description: 'A premium Indian heritage shopping experience with a seamless checkout.',
       image: '/portfolio-images-work/home_page.png',
-    category: 'Web Development',
+    categories: ['Web Development'],
     year: '2024',
     results: '+34% Conversion Rate',
     tags: ['React', 'Next.js', 'Razorpay', 'Tailwind CSS'],
@@ -26,55 +26,55 @@ const projects = [
     title: 'Salemijo',
     subtitle: 'AI-Powered CRM Platform',
     description: 'Modern CRM solution with AI-driven agent management, customizable chatbots, and integrated payment systems.',
-    image: '/portfolio-images-work/salemijo-home.png',
-    category: 'Web Development',
+    image: '/portfolio-images-work/salemijo-mobile.png',
+    categories: ['Web Development', 'Product Design'],
     year: '2024',
     results: '+150% Sales Efficiency',
     tags: ['React', 'Next.js', 'AI/ML', 'Razorpay', 'Firebase'],
   },
   {
     id: 3,
-    title: 'Vertex',
-    subtitle: 'Brand Identity',
-    description: 'Complete brand overhaul for a fintech startup disrupting traditional banking.',
-    image: '/images/pimg3.webp',
-    category: 'Branding',
+    title: 'Savastha Clinic',
+    subtitle: 'Healthcare Mobile App',
+    description: 'A dual-sided mobile app for patients to book doctors, pay, and consult — and for doctors to manage schedules and billing.',
+    image: '/portfolio-images-work/savastha/savastha-thumbnail.png',
+    categories: ['Mobile Development', 'Product Design'],
     year: '2024',
-    results: '$2.5M Seed Raised',
-    tags: ['Branding', 'Design System', 'Motion Design', 'Marketing'],
+    results: 'Seamless Booking',
+    tags: ['React Native', 'Firebase', 'Razorpay', 'Figma', 'Node.js'],
   },
   {
     id: 2,
-    title: 'Horizon',
-    subtitle: 'SaaS Dashboard',
-    description: 'Analytics platform that transforms complex data into actionable insights.',
-    image: '/images/pimg2.webp',
-    category: 'Product Design',
+    title: 'Code Quest',
+    subtitle: 'Company Portfolio',
+    description: 'A dynamic company portfolio showcasing technical expertise, serving over 500k requests with high performance.',
+    image: '/portfolio-images-work/codequest/screenshot1.png',
+    categories: ['Web Development', 'Branding'],
     year: '2024',
-    results: '50K+ Active Users',
-    tags: ['React', 'TypeScript', 'D3.js', 'PostgreSQL'],
+    results: '20k+ Unique Visitors',
+    tags: ['React', 'Next.js', 'Portfolio', 'Performance'],
   },
   {
     id: 5,
-    title: 'Aurora',
-    subtitle: 'Marketing Website',
-    description: 'High-converting marketing site for a sustainable fashion brand with engaging storytelling.',
-    image: '/images/pimg2.webp',
-    category: 'Web Design',
-    year: '2023',
-    results: '340% ROI',
-    tags: ['Next.js', 'Animation', 'CMS', 'SEO Optimized'],
+    title: 'Medhasya Academy',
+    subtitle: 'Marketing & Website',
+    description: 'A comprehensive educational website and marketing campaign driving high local SEO rankings and conversions.',
+    image: '/portfolio-images-work/medhasya/academy_home page.png',
+    categories: ['Web Development', 'Branding'],
+    year: '2024',
+    results: '#2 Google Maps Rank',
+    tags: ['SEO', 'Marketing', 'React', 'Local Growth'],
   },
   {
     id: 6,
-    title: 'Stellar',
-    subtitle: 'AI Integration',
-    description: 'Enterprise AI solution integrating GPT-4 for intelligent document processing.',
-    image: '/images/pimg3.webp',
-    category: 'AI Solutions',
+    title: 'Freshwork',
+    subtitle: 'AI Automation Workflow',
+    description: 'An intelligent AI automation platform streamlining data input and business workflows with custom engines.',
+    image: '/portfolio-images-work/freshwork/home.png',
+    categories: ['AI Solutions'],
     year: '2024',
-    results: '95% Accuracy',
-    tags: ['AI/ML', 'OpenAI', 'Python', 'Cloud Infrastructure'],
+    results: '10x Faster Workflows',
+    tags: ['AI/ML', 'Automation', 'Python', 'Cloud Workflow'],
   },
 ];
 
@@ -85,11 +85,11 @@ export default function WorkPage() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   const categories = ['All', 'Web Development', 'Product Design', 'Branding', 'Mobile Development', 'AI Solutions'];
-  const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
+  const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.categories.includes(selectedCategory));
 
   const stats = [
     { icon: TrendingUp, value: '150%', label: 'Avg. Growth' },
-    { icon: Users, value: '50+', label: 'Clients Served' },
+    { icon: Users, value: '8+', label: 'Clients Served' },
     { icon: Zap, value: '98%', label: 'Satisfaction' },
   ];
 
@@ -108,9 +108,9 @@ export default function WorkPage() {
           >
             <span className="text-xs uppercase tracking-[0.3em] mb-4 block" style={{ color: 'var(--text-subtle)' }}>Our Portfolio</span>
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6" style={{ color: 'var(--text-primary)' }}>
-              Selected
+              WORK
               <br />
-              <span style={{ color: 'var(--text-subtle)' }}>Work</span>
+              <span style={{ color: 'var(--text-subtle)' }}>SHOWCASE</span>
             </h1>
             <p className="text-lg sm:text-xl font-light max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               A collection of projects we're proud of. Each one crafted with attention to detail and strategic thinking.
@@ -246,13 +246,14 @@ export default function WorkPage() {
                     <motion.div
                       animate={{ scale: hoveredProject === project.id ? 1.05 : 1 }}
                       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="w-full h-full"
+                      className="w-full h-full relative"
                     >
+                      {/* Foreground Image */}
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-contain grayscale opacity-75 transition-all duration-500 group-hover/image:grayscale-0 group-hover/image:opacity-100 group-hover/image:scale-105 z-10"
                       />
                     </motion.div>
                     

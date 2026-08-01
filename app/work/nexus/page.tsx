@@ -195,7 +195,7 @@ export default function SalemijoCaseStudy() {
                     src={['/portfolio-images-work/salemijo-agent-management.png', '/portfolio-images-work/salemijo-crm-chatbot.png', '/portfolio-images-work/salemijo-billing.png'][idx]}
                     alt={feature.title}
                     fill
-                    className="object-cover"
+                    className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
                   />
                 </div>
               </motion.div>

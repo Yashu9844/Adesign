@@ -125,7 +125,7 @@ export default function Hero() {
                     className="font-bold"
                     style={{ fontSize: 'clamp(1.5rem, 3.5vw, 3rem)', color: 'var(--text-primary)' }}
                   >
-                    50+
+                    8+
                   </div>
                   <div className="text-[10px] sm:text-xs md:text-xs tracking-wider uppercase" style={{ color: 'var(--text-60)' }}>Projects</div>
                 </div>
@@ -180,6 +180,8 @@ export default function Hero() {
                     <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>Development</p>
                     <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>UX Strategy</p>
                     <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>Brand Systems</p>
+                    <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>Application</p>
+                    <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>AI Automation</p>
                   </div>
                 </div>
               </div>

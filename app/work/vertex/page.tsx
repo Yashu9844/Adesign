@@ -7,34 +7,155 @@ import { motion, useInView } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
-import { Palette, Lightbulb } from 'lucide-react';
+import { Check, TrendingUp, Users, Star, Calendar, MessageSquare } from 'lucide-react';
 
-export default function VertexCaseStudy() {
+function IPhoneMockup({ src, alt, priority = false }: { src: string; alt: string; priority?: boolean }) {
+  return (
+    <div className="relative mx-auto select-none" style={{ width: '100%', maxWidth: '280px' }}>
+      {/* Outer shell */}
+      <div
+        className="relative rounded-[2.8rem] p-2"
+        style={{
+          background: 'linear-gradient(145deg, #2a2a2a, #1a1a1a)',
+          boxShadow:
+            'inset 0 0 0 1px rgba(255,255,255,0.12), 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.8)',
+        }}
+      >
+        {/* Left buttons */}
+        <div className="absolute rounded-l-sm" style={{ left: '-3px', top: '72px', width: '3px', height: '28px', backgroundColor: '#333' }} />
+        <div className="absolute rounded-l-sm" style={{ left: '-3px', top: '112px', width: '3px', height: '50px', backgroundColor: '#333' }} />
+        <div className="absolute rounded-l-sm" style={{ left: '-3px', top: '174px', width: '3px', height: '50px', backgroundColor: '#333' }} />
+        {/* Right button */}
+        <div className="absolute rounded-r-sm" style={{ right: '-3px', top: '110px', width: '3px', height: '72px', backgroundColor: '#333' }} />
+
+        {/* Screen bezel */}
+        <div
+          className="relative overflow-hidden rounded-[2.2rem]"
+          style={{ aspectRatio: '9 / 19.5', backgroundColor: '#000' }}
+        >
+          {/* Dynamic Island */}
+          <div
+            className="absolute z-10 rounded-full"
+            style={{
+              top: '10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '96px',
+              height: '28px',
+              backgroundColor: '#000',
+            }}
+          />
+
+          {/* Screenshot — object-top clips long Figma scrollable screens at the top */}
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+            priority={priority}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FlowArrow() {
+  return (
+    <div className="hidden lg:flex items-center justify-center shrink-0" style={{ width: '72px' }}>
+      <div className="flex items-center w-full" style={{ color: 'var(--border-light)' }}>
+        <div className="flex-1 h-px" style={{ backgroundColor: 'var(--border-medium)' }} />
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="shrink-0 -ml-1">
+          <circle cx="14" cy="14" r="9" stroke="currentColor" strokeWidth="1" fill="none" />
+          <path d="M10 14h8M15 11l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+const screenFlows = [
+  {
+    flowLabel: 'Onboarding',
+    screens: [
+      { src: '/portfolio-images-work/savastha/login.jpg', label: 'Login', description: 'Secure sign-in via phone OTP or email — no passwords to remember.' },
+      { src: '/portfolio-images-work/savastha/signup-choice.jpg', label: 'Sign Up', description: 'Choose your role upfront — patient or doctor — to tailor the experience.' },
+      { src: '/portfolio-images-work/savastha/patient-account-setup.jpg', label: 'Account Setup', description: 'Build your health profile in under 60 seconds with guided onboarding.' },
+    ],
+  },
+  {
+    flowLabel: 'Finding a Doctor',
+    screens: [
+      { src: '/portfolio-images-work/savastha/doctor-search.jpg', label: 'Doctor Search', description: 'Filter by specialty, location, language, and real-time slot availability.' },
+      { src: '/portfolio-images-work/savastha/doctor-profile.jpg', label: 'Doctor Profile', description: 'Full profile with ratings, qualifications, experience, and open appointments.' },
+      { src: '/portfolio-images-work/savastha/appointment-date-time.jpg', label: 'Pick a Slot', description: 'Calendar view of available times — pick the one that fits your schedule.' },
+    ],
+  },
+  {
+    flowLabel: 'Booking & Payment',
+    screens: [
+      { src: '/portfolio-images-work/savastha/appointment-confirm-pay.jpg', label: 'Confirm & Pay', description: 'Review appointment details and pay securely via Razorpay in one tap.' },
+      { src: '/portfolio-images-work/savastha/booking-confirmation.jpg', label: 'Booking Confirmed', description: 'Instant confirmation with calendar sync and reminder notification.' },
+      { src: '/portfolio-images-work/savastha/doctor-dashboard.jpg', label: 'Doctor Dashboard', description: "Doctors see their full schedule, patient queue, and today's consultations." },
+    ],
+  },
+  {
+    flowLabel: 'Ongoing Care',
+    screens: [
+      { src: '/portfolio-images-work/savastha/billing-payments.jpg', label: 'Billing & Payments', description: 'Download GST-ready receipts and track full payment history at a glance.' },
+      { src: '/portfolio-images-work/savastha/chat-messaging.jpg', label: 'Chat & Messaging', description: 'Direct secure messaging with your doctor for follow-ups and queries.' },
+      { src: '/portfolio-images-work/savastha/settings-profile.jpg', label: 'Settings & Profile', description: 'Manage health records, notification preferences, and linked devices.' },
+    ],
+  },
+];
+
+export default function SavasthaClinicCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const strategyRef = useRef<HTMLDivElement>(null);
-  const deliveriesRef = useRef<HTMLDivElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const processRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const heroInView = useInView(heroRef, { once: true });
-  const strategyInView = useInView(strategyRef, { once: true });
-  const deliveriesInView = useInView(deliveriesRef, { once: true });
 
-  const deliverables = [
+  const heroInView = useInView(heroRef, { once: true });
+  const resultsInView = useInView(resultsRef, { once: true });
+  const processInView = useInView(processRef, { once: true });
+
+  const results = [
+    { metric: '100%', label: 'Digital Booking', Icon: Star },
+    { metric: '500+', label: 'Patients', Icon: Users },
+  ];
+
+  const process = [
     {
-      category: 'Brand Identity',
-      items: ['Logo System', 'Color Palette', 'Typography', 'Brand Guidelines'],
-      image: '/images/pimg3.webp',
+      num: '01',
+      title: 'Research & Discovery',
+      description: 'Conducted in-depth interviews with patients, doctors, and clinic administrators to map pain points in existing appointment and billing workflows. Benchmarked against leading health-tech apps across India and globally.',
+      duration: '2 weeks',
+      details: ['User Interviews', 'Competitor Audit', 'Journey Mapping', 'Stakeholder Workshops'],
     },
     {
-      category: 'Design System',
-      items: ['Component Library', 'Iconography', 'Motion Design', 'Accessibility'],
-      image: '/images/pimg13.webp',
+      num: '02',
+      title: 'UX Architecture & Wireframing',
+      description: 'Designed two distinct user flows — patient-facing (search, book, pay, chat) and doctor-facing (dashboard, schedule, consultations). Information architecture was simplified to reduce friction at every touchpoint.',
+      duration: '3 weeks',
+      details: ['IA Design', 'Wireframes', 'Flow Validation', 'Accessibility Review'],
     },
     {
-      category: 'Applications',
-      items: ['Web Platform', 'Mobile App', 'Marketing Site', 'Internal Tools'],
-      image: '/images/pimg14.webp',
+      num: '03',
+      title: 'UI Design & Prototype',
+      description: 'Built a calm, trust-first visual system: soft whites, a clinical green accent, and high-contrast typography for readability across age groups. All 40+ screens designed in Figma with interactive prototypes for usability testing.',
+      duration: '4 weeks',
+      details: ['Design System', 'Component Library', '40+ Screens', 'Usability Testing'],
+    },
+    {
+      num: '04',
+      title: 'Development & Launch',
+      description: 'Developed in React Native with a Node.js backend, Razorpay for payments, and Firebase for real-time chat and notifications. Launched on iOS and Android simultaneously with a phased rollout to partner clinics.',
+      duration: '6 weeks',
+      details: ['React Native', 'Firebase', 'Razorpay', 'App Store Launch'],
     },
   ];
 
@@ -43,385 +164,300 @@ export default function VertexCaseStudy() {
       <SmoothScroll />
       <Navigation />
 
-      {/* Immersive Hero */}
-      <section ref={heroRef} className="relative min-h-[100vh] flex items-center px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-32 overflow-hidden">
-        {/* Background Image */}
-        <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={heroInView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 1.2 }}
-          className="absolute inset-0 -z-10"
-        >
-          <Image
-            src="/images/pimg15.webp"
-            alt="Background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </motion.div>
+      {/* Hero Section */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[90vh] flex items-center px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-32 pb-20 overflow-hidden"
+      >
+        <div className="w-full max-w-480 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        <div className="w-full max-w-[1920px] mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border backdrop-blur-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
-              <Palette className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
-              <span className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>Brand Transformation</span>
-            </div>
-
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-6" style={{ color: 'var(--text-primary)' }}>
-              Vertex
-            </h1>
-
-            <p className="text-xl sm:text-2xl leading-relaxed max-w-2xl mb-8" style={{ color: 'var(--text-muted)' }}>
-              Complete brand overhaul for a fintech startup that raised $2.5M in seed funding, positioning them as the disruptive leader in financial technology.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              {['Fintech', 'Brand Strategy', 'Design System', 'Motion'].map(tag => (
-                <span key={tag} className="px-4 py-2 rounded-none border text-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Metrics Below */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20"
-          >
-            {[
-              { label: 'Timeline', value: '16 Weeks' },
-              { label: 'Deliverables', value: '150+' },
-              { label: 'Funding Raised', value: '$2.5M' },
-              { label: 'Design Variance', value: '45+' },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 + i * 0.05 }}
-              >
-                <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
-                <p className="text-2xl sm:text-3xl font-accent font-black" style={{ color: 'var(--text-primary)' }}>{stat.value}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Brand Strategy Deep Dive */}
-      <section ref={strategyRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-        <div className="w-full max-w-[1920px] mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={strategyInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
-          >
-            Brand <span style={{ color: 'var(--text-subtle)' }}>Strategy</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Strategy Content */}
+            {/* Left: Content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <div className="space-y-8">
-                {[
-                  {
-                    title: 'Market Position',
-                    desc: 'Position as the human-first alternative to cold, corporate fintech giants. Trust through transparency.',
-                  },
-                  {
-                    title: 'Brand Voice',
-                    desc: 'Confident yet approachable. Financial expertise without the jargon. Authority with empathy.',
-                  },
-                  {
-                    title: 'Visual Language',
-                    desc: 'Modern geometric forms suggest stability and growth. Vibrant accents convey innovation and optimism.',
-                  },
-                  {
-                    title: 'Experience Design',
-                    desc: 'Every touchpoint reinforces the promise: banking made simple, secure, and human.',
-                  },
-                ].map((strategy, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                  >
-                    <h3 className="text-2xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{strategy.title}</h3>
-                    <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>{strategy.desc}</p>
-                  </motion.div>
-                ))}
+              <div className="space-y-6">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.3em]" style={{ color: 'var(--text-subtle)' }}>Case Study · Mobile App</span>
+                  <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mt-4 mb-4" style={{ color: 'var(--text-primary)' }}>
+                    Savastha<br />
+                    <span style={{ color: 'var(--text-subtle)' }}>Clinic</span>
+                  </h1>
+                  <p className="text-2xl font-light" style={{ color: 'var(--text-muted)' }}>Healthcare Booking & Consultation App</p>
+                </div>
+
+                <div className="space-y-4 py-8 border-y" style={{ borderColor: 'var(--border-faint)' }}>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Timeline</p>
+                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>15 weeks</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Team</p>
+                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>1 UI/UX Designer, 2 Mobile Developers, 1 Backend Engineer</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Tech Stack</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {['React Native', 'Node.js', 'Firebase', 'Razorpay', 'Figma'].map(tech => (
+                        <span key={tech} className="px-3 py-1 text-sm border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                  A full-featured healthcare mobile app enabling patients to search doctors, book appointments, pay, and consult via chat — all from one place.
+                </p>
               </div>
             </motion.div>
 
-            {/* Strategy Image */}
+            {/* Right: 3 stacked phone mockups */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={heroInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex items-center justify-center gap-4 lg:gap-6"
+            >
+              {/* Left phone — slightly lower */}
+              <div className="mt-12 opacity-70 scale-90 hidden sm:block">
+                <IPhoneMockup src="/portfolio-images-work/savastha/signup-choice.jpg" alt="Signup" />
+              </div>
+              {/* Center phone — hero */}
+              <div>
+                <IPhoneMockup src="/portfolio-images-work/savastha/doctor-search.jpg" alt="Doctor Search" priority />
+              </div>
+              {/* Right phone — slightly lower */}
+              <div className="mt-12 opacity-70 scale-90 hidden sm:block">
+                <IPhoneMockup src="/portfolio-images-work/savastha/appointment-date-time.jpg" alt="Book Appointment" />
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Challenge & Solution */}
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+        <div className="w-full max-w-480 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-6" style={{ color: 'var(--text-primary)' }}>
+                The Challenge
+              </h2>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                  Patients in tier-2 and tier-3 cities struggled to find qualified doctors, book appointments, and pay — often relying on phone calls and walk-ins. Clinics had no unified system, leading to double-bookings, missed follow-ups, and poor patient retention.
+                </p>
+                <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                  The brief: design and build a dual-sided app (patient + doctor) that felt as simple as booking a cab, while meeting the trust and compliance needs of healthcare.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] lg:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
-              <Image
-                src="/images/pimg16.webp"
-                alt="Brand Strategy"
-                fill
-                className="object-cover"
-              />
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-6" style={{ color: 'var(--text-primary)' }}>
+                Our Solution
+              </h2>
+              <div className="space-y-4">
+                {[
+                  'Doctor search by specialty, location, and availability',
+                  'Real-time appointment booking with calendar sync',
+                  'Razorpay-powered payments with insurance-ready receipts',
+                  'In-app chat and video consultation support',
+                  'Doctor dashboard with schedule, patient records, and billing',
+                  'Push notifications for reminders and follow-ups',
+                ].map((solution, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <Check className="w-5 h-5 shrink-0 mt-1" style={{ color: 'var(--text-muted)' }} />
+                    <span className="text-base" style={{ color: 'var(--text-muted)' }}>{solution}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Visual Evolution Gallery */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="w-full max-w-[1920px] mx-auto">
+      {/* Results */}
+      <section ref={resultsRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="w-full max-w-480 mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={resultsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
+            className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-16 text-center"
+            style={{ color: 'var(--text-primary)' }}
           >
-            Visual <span style={{ color: 'var(--text-subtle)' }}>Evolution</span>
+            Results That <span style={{ color: 'var(--text-subtle)' }}>Matter</span>
           </motion.h2>
 
-          {/* Before and After Split Screen */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
-          >
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--text-muted)' }}>Before</p>
-              <div className="relative h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
-                <Image
-                  src="/images/pimg4.webp"
-                  alt="Before"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--text-muted)' }}>After</p>
-              <div className="relative h-[400px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}>
-                <Image
-                  src="/images/pimg5.webp"
-                  alt="After"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Full Width Showcase */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[300px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden border mb-16" style={{ borderColor: 'var(--border-faint)' }}
-          >
-            <Image
-              src="/images/pimg6.webp"
-              alt="Brand Showcase"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {results.map((result, index) => {
+              const Icon = result.Icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={resultsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 border transition-all"
+                  style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--bg-card)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--bg-elevated)')}
+                >
+                  <Icon className="w-7 h-7 mb-4" style={{ color: 'var(--text-muted)' }} />
+                  <div className="text-4xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{result.metric}</div>
+                  <div className="text-sm font-light" style={{ color: 'var(--text-muted)' }}>{result.label}</div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Deliverables Section */}
-      <section ref={deliveriesRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-        <div className="w-full max-w-[1920px] mx-auto">
+      {/* App Flow Gallery */}
+      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+        <div className="w-full max-w-480 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-px" style={{ backgroundColor: 'var(--line-secondary)' }} />
+              <span className="text-[11px] sm:text-xs tracking-[0.3em] uppercase font-light" style={{ color: 'var(--text-subtle)' }}>User Flow</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black leading-[0.95]" style={{ color: 'var(--text-primary)' }}>
+              App <span style={{ color: 'var(--text-subtle)' }}>Showcase</span>
+            </h2>
+          </motion.div>
+
+          <div className="space-y-28">
+            {screenFlows.map((flow, flowIndex) => (
+              <motion.div
+                key={flow.flowLabel}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+              >
+                {/* Flow label */}
+                <div className="flex items-center gap-4 mb-12">
+                  <span
+                    className="text-[11px] tracking-[0.35em] uppercase font-medium px-3 py-1.5 border"
+                    style={{ color: 'var(--text-muted)', borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-card)' }}
+                  >
+                    {String(flowIndex + 1).padStart(2, '0')} — {flow.flowLabel}
+                  </span>
+                  <div className="flex-1 h-px" style={{ backgroundColor: 'var(--border-faint)' }} />
+                </div>
+
+                {/* Phone row with arrows through the middle */}
+                <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-0">
+                  {flow.screens.map((screen, screenIndex) => (
+                    <div key={screen.src} className="contents">
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: screenIndex * 0.15 }}
+                        className="flex-1"
+                      >
+                        <IPhoneMockup src={screen.src} alt={screen.label} />
+                      </motion.div>
+                      {screenIndex < flow.screens.length - 1 && <FlowArrow />}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Labels & descriptions below phones — aligned in 3 cols */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+                  {flow.screens.map((screen, screenIndex) => (
+                    <motion.div
+                      key={`label-${screen.src}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 + screenIndex * 0.1 }}
+                      className="text-center px-4"
+                    >
+                      <p className="text-sm font-semibold tracking-wide mb-1.5" style={{ color: 'var(--text-primary)' }}>
+                        {screen.label}
+                      </p>
+                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                        {screen.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Timeline */}
+      <section ref={processRef} className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="w-full max-w-480 mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
-            animate={deliveriesInView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16" style={{ color: 'var(--text-primary)' }}
+            className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-16 text-center"
+            style={{ color: 'var(--text-primary)' }}
           >
             Project <span style={{ color: 'var(--text-subtle)' }}>Timeline</span>
           </motion.h2>
 
-          <div className="max-w-4xl mx-auto mb-16 space-y-6">
-            {[
-              { week: 'Week 1-2', title: 'Brand Strategy & Discovery', desc: 'Competitive analysis, market research, stakeholder interviews, brand positioning workshop' },
-              { week: 'Week 3-4', title: 'Logo & Identity System', desc: 'Concept development, logo design iterations, initial brand guidelines, visual language definition' },
-              { week: 'Week 5-8', title: 'Extended Design System', desc: 'Typography, color palette refinement, UI components, pattern library, motion design specs' },
-              { week: 'Week 9-12', title: 'Implementation & Launch', desc: 'Website redesign, app integration, marketing collateral, launch campaign, training docs' },
-              { week: 'Week 13-16', title: 'Post-Launch & Optimization', desc: 'Brand awareness campaign, stakeholder feedback, refinements, expanded guidelines' },
-            ].map((timeline, idx) => (
+          <div className="max-w-4xl mx-auto">
+            {process.map((step, index) => (
               <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
-              >
-                <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 rounded-none font-accent font-bold text-sm" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}>{timeline.week}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{timeline.title}</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>{timeline.desc}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA Mid-page */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="p-8 sm:p-12 rounded-none border text-center" style={{ borderColor: 'var(--border-faint)', background: 'linear-gradient(to right, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1))' }}
-          >
-            <h3 className="text-2xl sm:text-3xl font-accent font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Ready to Elevate Your Brand?
-            </h3>
-            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Our brand transformations have helped 200+ companies raise $2.5B+ in funding. Let's build your iconic brand identity.
-            </p>
-            <Link href="/contact">
-              <button className="px-8 py-3 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
-                Start Brand Transformation
-              </button>
-            </Link>
-          </motion.div>
-
-          <div className="mt-16">
-            <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>What We <span style={{ color: 'var(--text-subtle)' }}>Delivered</span></h2>
-
-          <div className="space-y-16">
-            {deliverables.map((section, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                {/* Text Content */}
-                <div className={idx % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <h3 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>{section.category}</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    {section.items.map((item, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: i * 0.05 }}
-                        className="p-4 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-card)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'}
-                      >
-                        <div className="flex items-center gap-2 mb-2">
-                          <Lightbulb className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
-                          <span className="text-sm" style={{ color: 'var(--text-primary)' }}>{item}</span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Image */}
-                <div className={`relative h-[350px] sm:h-[450px] rounded-none overflow-hidden border ${idx % 2 === 1 ? 'lg:col-start-1' : ''}`} style={{ borderColor: 'var(--border-faint)' }}>
-                  <Image
-                    src={section.image}
-                    alt={section.category}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="w-full max-w-[1920px] mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl font-accent font-black mb-16 text-center" style={{ color: 'var(--text-primary)' }}
-          >
-            Impact & <span style={{ color: 'var(--text-subtle)' }}>Recognition</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                stat: '$2.5M',
-                title: 'Seed Funding Raised',
-                desc: 'Investors credited the brand strength as a key differentiator',
-              },
-              {
-                stat: '340%',
-                title: 'Website Conversion Lift',
-                desc: 'Higher engagement and lower bounce rates immediately post-launch',
-              },
-              {
-                stat: '5',
-                title: 'Design Awards',
-                desc: 'International recognition for innovation and execution',
-              },
-              {
-                stat: '98%',
-                title: 'Brand Recall',
-                desc: 'Target audience recognition after 3 months in market',
-              },
-              {
-                stat: '150+',
-                title: 'Design Assets',
-                desc: 'Complete system for scalability across products and markets',
-              },
-              {
-                stat: '45K+',
-                title: 'Early Adopters',
-                desc: 'User acquisition driven by brand strength and storytelling',
-              },
-            ].map((impact, i) => (
-              <motion.div
-                key={i}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="p-8 rounded-none border transition-all" style={{ borderColor: 'var(--border-faint)', backgroundColor: 'var(--bg-elevated)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-card)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-faint)'; }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative pb-12 last:pb-0"
               >
-                <div className="text-4xl font-accent font-black mb-2" style={{ color: 'var(--text-primary)' }}>{impact.stat}</div>
-                <h4 className="text-xl font-accent font-bold mb-3" style={{ color: 'var(--text-primary)' }}>{impact.title}</h4>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{impact.desc}</p>
+                {index !== process.length - 1 && (
+                  <div className="absolute left-8 top-20 bottom-0 w-px" style={{ background: 'linear-gradient(to bottom, var(--border-medium), transparent)' }} />
+                )}
+                <div className="flex gap-6">
+                  <div className="relative z-10 shrink-0">
+                    <div className="w-16 h-16 border-2 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }}>
+                      <span className="text-sm font-accent font-bold" style={{ color: 'var(--text-primary)' }}>{step.num}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 pt-2">
+                    <h3 className="text-2xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{step.title}</h3>
+                    <p className="mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>{step.description}</p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-sm italic" style={{ color: 'var(--text-subtle)' }}>{step.duration}</span>
+                      {step.details.map((detail, i) => (
+                        <span key={i} className="text-xs border px-3 py-1" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-muted)' }}>
+                          {detail}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -430,50 +466,56 @@ export default function VertexCaseStudy() {
 
       {/* Testimonial */}
       <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{ backgroundColor: 'var(--bg-elevated)' }}>
-        <div className="w-full max-w-4xl mx-auto text-center">
+        <div className="w-full max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex justify-center gap-2 mb-8">
+            <div className="mb-8 flex justify-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-3xl">⭐</span>
+                <Star key={i} className="w-6 h-6 fill-current" style={{ color: 'var(--text-primary)' }} />
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
-              "This wasn't just a rebrand. They completely reimagined how we communicate our value. The design system alone saved us millions in development costs down the line."
+              "Savastha transformed how our clinic operates. Patients love how easy it is to book, and our doctors spend less time on admin and more time on care. The app paid for itself within the first month."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Michael Torres</p>
-              <p style={{ color: 'var(--text-muted)' }}>Founder & CEO, Vertex</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Dr. Arjun Mehta</p>
+              <p style={{ color: 'var(--text-muted)' }}>Founder, Savastha Clinic</p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* CTA */}
       <section className="py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="w-full max-w-[1920px] mx-auto text-center">
+        <div className="w-full max-w-480 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            <h2 className="text-5xl sm:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
-              Ready to Build Your <span style={{ color: 'var(--text-subtle)' }}>Brand Legacy?</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>
+              Ready to Build Your <span style={{ color: 'var(--text-subtle)' }}>Mobile App?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="px-8 sm:px-12 py-4 rounded-full font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
-                  Let's Talk
+                <button className="px-8 sm:px-12 py-4 font-accent font-bold transition-all" style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}>
+                  Start Your Project
                 </button>
               </Link>
               <Link href="/work">
-                <button className="px-8 sm:px-12 py-4 border rounded-full font-accent font-bold transition-all" style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--border-medium)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-light)'}>
-                  See More Work
+                <button
+                  className="px-8 sm:px-12 py-4 border font-accent font-bold transition-all"
+                  style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.backgroundColor = 'transparent'; }}
+                >
+                  View More Projects
                 </button>
               </Link>
             </div>

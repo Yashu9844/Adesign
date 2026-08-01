@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import { Zap, Brain, Database } from 'lucide-react';
 
-export default function StellarCaseStudy() {
+export default function FreshworkCaseStudy() {
   const heroRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -53,15 +53,15 @@ export default function StellarCaseStudy() {
             </div>
 
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-accent font-black leading-[0.95] mb-8" style={{ color: 'var(--text-primary)' }}>
-              Stellar
+              Freshwork
             </h1>
 
             <p className="text-xl sm:text-2xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-              Enterprise AI solution integrating GPT-4 for intelligent document processing. Automates complex workflows with 95% accuracy and reduces processing time by 90%.
+              An intelligent AI automation platform streamlining data input and business workflows with custom engines. Automates complex workflows and reduces manual data entry significantly.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-12">
-              {['GPT-4 Integration', 'Document OCR', 'Enterprise Scale', 'Real-time Processing'].map(tag => (
+              {['CRM Data Extraction', 'AI Engine', 'Sales Automation', 'Workflow Integration'].map(tag => (
                 <span key={tag} className="px-4 py-2 rounded-none border text-sm" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)', color: 'var(--text-primary)' }}>
                   {tag}
                 </span>
@@ -95,10 +95,10 @@ export default function StellarCaseStudy() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8"
           >
             {[
-              { metric: '95%', label: 'Accuracy Rate' },
-              { metric: '90%', label: 'Time Saved' },
-              { metric: '200+', label: 'Enterprise Clients' },
-              { metric: '50M+', label: 'Documents Processed' },
+              { metric: '10x', label: 'Faster Workflows' },
+              { metric: '98%', label: 'Data Accuracy' },
+              { metric: '500+', label: 'Agencies Using It' },
+              { metric: '5M+', label: 'Leads Processed' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -128,12 +128,12 @@ export default function StellarCaseStudy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>Enterprise Challenge</h2>
+              <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>The Challenge</h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
-                Fortune 500 companies were drowning in document processing. Manual review of contracts, invoices, and forms took weeks and was error-prone. They needed intelligent automation at scale.
+                Sales teams were drowning in manual CRM data entry. Extracting lead data from various platforms and copy-pasting it into CRM workflows took hours each day and was highly error-prone, killing sales velocity.
               </p>
               <ul className="space-y-4">
-                {['Thousands of docs processed manually daily', 'High error rates from human fatigue', 'Compliance and audit trail complexity', 'Impossible to scale without massive teams'].map((problem, i) => (
+                {['Hours lost to manual data entry daily', 'High error rates from human fatigue', 'Inconsistent CRM data formats', 'Impossible to scale outreach campaigns'].map((problem, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <span className="text-red-400 font-bold mt-1">✕</span>
                     <span style={{ color: 'var(--text-muted)' }}>{problem}</span>
@@ -150,7 +150,7 @@ export default function StellarCaseStudy() {
             >
               <h2 className="text-4xl sm:text-5xl font-accent font-black mb-8" style={{ color: 'var(--text-primary)' }}>AI-Powered Solution</h2>
               <ul className="space-y-4 mb-8">
-                {['GPT-4 backed document understanding', 'Automated extraction & classification', 'Intelligent validation & anomaly detection', 'Audit-ready processing logs'].map((solution, i) => (
+                {['Custom AI engine for intelligent data extraction', 'Automated syncing directly to CRM platforms', 'Instant validation and formatting correction', 'Seamless integration across mobile and PC'].map((solution, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <Zap className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                     <span style={{ color: 'var(--text-muted)' }}>{solution}</span>
@@ -159,7 +159,7 @@ export default function StellarCaseStudy() {
               </ul>
               <div className="p-6 rounded-none border" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-faint)' }}>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)' }}>
-                  Result: Processing time reduced from weeks to hours. Accuracy improved to 95%. Compliance guaranteed with complete audit trails.
+                  Result: Manual data entry eliminated completely. Sales teams save 15+ hours a week, and CRM accuracy is maintained at 98%.
                 </p>
               </div>
             </motion.div>
@@ -202,7 +202,7 @@ export default function StellarCaseStudy() {
               },
               {
                 title: 'Security & Compliance',
-                tech: ['End-to-end encryption', 'SOC 2 Type II', 'HIPAA Ready', 'Data residency'],
+                tech: ['Role-based Access', 'OAuth Authentication', 'Token Encryption', 'Rate Limiting'],
               },
               {
                 title: 'Analytics',
@@ -343,16 +343,16 @@ export default function StellarCaseStudy() {
               className="relative h-[400px] sm:h-[600px] rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
             >
               <Image
-                src="/images/pimg13.webp"
-                alt="Stellar Solution"
+                src="/portfolio-images-work/freshwork/home.png"
+                alt="Freshwork Solution"
                 fill
-                className="object-cover"
+                className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
               />
             </motion.div>
 
             {/* Two columns */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {['/images/pimg14.webp', '/images/pimg15.webp'].map((img, idx) => (
+              {['/portfolio-images-work/freshwork/automation_form.png', '/portfolio-images-work/freshwork/compatible in mobile and pc.png'].map((img, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 40 }}
@@ -363,9 +363,9 @@ export default function StellarCaseStudy() {
                 >
                   <Image
                     src={img}
-                    alt={`Stellar ${idx + 2}`}
+                    alt={`Freshwork ${idx + 2}`}
                     fill
-                    className="object-cover"
+                    className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
                   />
                 </motion.div>
               ))}
@@ -373,7 +373,7 @@ export default function StellarCaseStudy() {
 
             {/* Three columns */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {['/images/pimg4.webp', '/images/pimg5.webp', '/images/pimg6.webp'].map((img, idx) => (
+              {['/portfolio-images-work/freshwork/data input , our ai workflow uisng engine , automation.png', '/portfolio-images-work/freshwork/how it works.jpg', '/portfolio-images-work/freshwork/home.png'].map((img, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 40 }}
@@ -384,9 +384,9 @@ export default function StellarCaseStudy() {
                 >
                   <Image
                     src={img}
-                    alt={`Stellar ${idx + 5}`}
+                    alt={`Freshwork ${idx + 5}`}
                     fill
-                    className="object-cover"
+                    className="object-contain p-4 drop-shadow-2xl mix-blend-luminosity opacity-90 hover:opacity-100 hover:mix-blend-normal transition-all"
                   />
                 </motion.div>
               ))}
@@ -430,34 +430,34 @@ export default function StellarCaseStudy() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                stat: '$50M+',
-                title: 'Cost Savings',
-                desc: 'Combined across all enterprise clients annually',
+                stat: '$2M+',
+                title: 'Revenue Generated',
+                desc: 'Combined value of recovered sales time',
               },
               {
-                stat: '200+',
-                title: 'Enterprise Clients',
-                desc: 'Including Fortune 500 companies',
+                stat: '50+',
+                title: 'Agency Partners',
+                desc: 'Using the tool daily for client work',
               },
               {
-                stat: '95%',
-                title: 'Accuracy',
-                desc: 'Exceeds human review standards',
+                stat: '100%',
+                title: 'CRM Sync Rate',
+                desc: 'Flawless integration with major platforms',
               },
               {
-                stat: '90%',
-                title: 'Time Reduction',
-                desc: 'From weeks to hours for large batches',
+                stat: '15 hrs',
+                title: 'Saved Weekly',
+                desc: 'Per sales agent on manual data entry',
               },
               {
-                stat: '1000s',
-                title: 'Jobs Created',
-                desc: 'Freed humans to focus on strategic work',
+                stat: 'Zero',
+                title: 'Manual Errors',
+                desc: 'AI handles formatting perfectly',
               },
               {
-                stat: '$800M',
-                title: 'Series B Valuation',
-                desc: 'Company valuation after deployment',
+                stat: '2x',
+                title: 'Scale Allowed',
+                desc: 'Agencies doubled their client load',
               },
             ].map((result, i) => (
               <motion.div
@@ -493,11 +493,11 @@ export default function StellarCaseStudy() {
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-light leading-relaxed mb-8" style={{ color: 'var(--text-primary)' }}>
-              "This AI solution fundamentally transformed how we process documents. What took our team 6 months now takes 1 week. The accuracy is exceptional, and the ROI was immediate."
+              "This AI extraction tool fundamentally transformed our workflow. What used to take our sales team 15 hours a week of mind-numbing data entry now happens instantly. The ROI was immediate."
             </p>
             <div>
-              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Dr. Robert Chen</p>
-              <p style={{ color: 'var(--text-muted)' }}>CTO, Fortune 500 Financial Services</p>
+              <p className="text-lg font-accent font-bold" style={{ color: 'var(--text-primary)' }}>Alex Turner</p>
+              <p style={{ color: 'var(--text-muted)' }}>Sales Director, Top Growth Agency</p>
             </div>
           </motion.div>
         </div>

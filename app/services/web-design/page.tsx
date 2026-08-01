@@ -71,7 +71,7 @@ const process = [
 
 const stats = [
   { value: '340%', label: 'Avg. Conversion Lift' },
-  { value: '50+', label: 'Websites Designed' },
+  { value: '8+', label: 'Websites Designed' },
   { value: '2.5M', label: 'Users Reached' },
   { value: '98%', label: 'Client Satisfaction' },
 ];

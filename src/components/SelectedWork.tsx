@@ -26,7 +26,8 @@ const projects = [
     title: 'Salemijo',
     subtitle: 'AI-Powered CRM Platform',
     description: 'Modern CRM solution with AI-driven agent management, customizable chatbots, and integrated payment systems.',
-    image: '/portfolio-images-work/salemijo-home.png',
+    image: '/portfolio-images-work/salemijo-mobile.png',
+    imageClass: 'object-contain',
     category: 'Web Development',
     year: '2024',
     results: '+150% Sales Efficiency',
@@ -34,13 +35,14 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Vertex',
-    subtitle: 'Brand Identity',
-    description: 'Complete brand overhaul for a fintech startup disrupting traditional banking.',
-    image: '/images/pimg3.webp',
-    category: 'Branding',
+    title: 'Savastha Clinic',
+    subtitle: 'Healthcare Mobile App',
+    description: 'A dual-sided mobile app for patients to book doctors, pay, and consult — and for doctors to manage schedules and billing.',
+    image: '/portfolio-images-work/savastha/savastha-thumbnail.png',
+    imageClass: 'object-contain scale-[1.15]',
+    category: 'Mobile Development',
     year: '2024',
-    results: '$2.5M Seed Raised',
+    results: 'Seamless Booking',
     href: '/work/vertex',
   },
 ];
@@ -110,8 +112,8 @@ export default function SelectedWork() {
 
           {/* Main Heading */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-accent font-black leading-[0.95] tracking-[-0.02em]" style={{ color: 'var(--text-primary)' }}>
-            <span className="work-word inline-block mr-4 sm:mr-6">Selected</span>
-            <span className="work-word inline-block" style={{ color: 'var(--text-subtle)' }}>Work</span>
+            <span className="work-word inline-block mr-4 sm:mr-6">WORK</span>
+            <span className="work-word inline-block" style={{ color: 'var(--text-subtle)' }}>SHOWCASE</span>
           </h2>
 
           {/* Subtext */}
@@ -159,7 +161,7 @@ export default function SelectedWork() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${'imageClass' in project ? project.imageClass : 'object-cover'}`}
                   />
                 </motion.div>
 
