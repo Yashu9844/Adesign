@@ -93,7 +93,7 @@ export default function LuminaCaseStudy() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Team</p>
-                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>1 UI/UX Designers, 2 Full-Stack Developers</p>
+                    <p className="text-lg font-medium" style={{ color: 'var(--text-primary)' }}>1 UI/UX Designer, 2 Full-Stack Developers</p>
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--text-subtle)' }}>Tech Stack</p>
@@ -108,7 +108,7 @@ export default function LuminaCaseStudy() {
                 </div>
 
                 <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                  A tradition clothing e-commerce platform designed to showcase premium Indian fashion, intelligent inventory, and secure transactions through razor pay 
+                  A traditional clothing e-commerce platform designed to showcase premium Indian fashion, intelligent inventory, and secure transactions through Razorpay 
                 </p>
               </div>
             </motion.div>
@@ -150,7 +150,7 @@ export default function LuminaCaseStudy() {
                     Aryan Store struggled with an outdated tech stack, losing a significant portion of customers at the checkout stage. Their unique product catalog lacked intelligent discovery and mobile experiences were clunky, making it hard to build consistent customer trust online. They needed a polished upgrade without losing their premium boutique identity.
                   </p>
                   <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                    The challenge: rebuild the storefront for speed and seamless conversion while preserving the distinct aesthetic that made Aryan Store stand out. Timeline: 8 weeks. Main goal: establish a solid digital foundation to steadily grow their initial customer base.
+                    The challenge: rebuild the storefront for speed and seamless conversion while preserving the distinct aesthetic that made Aryan Store stand out. Timeline: 12 weeks. Main goal: establish a solid digital foundation to steadily grow their initial customer base.
                 </p>
               </div>
             </motion.div>

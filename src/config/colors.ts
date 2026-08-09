@@ -75,6 +75,11 @@ export const COLORS = {
       secondaryBorder: 'rgba(255, 255, 255, 0.3)', // border-white/30
       secondaryBorderHover: 'rgba(255, 255, 255, 0.5)', // border-white/50
       hoverOpacity: 'rgba(255, 255, 255, 0.9)', // hover:bg-white/90
+      heading: '#ffffff', // text-white
+      subtitle: 'rgba(255, 255, 255, 0.65)', // text-white/65
+      button: '#ffffff',
+      buttonText: '#000000',
+      buttonHover: 'rgba(255, 255, 255, 0.9)',
     },
 
     // Gradients
@@ -157,15 +162,6 @@ export const COLORS = {
       description: 'rgba(255, 255, 255, 0.5)', // text-white/50
       copyright: 'rgba(255, 255, 255, 0.3)', // text-white/30
     },
-
-    cta: {
-      heading: '#ffffff', // text-white
-      subtitle: 'rgba(255, 255, 255, 0.65)', // text-white/65
-      button: '#ffffff',
-      buttonText: '#000000',
-      buttonHover: 'rgba(255, 255, 255, 0.9)',
-      secondaryText: 'rgba(255, 255, 255, 0.3)', // Label text
-    },
   },
 
   LIGHT: {
@@ -238,6 +234,11 @@ export const COLORS = {
       secondaryBorder: 'rgba(12, 10, 9, 0.2)',  // Visible border
       secondaryBorderHover: 'rgba(12, 10, 9, 0.4)', // Hover border
       hoverOpacity: 'rgba(24, 24, 27, 0.9)', // Button hover
+      heading: '#000000',
+      subtitle: 'rgba(0, 0, 0, 0.65)',
+      button: '#000000',
+      buttonText: '#ffffff',
+      buttonHover: 'rgba(0, 0, 0, 0.9)',
     },
 
     // Gradients - Warm minimal aesthetic
@@ -319,15 +320,6 @@ export const COLORS = {
       label: 'rgba(0, 0, 0, 0.3)',
       description: 'rgba(0, 0, 0, 0.5)',
       copyright: 'rgba(0, 0, 0, 0.3)',
-    },
-
-    cta: {
-      heading: '#000000',
-      subtitle: 'rgba(0, 0, 0, 0.65)',
-      button: '#000000',
-      buttonText: '#ffffff',
-      buttonHover: 'rgba(0, 0, 0, 0.9)',
-      secondaryText: 'rgba(0, 0, 0, 0.3)',
     },
   },
 };

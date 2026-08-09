@@ -149,7 +149,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     aria-label="GitHub"
                     className="group flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-105 hover:ring-1"
-                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
+                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)' }}
                   >
                     <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
@@ -159,7 +159,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                     className="group flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-105 hover:ring-1"
-                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
+                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)' }}
                   >
                     <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
@@ -167,7 +167,7 @@ export default function Hero() {
                     href="mailto:hello@agency.com"
                     aria-label="Email"
                     className="group flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-105 hover:ring-1"
-                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
+                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)' }}
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>

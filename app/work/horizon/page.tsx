@@ -66,8 +66,9 @@ export default function CodeQuestCaseStudy() {
               initial={{ opacity: 0, x: -50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative p-12 lg:p-16 rounded-none overflow-hidden border" style={{ borderColor: 'var(--border-faint)' }}
+              className="relative p-12 lg:p-16 rounded-none overflow-hidden border"
               style={{
+                borderColor: 'var(--border-faint)',
                 background: 'radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent)',
               }}
             >
