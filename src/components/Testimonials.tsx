@@ -32,6 +32,17 @@ const testimonials = [
     metric: '15 hrs',
     metricLabel: 'Saved Weekly',
   },
+  {
+    id: 3,
+    quote:
+      "Adesign built me a personal project that brings all my learning resources into one place. I also keep beautiful records of my life and manage my work from the same space. I'm really satisfied with what they delivered.",
+    author: 'Sana',
+    role: 'Client',
+    company: 'Mercedes-Benz',
+    image: '/testimonials/sana.png',
+    metric: 'All-in-one',
+    metricLabel: 'Personal Workspace',
+  },
 ];
 
 export default function Testimonials() {

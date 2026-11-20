@@ -10,6 +10,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import Testimonials from '@/components/Testimonials';
+import { whatsappHref } from '@/config/contact';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -535,145 +536,97 @@ const ManifestoSection = () => {
   );
 };
 
-// DNA/Expertise Section - Interactive skill visualization
-const DNASection = () => {
+// What You Get - customer-focused benefits (replaces the old "DNA" skills section)
+const WhatYouGetSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
-  const skills = [
-    { name: 'UI Design', level: 95, description: 'Pixel-perfect interfaces that delight users' },
-    { name: 'UX Strategy', level: 90, description: 'User-centered design backed by research' },
-    { name: 'Development', level: 92, description: 'Clean, scalable, performant code' },
-    { name: 'Branding', level: 88, description: 'Distinctive identities that resonate' },
-    { name: 'Animation', level: 85, description: 'Motion that brings designs to life' },
-    { name: 'Strategy', level: 87, description: 'Data-driven decisions for growth' },
+  const benefits = [
+    {
+      title: 'A Direct Line To The Founders',
+      description: 'No account managers in between. You talk to the people building your project, on a call or on WhatsApp.',
+    },
+    {
+      title: 'Delivered On Time',
+      description: 'You get a clear timeline up front, and we stick to it, so your launch happens when you planned it.',
+    },
+    {
+      title: 'Quality You Can See',
+      description: 'Fast, polished work that makes your business look as good as it really is, and turns visitors into customers.',
+    },
+    {
+      title: 'Support After Launch',
+      description: 'We stay close after go-live, so fixes, updates and next steps never have to wait.',
+    },
   ];
 
   return (
     <div ref={ref} className="my-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left side - Title and description */}
-        <div>
-          <motion.div 
-            className="flex items-center gap-4 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
-            <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-              Our DNA
-            </p>
-          </motion.div>
-          
-          <motion.h2 
-            className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-6"
-            style={{ color: 'var(--text-primary)' }}
+      <motion.div
+        className="flex items-center gap-4 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
+        <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
+          What You Get
+        </p>
+      </motion.div>
+
+      <motion.h2
+        className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-12"
+        style={{ color: 'var(--text-primary)' }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        Why Clients <span style={{ color: 'var(--text-subtle)' }}>Choose Us</span>
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {benefits.map((b, i) => (
+          <motion.div
+            key={b.title}
+            className="p-6 sm:p-8"
+            style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-medium)' }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
           >
-            What We're <br />
-            <span style={{ color: 'var(--text-subtle)' }}>Made Of</span>
-          </motion.h2>
-          
-          <motion.p 
-            className="text-lg font-light font-kh-teka max-w-md"
-            style={{ color: 'var(--text-muted)' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            A blend of creativity and technical excellence. We've honed our skills across hundreds of projects to deliver exceptional results.
-          </motion.p>
-
-          {/* Hover description */}
-          <div
-            className="mt-8 relative min-h-[120px]"
-            style={{ 
-              backgroundColor: 'var(--bg-elevated)', 
-              border: '1px solid var(--border-medium)'
-            }}
-          >
-            {/* Default text - fades out when skill is hovered */}
-            <p 
-              className="text-base font-kh-teka italic absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 text-center"
-              style={{ 
-                color: 'var(--text-subtle)',
-                opacity: hoveredSkill ? 0 : 1,
-                pointerEvents: hoveredSkill ? 'none' : 'auto'
-              }}
-            >
-              Hover over a skill to learn more...
+            <h3 className="text-xl sm:text-2xl font-accent font-black mb-3" style={{ color: 'var(--text-primary)' }}>
+              {b.title}
+            </h3>
+            <p className="text-base font-kh-teka leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              {b.description}
             </p>
-            
-            {/* Skill descriptions - each positioned absolutely to prevent layout shift */}
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300"
-                style={{ 
-                  opacity: hoveredSkill === skill.name ? 1 : 0,
-                  pointerEvents: hoveredSkill === skill.name ? 'auto' : 'none'
-                }}
-              >
-                <h4 className="text-xl font-accent font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-                  {skill.name}
-                </h4>
-                <p className="text-base font-kh-teka" style={{ color: 'var(--text-muted)' }}>
-                  {skill.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right side - Skill bars */}
-        <div className="space-y-6">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="group cursor-pointer"
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              onMouseEnter={() => setHoveredSkill(skill.name)}
-              onMouseLeave={() => setHoveredSkill(null)}
-            >
-              <div className="flex justify-between items-center mb-2">
-                <span 
-                  className="text-base font-kh-teka font-medium transition-colors duration-300"
-                  style={{ color: hoveredSkill === skill.name ? 'var(--text-primary)' : 'var(--text-muted)' }}
-                >
-                  {skill.name}
-                </span>
-                <span 
-                  className="text-sm font-kh-teka"
-                  style={{ color: 'var(--text-subtle)' }}
-                >
-                  {skill.level}%
-                </span>
-              </div>
-              <div 
-                className="h-2 w-full overflow-hidden"
-                style={{ backgroundColor: 'var(--bg-elevated)' }}
-              >
-                <motion.div
-                  className="h-full origin-left"
-                  style={{ 
-                    backgroundColor: hoveredSkill === skill.name ? 'var(--text-primary)' : 'var(--text-muted)',
-                    transition: 'background-color 0.3s ease'
-                  }}
-                  initial={{ scaleX: 0 }}
-                  animate={isInView ? { scaleX: skill.level / 100 } : {}}
-                  transition={{ duration: 1, delay: 0.5 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
+
+      <motion.div
+        className="mt-10 flex flex-wrap gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-4 font-kh-teka text-sm tracking-wider uppercase transition-all duration-300"
+          style={{ backgroundColor: 'var(--cta-primary)', color: 'var(--cta-primary-text)' }}
+        >
+          Chat on WhatsApp →
+        </a>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 px-8 py-4 font-kh-teka text-sm tracking-wider uppercase transition-all duration-300"
+          style={{ border: '1px solid var(--border-light)', color: 'var(--text-primary)' }}
+        >
+          Get a Free Quote
+        </Link>
+      </motion.div>
     </div>
   );
 };
@@ -702,19 +655,6 @@ const TeamSection = () => {
 
   return (
     <div ref={ref} className="my-20">
-      {/* Founder Section */}
-      <motion.div 
-        className="flex items-center gap-4 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
-        <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-          Who You Work With
-        </p>
-      </motion.div>
-      
       <motion.h2 
         className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-12"
         style={{ color: 'var(--text-primary)' }}
@@ -1006,16 +946,24 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Testimonials (same as home page) */}
+      <Testimonials />
+
+      {/* Team Section */}
+      <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="max-w-[1920px] mx-auto">
+          <SectionSeparator />
+          <TeamSection />
+        </div>
+      </div>
+
       {/* DNA/Expertise Section */}
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-[1920px] mx-auto">
           <SectionSeparator />
-          <DNASection />
+          <WhatYouGetSection />
         </div>
       </div>
-
-      {/* Testimonials (same as home page) */}
-      <Testimonials />
 
       {/* Values Section */}
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -1046,14 +994,6 @@ export default function AboutPage() {
               "Ongoing Partnership — Launch is just the beginning. We offer retainer relationships for brands that want a dedicated digital partner for continuous optimization and growth.",
             ]}
           />
-        </div>
-      </div>
-
-      {/* Team Section */}
-      <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-[1920px] mx-auto">
-          <SectionSeparator />
-          <TeamSection />
         </div>
       </div>
 
