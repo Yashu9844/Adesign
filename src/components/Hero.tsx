@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import ScrollIndicator from './ScrollIndicator';
+import PromiseMarquee from './PromiseMarquee';
 
 import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
 export default function Hero() {
@@ -65,7 +66,7 @@ export default function Hero() {
               {/* Small Label */}
               <div className="flex items-center gap-3">
                 <div className="w-8 sm:w-12 h-[1px]" style={{ backgroundColor: 'var(--line-primary)' }}></div>
-                <span className="text-xs sm:text-sm tracking-[0.25em] uppercase font-light" style={{ color: 'var(--text-muted)' }}>Design-Led Agency</span>
+                <span className="text-xs sm:text-sm tracking-[0.25em] uppercase font-light" style={{ color: 'var(--text-muted)' }}>Websites · Apps · Automation</span>
               </div>
               
               {/* Massive Heading - Fluid Typography with clamp() */}
@@ -74,13 +75,13 @@ export default function Hero() {
                   className="font-accent font-black leading-[0.85] tracking-[-0.02em]"
                   style={{ fontSize: 'clamp(2.25rem, 6.5vw, 7rem)', color: 'var(--text-primary)' }}
                 >
-                  WE DESIGN
+                  WE GROW
                 </h1>
                 <h1 
                   className="font-accent font-black leading-[0.85] tracking-[-0.02em] mt-1 sm:mt-2"
                   style={{ fontSize: 'clamp(2.25rem, 6.5vw, 7rem)', color: 'var(--text-subtle)' }}
                 >
-                  WEB EXPERIENCES
+                  YOUR BUSINESS
                 </h1>
               </div>
               
@@ -90,9 +91,9 @@ export default function Hero() {
                   className="font-light leading-relaxed"
                   style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.25rem)', color: 'var(--text-secondary)' }}
                 >
-                  Transforming ideas into powerful digital solutions through
-                  <span className="font-normal" style={{ color: 'var(--text-primary)' }}> innovative design</span> and
-                  <span className="font-normal" style={{ color: 'var(--text-primary)' }}> clean code</span>
+                  Websites, apps and automation that bring you
+                  <span className="font-normal" style={{ color: 'var(--text-primary)' }}> more customers</span>, delivered
+                  <span className="font-normal" style={{ color: 'var(--text-primary)' }}> on time</span> and built around your business
                 </p>
               </div>
               
@@ -193,7 +194,11 @@ export default function Hero() {
       
       {/* Scroll Indicator */}
       <ScrollIndicator />
-      
+
+      {/* Promise marquee at bottom of hero */}
+      <div className="absolute left-0 right-0 bottom-0 z-20 backdrop-blur-sm">
+        <PromiseMarquee />
+      </div>
     </section>
   );
 }

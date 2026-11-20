@@ -130,7 +130,7 @@ export default function Footer() {
               className="text-base sm:text-xl md:text-2xl font-light leading-relaxed max-w-md"
               style={{ color: 'var(--text-secondary)' }}
             >
-              We design and build premium web experiences for founders & modern brands.
+              Websites, apps and automation that bring you more customers, delivered on time.
             </motion.p>
 
             {/* Contact Info */}

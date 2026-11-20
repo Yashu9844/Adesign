@@ -41,7 +41,7 @@ const steps = [
     number: '04',
     title: 'Development',
     description:
-      'Our engineers bring designs to life with clean, performant code. We build scalable solutions using cutting-edge technologies.',
+      'We build your approved designs into a fast, reliable product, and test it thoroughly so launch day goes smoothly.',
     details: ['Frontend Development', 'Backend Integration', 'Testing & QA', 'Performance Optimization'],
     duration: '4-8 Weeks',
   },
@@ -143,7 +143,7 @@ export default function HowWeWork() {
               className="text-base sm:text-lg font-light leading-relaxed max-w-md lg:text-right"
               style={{ color: 'var(--text-disabled)' }}
             >
-              A proven methodology refined over years of delivering exceptional digital experiences.
+              A clear, simple process so you always know what's happening and what comes next.
             </motion.p>
           </div>
         </div>

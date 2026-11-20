@@ -787,49 +787,18 @@ const TeamSection = () => {
 
   const founders = [
     {
-      name: 'Alex Mitchell',
-      role: 'Founder & Creative Director',
-      bio: 'With 12 years of experience in digital design and strategy, Alex founded Adesign to bridge the gap between exceptional design and real business results.',
+      name: 'Yashavanth R Siddesh',
+      role: 'Founder',
+      bio: "Yashavanth started out as an engineer at an ISRO contractor, where things have to work the first time. He then spent years in startups, shipping fast, fixing what broke and learning what customers actually care about. He makes sure every project is delivered on time and built to grow your business.",
       image: '/images/pimg1.webp',
-      specialties: ['Brand Strategy', 'Design Direction', 'User Experience'],
+      specialties: ['Websites', 'Apps', 'Automation'],
     },
     {
-      name: 'Jordan Hayes',
-      role: 'Co-Founder & Strategy Lead',
-      bio: 'Jordan brings deep expertise in digital strategy and business development, ensuring every design decision drives measurable growth and client success.',
+      name: 'Zubair Mallick',
+      role: 'Co-Founder',
+      bio: "Zubair has worked across many AI startups and as a freelancer and contractor, so he knows what it takes to ship real products in real industries. A battle-scarred developer with a track record of excellence, he has won multiple development competitions, and brings that same standard to every client project.",
       image: '/images/pimg2.webp',
-      specialties: ['Business Strategy', 'Client Relations', 'Growth Marketing'],
-    },
-  ];
-
-  const team = [
-    {
-      name: 'Sarah Chen',
-      role: 'Lead Product Designer',
-      bio: 'Sarah brings her expertise in interaction design and design systems to create intuitive, beautiful digital experiences.',
-      specialties: ['UI/UX Design', 'Design Systems', 'Prototyping'],
-      image: '/images/pimg3.webp',
-    },
-    {
-      name: 'James Rodriguez',
-      role: 'Senior Full-Stack Developer',
-      bio: 'James specializes in building scalable, high-performance applications with modern technologies and best practices.',
-      specialties: ['Next.js', 'Backend Dev', 'DevOps'],
-      image: '/images/pimg4.webp',
-    },
-    {
-      name: 'Maya Patel',
-      role: 'Brand Strategist & Creative',
-      bio: 'Maya crafts compelling brand narratives and visual identities that resonate with audiences and drive growth.',
-      specialties: ['Brand Identity', 'Creative Strategy', 'Copywriting'],
-      image: '/images/pimg5.webp',
-    },
-    {
-      name: 'David Kim',
-      role: 'Lead Motion Designer',
-      bio: 'David creates immersive animation experiences that bring digital products to life and engage users at every touchpoint.',
-      specialties: ['Animation', 'Motion Design', 'Creative Code'],
-      image: '/images/pimg6.webp',
+      specialties: ['AI Solutions', 'Development', 'Automation'],
     },
   ];
 
@@ -844,7 +813,7 @@ const TeamSection = () => {
       >
         <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
         <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-          Leadership
+          Who You Work With
         </p>
       </motion.div>
       
@@ -855,7 +824,7 @@ const TeamSection = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: 0.1 }}
       >
-        Our <span style={{ color: 'var(--text-subtle)' }}>Founders</span>
+        Meet the <span style={{ color: 'var(--text-subtle)' }}>Founders</span>
       </motion.h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
@@ -900,88 +869,6 @@ const TeamSection = () => {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {founder.specialties.map((specialty) => (
-                    <span
-                      key={specialty}
-                      className="px-3 py-1 rounded-full text-xs font-kh-teka"
-                      style={{ backgroundColor: 'var(--bg-primary)', border: '1px solid var(--border-light)', color: 'var(--text-muted)' }}
-                    >
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Team Members Section */}
-      <motion.div 
-        className="flex items-center gap-4 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <div className="h-px w-8" style={{ backgroundColor: 'var(--text-subtle)' }} />
-        <p className="text-xs tracking-[0.3em] uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-          Core Team
-        </p>
-      </motion.div>
-
-      <motion.h2 
-        className="text-4xl sm:text-5xl md:text-6xl font-accent font-black mb-12"
-        style={{ color: 'var(--text-primary)' }}
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.4 }}
-      >
-        The <span style={{ color: 'var(--text-subtle)' }}>Team</span>
-      </motion.h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {team.map((member, index) => (
-          <motion.div
-            key={member.name}
-            className="group overflow-hidden rounded-none transition-all duration-500"
-            style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-medium)' }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-            whileHover={{ borderColor: 'var(--border-light)' }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 h-full">
-              {/* Image */}
-              <div className="relative h-[300px] sm:h-full overflow-hidden">
-                <motion.div
-                  animate={{ scale: 1.05 }}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full h-full"
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 sm:p-8 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-accent font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-kh-teka mb-4" style={{ color: 'var(--text-muted)' }}>
-                    {member.role}
-                  </p>
-                  <p className="text-sm leading-relaxed mb-6 font-kh-teka" style={{ color: 'var(--text-secondary)' }}>
-                    {member.bio}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {member.specialties.map((specialty) => (
                     <span
                       key={specialty}
                       className="px-3 py-1 rounded-full text-xs font-kh-teka"
@@ -1123,7 +1010,7 @@ export default function AboutPage() {
               className="text-lg md:text-xl lg:text-2xl font-light font-kh-teka"
               style={{ color: 'var(--text-muted)' }}
             >
-              A design-led digital agency crafting premium web experiences
+              A team building websites, apps and automation that grow your business
             </p>
             <span
               className="text-2xl md:text-3xl transition-transform duration-300 inline-block"

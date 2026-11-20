@@ -203,10 +203,10 @@ export default function ServicesPage() {
             className="mt-8 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto font-light"
             style={{ color: 'var(--text-muted)' }}
           >
-            Transforming ideas into exceptional digital experiences through
-            <span style={{ color: 'var(--text-primary)' }}> design</span>,
-            <span style={{ color: 'var(--text-primary)' }}> code</span>, and
-            <span style={{ color: 'var(--text-primary)' }}> innovation</span>.
+            Websites, apps and automation that bring you
+            <span style={{ color: 'var(--text-primary)' }}> more customers</span>, delivered
+            <span style={{ color: 'var(--text-primary)' }}> on time</span> and built around
+            <span style={{ color: 'var(--text-primary)' }}> your business</span>.
           </motion.p>
         </div>
 

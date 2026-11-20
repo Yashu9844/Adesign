@@ -150,7 +150,7 @@ export default function ContactPage() {
                   className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-xl font-kh-teka"
                   style={{ color: 'var(--text-muted)' }}
                 >
-                  Have a project in mind? We're here to transform your vision into exceptional digital experiences. Let's start a conversation.
+                  Have a project in mind? Tell us what you want to achieve and we'll show you the simplest way to get there. Let's talk.
                 </p>
               </motion.div>
 

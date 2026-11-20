@@ -16,18 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adesign.tech"),
-  title: "Adesign | Design-Led Web Experiences",
-  description: "We design and build premium web experiences for founders & modern brands. Focused on clarity, performance, and long-term value.",
-  keywords: ["Web Design Agency", "Web Development", "Next.js", "UI/UX Design", "Premium Websites"],
+  title: "Adesign | Websites, Apps & Automation That Grow Your Business",
+  description: "Websites, apps and automation that bring you more customers, delivered on time and built around your business.",
+  keywords: ["Website Design", "App Development", "Business Automation", "Web Design Agency Bengaluru", "Get More Customers Online"],
   authors: [{ name: "Adesign" }],
   creator: "Adesign",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://adesign.tech",
-    siteName: "Adesign - Design-Led Web Experiences",
-    title: "Adesign | Design-Led Web Experiences",
-    description: "We design and build premium web experiences for founders & modern brands.",
+    siteName: "Adesign - Websites, Apps & Automation",
+    title: "Adesign | Websites, Apps & Automation That Grow Your Business",
+    description: "Websites, apps and automation that bring you more customers, delivered on time.",
   },
   robots: {
     index: true,

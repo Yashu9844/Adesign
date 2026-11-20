@@ -33,7 +33,7 @@ const services = [
     title: 'Web Development',
     shortTitle: 'Development',
     description:
-      'From custom web applications to e-commerce platforms, we build performant, scalable solutions with cutting-edge technology.',
+      'From business websites to online stores, we build fast, reliable sites that turn visitors into customers.',
     capabilities: [
       'React & Next.js',
       'Full-Stack Apps',
@@ -84,7 +84,7 @@ const services = [
     title: 'Application',
     shortTitle: 'Application',
     description:
-      'We build native and cross-platform mobile applications that deliver seamless, engaging experiences across all devices.',
+      'We build mobile apps for iPhone and Android that your customers enjoy using and keep coming back to.',
     capabilities: [
       'iOS & Android',
       'React Native',
@@ -184,8 +184,8 @@ export default function WhatWeDo() {
               className="text-base sm:text-lg font-light leading-relaxed max-w-md lg:text-right"
               style={{ color: 'var(--text-light)' }}
             >
-              We specialize in creating digital experiences that are both
-              beautiful and functional, driving real business results.
+              We build things that look great and work hard for you,
+              bringing in more customers and saving you time.
             </motion.p>
           </div>
         </div>
