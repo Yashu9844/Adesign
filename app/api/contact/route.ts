@@ -6,9 +6,10 @@ export async function POST(request: NextRequest) {
 
     const web3FormsData = new FormData();
     web3FormsData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY || '');
-    web3FormsData.append('subject', `AGENCY WEBSITE: ${formData.name}`);
+    web3FormsData.append('subject', `ADESIGN WEBSITE: ${formData.name}`);
     web3FormsData.append('name', formData.name);
     web3FormsData.append('email', formData.email);
+    web3FormsData.append('phone', formData.phone || '');
     web3FormsData.append('company', formData.company || '');
     web3FormsData.append('projectType', formData.projectType || '');
     web3FormsData.append('budget', formData.budget || '');

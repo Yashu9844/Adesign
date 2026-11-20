@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTASection() {
@@ -144,11 +145,11 @@ export default function CTASection() {
             </Link>
 
             {/* Secondary CTA */}
-            <a href="mailto:hello@agency.com">
+            <a href={mailtoHref}>
               <button className="group relative px-8 sm:px-12 py-4 sm:py-5 overflow-hidden transition-all duration-500" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderWidth: '1px', borderColor: 'var(--border-light)' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; }}>
                 <span className="relative z-10 flex items-center gap-3">
                   <span className="text-sm sm:text-base font-medium tracking-[0.15em] uppercase">
-                    hello@agency.com
+                    {CONTACT.email}
                   </span>
                   <svg
                     className="w-5 h-5 transform group-hover:rotate-45 transition-transform duration-300"

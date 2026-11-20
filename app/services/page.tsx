@@ -10,6 +10,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { ArrowUpRight, Code2, Palette, Smartphone, Brain, Sparkles, Zap } from 'lucide-react';
 
+import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -489,7 +490,7 @@ function CTASection() {
                 </span>
               </button>
             </Link>
-            <Link href="mailto:hello@agency.com">
+            <Link href={mailtoHref}>
               <button className="group relative px-10 py-4 border font-medium tracking-wide transition-all duration-300" style={{ backgroundColor: 'transparent', color: 'var(--text-primary)', borderColor: 'var(--border-light)' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--text-primary)';

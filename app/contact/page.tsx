@@ -3,11 +3,12 @@
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { useState, useRef } from 'react';
-import { Github, Linkedin, Twitter, Instagram, Mail, ArrowUpRight, Send, MapPin, Clock, Phone } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, ArrowUpRight, Send, MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 
+import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
 export default function ContactPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -167,13 +168,13 @@ export default function ContactPage() {
                     <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>Email</p>
                   </div>
                   <a
-                    href="mailto:hello@adesign.agency"
+                    href={mailtoHref}
                     className="text-lg sm:text-xl font-light font-kh-teka flex items-center gap-2 transition-colors"
                     style={{ color: 'var(--text-primary)' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                   >
-                    hello@adesign.agency
+                    {CONTACT.email}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </div>
@@ -185,13 +186,13 @@ export default function ContactPage() {
                     <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>Phone</p>
                   </div>
                   <a
-                    href="tel:+1234567890"
+                    href={telHref}
                     className="text-lg sm:text-xl font-light font-kh-teka flex items-center gap-2 transition-colors"
                     style={{ color: 'var(--text-primary)' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                   >
-                    +1 (234) 567-890
+                    {CONTACT.phoneDisplay}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </div>
@@ -203,7 +204,7 @@ export default function ContactPage() {
                     <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>Location</p>
                   </div>
                   <p className="text-lg sm:text-xl font-light font-kh-teka" style={{ color: 'var(--text-primary)' }}>
-                    San Francisco, CA
+                    {CONTACT.location}
                   </p>
                   <p className="text-sm font-kh-teka mt-1" style={{ color: 'var(--text-muted)' }}>
                     Working with clients worldwide
@@ -241,10 +242,8 @@ export default function ContactPage() {
                 <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>Connect With Us</p>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+                    { icon: Github, href: CONTACT.social.github, label: 'GitHub' },
+                    { icon: Linkedin, href: CONTACT.social.linkedin, label: 'LinkedIn' },
                   ].map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}
@@ -356,7 +355,7 @@ export default function ContactPage() {
                             borderColor: 'var(--border-medium)',
                             color: 'var(--text-primary)'
                           }}
-                          placeholder="john@example.com"
+                          placeholder="you@example.com"
                         />
                         <div
                           className="absolute bottom-0 left-0 h-[1px] transition-all duration-300"
@@ -624,7 +623,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                 <a
-                  href="mailto:hello@adesign.agency"
+                  href={mailtoHref}
                   className="group flex items-center gap-2 transition-colors font-kh-teka"
                   style={{ color: 'var(--text-muted)' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
@@ -636,7 +635,7 @@ export default function ContactPage() {
                 </a>
                 <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
                 <a
-                  href="https://linkedin.com"
+                  href={CONTACT.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 transition-colors font-kh-teka"
@@ -650,14 +649,28 @@ export default function ContactPage() {
                 </a>
                 <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
                 <a
-                  href="tel:+1234567890"
+                  href={telHref}
                   className="group flex items-center gap-2 transition-colors font-kh-teka"
                   style={{ color: 'var(--text-muted)' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
                 >
                   <Phone className="w-5 h-5" />
-                  <span className="text-sm sm:text-base font-light">Schedule a Call</span>
+                  <span className="text-sm sm:text-base font-light">Call Us</span>
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 transition-colors font-kh-teka"
+                  style={{ color: 'var(--text-muted)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span className="text-sm sm:text-base font-light">WhatsApp</span>
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>

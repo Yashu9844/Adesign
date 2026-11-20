@@ -6,8 +6,9 @@ import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
 
+import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
 gsap.registerPlugin(ScrollTrigger);
 
 const footerLinks = {
@@ -25,10 +26,8 @@ const footerLinks = {
     { label: 'UX Design', href: '/services#ux' },
   ],
   social: [
-    { label: 'GitHub', href: 'https://github.com', icon: Github },
-    { label: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-    { label: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-    { label: 'Instagram', href: 'https://instagram.com', icon: Instagram },
+    { label: 'GitHub', href: CONTACT.social.github, icon: Github },
+    { label: 'LinkedIn', href: CONTACT.social.linkedin, icon: Linkedin },
   ],
 };
 
@@ -142,30 +141,43 @@ export default function Footer() {
               className="space-y-4 pt-4"
             >
               <a
-                href="mailto:hello@agency.com"
+                href={mailtoHref}
                 className="group flex items-center gap-3 transition-colors duration-300"
                 style={{ color: 'var(--text-subtle)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 <Mail className="w-4 h-4" />
-                <span className="text-sm md:text-base">hello@agency.com</span>
+                <span className="text-sm md:text-base">{CONTACT.email}</span>
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
               <a
-                href="tel:+15551234567"
+                href={telHref}
                 className="group flex items-center gap-3 transition-colors duration-300"
                 style={{ color: 'var(--text-subtle)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
               >
                 <Phone className="w-4 h-4" />
-                <span className="text-sm md:text-base">+1 (555) 123-4567</span>
+                <span className="text-sm md:text-base">{CONTACT.phoneDisplay}</span>
+                <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+              </a>
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 transition-colors duration-300"
+                style={{ color: 'var(--text-subtle)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-subtle)'; }}
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span className="text-sm md:text-base">Chat on WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
               <div className="flex items-center gap-3" style={{ color: 'var(--text-subtle)' }}>
                 <MapPin className="w-4 h-4" />
-                <span className="text-sm md:text-base">Bengaluru, India</span>
+                <span className="text-sm md:text-base">{CONTACT.location}</span>
               </div>
             </motion.div>
 
@@ -306,7 +318,7 @@ export default function Footer() {
               className="text-xs sm:text-sm"
               style={{ color: 'var(--text-subtle)' }}
             >
-              © {currentYear} Agency. All rights reserved.
+              © {currentYear} {CONTACT.brand}. All rights reserved.
             </motion.p>
 
             {/* Legal Links */}
