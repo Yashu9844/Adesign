@@ -749,7 +749,7 @@ const TeamSection = () => {
                     src={founder.image}
                     alt={founder.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-[center_25%]"
                   />
                 </motion.div>
               </div>
