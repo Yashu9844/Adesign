@@ -688,7 +688,7 @@ const TeamSection = () => {
       name: 'Yashavanth R Siddesh',
       role: 'Founder',
       bio: "Yashavanth started out as an engineer at an ISRO contractor, where things have to work the first time. He then spent years in startups, shipping fast, fixing what broke and learning what customers actually care about. He makes sure every project is delivered on time and built to grow your business.",
-      image: '/images/pimg1.webp',
+      image: '/images/yashavanth.webp',
       specialties: ['Websites', 'Apps', 'Automation'],
     },
     {
