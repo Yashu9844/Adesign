@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import ClientMarquee from './ClientMarquee';
 import ScrollIndicator from './ScrollIndicator';
 
 import { CONTACT, mailtoHref, telHref, whatsappHref } from '@/config/contact';
@@ -195,10 +194,6 @@ export default function Hero() {
       {/* Scroll Indicator */}
       <ScrollIndicator />
       
-      {/* Client marquee at bottom of hero */}
-      <div className="absolute left-0 right-0 z-20" style={{ bottom: '-20px' }}>
-        <ClientMarquee />
-      </div>
     </section>
   );
 }

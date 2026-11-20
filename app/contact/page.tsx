@@ -94,7 +94,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <div className="min-h-screen overflow-x-clip" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <SmoothScroll />
       <Navigation />
 
