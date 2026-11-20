@@ -145,16 +145,6 @@ export default function Hero() {
               <div className="space-y-5 sm:space-y-6 lg:space-y-8">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <a
-                    href={CONTACT.social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    className="group flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-105 hover:ring-1"
-                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
-                  >
-                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </a>
-                  <a
                     href={CONTACT.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -171,6 +161,16 @@ export default function Hero() {
                     style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </a>
+                  <a
+                    href={CONTACT.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="group flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-105 hover:ring-1"
+                    style={{ borderColor: 'var(--border-medium)', backgroundColor: 'var(--bg-glass)', color: 'var(--text-light)', ringColor: 'var(--border-light)' }}
+                  >
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                   <div className="h-px flex-1" style={{ backgroundColor: 'var(--border-medium)' }}></div>
                 </div>

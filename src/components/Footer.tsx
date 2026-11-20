@@ -26,8 +26,8 @@ const footerLinks = {
     { label: 'UX Design', href: '/services#ux' },
   ],
   social: [
-    { label: 'GitHub', href: CONTACT.social.github, icon: Github },
     { label: 'LinkedIn', href: CONTACT.social.linkedin, icon: Linkedin },
+    { label: 'GitHub', href: CONTACT.social.github, icon: Github },
   ],
 };
 

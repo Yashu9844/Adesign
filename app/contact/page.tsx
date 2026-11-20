@@ -161,6 +161,24 @@ export default function ContactPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-6"
               >
+                {/* LinkedIn */}
+                <div className="group">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Linkedin className="w-4 h-4" style={{ color: 'var(--text-subtle)' }} />
+                    <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>LinkedIn</p>
+                  </div>
+                  <a
+                    href={CONTACT.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg sm:text-xl font-light font-kh-teka flex items-center gap-2 transition-colors"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Yashavanth R Siddesh
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </div>
+
                 {/* Email */}
                 <div className="group">
                   <div className="flex items-center gap-2 mb-2">
@@ -242,8 +260,8 @@ export default function ContactPage() {
                 <p className="text-xs tracking-wider uppercase font-kh-teka" style={{ color: 'var(--text-subtle)' }}>Connect With Us</p>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: CONTACT.social.github, label: 'GitHub' },
                     { icon: Linkedin, href: CONTACT.social.linkedin, label: 'LinkedIn' },
+                    { icon: Github, href: CONTACT.social.github, label: 'GitHub' },
                   ].map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}
@@ -623,18 +641,6 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                 <a
-                  href={mailtoHref}
-                  className="group flex items-center gap-2 transition-colors font-kh-teka"
-                  style={{ color: 'var(--text-muted)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
-                >
-                  <Mail className="w-5 h-5" />
-                  <span className="text-sm sm:text-base font-light">Direct Email</span>
-                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
-                <a
                   href={CONTACT.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -645,6 +651,18 @@ export default function ContactPage() {
                 >
                   <Linkedin className="w-5 h-5" />
                   <span className="text-sm sm:text-base font-light">LinkedIn Message</span>
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
+                <a
+                  href={mailtoHref}
+                  className="group flex items-center gap-2 transition-colors font-kh-teka"
+                  style={{ color: 'var(--text-muted)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+                >
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm sm:text-base font-light">Direct Email</span>
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <div className="hidden sm:block w-[1px] h-4" style={{ backgroundColor: 'var(--border-light)' }} />
