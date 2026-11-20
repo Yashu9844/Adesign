@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -114,11 +115,13 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
               <Link href="/" className="inline-block group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all duration-300" style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-medium)' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-glass)'; e.currentTarget.style.borderColor = 'var(--border-light)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-elevated)'; e.currentTarget.style.borderColor = 'var(--border-medium)'; }}>
-                  <span className="text-2xl sm:text-3xl font-bold font-accent group-hover:scale-110 transition-transform duration-300" style={{ color: 'var(--text-primary)' }}>
-                    A
-                  </span>
-                </div>
+              <Image
+                src="/logo-adesign.png"
+                alt="Adesign"
+                width={670}
+                height={266}
+                className="h-14 sm:h-16 w-auto rounded-md transition-transform duration-300 group-hover:scale-105"
+              />
               </Link>
             </motion.div>
 

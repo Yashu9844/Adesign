@@ -35,7 +35,7 @@ const MediaSection = ({ imageSrc, alt }: { imageSrc: string; alt: string }) => {
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <Image
-          src="/images/pimg1.webp"
+          src={imageSrc}
           alt={alt}
           width={1920}
           height={1080}
@@ -695,7 +695,7 @@ const TeamSection = () => {
       name: 'Zubair Mallick',
       role: 'Co-Founder',
       bio: "Zubair has worked across many AI startups and as a freelancer and contractor, so he knows what it takes to ship real products in real industries. A battle-scarred developer with a track record of excellence, he has won multiple development competitions, and brings that same standard to every client project.",
-      image: '/images/pimg2.webp',
+      image: '/images/zubair-mallick.webp',
       specialties: ['AI Solutions', 'Development', 'Automation'],
     },
   ];
@@ -784,6 +784,8 @@ const TeamSection = () => {
     </div>
   );
 };
+
+const SHOW_AWARDS_AND_TECH = false;
 
 // Awards/Recognition Section
 const AwardsSection = () => {
@@ -933,7 +935,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
           >
-            <MediaSection imageSrc="/images/about-hero.png" alt="Adesign Agency" />
+            <MediaSection imageSrc="/images/about-hero-adesign.webp" alt="Adesign: websites, apps and automation" />
           </motion.div>
         </div>
       </div>
@@ -984,8 +986,8 @@ export default function AboutPage() {
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 my-16">
         <div className="max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MediaSection imageSrc="/images/pimg1.webp" alt="Our Design Process" />
-            <MediaSection imageSrc="/images/pimg2.webp" alt="Our Development" />
+            <MediaSection imageSrc="/images/about-collage-2.webp" alt="Adesign: design, development and growth" />
+            <MediaSection imageSrc="/images/about-collage-3.webp" alt="Adesign: your ideas, our craft" />
           </div>
         </div>
       </div>
@@ -1055,6 +1057,9 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Awards & Technologies sections hidden for now. Set SHOW_AWARDS_AND_TECH to true to bring them back. */}
+      {SHOW_AWARDS_AND_TECH && (
+        <>
       {/* Awards Section */}
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-[1920px] mx-auto">
@@ -1095,6 +1100,8 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+        </>
+      )}
 
       {/* CTA Section */}
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-16">
