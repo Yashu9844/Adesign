@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navigation() {
@@ -58,14 +57,29 @@ export default function Navigation() {
         href="/"
         className="hidden lg:block fixed top-6 md:top-8 left-6 md:left-8 z-50 group cursor-pointer"
       >
-        <Image
-          src="/logo-adesign.png"
-          alt="Adesign"
-          width={670}
-          height={266}
-          priority
-          className="h-12 md:h-14 w-auto rounded-md md:rounded-lg transition-transform duration-300 group-hover:scale-105"
-        />
+        <div 
+          className="w-12 h-12 md:w-14 md:h-14 backdrop-blur-md rounded-lg md:rounded-[0.5vw] flex items-center justify-center transition-all duration-300"
+          style={{ 
+            backgroundColor: 'var(--bg-glass)', 
+            borderWidth: '1px', 
+            borderColor: 'var(--border-faint)' 
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-glass-heavy)';
+            e.currentTarget.style.borderColor = 'var(--border-medium)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-glass)';
+            e.currentTarget.style.borderColor = 'var(--border-faint)';
+          }}
+        >
+          <span 
+            className="text-2xl md:text-3xl font-bold font-kh-teka group-hover:scale-110 transition-transform duration-300"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            A
+          </span>
+        </div>
       </Link>
 
       {/* Center Menu Strip */}
