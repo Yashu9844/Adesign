@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
+import Testimonials from '@/components/Testimonials';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -677,109 +678,6 @@ const DNASection = () => {
   );
 };
 
-// Featured Testimonial - Large statement
-const FeaturedTestimonial = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
-  return (
-    <div ref={ref} className="my-20 relative">
-      <div 
-        className="p-8 md:p-12 lg:p-16 relative overflow-hidden"
-        style={{ 
-          backgroundColor: 'var(--bg-elevated)', 
-          border: '1px solid var(--border-medium)' 
-        }}
-      >
-        {/* Decorative elements */}
-        <div 
-          className="absolute top-0 right-0 w-64 h-64 opacity-50"
-          style={{ 
-            background: 'radial-gradient(circle, var(--border-light) 0%, transparent 70%)' 
-          }}
-        />
-        
-        <div className="relative z-10">
-          <motion.div
-            className="flex items-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div 
-                  key={i}
-                  className="w-10 h-10 rounded-full border-2 overflow-hidden"
-                  style={{ 
-                    borderColor: 'var(--bg-primary)',
-                    backgroundColor: 'var(--bg-glass)'
-                  }}
-                >
-                  <Image 
-                    src={`/images/testimonial${i}.png`} 
-                    alt={`Client ${i}`}
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <span className="text-sm font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-              Trusted by 8+ clients worldwide
-            </span>
-          </motion.div>
-
-          <motion.blockquote
-            className="text-xl md:text-2xl lg:text-3xl font-accent font-bold leading-relaxed mb-8"
-            style={{ color: 'var(--text-primary)' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
-            "Working with Adesign transformed our digital presence completely. They didn't just deliver a website—they delivered a 
-            <span style={{ color: 'var(--text-subtle)' }}> growth engine</span> that continues to exceed our expectations."
-          </motion.blockquote>
-
-          <motion.div
-            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div>
-              <p className="text-base font-kh-teka font-medium" style={{ color: 'var(--text-primary)' }}>
-                Yashavanth R Siddesh
-              </p>
-              <p className="text-sm font-kh-teka" style={{ color: 'var(--text-subtle)' }}>
-                CEO, TechVentures Inc.
-              </p>
-            </div>
-            
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <motion.svg
-                  key={star}
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  style={{ color: 'var(--text-primary)' }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.3, delay: 0.4 + star * 0.1 }}
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </motion.svg>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Team Section
 const TeamSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -1114,13 +1012,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Featured Testimonial */}
-      <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-[1920px] mx-auto">
-          <SectionSeparator />
-          <FeaturedTestimonial />
-        </div>
-      </div>
+      {/* Testimonials (same as home page) */}
+      <Testimonials />
 
       {/* Values Section */}
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
