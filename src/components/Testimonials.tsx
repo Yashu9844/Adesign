@@ -35,10 +35,10 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "Adesign built me a personal project that brings all my learning resources into one place. I also keep beautiful records of my life and manage my work from the same space. I'm really satisfied with what they delivered.",
+      "Adesign built me a personal project that brings all my learning resources into one place. I also keep beautiful records of my life and manage my personal work from the same space. I'm really satisfied with what they delivered.",
     author: 'Sana',
-    role: 'Client',
-    company: 'Mercedes-Benz',
+    role: '',
+    company: 'Personal Platform',
     image: '/testimonials/sana.png',
     metric: 'All-in-one',
     metricLabel: 'Personal Workspace',
@@ -175,11 +175,13 @@ export default function Testimonials() {
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-px" style={{ backgroundColor: 'var(--text-muted)' }} />
                     <div>
-                      <div className="text-base sm:text-lg font-medium" style={{ color: 'var(--text-primary)' }}>
-                        {currentTestimonial.author}
-                      </div>
-                      <div className="text-sm" style={{ color: 'var(--text-subtle)' }}>
-                        {currentTestimonial.role}, {currentTestimonial.company}
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide" style={{ color: 'var(--text-primary)' }}>
+                          {currentTestimonial.author}
+                        </span>
+                        <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide" style={{ color: 'var(--text-subtle)' }}>
+                          ({[currentTestimonial.role, currentTestimonial.company].filter(Boolean).join(', ')})
+                        </span>
                       </div>
                     </div>
                   </div>
